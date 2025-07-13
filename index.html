@@ -2,49 +2,137 @@
 <html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Ekobol: AI-Powered E-commerce</title>
+<title>Ekobol - How It Works</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter:wght@400;500;700;900&amp;family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
 <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
 <style type="text/tailwindcss">
       :root {
         --primary-color: #0ecd90;
-        --secondary-color: #f0f4f3;
-        --text-dark: #111816;
-        --text-light: #ffffff;
+        --text-primary-color: #111816;
+        --text-secondary-color: #61897d;
+        --background-color: #ffffff;
+        --divider-color: #f0f4f3;
       }
       body {
-        font-family: 'Inter', sans-serif;
-      }
-      .hero-gradient {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
+        font-family: 'Inter', 'Noto Sans', sans-serif;
       }
     </style>
 </head>
-<body class="bg-white">
-<div class="relative min-h-screen w-full overflow-x-hidden">
-<div class="absolute inset-0">
-<div class="h-full w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCpw9utlIR6wvFxE5tt4LcIXcTzXMuIKGdhDEXo9PGj9BbBrgS1ZxkJBMxv4iMiEwXH2EV40jlmkGHQulmgeldrOnG6T9VE2FSdWBK0YwucQcqPcapn8wGJjQVfDO6rweksk__0WI3OhOZemVLdIJYMB_lVxFZx4bxJhDZRlHF1b1j11eboM2y8uN0V3bT3yxYdaqHtsPcIbZQPcDUcStkYCrTUPJxuIpUip7h8doZcXmWwTckxcmX5xHRoLP4AU-XNZ2_fior6dtg");'></div>
-<div class="absolute inset-0 hero-gradient"></div>
+<body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--divider-color)] px-10 py-4">
+<a class="flex items-center gap-3 text-2xl font-bold tracking-tight" href="#">
+<svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+</svg>
+<span>Ekobol</span>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="#">Product</a>
+<a class="text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="#">Solutions</a>
+<a class="text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="#">Resources</a>
+<a class="text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="#">Pricing</a>
+</nav>
+<div class="flex items-center gap-4">
+<a class="hidden sm:inline-block text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="#">Log In</a>
+<a class="flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300" href="#">
+<span class="truncate">Get Started Free</span>
+</a>
 </div>
-<div class="relative z-10 flex h-full min-h-screen flex-col items-center justify-center px-4 py-20 text-center text-white sm:px-6 lg:px-8">
-<div class="max-w-4xl">
-<h1 class="text-4xl font-black leading-tight tracking-tight md:text-6xl lg:text-7xl">
-            Ekobol: Your All-in-One E-commerce Platform, <span class="text-[var(--primary-color)]">Supercharged by AI</span>
+</header>
+<main class="flex-1 px-4 sm:px-10 lg:px-20 py-16 lg:py-24">
+<div class="max-w-5xl mx-auto text-center">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-tight mb-6">
+              Your E-commerce Journey, <br class="hidden sm:inline"/>
+              Streamlined in <span class="text-[var(--primary-color)]">Three Steps</span>
 </h1>
-<p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-200 md:text-xl">
-            Seamlessly manage and scale your online business across every channel, from product creation to fulfillment, with the power of artificial intelligence and expert guidance from Me the Tech.
-          </p>
-<div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-<button class="transform rounded-full bg-[var(--primary-color)] px-8 py-3 text-base font-bold text-[var(--text-dark)] transition-transform duration-300 ease-in-out hover:scale-105">
-              Start Your Free Trial
-            </button>
-<button class="transform rounded-full bg-[var(--secondary-color)] px-8 py-3 text-base font-bold text-[var(--text-dark)] transition-transform duration-300 ease-in-out hover:scale-105">
-              Request a Demo
-            </button>
+<p class="text-lg md:text-xl text-[var(--text-secondary-color)] max-w-3xl mx-auto">
+              Discover how Ekobol simplifies your path to e-commerce success with our powerful, AI-driven platform.
+            </p>
 </div>
+<div class="mt-20 max-w-6xl mx-auto">
+<div class="relative grid md:grid-cols-3 gap-12">
+<div class="absolute top-1/2 left-0 w-full h-1 bg-[var(--divider-color)] -translate-y-1/2 -z-10 hidden md:block"></div>
+<div class="absolute top-1/2 left-0 w-full h-1 bg-[var(--primary-color)] -translate-y-1/2 -z-10 hidden md:block" id="progress-line" style="width: 0%;"></div>
+<div class="relative flex flex-col items-center text-center">
+<div class="relative mb-6">
+<div class="flex items-center justify-center size-16 rounded-full bg-[var(--primary-color)] text-white shadow-lg">
+<span class="text-2xl font-bold">1</span>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Connect &amp; Configure</h3>
+<p class="text-[var(--text-secondary-color)]">
+                  Seamlessly integrate your existing marketplaces and online stores. Customize your settings with Ekobol's intuitive connection tools.
+                </p>
+</div>
+<div class="relative flex flex-col items-center text-center">
+<div class="relative mb-6">
+<div class="flex items-center justify-center size-16 rounded-full bg-white border-2 border-[var(--primary-color)] text-[var(--primary-color)] shadow-lg">
+<span class="text-2xl font-bold">2</span>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Leverage AI-Powered Tools</h3>
+<p class="text-[var(--text-secondary-color)]">
+                  Harness our AI suite to optimize product listings, manage inventory, automate tasks, and gain invaluable market insights.
+                </p>
+</div>
+<div class="relative flex flex-col items-center text-center">
+<div class="relative mb-6">
+<div class="flex items-center justify-center size-16 rounded-full bg-white border-2 border-[var(--primary-color)] text-[var(--primary-color)] shadow-lg">
+<span class="text-2xl font-bold">3</span>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Analyze, Adapt, &amp; Thrive</h3>
+<p class="text-[var(--text-secondary-color)]">
+                  Monitor performance in real-time, identify growth opportunities, and scale your business with confidence, backed by Ekobol's AI.
+                </p>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-gray-50 text-[var(--text-secondary-color)] px-10 py-12">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1 md:col-span-1">
+<a class="flex items-center gap-3 text-2xl font-bold tracking-tight text-[var(--text-primary-color)]" href="#">
+<svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path></svg>
+<span>Ekobol</span>
+</a>
+<p class="mt-4 text-sm">Empowering your e-commerce journey with AI.</p>
+</div>
+<div>
+<h4 class="font-semibold text-[var(--text-primary-color)] mb-4">Product</h4>
+<ul class="space-y-3">
+<li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">Features</a></li>
+<li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">Integrations</a></li>
+<li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">Pricing</a></li>
+<li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">Updates</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold text-[var(--text-primary-color)] mb-4">Company</h4>
+<ul class="space-y-3">
+<li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">Contact</a></li>
+<li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">Blog</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold text-[var(--text-primary-color)] mb-4">Legal</h4>
+<ul class="space-y-3">
+<li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">Cookie Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-[var(--divider-color)] text-center text-sm">
+<p>© 2024 Ekobol. All rights reserved.</p>
+</div>
+</footer>
 </div>
 </div>
 
