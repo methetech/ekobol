@@ -1,0 +1,21 @@
+/*
+  ========================================
+  Ekobol Global Stylesheet
+  ========================================
+*/
+
+/* 1. Define custom properties (variables) for the entire site */
+:root {
+  --primary-color: #0ecd90;
+  --text-primary-color: #111816;
+  --text-secondary-color: #61897d;
+  --background-color: #ffffff;
+  --divider-color: #f0f4f3;
+}
+
+/* 2. Apply base font styles to the body */
+body {
+  font-family: 'Inter', 'Noto Sans', sans-serif;
+}
+
+/* 3. (Optional) Add any other global styles you want here in the future */

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Resources - Ekobol</title>
+    
+    <!-- Fonts -->
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    
+    <!-- Tailwind CSS Script -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Your New Global Stylesheet -->
+    <link rel="stylesheet" href="global.css">
+
+</head>
+<body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+    <!-- Header (with correct links) -->
+    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--divider-color)] px-10 py-4">
+        <a class="flex items-center gap-3 text-2xl font-bold tracking-tight" href="index.html">
+             <svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path></svg>
+            <span>Ekobol</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8">
+            <a class="text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="product.html">Product</a>
+            <a class="text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="solutions.html">Solutions</a>
+            <a class="text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="resources.html">Resources</a>
+            <a class="text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="pricing.html">Pricing</a>
+        </nav>
+        <div class="flex items-center gap-4">
+             <a class="hidden sm:inline-block text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="#">Log In</a>
+             <a class="flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300" href="#">
+                 <span class="truncate">Get Started Free</span>
+             </a>
+        </div>
+    </header>
+
+    <!-- Main Content for resources.html -->
+    <main class="flex-1 px-4 sm:px-10 lg:px-20 py-16 lg:py-24">
+        <div class="max-w-5xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-tight mb-6">Grow Smarter, Not Harder.</h1>
+            <p class="text-lg md:text-xl text-[var(--text-secondary-color)] max-w-3xl mx-auto">Dive into our collection of resources designed to help you succeed in the ever-changing world of e-commerce.</p>
+        </div>
+        <div class="mt-20 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="border border-[var(--divider-color)] rounded-lg p-8"><h3 class="text-2xl font-bold mb-3">The Ekobol Blog</h3><p class="text-[var(--text-secondary-color)] mb-6">Stay updated with the latest e-commerce trends, AI strategies, and tips for multi-marketplace success.</p><a href="#" class="font-bold text-[var(--primary-color)] hover:underline">Read Now →</a></div>
+            <div class="border border-[var(--divider-color)] rounded-lg p-8"><h3 class="text-2xl font-bold mb-3">Success Stories</h3><p class="text-[var(--text-secondary-color)] mb-6">See how real businesses, from artisans to large brands, have scaled their operations and boosted revenue with Ekobol.</p><a href="#" class="font-bold text-[var(--primary-color)] hover:underline">See the Results →</a></div>
+            <div class="border border-[var(--divider-color)] rounded-lg p-8"><h3 class="text-2xl font-bold mb-3">Help Center & Docs</h3><p class="text-[var(--text-secondary-color)] mb-6">Find step-by-step guides, technical documentation, and answers to frequently asked questions about our platform.</p><a href="#" class="font-bold text-[var(--primary-color)] hover:underline">Get Support →</a></div>
+            <div class="border border-[var(--divider-color)] rounded-lg p-8"><h3 class="text-2xl font-bold mb-3">Webinars & Tutorials</h3><p class="text-[var(--text-secondary-color)] mb-6">Watch on-demand webinars and video tutorials to master Ekobol's features and advanced e-commerce strategies.</p><a href="#" class="font-bold text-[var(--primary-color)] hover:underline">Watch & Learn →</a></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 text-[var(--text-secondary-color)] px-10 py-12">
+        <div class="mt-12 pt-8 border-t border-[var(--divider-color)] text-center text-sm"><p>© 2024 Ekobol. All rights reserved.</p></div>
+    </footer>
+</div>
+</div>
+</body>
+</html>
