@@ -40,7 +40,7 @@
                 </div>
             </div>
         </section>
-
+        
         <!-- How It Works Section -->
         <section class="px-4 sm:px-10 lg:px-20 py-16 lg:py-24 bg-[var(--background-secondary-color)] transition-colors duration-300">
             <div class="max-w-6xl mx-auto">
@@ -70,14 +70,15 @@
         </section>
 
         <!-- AI Transformation Playground Section -->
-        <section class="px-4 sm:px-10 lg:px-20 py-20 lg:py-32">
+        <section class="px-4 sm:px-10 lg:px-20 py-20 lg:py-24">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">From One Photo to a Perfect Listing.</h2>
                     <p class="text-lg text-[var(--text-secondary-color)] mt-4 max-w-3xl mx-auto">See how Ekobol's AI transforms a simple image into a market-leading product listing.</p>
                 </div>
 
-                <div id="playground-container" class="relative bg-[var(--background-secondary-color)] border border-[var(--border-color)] rounded-2xl shadow-xl p-8 transition-all duration-300">
+                <div id="playground-container" class="relative bg-[var(--background-secondary-color)] border border-[var(--border-color)] rounded-2xl shadow-xl p-8 transition-all duration-300 min-h-[500px]">
+                    
                     <div id="initial-card" class="text-center max-w-lg mx-auto transition-opacity duration-300">
                         <h3 class="text-xl font-bold mb-4 text-[var(--text-primary-color)]">BEFORE</h3>
                         <div class="bg-[var(--background-color)] border border-[var(--border-color)] rounded-lg p-4">
@@ -90,33 +91,30 @@
                         </button>
                     </div>
 
-                    <div id="results-container" class="overflow-hidden transition-all duration-700 ease-in-out" style="max-height: 0px; opacity: 0;">
-                        <!-- DEFINITIVE 2-COLUMN LAYOUT -->
-                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            <!-- Left Column: Image -->
-                            <div class="lg:col-span-1">
+                    <div id="results-container" class="absolute inset-0 p-8 opacity-0 pointer-events-none transition-opacity duration-500">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 h-full">
+                            <div class="lg:col-span-1 h-full">
                                 <h4 class="font-bold mb-2">1. AI Image Studio</h4>
-                                <img src="wallet-after.webp" alt="AI-generated photo of a wallet" class="rounded-lg w-full border border-[var(--border-color)]"/>
+                                <img src="wallet-after.webp" alt="AI-generated photo of a wallet" class="rounded-lg w-full h-full object-cover border border-[var(--border-color)]"/>
                             </div>
-                            <!-- Right Column: Info -->
-                            <div class="lg:col-span-2 grid grid-cols-1 gap-8">
-                                <div>
+                            <div class="lg:col-span-2 grid grid-rows-2 gap-8 h-full">
+                                <div class="row-span-1">
                                     <h4 class="font-bold mb-2">2. AI Smart Description</h4>
-                                    <div class="bg-[var(--background-color)] border border-[var(--border-color)] rounded-lg p-4 text-sm">
+                                    <div class="bg-[var(--background-color)] border border-[var(--border-color)] rounded-lg p-4 text-sm h-full">
                                         <p class="text-[var(--text-secondary-color)]">Meet timeless style and superior craftsmanship. Handcrafted from genuine leather, this minimalist wallet offers both durability and elegance. With ample space for your cards and cash, it's the perfect companion for daily use.</p>
                                     </div>
                                 </div>
-                                <div>
+                                <div class="row-span-1">
                                     <h4 class="font-bold mb-2">3. AI Price Optimization</h4>
-                                    <div class="bg-[var(--background-color)] border border-[var(--border-color)] rounded-lg p-6 flex flex-col justify-center items-center text-center">
+                                    <div class="bg-[var(--background-color)] border border-[var(--border-color)] rounded-lg p-6 flex flex-col justify-center items-center text-center h-full">
                                         <p class="text-lg text-[var(--text-secondary-color)]">Recommended Price</p>
                                         <p class="text-5xl font-bold text-[var(--primary-color)]">$49</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <button id="reset-button" class="mt-8 text-sm text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] transition-colors">Try Again</button>
+                        <div class="text-center absolute bottom-8 left-1/2 -translate-x-1/2">
+                            <button id="reset-button" class="text-sm text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] transition-colors">Try Again</button>
                         </div>
                     </div>
                 </div>
@@ -124,7 +122,7 @@
         </section>
 
         <!-- Final CTA Section -->
-        <section class="px-4 sm:px-10 lg:px-20 py-20 lg:py-32 bg-[var(--background-secondary-color)] transition-colors duration-300">
+        <section class="px-4 sm:px-10 lg:px-20 py-20 lg:py-24">
             <div class="max-w-4xl mx-auto text-center">
                 <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">Ready to Build Your Digital Empire?</h2>
                 <p class="text-lg md:text-xl text-[var(--text-secondary-color)] max-w-2xl mx-auto mb-8">
