@@ -6,19 +6,36 @@
 
 /* 1. Define custom properties (variables) for the entire site */
 :root {
+  /* Light Mode (Default) */
   --primary-color: #0ecd90;
   --text-primary-color: #111816;
   --text-secondary-color: #61897d;
   --background-color: #ffffff;
+  --background-secondary-color: #f8fafc; /* For cards/modules */
   --divider-color: #f0f4f3;
+  --border-color: #e2e8f0;
 }
 
-/* 2. Apply base font styles to the body */
+body.dark-mode {
+  /* Dark Mode */
+  --primary-color: #0ecd90;
+  --text-primary-color: #f1f5f9;
+  --text-secondary-color: #94a3b8;
+  --background-color: #0f172a; /* slate-900 */
+  --background-secondary-color: #1e293b; /* slate-800 */
+  --divider-color: #334155; /* slate-700 */
+  --border-color: #334155; /* slate-700 */
+}
+
+/* 2. Apply base font styles and transition to the body */
 body {
   font-family: 'Inter', 'Noto Sans', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-primary-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* 3. (Optional) Add any other global styles you want here in the future */
+/* 3. Prose styles for legal pages etc. */
 .prose h1, .prose h2, .prose h3 {
     color: var(--text-primary-color);
 }

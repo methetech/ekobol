@@ -5,23 +5,18 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Ekobol - Yapay Zeka Destekli E-ticaret Platformu</title>
     
-    <!-- Fonts -->
+    <link rel="icon" href="ekobol.ico" type="image/x-icon">
+    
     <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
     <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
     
-    <!-- Tailwind CSS Script -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-
-    <!-- Global Stylesheet -->
     <link rel="stylesheet" href="global.css">
-
 </head>
 <body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
 <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
 <div class="layout-container flex h-full grow flex-col">
 
-    <!-- Header will be loaded here by JavaScript -->
     <div id="header-placeholder"></div>
 
     <main class="flex-1">
@@ -39,15 +34,15 @@
                     <a class="flex min-w-[160px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300" href="signup.html">
                         <span class="truncate">Ücretsiz Başla</span>
                     </a>
-                    <a class="flex min-w-[160px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-white border-2 border-[var(--divider-color)] text-[var(--text-primary-color)] text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300" href="solutions.html">
+                    <a class="flex min-w-[160px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-[var(--background-secondary-color)] border-2 border-[var(--border-color)] text-[var(--text-primary-color)] text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300" href="solutions.html">
                         <span class="truncate">Çözümleri Keşfet</span>
                     </a>
                 </div>
             </div>
         </section>
-
+        
         <!-- How It Works Section -->
-        <section class="px-4 sm:px-10 lg:px-20 py-16 lg:py-24 bg-gray-50">
+        <section class="px-4 sm:px-10 lg:px-20 py-16 lg:py-24 bg-[var(--background-secondary-color)] transition-colors duration-300">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-16">
                      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">E-ticaret Yolculuğunuz Artık Çok Kolay</h2>
@@ -74,48 +69,63 @@
             </div>
         </section>
 
-        <!-- Features Section -->
-        <section class="px-4 sm:px-10 lg:px-20 py-16 lg:py-24">
-             <div class="max-w-7xl mx-auto">
+        <!-- AI Transformation Playground Section -->
+        <section class="px-4 sm:px-10 lg:px-20 py-20 lg:py-24">
+            <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-16">
-                     <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Ekobol Farkını Yaşayın</h2>
-                     <p class="text-lg text-[var(--text-secondary-color)] mt-4">Bu sadece başka bir entegratör değil. Bu sizin yapay zeka yardımcı pilotunuz.</p>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">Tek Fotoğraftan Mükemmel Listelemeye</h2>
+                    <p class="text-lg text-[var(--text-secondary-color)] mt-4 max-w-3xl mx-auto">Ekobol'ün yapay zekasının basit bir görüntüyü nasıl pazar lideri bir ürün listesine dönüştürdüğünü görün.</p>
                 </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="p-6 text-center">
-                        <div class="flex justify-center mb-4"><svg class="h-10 w-10 text-[var(--primary-color)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 01-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 013.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 013.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 01-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.553L16.5 21.75l-.398-1.197a3.375 3.375 0 00-2.456-2.456L12.75 18l1.197-.398a3.375 3.375 0 002.456-2.456L16.5 14.25l.398 1.197a3.375 3.375 0 002.456 2.456L20.25 18l-1.197.398a3.375 3.375 0 00-2.456 2.456z" /></svg></div>
-                        <h3 class="text-xl font-bold mb-2">YZ Görüntü Stüdyosu</h3><p class="text-[var(--text-secondary-color)]">Basit yüklemelerden çarpıcı, profesyonel ürün fotoğrafları oluşturun. Fotoğrafçıya gerek yok.</p>
+
+                <div id="playground-container" class="relative bg-[var(--background-secondary-color)] border border-[var(--border-color)] rounded-2xl shadow-xl p-8 transition-all duration-300 min-h-[500px]">
+                    
+                    <!-- CORRECTED STRUCTURE: Both states share one container -->
+                    <div id="initial-card" class="text-center max-w-lg mx-auto transition-opacity duration-300">
+                        <h3 class="text-xl font-bold mb-4 text-[var(--text-primary-color)]">BAŞLANGIÇ</h3>
+                        <div class="bg-[var(--background-color)] border border-[var(--border-color)] rounded-lg p-4">
+                            <img src="wallet-before.webp" alt="Sade bir cüzdan fotoğrafı" class="rounded-lg aspect-video object-cover w-full"/>
+                            <p class="text-sm text-[var(--text-secondary-color)] mt-2">Telefonla çekilmiş basit bir fotoğraf.</p>
+                        </div>
+                        <button id="transform-button" class="mt-8 flex w-full max-w-xs mx-auto cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-emerald-500 text-white text-lg font-bold shadow-lg shadow-emerald-500/30 hover:shadow-xl hover:bg-emerald-400 transition-all duration-300">
+                            <span>Dönüşümü Başlat</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 01-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 013.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 013.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 01-3.09 3.09z" /></svg>
+                        </button>
                     </div>
-                     <div class="p-6 text-center">
-                        <div class="flex justify-center mb-4"><svg class="h-10 w-10 text-[var(--primary-color)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" /></svg></div>
-                        <h3 class="text-xl font-bold mb-2">Akıllı Açıklamalar</h3><p class="text-[var(--text-secondary-color)]">Her pazar yeri için saniyeler içinde ilgi çekici, SEO dostu ürün açıklamaları ve başlıkları oluşturun.</p>
-                    </div>
-                     <div class="p-6 text-center">
-                        <div class="flex justify-center mb-4"><svg class="h-10 w-10 text-[var(--primary-color)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" /></svg></div>
-                        <h3 class="text-xl font-bold mb-2">Gerçek Zamanlı Senkronizasyon</h3><p class="text-[var(--text-secondary-color)]">Fiyatınızı veya stoğunuzu bir kez güncelleyin ve anında her yerde yansımasını görün. Artık manuel güncelleme yok.</p>
-                    </div>
-                     <div class="p-6 text-center">
-                        <div class="flex justify-center mb-4"><svg class="h-10 w-10 text-[var(--primary-color)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" /></svg></div>
-                        <h3 class="text-xl font-bold mb-2">Birleşik Kontrol Paneli</h3><p class="text-[var(--text-secondary-color)]">Tüm kanallardaki satışları, siparişleri ve envanteri tek bir merkezi, kullanımı kolay merkezden takip edin.</p>
+
+                    <!-- This element is now positioned on top and revealed with opacity -->
+                    <div id="results-container" class="absolute inset-0 p-8 opacity-0 pointer-events-none transition-opacity duration-500">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 h-full">
+                            <div class="lg:col-span-1 h-full">
+                                <h4 class="font-bold mb-2">1. YZ Görsel Stüdyosu</h4>
+                                <img src="wallet-after.webp" alt="AI tarafından oluşturulmuş cüzdan fotoğrafı" class="rounded-lg w-full h-full object-cover border border-[var(--border-color)]"/>
+                            </div>
+                            <div class="lg:col-span-2 grid grid-rows-2 gap-8 h-full">
+                                <div class="row-span-1">
+                                    <h4 class="font-bold mb-2">2. YZ Akıllı Açıklama</h4>
+                                    <div class="bg-[var(--background-color)] border border-[var(--border-color)] rounded-lg p-4 text-sm h-full">
+                                        <p class="text-[var(--text-secondary-color)]">Zamansız stil ve üstün işçilikle tanışın. Hakiki deriden el yapımı olan bu minimalist cüzdan, hem dayanıklılık hem de zarafet sunar. Kartlarınız ve nakit paranız için geniş alanıyla günlük kullanım için mükemmel bir arkadaştır.</p>
+                                    </div>
+                                </div>
+                                <div class="row-span-1">
+                                    <h4 class="font-bold mb-2">3. YZ Fiyat Optimizasyonu</h4>
+                                    <div class="bg-[var(--background-color)] border border-[var(--border-color)] rounded-lg p-6 flex flex-col justify-center items-center text-center h-full">
+                                        <p class="text-lg text-[var(--text-secondary-color)]">Önerilen Satış Fiyatı</p>
+                                        <p class="text-5xl font-bold text-[var(--primary-color)]">₺950</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center absolute bottom-8 left-1/2 -translate-x-1/2">
+                            <button id="reset-button" class="text-sm text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] transition-colors">Tekrar Dene</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Social Proof/Testimonial Section -->
-        <section class="px-4 sm:px-10 lg:px-20 py-16 lg:py-24 bg-gray-50">
-            <div class="max-w-3xl mx-auto text-center">
-                <blockquote class="text-2xl md:text-3xl font-medium leading-snug">
-                    “Partner Planı ile kelimenin tam anlamıyla sadece harika ürünler yapmaya odaklanıyoruz. Ekobol markamızı sıfırdan kurdu ve online satışlarımız üçe katlandı. Sanki bizim için çalışan koca bir dijital pazarlama ajansımız var gibi hissediyoruz.”
-                </blockquote>
-                <p class="mt-6 font-bold text-lg">Ayşe Yılmaz</p>
-                <p class="text-[var(--text-secondary-color)]">Kurucu, AY Tasarım</p>
-            </div>
-        </section>
-
-         <!-- Final CTA Section -->
-        <section class="px-4 sm:px-10 lg:px-20 py-20 lg:py-32 text-center">
-            <div class="max-w-4xl mx-auto">
+        <!-- Final CTA Section -->
+        <section class="px-4 sm:px-10 lg:px-20 py-20 lg:py-24">
+            <div class="max-w-4xl mx-auto text-center">
                 <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">Dijital İmparatorluğunuzu Kurmaya Hazır mısınız?</h2>
                 <p class="text-lg md:text-xl text-[var(--text-secondary-color)] max-w-2xl mx-auto mb-8">
                   Platformlar arasında hokkabazlık yapmayı bırakın. Geleceğinizi inşa etmeye başlayın. Esnek planlarımızı keşfedin ve hedeflerinize en uygun olanı bulun.
@@ -127,13 +137,11 @@
         </section>
     </main>
 
-    <!-- Footer will be loaded here by JavaScript -->
     <div id="footer-placeholder"></div>
 
 </div>
 </div>
 
-<!-- Load our app script at the end of the body -->
 <script src="app.js"></script>
 
 </body>

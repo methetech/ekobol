@@ -1,23 +1,28 @@
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--divider-color)] px-10 py-4">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--border-color)] px-10 py-4 transition-colors duration-300">
     <a class="flex items-center gap-3 text-2xl font-bold tracking-tight" href="index_en.html">
-        <svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-            <path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
-        </svg>
+        <!-- SVG replaced with IMG tag -->
+        <img src="ekobol.ico" alt="Ekobol Logo" class="h-8 w-8">
         <span>Ekobol</span>
     </a>
     <nav class="hidden md:flex items-center gap-8">
-        <a class="text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="product_en.html">Product</a>
-        <a class="text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="solutions_en.html">Solutions</a>
-        <a class="text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="resources_en.html">Resources</a>
-        <a class="text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="pricing_en.html">Pricing</a>
+        <a class="text-base font-medium text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" href="product_en.html">Product</a>
+        <a class="text-base font-medium text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" href="solutions_en.html">Solutions</a>
+        <a class="text-base font-medium text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" href="resources_en.html">Resources</a>
+        <a class="text-base font-medium text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" href="pricing_en.html">Pricing</a>
     </nav>
     <div class="flex items-center gap-4">
         <div class="hidden sm:flex items-center gap-2 text-base font-medium">
-            <a id="lang-en-link" href="#">EN</a>
+            <a id="lang-en-link" href="#" class="transition-colors">EN</a>
             <span class="text-[var(--text-secondary-color)]">/</span>
-            <a id="lang-tr-link" href="#">TR</a>
+            <a id="lang-tr-link" href="#" class="transition-colors">TR</a>
         </div>
-        <a class="hidden sm:inline-block text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="login_en.html">Log In</a>
+        
+        <button id="theme-toggle" type="button" class="p-2 rounded-full text-[var(--text-secondary-color)] hover:bg-[var(--divider-color)] transition-colors">
+            <svg id="theme-icon-sun" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            <svg id="theme-icon-moon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+        </button>
+
+        <a class="hidden sm:inline-block text-base font-medium text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" href="login_en.html">Log In</a>
         <a class="flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300" href="signup_en.html">
             <span class="truncate">Get Started Free</span>
         </a>
