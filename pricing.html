@@ -20,69 +20,63 @@
 <body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
 <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
 <div class="layout-container flex h-full grow flex-col">
-    <!-- Header -->
-    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--divider-color)] px-10 py-4">
-        <a class="flex items-center gap-3 text-2xl font-bold tracking-tight" href="index.html">
-             <svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path></svg>
-            <span>Ekobol</span>
-        </a>
-        <nav class="hidden md:flex items-center gap-8">
-            <a class="text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="product.html">Product</a>
-            <a class="text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="solutions.html">Solutions</a>
-            <a class="text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="resources.html">Resources</a>
-            <a class="text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="pricing.html">Pricing</a>
-        </nav>
-        <div class="flex items-center gap-4">
-             <a class="hidden sm:inline-block text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="login.html">Log In</a>
-             <a class="flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300" href="signup.html">
-                 <span class="truncate">Get Started Free</span>
-             </a>
-        </div>
-    </header>
+
+    <!-- Header will be loaded here by JavaScript -->
+    <div id="header-placeholder"></div>
 
     <!-- Main Content for pricing.html -->
     <main class="flex-1 px-4 sm:px-10 lg:px-20 py-16 lg:py-24">
         <div class="max-w-5xl mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-tight mb-6">Flexible Plans for Every Scenario.</h1>
-            <p class="text-lg md:text-xl text-[var(--text-secondary-color)] max-w-3xl mx-auto">Eko Bol: where the economy is abundant. We believe in fair, transparent pricing that grows with you. No hidden fees. Ever.</p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-tight mb-6">
+                Flexible Plans for Every Scenario.
+            </h1>
+            <p class="text-lg md:text-xl text-[var(--text-secondary-color)] max-w-3xl mx-auto">
+                Eko Bol: where the economy is abundant. We believe in fair, transparent pricing that grows with you. No hidden fees. Ever.
+            </p>
         </div>
         <div class="mt-20 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+            
+            <!-- Plan 1: Basic -->
             <div class="border border-[var(--divider-color)] rounded-lg p-8 flex flex-col">
                 <h3 class="text-2xl font-bold mb-2">Basic Plan</h3>
                 <p class="text-[var(--text-secondary-color)] mb-6">For the hands-on seller who wants AI superpowers.</p>
-                <p class="text-4xl font-bold mb-6">10% <span class="text-lg font-medium text-[var(--text-secondary-color)]">/ of revenue</span></p>
-                <ul class="space-y-3 text-[var(--text-secondary-color)] mb-8 grow">
-                    <li>✓ Full Platform Access</li>
-                    <li>✓ All AI Tools</li>
-                    <li>✓ Multi-Channel Integration</li>
-                    <li>✓ Community Support</li>
+                <p class="text-5xl font-bold mb-6">10%<span class="text-lg font-medium text-[var(--text-secondary-color)]"> / of revenue</span></p>
+                <ul class="space-y-4 text-[var(--text-secondary-color)] mb-8 grow">
+                    <li class="flex items-start"><svg class="h-6 w-6 text-[var(--primary-color)] mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span>Full Platform Access</span></li>
+                    <li class="flex items-start"><svg class="h-6 w-6 text-[var(--primary-color)] mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span>All AI Tools</span></li>
+                    <li class="flex items-start"><svg class="h-6 w-6 text-[var(--primary-color)] mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span>Multi-Channel Integration</span></li>
+                    <li class="flex items-start"><svg class="h-6 w-6 text-[var(--primary-color)] mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span>Community Support</span></li>
                 </ul>
                 <a href="signup.html" class="text-center w-full flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-white border-2 border-[var(--primary-color)] text-[var(--primary-color)] text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300">Choose Basic</a>
             </div>
-            <div class="border-2 border-[var(--primary-color)] rounded-lg p-8 flex flex-col relative">
+
+            <!-- Plan 2: Partner (Recommended) -->
+            <div class="border-2 border-[var(--primary-color)] rounded-lg p-8 flex flex-col relative transform scale-105">
                 <p class="absolute top-0 -translate-y-1/2 bg-[var(--primary-color)] text-white px-4 py-1 rounded-full text-sm font-bold self-center">MOST POPULAR</p>
                 <h3 class="text-2xl font-bold mb-2 pt-4">Partner Plan</h3>
                 <p class="text-[var(--text-secondary-color)] mb-6">You produce & ship. We handle absolutely everything else.</p>
-                <p class="text-4xl font-bold mb-6">50% <span class="text-lg font-medium text-[var(--text-secondary-color)]">/ of revenue</span></p>
-                <ul class="space-y-3 text-[var(--text-secondary-color)] mb-8 grow">
-                    <li>✓ Everything in Basic PLUS:</li>
-                    <li>✓ We Build Your Brand & Website</li>
-                    <li>✓ We Handle All Digital Marketing</li>
-                    <li>✓ We Manage Listings & Customer Service</li>
-                    <li>✓ Dedicated Growth Partner</li>
+                <p class="text-5xl font-bold mb-6">50%<span class="text-lg font-medium text-[var(--text-secondary-color)]"> / of revenue</span></p>
+                <ul class="space-y-4 text-[var(--text-secondary-color)] mb-8 grow">
+                    <li class="flex items-start"><svg class="h-6 w-6 text-[var(--primary-color)] mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span>Everything in Basic, PLUS:</span></li>
+                    <li class="flex items-start"><svg class="h-6 w-6 text-[var(--primary-color)] mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span>We Build Your Brand & Website</span></li>
+                    <li class="flex items-start"><svg class="h-6 w-6 text-[var(--primary-color)] mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span>We Handle All Digital Marketing</span></li>
+                    <li class="flex items-start"><svg class="h-6 w-6 text-[var(--primary-color)] mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span>We Manage Listings & Support</span></li>
+                    <li class="flex items-start"><svg class="h-6 w-6 text-[var(--primary-color)] mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span>Dedicated Growth Partner</span></li>
                 </ul>
                 <a href="signup.html" class="text-center w-full flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300">Choose Partner</a>
             </div>
+            
+            <!-- Plan 3: Flexible -->
             <div class="border border-[var(--divider-color)] rounded-lg p-8 flex flex-col">
                 <h3 class="text-2xl font-bold mb-2">Flexible Plans</h3>
                 <p class="text-[var(--text-secondary-color)] mb-6">Custom solutions for unique needs.</p>
-                <div class="mb-6">
-                     <p class="text-3xl font-bold">Dynamic</p>
-                     <p class="text-[var(--text-secondary-color)]">An adjustable revenue share based on the work you want to do. Let's talk.</p>
+                <div class="mb-8">
+                     <p class="text-3xl font-bold">Dynamic Plan</p>
+                     <p class="mt-2 text-[var(--text-secondary-color)]">An adjustable revenue share based on the work you want to do. Let's build a custom partnership.</p>
                 </div>
-                 <div class="mb-6">
-                     <p class="text-3xl font-bold">Monthly</p>
-                     <p class="text-[var(--text-secondary-color)]">For sellers who just want to use specific tools on a few marketplaces. Starts at $10/mo.</p>
+                 <div class="mb-8">
+                     <p class="text-3xl font-bold">Monthly Plan</p>
+                     <p class="mt-2 text-[var(--text-secondary-color)]">Just need specific tools for a few marketplaces? We offer affordable monthly subscriptions.</p>
                 </div>
                 <div class="grow"></div>
                 <a href="contact.html" class="text-center w-full flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-white border-2 border-[var(--primary-color)] text-[var(--primary-color)] text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300">Contact Us</a>
@@ -90,17 +84,14 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-50 text-[var(--text-secondary-color)] px-10 py-12">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div class="col-span-1 md:col-span-1"><a class="flex items-center gap-3 text-2xl font-bold tracking-tight text-[var(--text-primary-color)]" href="index.html"><svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path></svg><span>Ekobol</span></a><p class="mt-4 text-sm">Empowering your e-commerce journey with AI.</p></div>
-            <div><h4 class="font-semibold text-[var(--text-primary-color)] mb-4">Product</h4><ul class="space-y-3"><li><a class="hover:text-[var(--primary-color)] transition-colors" href="product.html">Features</a></li><li><a class="hover:text-[var(--primary-color)] transition-colors" href="solutions.html">Solutions</a></li><li><a class="hover:text-[var(--primary-color)] transition-colors" href="pricing.html">Pricing</a></li><li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">Updates</a></li></ul></div>
-            <div><h4 class="font-semibold text-[var(--text-primary-color)] mb-4">Company</h4><ul class="space-y-3"><li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">About Us</a></li><li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">Careers</a></li><li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">Contact</a></li><li><a class="hover:text-[var(--primary-color)] transition-colors" href="resources.html">Resources</a></li></ul></div>
-            <div><h4 class="font-semibold text-[var(--text-primary-color)] mb-4">Legal</h4><ul class="space-y-3"><li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">Terms of Service</a></li><li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">Privacy Policy</a></li><li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">Cookie Policy</a></li></ul></div>
-        </div>
-        <div class="mt-12 pt-8 border-t border-[var(--divider-color)] text-center text-sm"><p>© 2024 Ekobol. All rights reserved.</p></div>
-    </footer>
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+    
 </div>
 </div>
+
+<!-- Load our app script at the end of the body -->
+<script src="app.js"></script>
+
 </body>
 </html>

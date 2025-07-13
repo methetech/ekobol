@@ -20,77 +20,86 @@
 <body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
 <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
 <div class="layout-container flex h-full grow flex-col">
-    <!-- Header -->
-    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--divider-color)] px-10 py-4">
-        <a class="flex items-center gap-3 text-2xl font-bold tracking-tight" href="index.html">
-             <svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path></svg>
-            <span>Ekobol</span>
-        </a>
-        <nav class="hidden md:flex items-center gap-8">
-            <a class="text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="product.html">Product</a>
-            <a class="text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="solutions.html">Solutions</a>
-            <a class="text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="resources.html">Resources</a>
-            <a class="text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="pricing.html">Pricing</a>
-        </nav>
-        <div class="flex items-center gap-4">
-             <a class="hidden sm:inline-block text-base font-medium hover:text-[var(--primary-color)] transition-colors" href="login.html">Log In</a>
-             <a class="flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300" href="signup.html">
-                 <span class="truncate">Get Started Free</span>
-             </a>
-        </div>
-    </header>
+
+    <!-- Header will be loaded here by JavaScript -->
+    <div id="header-placeholder"></div>
 
     <!-- Main Content for product.html -->
     <main class="flex-1 px-4 sm:px-10 lg:px-20 py-16 lg:py-24">
         <div class="max-w-5xl mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-tight mb-6">The Future of E-commerce is Here.<br>It's Powered by <span class="text-[var(--primary-color)]">AI</span>.</h1>
-            <p class="text-lg md:text-xl text-[var(--text-secondary-color)] max-w-3xl mx-auto">Ekobol isn't just an integrator; it's your strategic partner. Explore the cutting-edge tools designed to automate, optimize, and dominate the digital marketplace.</p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-tight mb-6">
+                The Future of E-commerce is Here.<br>It's Powered by <span class="text-[var(--primary-color)]">AI</span>.
+            </h1>
+            <p class="text-lg md:text-xl text-[var(--text-secondary-color)] max-w-3xl mx-auto">
+                Ekobol isn't just an integrator; it's your strategic partner. Explore the cutting-edge tools designed to automate, optimize, and dominate the digital marketplace.
+            </p>
         </div>
-        <div class="mt-20 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div class="mt-20 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+            
+            <!-- Feature 1 -->
             <div class="flex flex-col items-center text-center p-4">
-                <div class="flex justify-center mb-4"><svg class="h-10 w-10 text-[var(--primary-color)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 01-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 013.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 013.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 01-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.553L16.5 21.75l-.398-1.197a3.375 3.375 0 00-2.456-2.456L12.75 18l1.197-.398a3.375 3.375 0 002.456-2.456L16.5 14.25l.398 1.197a3.375 3.375 0 002.456 2.456L20.25 18l-1.197.398a3.375 3.375 0 00-2.456 2.456z" /></svg></div>
+                <div class="flex justify-center mb-4">
+                    <svg class="h-10 w-10 text-[var(--primary-color)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 01-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 013.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 013.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 01-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.553L16.5 21.75l-.398-1.197a3.375 3.375 0 00-2.456-2.456L12.75 18l1.197-.398a3.375 3.375 0 002.456-2.456L16.5 14.25l.398 1.197a3.375 3.375 0 002.456 2.456L20.25 18l-1.197.398a3.375 3.375 0 00-2.456 2.456z" /></svg>
+                </div>
                 <h3 class="text-2xl font-bold mb-3">AI Image Generation</h3>
                 <p class="text-[var(--text-secondary-color)]">Our AI creates a professional, marketplace-ready image library from your photos. Background removal, lifestyle mockups, and infinite variations.</p>
             </div>
+            
+            <!-- Feature 2 -->
             <div class="flex flex-col items-center text-center p-4">
-                <div class="flex justify-center mb-4"><svg class="h-10 w-10 text-[var(--primary-color)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" /></svg></div>
+                <div class="flex justify-center mb-4">
+                    <svg class="h-10 w-10 text-[var(--primary-color)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" /></svg>
+                </div>
                 <h3 class="text-2xl font-bold mb-3">AI Description Writer</h3>
                 <p class="text-[var(--text-secondary-color)]">Our AI generates compelling, SEO-optimized titles, descriptions, and bullet points tailored for the algorithms of Trendyol, Amazon, and Etsy.</p>
             </div>
+            
+            <!-- Feature 3 -->
             <div class="flex flex-col items-center text-center p-4">
-                 <div class="flex justify-center mb-4"><svg class="h-10 w-10 text-[var(--primary-color)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" /></svg></div>
+                 <div class="flex justify-center mb-4">
+                    <svg class="h-10 w-10 text-[var(--primary-color)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" /></svg>
+                 </div>
                 <h3 class="text-2xl font-bold mb-3">Real-Time Multi-Channel Sync</h3>
                 <p class="text-[var(--text-secondary-color)]">Change a price, update stock, or modify a description once. Ekobol instantly pushes the changes across all your marketplaces. Total control, zero repetition.</p>
             </div>
+            
+            <!-- Feature 4 -->
             <div class="flex flex-col items-center text-center p-4">
-                <div class="flex justify-center mb-4"><svg class="h-10 w-10 text-[var(--primary-color)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V6.375c0-.621.504-1.125 1.125-1.125h.375m16.5 0h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375" /></svg></div>
+                <div class="flex justify-center mb-4">
+                    <svg class="h-10 w-10 text-[var(--primary-color)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V6.375c0-.621.504-1.125 1.125-1.125h.375m16.5 0h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375" /></svg>
+                </div>
                 <h3 class="text-2xl font-bold mb-3">AI Pricing Optimization</h3>
                 <p class="text-[var(--text-secondary-color)]">Let our AI be your market analyst. It monitors competitors, analyzes demand, and suggests optimal pricing strategies to maximize your revenue.</p>
             </div>
+            
+            <!-- Feature 5 -->
             <div class="flex flex-col items-center text-center p-4">
-                <div class="flex justify-center mb-4"><svg class="h-10 w-10 text-[var(--primary-color)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" /></svg></div>
+                <div class="flex justify-center mb-4">
+                    <svg class="h-10 w-10 text-[var(--primary-color)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" /></svg>
+                </div>
                 <h3 class="text-2xl font-bold mb-3">Unified Analytics Dashboard</h3>
                 <p class="text-[var(--text-secondary-color)]">Track sales across all channels from a single, beautiful interface. Understand your business at a glance and make data-driven decisions.</p>
             </div>
+            
+            <!-- Feature 6 -->
             <div class="flex flex-col items-center text-center p-4">
-                <div class="flex justify-center mb-4"><svg class="h-10 w-10 text-[var(--primary-color)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375" /></svg></div>
+                <div class="flex justify-center mb-4">
+                    <svg class="h-10 w-10 text-[var(--primary-color)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375" /></svg>
+                </div>
                 <h3 class="text-2xl font-bold mb-3">Automated Inventory</h3>
                 <p class="text-[var(--text-secondary-color)]">Our AI forecasts demand and predicts when you'll run out of stock. Get intelligent alerts and reorder suggestions to prevent stockouts forever.</p>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-50 text-[var(--text-secondary-color)] px-10 py-12">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div class="col-span-1 md:col-span-1"><a class="flex items-center gap-3 text-2xl font-bold tracking-tight text-[var(--text-primary-color)]" href="index.html"><svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path></svg><span>Ekobol</span></a><p class="mt-4 text-sm">Empowering your e-commerce journey with AI.</p></div>
-            <div><h4 class="font-semibold text-[var(--text-primary-color)] mb-4">Product</h4><ul class="space-y-3"><li><a class="hover:text-[var(--primary-color)] transition-colors" href="product.html">Features</a></li><li><a class="hover:text-[var(--primary-color)] transition-colors" href="solutions.html">Solutions</a></li><li><a class="hover:text-[var(--primary-color)] transition-colors" href="pricing.html">Pricing</a></li><li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">Updates</a></li></ul></div>
-            <div><h4 class="font-semibold text-[var(--text-primary-color)] mb-4">Company</h4><ul class="space-y-3"><li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">About Us</a></li><li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">Careers</a></li><li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">Contact</a></li><li><a class="hover:text-[var(--primary-color)] transition-colors" href="resources.html">Resources</a></li></ul></div>
-            <div><h4 class="font-semibold text-[var(--text-primary-color)] mb-4">Legal</h4><ul class="space-y-3"><li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">Terms of Service</a></li><li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">Privacy Policy</a></li><li><a class="hover:text-[var(--primary-color)] transition-colors" href="#">Cookie Policy</a></li></ul></div>
-        </div>
-        <div class="mt-12 pt-8 border-t border-[var(--divider-color)] text-center text-sm"><p>© 2024 Ekobol. All rights reserved.</p></div>
-    </footer>
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+    
 </div>
 </div>
+
+<!-- Load our app script at the end of the body -->
+<script src="app.js"></script>
+
 </body>
 </html>

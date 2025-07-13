@@ -19,3 +19,9 @@ body {
 }
 
 /* 3. (Optional) Add any other global styles you want here in the future */
+.prose h1, .prose h2, .prose h3 {
+    color: var(--text-primary-color);
+}
+.prose p, .prose ul, .prose li {
+    color: var(--text-secondary-color);
+}
