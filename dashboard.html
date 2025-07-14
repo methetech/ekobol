@@ -39,18 +39,18 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="bg-white rounded-xl border border-[var(--divider-color)] shadow-sm p-6">
                         <p class="text-lg font-medium text-[var(--text-secondary-color)]">Toplam Satış (Son 30 Gün)</p>
-                        <p class="text-4xl font-bold text-[var(--primary-color)] mt-2">₺28.900</p>
-                        <p class="text-sm text-[var(--text-secondary-color)] mt-1">Önceki döneme göre %12 artış</p>
+                        <p id="total-sales" class="text-4xl font-bold text-[var(--primary-color)] mt-2">₺28.900</p>
+                        <p id="total-sales-trend" class="text-sm text-[var(--text-secondary-color)] mt-1">Önceki döneme göre %12 artış</p>
                     </div>
                     <div class="bg-white rounded-xl border border-[var(--divider-color)] shadow-sm p-6">
                         <p class="text-lg font-medium text-[var(--text-secondary-color)]">Toplam Sipariş (Son 30 Gün)</p>
-                        <p class="text-4xl font-bold text-[var(--primary-color)] mt-2">985</p>
-                        <p class="text-sm text-[var(--text-secondary-color)] mt-1">Önceki döneme göre %8 artış</p>
+                        <p id="total-orders" class="text-4xl font-bold text-[var(--primary-color)] mt-2">985</p>
+                        <p id="total-orders-trend" class="text-sm text-[var(--text-secondary-color)] mt-1">Önceki döneme göre %8 artış</p>
                     </div>
                     <div class="bg-white rounded-xl border border-[var(--divider-color)] shadow-sm p-6">
                         <p class="text-lg font-medium text-[var(--text-secondary-color)]">Toplam Kâr (Son 30 Gün)</p>
-                        <p class="text-4xl font-bold text-[var(--primary-color)] mt-2">₺11.560</p>
-                        <p class="text-sm text-[var(--text-secondary-color)] mt-1">Önceki döneme göre %15 artış</p>
+                        <p id="total-profit" class="text-4xl font-bold text-[var(--primary-color)] mt-2">₺11.560</p>
+                        <p id="total-profit-trend" class="text-sm text-[var(--text-secondary-color)] mt-1">Önceki döneme göre %15 artış</p>
                     </div>
                 </div>
             </section>
@@ -60,7 +60,7 @@
                 <!-- Etsy Panel -->
                 <div class="bg-white rounded-xl border border-[var(--divider-color)] shadow-sm p-6">
                     <h2 class="text-[var(--text-primary-color)] text-2xl font-bold leading-tight tracking-tight mb-4">Etsy Performansı</h2>
-                    <p class="text-lg font-medium text-[var(--text-secondary-color)]">Satış: <span class="text-[var(--primary-color)] font-bold">₺8.200</span> (Toplamın %28'i)</p>
+                    <p class="text-lg font-medium text-[var(--text-secondary-color)]">Satış: <span id="etsy-sales-value" class="text-[var(--primary-color)] font-bold">₺8.200</span> (Toplamın %<span id="etsy-sales-percentage">28</span>'i)</p>
                     <div class="h-32 my-4">
                         <canvas id="etsySalesChart"></canvas>
                     </div>
@@ -76,7 +76,8 @@
                                     <th scope="col" class="px-2 py-2 text-left text-xs font-medium text-[var(--text-secondary-color)] uppercase tracking-wider">Durum</th>
                                 </tr>
                             </thead>
-                            <tbody class="bg-white divide-y divide-[var(--divider-color)]">
+                            <tbody id="etsy-orders-table-body" class="bg-white divide-y divide-[var(--divider-color)]">
+                                <!-- Orders will be dynamically loaded here by JavaScript -->
                                 <tr>
                                     <td class="px-2 py-2 whitespace-nowrap text-sm font-medium text-[var(--text-primary-color)]">#E10023</td>
                                     <td class="px-2 py-2 whitespace-nowrap text-sm text-[var(--text-secondary-color)]">El Yapımı Kupa</td>
@@ -100,7 +101,7 @@
                 <!-- Trendyol Panel -->
                 <div class="bg-white rounded-xl border border-[var(--divider-color)] shadow-sm p-6">
                     <h2 class="text-[var(--text-primary-color)] text-2xl font-bold leading-tight tracking-tight mb-4">Trendyol Performansı</h2>
-                    <p class="text-lg font-medium text-[var(--text-secondary-color)]">Satış: <span class="text-[var(--primary-color)] font-bold">₺7.800</span> (Toplamın %27'si)</p>
+                    <p class="text-lg font-medium text-[var(--text-secondary-color)]">Satış: <span id="trendyol-sales-value" class="text-[var(--primary-color)] font-bold">₺7.800</span> (Toplamın %<span id="trendyol-sales-percentage">27</span>'si)</p>
                     <div class="h-32 my-4">
                         <canvas id="trendyolSalesChart"></canvas>
                     </div>
@@ -116,7 +117,8 @@
                                     <th scope="col" class="px-2 py-2 text-left text-xs font-medium text-[var(--text-secondary-color)] uppercase tracking-wider">Durum</th>
                                 </tr>
                             </thead>
-                            <tbody class="bg-white divide-y divide-[var(--divider-color)]">
+                            <tbody id="trendyol-orders-table-body" class="bg-white divide-y divide-[var(--divider-color)]">
+                                <!-- Orders will be dynamically loaded here by JavaScript -->
                                 <tr>
                                     <td class="px-2 py-2 whitespace-nowrap text-sm font-medium text-[var(--text-primary-color)]">#T20056</td>
                                     <td class="px-2 py-2 whitespace-nowrap text-sm text-[var(--text-secondary-color)]">Organik Pamuk Tişört</td>
@@ -140,7 +142,7 @@
                 <!-- Hepsiburada Panel -->
                 <div class="bg-white rounded-xl border border-[var(--divider-color)] shadow-sm p-6">
                     <h2 class="text-[var(--text-primary-color)] text-2xl font-bold leading-tight tracking-tight mb-4">Hepsiburada Performansı</h2>
-                    <p class="text-lg font-medium text-[var(--text-secondary-color)]">Satış: <span class="text-[var(--primary-color)] font-bold">₺6.500</span> (Toplamın %22'si)</p>
+                    <p class="text-lg font-medium text-[var(--text-secondary-color)]">Satış: <span id="hepsiburada-sales-value" class="text-[var(--primary-color)] font-bold">₺6.500</span> (Toplamın %<span id="hepsiburada-sales-percentage">22</span>'si)</p>
                     <div class="h-32 my-4">
                         <canvas id="hepsiburadaSalesChart"></canvas>
                     </div>
@@ -156,7 +158,8 @@
                                     <th scope="col" class="px-2 py-2 text-left text-xs font-medium text-[var(--text-secondary-color)] uppercase tracking-wider">Durum</th>
                                 </tr>
                             </thead>
-                            <tbody class="bg-white divide-y divide-[var(--divider-color)]">
+                            <tbody id="hepsiburada-orders-table-body" class="bg-white divide-y divide-[var(--divider-color)]">
+                                <!-- Orders will be dynamically loaded here by JavaScript -->
                                 <tr>
                                     <td class="px-2 py-2 whitespace-nowrap text-sm font-medium text-[var(--text-primary-color)]">#H30011</td>
                                     <td class="px-2 py-2 whitespace-nowrap text-sm text-[var(--text-secondary-color)]">Akıllı Saat</td>
@@ -180,7 +183,7 @@
                 <!-- Website Panel -->
                 <div class="bg-white rounded-xl border border-[var(--divider-color)] shadow-sm p-6">
                     <h2 class="text-[var(--text-primary-color)] text-2xl font-bold leading-tight tracking-tight mb-4">Web Sitesi Performansı</h2>
-                    <p class="text-lg font-medium text-[var(--text-secondary-color)]">Satış: <span class="text-[var(--primary-color)] font-bold">₺6.400</span> (Toplamın %22'si)</p>
+                    <p class="text-lg font-medium text-[var(--text-secondary-color)]">Satış: <span id="website-sales-value" class="text-[var(--primary-color)] font-bold">₺6.400</span> (Toplamın %<span id="website-sales-percentage">22</span>'si)</p>
                     <div class="h-32 my-4">
                         <canvas id="websiteSalesChart"></canvas>
                     </div>
@@ -196,7 +199,8 @@
                                     <th scope="col" class="px-2 py-2 text-left text-xs font-medium text-[var(--text-secondary-color)] uppercase tracking-wider">Durum</th>
                                 </tr>
                             </thead>
-                            <tbody class="bg-white divide-y divide-[var(--divider-color)]">
+                            <tbody id="website-orders-table-body" class="bg-white divide-y divide-[var(--divider-color)]">
+                                <!-- Orders will be dynamically loaded here by JavaScript -->
                                 <tr>
                                     <td class="px-2 py-2 whitespace-nowrap text-sm font-medium text-[var(--text-primary-color)]">#W40078</td>
                                     <td class="px-2 py-2 whitespace-nowrap text-sm text-[var(--text-secondary-color)]">Premium Kahve Çekirdekleri</td>
@@ -222,7 +226,7 @@
             <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                 <div class="bg-white rounded-xl border border-[var(--divider-color)] shadow-sm p-6">
                     <h2 class="text-[var(--text-primary-color)] text-2xl font-bold leading-tight tracking-tight mb-6">Hızlı İstatistikler</h2>
-                    <ul class="space-y-4 text-base text-[var(--text-secondary-color)]">
+                    <ul id="quick-stats-list" class="space-y-4 text-base text-[var(--text-secondary-color)]">
                         <li><strong class="text-[var(--text-primary-color)]">En Çok Satan Ürün:</strong> Organik Pamuk Tişört <span class="text-sm">(350 satış)</span></li>
                         <li><strong class="text-[var(--text-primary-color)]">En İyi Kanal (gelire göre):</strong> Etsy <span class="text-sm">(₺8.200)</span></li>
                         <li><strong class="text-[var(--text-primary-color)]">Ortalama Sipariş Değeri:</strong> ₺29.34</li>
@@ -237,7 +241,7 @@
                     <p class="text-base text-[var(--text-secondary-color)] mb-4">
                         YZ motorumuz size eyleme geçirilebilir içgörüler sağlamak için verilerinizi sürekli analiz ediyor.
                     </p>
-                    <ul class="list-disc list-inside space-y-2 text-base text-[var(--text-secondary-color)]">
+                    <ul id="ai-recommendations-list" class="list-disc list-inside space-y-2 text-base text-[var(--text-secondary-color)]">
                         <li>Hepsiburada'da "Akıllı Saat" için yeni bir reklam kampanyası başlatmayı düşünün.</li>
                         <li>Web sitenizdeki "Espresso Makinesi" ürün açıklamalarını daha fayda odaklı anahtar kelimelerle optimize edin.</li>
                         <li>Dönüşüm oranını %5 artırmak için Etsy'deki "Özel Yapım Kolye" fiyatlandırma stratejisini gözden geçirin.</li>
@@ -259,80 +263,7 @@
 <!-- Load our app script at the end of the body -->
 <script src="app.js"></script>
 
-<!-- Chart Initialization Script -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const createSalesChart = (ctxId, dataValues, label, color) => {
-            const ctx = document.getElementById(ctxId);
-            if (!ctx) return;
-
-            new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: ['Hafta 1', 'Hafta 2', 'Hafta 3', 'Hafta 4'], // Turkish labels
-                    datasets: [{
-                        label: label,
-                        data: dataValues,
-                        borderColor: color,
-                        backgroundColor: Chart.helpers.color(color).alpha(0.2).rgbString(),
-                        fill: true,
-                        tension: 0.3,
-                        pointRadius: 3,
-                        pointBackgroundColor: color
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false,
-                        },
-                        tooltip: {
-                            mode: 'index',
-                            intersect: false,
-                        }
-                    },
-                    scales: {
-                        x: {
-                            display: true,
-                            title: {
-                                display: false,
-                            },
-                            grid: {
-                                display: false,
-                            }
-                        },
-                        y: {
-                            display: false, // Hide Y-axis for cleaner look in small charts
-                            title: {
-                                display: false,
-                            },
-                            beginAtZero: true,
-                            grid: {
-                                display: false,
-                            }
-                        }
-                    },
-                    layout: {
-                        padding: {
-                            left: 0,
-                            right: 0,
-                            top: 0,
-                            bottom: 0
-                        }
-                    }
-                }
-            });
-        };
-
-        // Initialize charts for each channel with unique dummy data
-        createSalesChart('etsySalesChart', [1800, 2100, 2500, 2800], 'Etsy Satışları', '#0ecd90'); 
-        createSalesChart('trendyolSalesChart', [1500, 1700, 2200, 2400], 'Trendyol Satışları', '#0ecd90');
-        createSalesChart('hepsiburadaSalesChart', [1100, 1300, 1600, 1900], 'Hepsiburada Satışları', '#0ecd90');
-        createSalesChart('websiteSalesChart', [900, 1100, 1400, 1700], 'Web Sitesi Satışları', '#0ecd90');
-    });
-</script>
+<!-- Chart Initialization Script is now part of app.js (or could be standalone if preferred) -->
 
 </body>
 </html>

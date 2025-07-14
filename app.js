@@ -6,14 +6,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const footerPlaceholder = document.getElementById('footer-placeholder');
     const path = window.location.pathname;
     const currentPage = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
-    // Determine language based on current page filename suffix
+
     const isEnglish = currentPage.endsWith('_en.html') || 
-                      (currentPage === 'trends.html' && path.includes('_en')); // Handle trends.html if it's the EN version
+                      (currentPage === 'trends.html' && path.includes('_en'));
 
     const headerFile = isEnglish ? 'header_en.html' : 'header.html';
     const footerFile = isEnglish ? 'footer_en.html' : 'footer.html';
 
-    // Fetch and inject the header
     if (headerPlaceholder) {
         fetch(headerFile)
             .then(response => {
@@ -22,13 +21,11 @@ document.addEventListener("DOMContentLoaded", function() {
             })
             .then(data => {
                 headerPlaceholder.innerHTML = data;
-                // Once the header is loaded, run all scripts that depend on it
                 initializeHeaderScripts();
             })
             .catch(error => console.error("Header loading failed:", error));
     }
 
-    // Fetch and inject the footer
     if (footerPlaceholder) {
         fetch(footerFile)
             .then(response => {
@@ -41,9 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
             .catch(error => console.error("Footer loading failed:", error));
     }
 
-    // --- All scripts that depend on header elements go here ---
     function initializeHeaderScripts() {
-        
         // 1. THEME SWITCHER LOGIC
         const themeToggle = document.getElementById('theme-toggle');
         const sunIcon = document.getElementById('theme-icon-sun');
@@ -66,7 +61,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
             const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
             applyTheme(savedTheme);
-
             themeToggle.addEventListener('click', toggleTheme);
         }
 
@@ -75,10 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const trLink = document.getElementById('lang-tr-link');
         
         if (enLink && trLink) {
-            // Determine base page name without language suffix
             let basePageName = currentPage.replace('_en.html', '.html');
-            
-            // Define all pages (logged-out and logged-in) for robust language switching
             const allPages = [
                 'index.html', 'product.html', 'solutions.html', 'resources.html', 'pricing.html', 'about.html',
                 'careers.html', 'contact.html', 'cookies.html', 'dynamic-plan.html', 'basic-plan.html',
@@ -99,30 +90,26 @@ document.addEventListener("DOMContentLoaded", function() {
                         if (targetLangIsEnglish) {
                             targetPage = pageBaseName.replace('.html', '_en.html'); 
                         } else {
-                            targetPage = pageBaseName; // Turkish version
+                            targetPage = pageBaseName;
                         }
                         
-                        // Handle pages that might not have a distinct _en.html (like trends) if a specific pattern is used
                         if (pageBaseName === 'trends.html' && targetLangIsEnglish && !allPages.includes('trends_en.html')) {
                              targetPage = 'trends.html'; 
                         } else if (pageBaseName === 'trends.html' && !targetLangIsEnglish && allPages.includes('trends.html')) {
                             targetPage = 'trends.html';
                         }
                         
-                        // Ensure it points to _en version if it exists
                         if (targetLangIsEnglish && !targetPage.endsWith('_en.html') && allPages.includes(targetPage.replace('.html', '_en.html'))) {
                             targetPage = targetPage.replace('.html', '_en.html');
                         } else if (!targetLangIsEnglish && targetPage.endsWith('_en.html') && allPages.includes(targetPage.replace('_en.html', '.html'))) {
                             targetPage = targetPage.replace('_en.html', '.html');
                         }
 
-
                         foundMatch = true;
                         break;
                     }
                 }
                 
-                // Fallback for pages not explicitly listed: just toggle _en suffix
                 if (!foundMatch) {
                     if (targetLangIsEnglish && !originalPage.endsWith('_en.html')) {
                         targetPage = originalPage.replace('.html', '_en.html');
@@ -138,10 +125,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
             if (isEnglish) {
                 enLink.classList.add('font-bold', 'text-[var(--text-primary-color)]');
-                trLink.classList.remove('font-bold');
+                trLink.classList.remove('font-bold', 'text-[var(--text-primary-color)]');
             } else {
                 trLink.classList.add('font-bold', 'text-[var(--text-primary-color)]');
-                enLink.classList.remove('font-bold');
+                enLink.classList.remove('font-bold', 'text-[var(--text-primary-color)]');
             }
         }
         
@@ -165,58 +152,47 @@ document.addEventListener("DOMContentLoaded", function() {
         );
         
         const applyLoggedInState = (isLoggedIn) => {
-            if (isLoggedIn) { // Currently in DEMO MODE (User is "logged in")
-                // Show logged-in navigation
+            if (isLoggedIn) {
                 if (navLoggedOut) navLoggedOut.style.display = 'none';
                 if (navLoggedIn) navLoggedIn.style.display = 'flex'; 
 
-                // Hide logged-out actions (login/signup)
                 if (actionsLoggedOut) actionsLoggedOut.style.display = 'none';
-                // Show logged-in actions (empty currently, but ensures the container itself is visible if needed later)
                 if (actionsLoggedIn) actionsLoggedIn.style.display = 'flex'; 
 
-                // Update logo link to dashboard
                 if (logoLink) {
                     const dashboardPage = isEnglish ? 'dashboard_en.html' : 'dashboard.html';
                     logoLink.href = dashboardPage;
                 }
 
-                // Style demo strip for DEMO MODE (gray) - text indicates action to go back to public
                 if (demoModeStrip) {
                     demoModeStrip.classList.remove('bg-[var(--primary-color)]', 'text-white');
                     demoModeStrip.classList.add('bg-gray-200', 'text-[var(--text-primary-color)]');
                     demoModeStrip.textContent = isEnglish ? 'DEMO MODE' : 'ZİYARETÇİ MODU';
                 }
 
-                // Redirect if on public index page while in demo mode
                 if (currentPage === 'index.html' || currentPage === 'index_en.html') {
                     const redirectPage = isEnglish ? 'dashboard_en.html' : 'dashboard.html';
                     window.location.href = redirectPage;
                 }
 
-            } else { // Currently in PUBLIC MODE (User is "logged out")
-                // Show logged-out navigation
+            } else {
                 if (navLoggedIn) navLoggedIn.style.display = 'none';
                 if (navLoggedOut) navLoggedOut.style.display = 'flex'; 
 
-                // Show logged-out actions (login/signup)
                 if (actionsLoggedIn) actionsLoggedIn.style.display = 'none'; 
                 if (actionsLoggedOut) actionsLoggedOut.style.display = 'flex'; 
 
-                // Update logo link to public index
                 if (logoLink) {
                     const indexPage = isEnglish ? 'index_en.html' : 'index.html';
                     logoLink.href = indexPage;
                 }
 
-                // Style demo strip for PUBLIC MODE (green) - text indicates action to go to demo mode
                 if (demoModeStrip) {
                     demoModeStrip.classList.remove('bg-gray-200', 'text-[var(--text-primary-color)]');
                     demoModeStrip.classList.add('bg-[var(--primary-color)]', 'text-white');
                     demoModeStrip.textContent = isEnglish ? 'PUBLIC MODE' : 'DEMO MODU';
                 }
 
-                // Redirect if on a logged-in page while logged out
                 if (isCurrentPageLoggedIn) {
                     const indexPage = isEnglish ? 'index_en.html' : 'index.html';
                     window.location.href = indexPage;
@@ -226,9 +202,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const toggleDemoMode = () => {
             let isLoggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
-            isLoggedIn = !isLoggedIn; // Toggle the state
+            isLoggedIn = !isLoggedIn;
             sessionStorage.setItem('isLoggedIn', isLoggedIn);
-            // After toggling, force a reload to ensure all script dependencies and header are re-initialized
             window.location.reload(); 
         };
 
@@ -236,7 +211,6 @@ document.addEventListener("DOMContentLoaded", function() {
             demoModeStrip.addEventListener('click', toggleDemoMode);
         }
 
-        // Apply state on initial page load
         const isLoggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
         applyLoggedInState(isLoggedIn);
     }
@@ -263,5 +237,323 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (transformButton) transformButton.addEventListener('click', runTransformation);
         if (resetButton) resetButton.addEventListener('click', resetTransformation);
+    }
+
+    // --- Dashboard Specific Scripts ---
+    if (document.querySelector('main.bg-[var(--background-secondary-color)] .layout-content-container') && 
+        (currentPage === 'dashboard.html' || currentPage === 'dashboard_en.html')) {
+        
+        const updateSummaryCardsDashboard = () => {
+            const currency = isEnglish ? '$' : '₺';
+            document.getElementById('total-sales').textContent = `${currency}28,900`;
+            document.getElementById('total-sales-trend').textContent = isEnglish ? '+12% vs previous period' : 'Önceki döneme göre %12 artış';
+            document.getElementById('total-orders').textContent = '985';
+            document.getElementById('total-orders-trend').textContent = isEnglish ? '+8% vs previous period' : 'Önceki döneme göre %8 artış';
+            document.getElementById('total-profit').textContent = `${currency}11,560`;
+            document.getElementById('total-profit-trend').textContent = isEnglish ? '+15% vs previous period' : 'Önceki döneme göre %15 artış';
+
+            document.getElementById('etsy-sales-value').textContent = `${currency}8,200`;
+            document.getElementById('etsy-sales-percentage').textContent = '28';
+            document.getElementById('trendyol-sales-value').textContent = `${currency}7,800`;
+            document.getElementById('trendyol-sales-percentage').textContent = '27';
+            document.getElementById('hepsiburada-sales-value').textContent = `${currency}6,500`;
+            document.getElementById('hepsiburada-sales-percentage').textContent = '22';
+            document.getElementById('website-sales-value').textContent = `${currency}6,400`;
+            document.getElementById('website-sales-percentage').textContent = '22';
+
+            const quickStatsList = document.getElementById('quick-stats-list');
+            const aiRecommendationsList = document.getElementById('ai-recommendations-list');
+
+            if (quickStatsList) {
+                quickStatsList.innerHTML = isEnglish ? `
+                    <li><strong class="text-[var(--text-primary-color)]">Top Performing Product:</strong> Organic Cotton T-shirt <span class="text-sm">(350 sales)</span></li>
+                    <li><strong class="text-[var(--text-primary-color)]">Best Channel (by revenue):</strong> Etsy <span class="text-sm">(${currency}8,200)</span></li>
+                    <li><strong class="text-[var(--text-primary-color)]">Overall Average Order Value:</strong> ${currency}29.34</li>
+                    <li><strong class="text-[var(--text-primary-color)]">Low Stock Alerts:</strong> 5 products below threshold.</li>
+                ` : `
+                    <li><strong class="text-[var(--text-primary-color)]">En Çok Satan Ürün:</strong> Organik Pamuk Tişört <span class="text-sm">(350 satış)</span></li>
+                    <li><strong class="text-[var(--text-primary-color)]">En İyi Kanal (gelire göre):</strong> Etsy <span class="text-sm">(₺8.200)</span></li>
+                    <li><strong class="text-[var(--text-primary-color)]">Ortalama Sipariş Değeri:</strong> ₺29.34</li>
+                    <li><strong class="text-[var(--text-primary-color)]">Düşük Stok Uyarıları:</strong> 5 ürün eşiğin altında.</li>
+                `;
+            }
+
+            if (aiRecommendationsList) {
+                aiRecommendationsList.innerHTML = isEnglish ? `
+                    <li>Consider launching a new ad campaign for "Smartwatch" on Hepsiburada.</li>
+                    <li>Optimize product descriptions for "Espresso Machine" on your Website with more benefit-driven language.</li>
+                    <li>Review pricing strategy for "Custom Necklace" on Etsy to improve conversion rate by 5%.</li>
+                ` : `
+                    <li>Hepsiburada'da "Akıllı Saat" için yeni bir reklam kampanyası başlatmayı düşünün.</li>
+                    <li>Web sitenizdeki "Espresso Makinesi" ürün açıklamalarını daha fayda odaklı anahtar kelimelerle optimize edin.</li>
+                    <li>Dönüşüm oranını %5 artırmak için Etsy'deki "Özel Yapım Kolye" fiyatlandırma stratejisini gözden geçirin.</li>
+                `;
+            }
+        };
+
+        updateSummaryCardsDashboard();
+
+        const createSalesChart = (ctxId, dataValues, labelKey, color) => {
+            const ctx = document.getElementById(ctxId);
+            if (!ctx) return;
+
+            const labels = isEnglish ? ['Week 1', 'Week 2', 'Week 3', 'Week 4'] : ['Hafta 1', 'Hafta 2', 'Hafta 3', 'Hafta 4'];
+            const labelText = isEnglish ? `${labelKey} Sales` : `${labelKey} Satışları`;
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: labelText,
+                        data: dataValues,
+                        borderColor: color,
+                        backgroundColor: Chart.helpers.color(color).alpha(0.2).rgbString(),
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: 3,
+                        pointBackgroundColor: color
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { mode: 'index', intersect: false }
+                    },
+                    scales: {
+                        x: { display: true, title: { display: false }, grid: { display: false } },
+                        y: { display: false, title: { display: false }, beginAtZero: true, grid: { display: false } }
+                    },
+                    layout: { padding: { left: 0, right: 0, top: 0, bottom: 0 } }
+                }
+            });
+        };
+
+        createSalesChart('etsySalesChart', [1800, 2100, 2500, 2800], 'Etsy', '#0ecd90'); 
+        createSalesChart('trendyolSalesChart', [1500, 1700, 2200, 2400], 'Trendyol', '#0ecd90');
+        createSalesChart('hepsiburadaSalesChart', [1100, 1300, 1600, 1900], 'Hepsiburada', '#0ecd90');
+        createSalesChart('websiteSalesChart', [900, 1100, 1400, 1700], isEnglish ? 'Website' : 'Web Sitesi', '#0ecd90');
+    }
+
+    // --- Finances Page Specific Scripts ---
+    if (document.querySelector('main.bg-[var(--background-secondary-color)] .layout-content-container') && 
+        (currentPage === 'finances.html' || currentPage === 'finances_en.html')) {
+
+        const updateFinancialData = () => {
+            const currency = isEnglish ? '$' : '₺';
+
+            document.getElementById('gross-revenue').textContent = `${currency}28,900`;
+            document.getElementById('gross-revenue-trend').textContent = isEnglish ? '+12% vs previous period' : 'Önceki döneme göre %12 artış';
+            document.getElementById('total-expenses').textContent = `${currency}17,340`;
+            document.getElementById('total-expenses-trend').textContent = isEnglish ? '+5% vs previous period' : 'Önceki döneme göre %5 artış';
+            document.getElementById('net-profit').textContent = `${currency}11,560`;
+            document.getElementById('net-profit-trend').textContent = isEnglish ? '+15% vs previous period' : 'Önceki döneme göre %15 artış';
+
+            const transactionsTableBody = document.getElementById('recent-transactions-table-body');
+            // In a real app, you'd fetch data and then loop to create rows dynamically.
+            // Current rows are static HTML.
+
+            document.getElementById('current-plan').textContent = isEnglish ? 'Partner Plan' : 'Partner Planı';
+            document.getElementById('current-plan-details').textContent = isEnglish ? '50/50 Profit Share' : '%50 Kâr Paylaşımı';
+            document.getElementById('next-billing-date').textContent = isEnglish ? 'August 1, 2025' : '1 Ağustos 2025';
+            document.getElementById('estimated-payment').textContent = isEnglish ? `Estimated Payment: ~${currency}500.00` : `Tahmini Ödeme: ~₺500.00`;
+
+            const aiFinancialInsightsList = document.getElementById('ai-financial-insights-list');
+            if (aiFinancialInsightsList) {
+                aiFinancialInsightsList.innerHTML = isEnglish ? `
+                    <li>Your marketing spend is 2% higher than average for your sales volume. Review campaign efficiency.</li>
+                    <li>Consider negotiating lower shipping rates; current rates impact your net profit by 1.5%.</li>
+                    <li>Identified potential tax deductions related to office supplies totaling ${currency}X.XX this quarter.</li>
+                ` : `
+                    <li>Pazarlama harcamanız, satış hacminize göre ortalamadan %2 daha yüksek. Kampanya verimliliğini gözden geçirin.</li>
+                    <li>Daha düşük nakliye oranları için müzakere yapmayı düşünün; mevcut oranlar net kârınızı %1.5 etkiliyor.</li>
+                    <li>Bu çeyrekte ofis malzemeleriyle ilgili toplam X.XX TL'lik potansiyel vergi indirimleri tespit edildi.</li>
+                `;
+            }
+        };
+        updateFinancialData();
+    }
+
+
+    // --- Orders Page Specific Script ---
+    if (document.getElementById('orders-table-body')) {
+        const channelFilter = document.getElementById('channel-filter');
+        const statusFilter = document.getElementById('status-filter');
+        const orderSearch = document.getElementById('order-search');
+        const ordersTableBody = document.getElementById('orders-table-body');
+        const allOrderRows = Array.from(ordersTableBody.querySelectorAll('.order-row'));
+
+        const applyOrdersFilters = () => {
+            const selectedChannel = channelFilter.value;
+            const selectedStatus = statusFilter.value;
+            const searchTerm = orderSearch.value.toLowerCase();
+
+            allOrderRows.forEach(row => {
+                const rowChannel = row.dataset.channel;
+                const rowStatus = row.dataset.status;
+                const rowOrderId = row.dataset.orderId.toLowerCase();
+                const rowTextContent = row.textContent.toLowerCase();
+
+                const matchesChannel = !selectedChannel || rowChannel === selectedChannel;
+                const matchesStatus = !selectedStatus || rowStatus === selectedStatus;
+                const matchesSearch = !searchTerm || rowOrderId.includes(searchTerm) || rowTextContent.includes(searchTerm);
+
+                if (matchesChannel && matchesStatus && matchesSearch) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        };
+
+        if (channelFilter) channelFilter.addEventListener('change', applyOrdersFilters);
+        if (statusFilter) statusFilter.addEventListener('change', applyOrdersFilters);
+        if (orderSearch) orderSearch.addEventListener('keyup', applyOrdersFilters);
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const channelParam = urlParams.get('channel');
+        if (channelParam && channelFilter) {
+            channelFilter.value = channelParam;
+        }
+        applyOrdersFilters();
+    }
+
+    // --- Products Manage Page Specific Script ---
+    if (document.getElementById('products-table-body')) {
+        const channelFilter = document.getElementById('channel-filter');
+        const statusFilter = document.getElementById('status-filter');
+        const productSearch = document.getElementById('product-search');
+        const productsTableBody = document.getElementById('products-table-body');
+        const allProductRows = Array.from(productsTableBody.querySelectorAll('.product-row'));
+
+        const applyProductsFilters = () => {
+            const selectedChannel = channelFilter.value;
+            const selectedStatus = statusFilter.value;
+            const searchTerm = productSearch.value.toLowerCase();
+
+            allProductRows.forEach(row => {
+                const rowChannels = row.dataset.channels.split(',');
+                const rowStatus = row.dataset.status;
+                const rowProductName = row.dataset.productName.toLowerCase();
+                const rowSku = row.dataset.sku.toLowerCase();
+
+                const matchesChannel = !selectedChannel || rowChannels.includes(selectedChannel);
+                const matchesStatus = !selectedStatus || rowStatus === selectedStatus;
+                const matchesSearch = !searchTerm || rowProductName.includes(searchTerm) || rowSku.includes(searchTerm);
+
+                if (matchesChannel && matchesStatus && matchesSearch) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        };
+
+        if (channelFilter) channelFilter.addEventListener('change', applyProductsFilters);
+        if (statusFilter) statusFilter.addEventListener('change', applyProductsFilters);
+        if (productSearch) productSearch.addEventListener('keyup', applyProductsFilters);
+
+        applyProductsFilters();
+    }
+
+    // --- Product Add/Edit Page Specific Script ---
+    if (document.querySelector('main.bg-[var(--background-secondary-color)] .layout-content-container.max-w-4xl')) {
+        const productDescriptionTextArea = document.getElementById('product-description');
+        const aiDescriptionButton = productDescriptionTextArea ? productDescriptionTextArea.nextElementSibling : null;
+
+        if (aiDescriptionButton && aiDescriptionButton.tagName === 'BUTTON') {
+            aiDescriptionButton.addEventListener('click', () => {
+                if (productDescriptionTextArea) {
+                    if (isEnglish) {
+                        productDescriptionTextArea.value = "This is an example of an AI-generated optimized product description. It highlights key features, benefits, and targets your audience to drive more sales. SEO-friendly.";
+                    } else {
+                        productDescriptionTextArea.value = "Bu, YZ tarafından oluşturulan optimize edilmiş bir ürün açıklaması örneğidir. Ürününüzün temel özelliklerini, faydalarını ve hedef kitlenizi göz önünde bulundurarak daha fazla satış elde etmenizi sağlar. SEO dostudur.";
+                    }
+                    alert(isEnglish ? "AI description generated! (This is a static example)" : "YZ açıklaması oluşturuldu! (Bu statik bir örnektir)");
+                }
+            });
+        }
+
+        const productPriceInput = document.getElementById('product-price');
+        const aiPriceOptimizeButton = productPriceInput ? productPriceInput.nextElementSibling : null;
+
+        if (aiPriceOptimizeButton && aiPriceOptimizeButton.tagName === 'BUTTON') {
+            aiPriceOptimizeButton.addEventListener('click', () => {
+                if (productPriceInput) {
+                    const currentPrice = parseFloat(productPriceInput.value || 0);
+                    if (!isNaN(currentPrice)) {
+                        productPriceInput.value = (currentPrice * 1.15).toFixed(2);
+                        alert(isEnglish ? "AI price optimized! (This is a static example)" : "YZ fiyatı optimize edildi! (Bu statik bir örnektir)");
+                    } else {
+                        alert(isEnglish ? "Please enter a valid price first." : "Lütfen önce geçerli bir fiyat girin.");
+                    }
+                }
+            });
+        }
+    }
+
+    // --- Subscription Page Specific Script ---
+    if (currentPage === 'subscription.html' || currentPage === 'subscription_en.html') {
+        const billingToggle = document.getElementById('billing-toggle');
+        const toggleCircle = document.getElementById('toggle-circle');
+        const monthlyLabel = document.getElementById('monthly-label');
+        const yearlyLabel = document.getElementById('yearly-label');
+        const featurePrices = document.querySelectorAll('.feature-price');
+
+        let isYearlyBilling = false; // Initial state: Monthly
+
+        const updatePrices = () => {
+            featurePrices.forEach(priceElement => {
+                const monthlyPrice = parseFloat(priceElement.dataset.monthly);
+                const yearlyPrice = parseFloat(priceElement.dataset.yearly);
+                const currency = isEnglish ? '$' : '₺';
+                const perPeriodText = isEnglish ? '/mo' : '/ay';
+
+                if (isYearlyBilling) {
+                    priceElement.textContent = `${currency}${yearlyPrice}`;
+                } else {
+                    priceElement.textContent = `${currency}${monthlyPrice}`;
+                }
+                // Append the "/mo" or "/ay" unless it's the full suite which might not need it explicitly if it's already part of the hardcoded text
+                if (priceElement.id !== 'full-suite-price' || !isYearlyBilling) { // Assuming full-suite-price also has /mo or /ay for monthly
+                     const existingSpan = priceElement.querySelector('span');
+                     if (existingSpan) { // If there's already a span for /ay or /mo
+                        existingSpan.textContent = perPeriodText;
+                     } else { // Otherwise, create one
+                        const span = document.createElement('span');
+                        span.className = 'text-base font-medium text-[var(--text-secondary-color)]';
+                        span.textContent = perPeriodText;
+                        priceElement.appendChild(span);
+                     }
+                } else if (priceElement.id === 'full-suite-price' && isYearlyBilling) {
+                    // For yearly full suite, ensure the suffix matches the expected display (e.g. no /mo or /ay)
+                    const existingSpan = priceElement.querySelector('span');
+                    if (existingSpan) {
+                        existingSpan.remove(); // Remove the /mo or /ay suffix for yearly full suite if desired
+                    }
+                }
+            });
+
+            // Update toggle circle position and label styling
+            if (isYearlyBilling) {
+                toggleCircle.style.transform = 'translateX(100%)';
+                monthlyLabel.classList.remove('text-[var(--primary-color)]');
+                yearlyLabel.classList.add('text-[var(--primary-color)]');
+            } else {
+                toggleCircle.style.transform = 'translateX(0)';
+                monthlyLabel.classList.add('text-[var(--primary-color)]');
+                yearlyLabel.classList.remove('text-[var(--primary-color)]');
+            }
+        };
+
+        if (billingToggle) {
+            billingToggle.addEventListener('click', () => {
+                isYearlyBilling = !isYearlyBilling;
+                updatePrices();
+            });
+        }
+        updatePrices(); // Initial price display based on default `isYearlyBilling`
     }
 });

@@ -36,18 +36,18 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="bg-white rounded-xl border border-[var(--divider-color)] shadow-sm p-6">
                         <p class="text-lg font-medium text-[var(--text-secondary-color)]">Gross Revenue (Last 30 Days)</p>
-                        <p class="text-4xl font-bold text-[var(--primary-color)] mt-2">$28,900</p>
-                        <p class="text-sm text-[var(--text-secondary-color)] mt-1">+12% vs previous period</p>
+                        <p id="gross-revenue" class="text-4xl font-bold text-[var(--primary-color)] mt-2">$28,900</p>
+                        <p id="gross-revenue-trend" class="text-sm text-[var(--text-secondary-color)] mt-1">+12% vs previous period</p>
                     </div>
                     <div class="bg-white rounded-xl border border-[var(--divider-color)] shadow-sm p-6">
                         <p class="text-lg font-medium text-[var(--text-secondary-color)]">Total Expenses (Last 30 Days)</p>
-                        <p class="text-4xl font-bold text-red-500 mt-2">$17,340</p>
-                        <p class="text-sm text-[var(--text-secondary-color)] mt-1">+5% vs previous period</p>
+                        <p id="total-expenses" class="text-4xl font-bold text-red-500 mt-2">$17,340</p>
+                        <p id="total-expenses-trend" class="text-sm text-[var(--text-secondary-color)] mt-1">+5% vs previous period</p>
                     </div>
                     <div class="bg-white rounded-xl border border-[var(--divider-color)] shadow-sm p-6">
                         <p class="text-lg font-medium text-[var(--text-secondary-color)]">Net Profit (Last 30 Days)</p>
-                        <p class="text-4xl font-bold text-green-600 mt-2">$11,560</p>
-                        <p class="text-sm text-[var(--text-secondary-color)] mt-1">+15% vs previous period</p>
+                        <p id="net-profit" class="text-4xl font-bold text-green-600 mt-2">$11,560</p>
+                        <p id="net-profit-trend" class="text-sm text-[var(--text-secondary-color)] mt-1">+15% vs previous period</p>
                     </div>
                 </div>
             </section>
@@ -66,7 +66,8 @@
                                     <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-[var(--text-secondary-color)] uppercase tracking-wider">Amount</th>
                                 </tr>
                             </thead>
-                            <tbody class="bg-white divide-y divide-[var(--divider-color)]">
+                            <tbody id="recent-transactions-table-body" class="bg-white divide-y divide-[var(--divider-color)]">
+                                <!-- Transactions will be dynamically loaded here by JavaScript -->
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-secondary-color)]">2025-07-14</td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[var(--text-primary-color)]">Etsy Sales Payout</td>
@@ -102,7 +103,7 @@
                     </div>
                 </div>
                 <div class="mt-6 text-center">
-                    <a href="#" class="inline-flex items-center justify-center text-[var(--primary-color)] font-bold hover:underline">View Full Statement →</a>
+                    <a href="full-statement_en.html" class="inline-flex items-center justify-center text-[var(--primary-color)] font-bold hover:underline">View Full Statement →</a>
                 </div>
             </section>
 
@@ -112,15 +113,15 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <p class="text-lg font-medium text-[var(--text-secondary-color)]">Current Plan:</p>
-                        <p class="text-xl font-bold text-[var(--text-primary-color)] mt-1">Partner Plan</p>
-                        <p class="text-sm text-[var(--text-secondary-color)] mt-1">50/50 Profit Share</p>
+                        <p id="current-plan" class="text-xl font-bold text-[var(--text-primary-color)] mt-1">Partner Plan</p>
+                        <p id="current-plan-details" class="text-sm text-[var(--text-secondary-color)] mt-1">50/50 Profit Share</p>
                         <a href="pricing_en.html" class="inline-block mt-4 text-[var(--primary-color)] font-bold hover:underline">Change Plan →</a>
                     </div>
                     <div>
                         <p class="text-lg font-medium text-[var(--text-secondary-color)]">Next Billing Date:</p>
-                        <p class="text-xl font-bold text-[var(--text-primary-color)] mt-1">August 1, 2025</p>
-                        <p class="text-sm text-[var(--text-secondary-color)] mt-1">Estimated Payment: ~$500.00</p>
-                        <a href="#" class="inline-block mt-4 text-[var(--primary-color)] font-bold hover:underline">Update Payment Method →</a>
+                        <p id="next-billing-date" class="text-xl font-bold text-[var(--text-primary-color)] mt-1">August 1, 2025</p>
+                        <p id="estimated-payment" class="text-sm text-[var(--text-secondary-color)] mt-1">Estimated Payment: ~$500.00</p>
+                        <a href="update-payment_en.html" class="inline-block mt-4 text-[var(--primary-color)] font-bold hover:underline">Update Payment Method →</a>
                     </div>
                 </div>
             </section>
@@ -131,13 +132,13 @@
                 <p class="text-base text-[var(--text-secondary-color)] mb-4">
                     Our AI analyzes your financial data to provide actionable recommendations.
                 </p>
-                <ul class="list-disc list-inside space-y-2 text-base text-[var(--text-secondary-color)]">
+                <ul id="ai-financial-insights-list" class="list-disc list-inside space-y-2 text-base text-[var(--text-secondary-color)]">
                     <li>Your marketing spend is 2% higher than average for your sales volume. Review campaign efficiency.</li>
                     <li>Consider negotiating lower shipping rates; current rates impact your net profit by 1.5%.</li>
                     <li>Identified potential tax deductions related to office supplies totaling $X.XX this quarter.</li>
                 </ul>
                 <div class="mt-6 text-center">
-                    <a href="#" class="inline-flex items-center justify-center text-[var(--primary-color)] font-bold hover:underline">Generate Detailed Report →</a>
+                    <a href="generate-report_en.html" class="inline-flex items-center justify-center text-[var(--primary-color)] font-bold hover:underline">Generate Detailed Report →</a>
                 </div>
             </section>
         </div>

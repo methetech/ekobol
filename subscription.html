@@ -25,11 +25,11 @@
                 Sadece ihtiyacınız olan araçlar için ödeme yapın. İşletmeniz için mükemmel aboneliği oluşturmak üzere özellikleri seçin ve eşleştirin. Yıllık ödeme yapın ve %20 tasarruf edin.
             </p>
             <div class="mt-8 flex justify-center items-center gap-4">
-                <span class="font-medium">Aylık</span>
-                <div class="relative inline-block w-14 h-8 rounded-full bg-gray-200 cursor-pointer">
-                    <div class="absolute left-1 top-1 w-6 h-6 rounded-full bg-white transition-transform duration-300"></div>
+                <span id="monthly-label" class="font-medium">Aylık</span>
+                <div id="billing-toggle" class="relative inline-block w-14 h-8 rounded-full bg-gray-200 cursor-pointer">
+                    <div id="toggle-circle" class="absolute left-1 top-1 w-6 h-6 rounded-full bg-white transition-transform duration-300"></div>
                 </div>
-                <span class="font-medium text-[var(--primary-color)]">Yıllık (2 Ay Ücretsiz)</span>
+                <span id="yearly-label" class="font-medium text-[var(--primary-color)]">Yıllık (2 Ay Ücretsiz)</span>
             </div>
         </div>
         <div class="mt-20 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -37,37 +37,37 @@
             <div class="border border-[var(--divider-color)] rounded-lg p-8 flex flex-col text-center">
                 <h3 class="text-2xl font-bold mb-3">YZ Görüntü Oluşturucu</h3>
                 <p class="text-[var(--text-secondary-color)] mb-6 grow">Ürün fotoğraflarınızdan anında pazar yerine hazır görseller oluşturun.</p>
-                <p class="text-4xl font-bold">₺200<span class="text-base font-medium text-[var(--text-secondary-color)]">/ay</span></p>
+                <p id="image-generator-price" class="feature-price text-4xl font-bold" data-monthly="200" data-yearly="160">₺200<span class="text-base font-medium text-[var(--text-secondary-color)]">/ay</span></p>
             </div>
             
             <div class="border border-[var(--divider-color)] rounded-lg p-8 flex flex-col text-center">
                 <h3 class="text-2xl font-bold mb-3">YZ Açıklama Yazarı</h3>
                 <p class="text-[var(--text-secondary-color)] mb-6 grow">SEO için optimize edilmiş, ilgi çekici başlıklar ve açıklamalar oluşturun.</p>
-                <p class="text-4xl font-bold">₺150<span class="text-base font-medium text-[var(--text-secondary-color)]">/ay</span></p>
+                <p id="description-writer-price" class="feature-price text-4xl font-bold" data-monthly="150" data-yearly="120">₺150<span class="text-base font-medium text-[var(--text-secondary-color)]">/ay</span></p>
             </div>
 
             <div class="border border-[var(--divider-color)] rounded-lg p-8 flex flex-col text-center">
                 <h3 class="text-2xl font-bold mb-3">Çok Kanallı Senkronizasyon</h3>
                 <p class="text-[var(--text-secondary-color)] mb-6 grow">Tüm pazar yerlerinizdeki stok ve fiyatları gerçek zamanlı olarak senkronize edin.</p>
-                <p class="text-4xl font-bold">₺250<span class="text-base font-medium text-[var(--text-secondary-color)]">/ay</span></p>
+                <p id="multi-channel-sync-price" class="feature-price text-4xl font-bold" data-monthly="250" data-yearly="200">₺250<span class="text-base font-medium text-[var(--text-secondary-color)]">/ay</span></p>
             </div>
 
             <div class="border border-[var(--divider-color)] rounded-lg p-8 flex flex-col text-center">
                 <h3 class="text-2xl font-bold mb-3">YZ Fiyat Optimizasyonu</h3>
                 <p class="text-[var(--text-secondary-color)] mb-6 grow">Kârınızı en üst düzeye çıkarmak için veriye dayalı fiyatlandırma önerileri alın.</p>
-                <p class="text-4xl font-bold">₺300<span class="text-base font-medium text-[var(--text-secondary-color)]">/ay</span></p>
+                <p id="price-optimization-price" class="feature-price text-4xl font-bold" data-monthly="300" data-yearly="240">₺300<span class="text-base font-medium text-[var(--text-secondary-color)]">/ay</span></p>
             </div>
 
             <div class="border border-[var(--divider-color)] rounded-lg p-8 flex flex-col text-center">
                 <h3 class="text-2xl font-bold mb-3">Birleşik Analitik</h3>
                 <p class="text-[var(--text-secondary-color)] mb-6 grow">Tüm satış kanallarınız için birleşik bir kontrol panelinden içgörüler edinin.</p>
-                <p class="text-4xl font-bold">₺100<span class="text-base font-medium text-[var(--text-secondary-color)]">/ay</span></p>
+                <p id="unified-analytics-price" class="feature-price text-4xl font-bold" data-monthly="100" data-yearly="80">₺100<span class="text-base font-medium text-[var(--text-secondary-color)]">/ay</span></p>
             </div>
 
              <div class="border border-[var(--divider-color)] rounded-lg p-8 flex flex-col text-center bg-gray-50">
                 <h3 class="text-2xl font-bold mb-3">Tam Paket</h3>
                 <p class="text-[var(--text-secondary-color)] mb-6 grow">Tüm özellikleri bir araya getirin ve en iyi değeri elde edin.</p>
-                <p class="text-4xl font-bold text-[var(--primary-color)]">₺750<span class="text-base font-medium text-[var(--text-secondary-color)]">/ay</span></p>
+                <p id="full-suite-price" class="feature-price text-4xl font-bold text-[var(--primary-color)]" data-monthly="750" data-yearly="600">₺750<span class="text-base font-medium text-[var(--text-secondary-color)]">/ay</span></p>
             </div>
 
         </div>

@@ -36,18 +36,18 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="bg-white rounded-xl border border-[var(--divider-color)] shadow-sm p-6">
                         <p class="text-lg font-medium text-[var(--text-secondary-color)]">Brüt Gelir (Son 30 Gün)</p>
-                        <p class="text-4xl font-bold text-[var(--primary-color)] mt-2">₺28.900</p>
-                        <p class="text-sm text-[var(--text-secondary-color)] mt-1">Önceki döneme göre %12 artış</p>
+                        <p id="gross-revenue" class="text-4xl font-bold text-[var(--primary-color)] mt-2">₺28.900</p>
+                        <p id="gross-revenue-trend" class="text-sm text-[var(--text-secondary-color)] mt-1">Önceki döneme göre %12 artış</p>
                     </div>
                     <div class="bg-white rounded-xl border border-[var(--divider-color)] shadow-sm p-6">
                         <p class="text-lg font-medium text-[var(--text-secondary-color)]">Toplam Giderler (Son 30 Gün)</p>
-                        <p class="text-4xl font-bold text-red-500 mt-2">₺17.340</p>
-                        <p class="text-sm text-[var(--text-secondary-color)] mt-1">Önceki döneme göre %5 artış</p>
+                        <p id="total-expenses" class="text-4xl font-bold text-red-500 mt-2">₺17.340</p>
+                        <p id="total-expenses-trend" class="text-sm text-[var(--text-secondary-color)] mt-1">Önceki döneme göre %5 artış</p>
                     </div>
                     <div class="bg-white rounded-xl border border-[var(--divider-color)] shadow-sm p-6">
                         <p class="text-lg font-medium text-[var(--text-secondary-color)]">Net Kâr (Son 30 Gün)</p>
-                        <p class="text-4xl font-bold text-green-600 mt-2">₺11.560</p>
-                        <p class="text-sm text-[var(--text-secondary-color)] mt-1">Önceki döneme göre %15 artış</p>
+                        <p id="net-profit" class="text-4xl font-bold text-green-600 mt-2">₺11.560</p>
+                        <p id="net-profit-trend" class="text-sm text-[var(--text-secondary-color)] mt-1">Önceki döneme göre %15 artış</p>
                     </div>
                 </div>
             </section>
@@ -66,7 +66,8 @@
                                     <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-[var(--text-secondary-color)] uppercase tracking-wider">Miktar</th>
                                 </tr>
                             </thead>
-                            <tbody class="bg-white divide-y divide-[var(--divider-color)]">
+                            <tbody id="recent-transactions-table-body" class="bg-white divide-y divide-[var(--divider-color)]">
+                                <!-- Transactions will be dynamically loaded here by JavaScript -->
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-secondary-color)]">2025-07-14</td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[var(--text-primary-color)]">Etsy Satış Ödemesi</td>
@@ -102,7 +103,7 @@
                     </div>
                 </div>
                 <div class="mt-6 text-center">
-                    <a href="#" class="inline-flex items-center justify-center text-[var(--primary-color)] font-bold hover:underline">Tam Beyanı Görüntüle →</a>
+                    <a href="full-statement.html" class="inline-flex items-center justify-center text-[var(--primary-color)] font-bold hover:underline">Tam Beyanı Görüntüle →</a>
                 </div>
             </section>
 
@@ -112,15 +113,15 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <p class="text-lg font-medium text-[var(--text-secondary-color)]">Mevcut Plan:</p>
-                        <p class="text-xl font-bold text-[var(--text-primary-color)] mt-1">Partner Planı</p>
-                        <p class="text-sm text-[var(--text-secondary-color)] mt-1">%50 Kâr Paylaşımı</p>
+                        <p id="current-plan" class="text-xl font-bold text-[var(--text-primary-color)] mt-1">Partner Planı</p>
+                        <p id="current-plan-details" class="text-sm text-[var(--text-secondary-color)] mt-1">%50 Kâr Paylaşımı</p>
                         <a href="pricing.html" class="inline-block mt-4 text-[var(--primary-color)] font-bold hover:underline">Planı Değiştir →</a>
                     </div>
                     <div>
                         <p class="text-lg font-medium text-[var(--text-secondary-color)]">Sonraki Faturalandırma Tarihi:</p>
-                        <p class="text-xl font-bold text-[var(--text-primary-color)] mt-1">1 Ağustos 2025</p>
-                        <p class="text-sm text-[var(--text-secondary-color)] mt-1">Tahmini Ödeme: ~₺500.00</p>
-                        <a href="#" class="inline-block mt-4 text-[var(--primary-color)] font-bold hover:underline">Ödeme Yöntemini Güncelle →</a>
+                        <p id="next-billing-date" class="text-xl font-bold text-[var(--text-primary-color)] mt-1">1 Ağustos 2025</p>
+                        <p id="estimated-payment" class="text-sm text-[var(--text-secondary-color)] mt-1">Tahmini Ödeme: ~₺500.00</p>
+                        <a href="update-payment.html" class="inline-block mt-4 text-[var(--primary-color)] font-bold hover:underline">Ödeme Yöntemini Güncelle →</a>
                     </div>
                 </div>
             </section>
@@ -131,13 +132,13 @@
                 <p class="text-base text-[var(--text-secondary-color)] mb-4">
                     YZ'miz, eyleme geçirilebilir öneriler sunmak için finansal verilerinizi analiz eder.
                 </p>
-                <ul class="list-disc list-inside space-y-2 text-base text-[var(--text-secondary-color)]">
+                <ul id="ai-financial-insights-list" class="list-disc list-inside space-y-2 text-base text-[var(--text-secondary-color)]">
                     <li>Pazarlama harcamanız, satış hacminize göre ortalamadan %2 daha yüksek. Kampanya verimliliğini gözden geçirin.</li>
                     <li>Daha düşük nakliye oranları için müzakere yapmayı düşünün; mevcut oranlar net kârınızı %1.5 etkiliyor.</li>
                     <li>Bu çeyrekte ofis malzemeleriyle ilgili toplam X.XX TL'lik potansiyel vergi indirimleri tespit edildi.</li>
                 </ul>
                 <div class="mt-6 text-center">
-                    <a href="#" class="inline-flex items-center justify-center text-[var(--primary-color)] font-bold hover:underline">Detaylı Rapor Oluştur →</a>
+                    <a href="generate-report.html" class="inline-flex items-center justify-center text-[var(--primary-color)] font-bold hover:underline">Detaylı Rapor Oluştur →</a>
                 </div>
             </section>
         </div>
