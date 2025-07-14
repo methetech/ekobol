@@ -42,3 +42,22 @@ body {
 .prose p, .prose ul, .prose li {
     color: var(--text-secondary-color);
 }
+
+/* 4. Table styles for consistency */
+table {
+  color: var(--text-primary-color); /* Default text color for table content */
+}
+
+thead th {
+  color: var(--text-secondary-color); /* Header text color */
+}
+
+/* 5. Tab styles for consistency in logged-in dashboards */
+.active-tab {
+    border-bottom: 3px solid var(--primary-color);
+    color: var(--text-primary-color);
+}
+.inactive-tab {
+    border-bottom: 3px solid transparent;
+    color: var(--text-secondary-color);
+}
