@@ -21,10 +21,8 @@
 <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
 <div class="layout-container flex h-full grow flex-col">
 
-    <!-- Header will be loaded here by JavaScript -->
     <div id="header-placeholder"></div>
 
-    <!-- Main Content for pricing.html -->
     <main class="flex-1 px-4 sm:px-10 lg:px-20 py-16 lg:py-24">
         <div class="max-w-5xl mx-auto text-center">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-tight mb-6">
@@ -34,64 +32,62 @@
                 Eko Bol: where the economy is abundant. We believe in fair, transparent pricing that grows with you. No hidden fees. Ever.
             </p>
         </div>
-        <div class="mt-20 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        <div class="mt-20 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
             
-            <!-- Plan 1: Basic -->
             <div class="border border-[var(--divider-color)] rounded-lg p-8 flex flex-col">
                 <h3 class="text-2xl font-bold mb-2">Basic Plan</h3>
                 <p class="text-[var(--text-secondary-color)] mb-6">For the hands-on seller who wants AI superpowers.</p>
-                <p class="text-5xl font-bold mb-6">10%<span class="text-lg font-medium text-[var(--text-secondary-color)]"> / of revenue</span></p>
+                <p class="text-5xl font-bold mb-6">10%<span class="text-lg font-medium text-[var(--text-secondary-color)]"> / of profit</span></p>
                 <ul class="space-y-4 text-[var(--text-secondary-color)] mb-8 grow">
-                    <li class="flex items-start"><svg class="h-6 w-6 text-[var(--primary-color)] mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span>Full Platform Access</span></li>
-                    <li class="flex items-start"><svg class="h-6 w-6 text-[var(--primary-color)] mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span>All AI Tools</span></li>
+                    <li class="flex items-start"><svg class="h-6 w-6 text-[var(--primary-color)] mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span>Full AI Tools Suite</span></li>
                     <li class="flex items-start"><svg class="h-6 w-6 text-[var(--primary-color)] mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span>Multi-Channel Integration</span></li>
                     <li class="flex items-start"><svg class="h-6 w-6 text-[var(--primary-color)] mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span>Community Support</span></li>
                 </ul>
-                <a href="signup.html" class="text-center w-full flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-white border-2 border-[var(--primary-color)] text-[var(--primary-color)] text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300">Choose Basic</a>
+                <a href="basic-plan_en.html" class="text-center w-full block rounded-full py-3 px-6 bg-white border-2 border-[var(--primary-color)] text-[var(--primary-color)] font-bold hover:shadow-xl transition-shadow">Choose Basic</a>
             </div>
 
-            <!-- Plan 2: Partner (Recommended) -->
-            <div class="border-2 border-[var(--primary-color)] rounded-lg p-8 flex flex-col relative transform scale-105">
-                <p class="absolute top-0 -translate-y-1/2 bg-[var(--primary-color)] text-white px-4 py-1 rounded-full text-sm font-bold self-center">MOST POPULAR</p>
+            <div class="border-2 border-[var(--primary-color)] rounded-lg p-8 flex flex-col relative">
+                 <p class="absolute top-0 -translate-y-1/2 bg-[var(--primary-color)] text-white px-4 py-1 rounded-full text-sm font-bold self-center">MOST POPULAR</p>
                 <h3 class="text-2xl font-bold mb-2 pt-4">Partner Plan</h3>
                 <p class="text-[var(--text-secondary-color)] mb-6">You produce & ship. We handle absolutely everything else.</p>
-                <p class="text-5xl font-bold mb-6">50%<span class="text-lg font-medium text-[var(--text-secondary-color)]"> / of revenue</span></p>
+                <p class="text-5xl font-bold mb-6">50%<span class="text-lg font-medium text-[var(--text-secondary-color)]"> / of profit</span></p>
                 <ul class="space-y-4 text-[var(--text-secondary-color)] mb-8 grow">
                     <li class="flex items-start"><svg class="h-6 w-6 text-[var(--primary-color)] mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span>Everything in Basic, PLUS:</span></li>
                     <li class="flex items-start"><svg class="h-6 w-6 text-[var(--primary-color)] mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span>We Build Your Brand & Website</span></li>
                     <li class="flex items-start"><svg class="h-6 w-6 text-[var(--primary-color)] mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span>We Handle All Digital Marketing</span></li>
-                    <li class="flex items-start"><svg class="h-6 w-6 text-[var(--primary-color)] mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span>We Manage Listings & Support</span></li>
                     <li class="flex items-start"><svg class="h-6 w-6 text-[var(--primary-color)] mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span>Dedicated Growth Partner</span></li>
                 </ul>
-                <a href="signup.html" class="text-center w-full flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300">Choose Partner</a>
+                <a href="partner-plan_en.html" class="text-center w-full block rounded-full py-3 px-6 bg-[var(--primary-color)] text-white font-bold hover:shadow-xl transition-shadow">Choose Partner</a>
             </div>
             
-            <!-- Plan 3: Flexible -->
             <div class="border border-[var(--divider-color)] rounded-lg p-8 flex flex-col">
-                <h3 class="text-2xl font-bold mb-2">Flexible Plans</h3>
-                <p class="text-[var(--text-secondary-color)] mb-6">Custom solutions for unique needs.</p>
-                <div class="mb-8">
-                     <p class="text-3xl font-bold">Dynamic Plan</p>
-                     <p class="mt-2 text-[var(--text-secondary-color)]">An adjustable revenue share based on the work you want to do. Let's build a custom partnership.</p>
-                </div>
-                 <div class="mb-8">
-                     <p class="text-3xl font-bold">Monthly Plan</p>
-                     <p class="mt-2 text-[var(--text-secondary-color)]">Just need specific tools for a few marketplaces? We offer affordable monthly subscriptions.</p>
+                <h3 class="text-2xl font-bold mb-2">Monthly Subscription</h3>
+                <p class="text-[var(--text-secondary-color)] mb-6">Need specific tools? Pay only for the features you need.</p>
+                <p class="text-5xl font-bold mb-6">From $10<span class="text-lg font-medium text-[var(--text-secondary-color)]">/mo</span></p>
+                <ul class="space-y-4 text-[var(--text-secondary-color)] mb-8 grow">
+                    <li class="flex items-start"><svg class="h-6 w-6 text-[var(--primary-color)] mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span>Build your own plan</span></li>
+                    <li class="flex items-start"><svg class="h-6 w-6 text-[var(--primary-color)] mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span>Cancel anytime</span></li>
+                    <li class="flex items-start"><svg class="h-6 w-6 text-[var(--primary-color)] mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span>Discount for yearly payment</span></li>
+                </ul>
+                <a href="subscription_en.html" class="text-center w-full block rounded-full py-3 px-6 bg-white border-2 border-[var(--primary-color)] text-[var(--primary-color)] font-bold hover:shadow-xl transition-shadow">Explore Features</a>
+            </div>
+
+            <div class="border border-[var(--divider-color)] rounded-lg p-8 flex flex-col">
+                <h3 class="text-2xl font-bold mb-2">Dynamic Plan</h3>
+                <p class="text-[var(--text-secondary-color)] mb-6">Custom solutions and an adjustable profit-share for unique needs.</p>
+                <div class="my-auto text-center">
+                    <p class="text-3xl font-bold mb-4">A Custom Partnership</p>
+                    <p class="text-[var(--text-secondary-color)]">Let's build a custom partnership that splits the workload between you and us. Contact us to find the perfect fit.</p>
                 </div>
                 <div class="grow"></div>
-                <a href="contact.html" class="text-center w-full flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-white border-2 border-[var(--primary-color)] text-[var(--primary-color)] text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300">Contact Us</a>
+                <a href="contact_en.html" class="text-center w-full block rounded-full py-3 px-6 bg-white border-2 border-[var(--primary-color)] text-[var(--primary-color)] font-bold hover:shadow-xl transition-shadow">Contact Us</a>
             </div>
         </div>
     </main>
 
-    <!-- Footer will be loaded here by JavaScript -->
     <div id="footer-placeholder"></div>
-    
 </div>
 </div>
-
-<!-- Load our app script at the end of the body -->
 <script src="app.js"></script>
-
 </body>
 </html>
