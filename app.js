@@ -74,9 +74,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 'partner-plan.html', 'payment.html', 'privacy.html', 'signup.html', 'login.html',
                 'forgot-password.html', 'subscription.html', 'success-stories.html', 'help-center.html', 'blog.html',
                 'dashboard.html', 'orders.html', 'products-manage.html', 'marketing-tools.html', 'trends.html', 'finances.html',
-                'product-add-edit.html', // Existing pages
-                'full-statement.html', 'update-payment.html', 'generate-report.html', // Newly added pages
-                'blog-post.html', 'order-detail.html' // Newly added templates
+                'product-add-edit.html', 
+                'full-statement.html', 'update-payment.html', 'generate-report.html', 
+                'blog-post.html', 'order-detail.html', 'ai-pricing-optimization.html', 'new-image-styles-update.html', 'webinars.html', 
+                'product-display.html', 'invoice.html', 'order-tracking.html', 'login-success.html',
+                'ai-image-generator-guide.html', 'connect-marketplace-guide.html', 'setup-profile-guide.html', 'understanding-dashboard-guide.html', 
+                'best-practices-ai-descriptions.html', 'optimize-pricing-with-ai-guide.html', 'how-revenue-sharing-works-guide.html', 'upgrade-downgrade-plan-guide.html', 'viewing-invoices-guide.html', // Previous/Current Help Center articles
+                'ai-inventory-automation-guide.html' // New help center article for this turn
             ];
 
             const getTargetPage = (originalPage, targetLangIsEnglish) => {
@@ -146,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const logoLink = document.getElementById('logo-link');
         const demoModeStrip = document.getElementById('demo-mode-strip');
 
-        const loggedInPagesBase = ['dashboard', 'orders', 'products-manage', 'marketing-tools', 'trends', 'finances', 'product-add-edit', 'full-statement', 'update-payment', 'generate-report', 'order-detail']; 
+        const loggedInPagesBase = ['dashboard', 'orders', 'products-manage', 'marketing-tools', 'trends', 'finances', 'product-add-edit', 'full-statement', 'update-payment', 'generate-report', 'order-detail', 'product-display', 'invoice', 'order-tracking', 'login-success']; 
         const isCurrentPageLoggedIn = loggedInPagesBase.some(base => 
             currentPage.startsWith(base) || currentPage.startsWith(base.replace('.html', '_en.html'))
         );
@@ -423,7 +427,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <li>Consider negotiating lower shipping rates; current rates impact your net profit by 1.5%.</li>
                     <li>Identified potential tax deductions related to office supplies totaling ${currency}X.XX this quarter.</li>
                 ` : `
-                    <li>Pazarlama harcamalarınız, satış hacminize göre ortalamadan %2 daha yüksek. Kampanya verimliliğini gözden geçirin.</li>
+                    <li>Pazarlama harcamanız, satış hacminize göre ortalamadan %2 daha yüksek. Kampanya verimliliğini gözden geçirin.</li>
                     <li>Daha düşük nakliye oranları için müzakere yapmayı düşünün; mevcut oranlar net kârınızı %1.5 etkiliyor.</li>
                     <li>Bu çeyrekte ofis malzemeleriyle ilgili toplam X.XX TL'lik potansiyel vergi indirimleri tespit edildi.</li>
                 `;

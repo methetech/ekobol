@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Live Analytics - Ekobol</title>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="global.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+    <div id="header-placeholder"></div>
+    <main class="flex flex-1 justify-center py-10 bg-[var(--background-secondary-color)]">
+        <div class="layout-content-container flex flex-col w-full max-w-6xl px-4">
+            <div class="mb-8">
+                <h1 class="text-[var(--text-primary-color)] text-4xl font-bold leading-tight tracking-tight">Live Analytics</h1>
+                <p class="text-[var(--text-secondary-color)] text-base font-normal leading-normal mt-1">Monitor real-time sales data and site activity.</p>
+            </div>
+            <div class="border-b border-[var(--divider-color)] mb-8">
+                <nav class="flex gap-8 -mb-px">
+                    <a class="flex items-center justify-center py-4 px-1 inactive-tab" href="dashboard_en.html">
+                        <span class="text-sm font-semibold">Overview</span>
+                    </a>
+                    <a class="flex items-center justify-center py-4 px-1 inactive-tab" href="trends_en.html">
+                        <span class="text-sm font-semibold">Trends</span>
+                    </a>
+                    <a class="flex items-center justify-center py-4 px-1 active-tab" href="live-analytics_en.html">
+                        <span class="text-sm font-semibold">Live</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Live Overview Cards -->
+            <section class="mb-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl border border-[var(--divider-color)] shadow-sm p-6">
+                    <p class="text-lg font-medium text-[var(--text-secondary-color)]">Current Visitors</p>
+                    <p id="live-visitors" class="text-4xl font-bold text-[var(--primary-color)] mt-2">12</p>
+                    <p class="text-sm text-[var(--text-secondary-color)] mt-1">Active users in the last 5 minutes</p>
+                </div>
+                <div class="bg-white rounded-xl border border-[var(--divider-color)] shadow-sm p-6">
+                    <p class="text-lg font-medium text-[var(--text-secondary-color)]">Last Hour Sales</p>
+                    <p id="live-sales" class="text-4xl font-bold text-[var(--primary-color)] mt-2">$180.00</p>
+                    <p class="text-sm text-[var(--text-secondary-color)] mt-1">Total 3 orders</p>
+                </div>
+                <div class="bg-white rounded-xl border border-[var(--divider-color)] shadow-sm p-6">
+                    <p class="text-lg font-medium text-[var(--text-secondary-color)]">Most Viewed Product</p>
+                    <p id="most-viewed-product" class="text-xl font-bold text-[var(--text-primary-color)] mt-2">Organic Cotton T-shirt</p>
+                    <p class="text-sm text-[var(--text-secondary-color)] mt-1">Currently viewed by 5 visitors</p>
+                </div>
+            </section>
+
+            <!-- Live Sales Chart -->
+            <section class="mb-12 bg-white rounded-xl border border-[var(--divider-color)] shadow-sm p-6">
+                <h2 class="text-[var(--text-primary-color)] text-2xl font-bold leading-tight tracking-tight mb-4">Live Sales Stream (Last 60 Minutes)</h2>
+                <div class="h-64 md:h-80">
+                    <canvas id="liveSalesChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Live Orders / Activity Feed -->
+            <section class="bg-white rounded-xl border border-[var(--divider-color)] shadow-sm p-6">
+                <h2 class="text-[var(--text-primary-color)] text-2xl font-bold leading-tight tracking-tight mb-4">Live Orders & Activity</h2>
+                <div class="overflow-y-auto h-80 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="text-sm text-[var(--text-secondary-color)] min-w-[80px]">Now</div>
+                        <p class="text-[var(--text-primary-color)] font-medium">New order <span class="text-[var(--primary-color)]">#E10024</span> from Etsy! ($65.00)</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="text-sm text-[var(--text-secondary-color)] min-w-[80px]">1 min ago</div>
+                        <p class="text-[var(--text-primary-color)]">2 new visitors on Organic Cotton T-shirt product page.</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="text-sm text-[var(--text-secondary-color)] min-w-[80px]">3 min ago</div>
+                        <p class="text-[var(--text-primary-color)] font-medium">New order <span class="text-[var(--primary-color)]">#W40079</span> from Website! ($115.00)</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="text-sm text-[var(--text-secondary-color)] min-w-[80px]">5 min ago</div>
+                        <p class="text-[var(--text-primary-color)]">Handmade Ceramic Mug stock level dropped: 3 left.</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="text-sm text-[var(--text-secondary-color)] min-w-[80px]">8 min ago</div>
+                        <p class="text-[var(--text-primary-color)] font-medium">New order <span class="text-[var(--primary-color)]">#T20057</span> from Trendyol! ($15.00)</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="text-sm text-[var(--text-secondary-color)] min-w-[80px]">10 min ago</div>
+                        <p class="text-[var(--text-primary-color)]">New visitor source detected: Instagram Ads.</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="text-sm text-[var(--text-secondary-color)] min-w-[80px]">12 min ago</div>
+                        <p class="text-[var(--text-primary-color)]">Total active visitors increased to 10.</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="text-sm text-[var(--text-secondary-color)] min-w-[80px]">15 min ago</div>
+                        <p class="text-[var(--text-primary-color)]">Hepsiburada product update completed.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <div id="footer-placeholder"></div>
+</div>
+</div>
+<script src="app.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const isEnglish = document.documentElement.lang === 'en'; // Detect language for chart labels
+
+        // Function to create Live Sales Chart
+        const createLiveSalesChart = (ctxId) => {
+            const ctx = document.getElementById(ctxId);
+            if (!ctx) return;
+
+            // Generate labels for the last 60 minutes
+            const labels = [];
+            for (let i = 59; i >= 0; i--) {
+                labels.push(`${i} ${isEnglish ? 'min ago' : 'dk önce'}`);
+            }
+            labels[59] = isEnglish ? 'Now' : 'Şimdi'; // Label the current minute "Now"
+
+            // Dummy data for sales (can be replaced with real-time data API in a real app)
+            const salesData = Array(60).fill(0).map((_, i) => (Math.random() * 20 + (i / 10)).toFixed(2));
+            salesData[59] = (Math.random() * 50).toFixed(2); // Higher recent sale for demo
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: isEnglish ? 'Live Sales ($)' : 'Canlı Satışlar (₺)',
+                        data: salesData,
+                        borderColor: 'rgb(14, 205, 144)', // primary-color
+                        backgroundColor: 'rgba(14, 205, 144, 0.2)',
+                        fill: true,
+                        tension: 0.2,
+                        pointRadius: 0,
+                        pointHitRadius: 10,
+                        pointBorderColor: 'transparent',
+                        pointBackgroundColor: 'transparent',
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { mode: 'index', intersect: false }
+                    },
+                    scales: {
+                        x: {
+                            display: true,
+                            grid: { display: false },
+                            ticks: {
+                                autoSkip: true,
+                                maxTicksLimit: 10 // Show fewer ticks on X axis for readability
+                            }
+                        },
+                        y: {
+                            display: true,
+                            beginAtZero: true,
+                            grid: { color: 'rgba(0,0,0,0.1)' },
+                            ticks: {
+                                callback: function(value) {
+                                    return (isEnglish ? '$' : '₺') + value;
+                                }
+                            }
+                        }
+                    },
+                    animation: false // Disable animation for a "live" feel
+                }
+            });
+        };
+
+        createLiveSalesChart('liveSalesChart');
+
+        // Simulate live data updates (for demonstration purposes)
+        setInterval(() => {
+            // Update dummy data for live visitors and sales
+            document.getElementById('live-visitors').textContent = Math.floor(Math.random() * 20) + 5; // 5-24 visitors
+            document.getElementById('live-sales').textContent = (isEnglish ? '$' : '₺') + (Math.random() * 300).toFixed(2); // Random sales amount
+            
+            // In a real app, you'd fetch real data and update the chart data here
+            // liveSalesChart.data.datasets[0].data.shift(); // remove first data point
+            // liveSalesChart.data.datasets[0].data.push(Math.random() * 20 + 5); // add new data point
+            // liveSalesChart.update();
+        }, 5000); // Update every 5 seconds
+    });
+</script>
+</body>
+</html>
