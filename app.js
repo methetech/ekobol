@@ -79,8 +79,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 'blog-post.html', 'order-detail.html', 'ai-pricing-optimization.html', 'new-image-styles-update.html', 'webinars.html', 
                 'product-display.html', 'invoice.html', 'order-tracking.html', 'login-success.html',
                 'ai-image-generator-guide.html', 'connect-marketplace-guide.html', 'setup-profile-guide.html', 'understanding-dashboard-guide.html', 
-                'best-practices-ai-descriptions.html', 'optimize-pricing-with-ai-guide.html', 'how-revenue-sharing-works-guide.html', 'upgrade-downgrade-plan-guide.html', 'viewing-invoices-guide.html', // Previous/Current Help Center articles
-                'ai-inventory-automation-guide.html' // New help center article for this turn
+                'best-practices-ai-descriptions.html', 'optimize-pricing-with-ai-guide.html', 'how-revenue-sharing-works-guide.html', 'upgrade-downgrade-plan-guide.html', 'viewing-invoices-guide.html',
+                'ai-inventory-automation-guide.html', 'ai-marketing-campaigns-guide.html', 'seo-optimization-tools-guide.html', 'social-media-scheduler-guide.html',
+                'price-optimization-conversion-guide.html', 
+                'product-edit-delete-guide.html' // Last help center article
             ];
 
             const getTargetPage = (originalPage, targetLangIsEnglish) => {
