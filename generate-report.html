@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Rapor Oluştur - Ekobol</title>
+    
+    <!-- Fonts -->
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    
+    <!-- Tailwind CSS Script -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Global Stylesheet -->
+    <link rel="stylesheet" href="global.css">
+
+</head>
+<body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+
+    <!-- Header will be loaded here by JavaScript -->
+    <div id="header-placeholder"></div>
+
+    <main class="flex-1 flex items-center justify-center px-4 py-16 lg:py-24 bg-gray-50">
+        <div class="w-full max-w-2xl">
+            <div class="mb-8 text-center">
+                <h1 class="text-3xl font-bold tracking-tight md:text-4xl">Finansal Rapor Oluştur</h1>
+                <p class="mt-2 text-[var(--text-secondary-color)]">Detaylı finansal içgörüler ve analizler için özel raporlar oluşturun.</p>
+            </div>
+            <div class="rounded-lg border border-[var(--divider-color)] bg-[var(--background-color)] p-8 shadow-sm">
+                <form class="space-y-6">
+                    <div>
+                        <label class="text-sm font-medium" for="report-type">Rapor Türü Seçin</label>
+                        <select id="report-type" name="report-type" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] bg-white text-[var(--text-primary-color)]">
+                            <option value="profit-loss">Kâr ve Zarar Beyanı</option>
+                            <option value="sales-by-channel">Kanala Göre Satış Raporu</option>
+                            <option value="expense-breakdown">Gider Dökümü</option>
+                            <option value="tax-summary">Vergi Özeti</option>
+                            <option value="custom">Özel Rapor</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-sm font-medium" for="date-range">Tarih Aralığı</label>
+                        <select id="date-range" name="date-range" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] bg-white text-[var(--text-primary-color)]">
+                            <option value="last-30-days">Son 30 Gün</option>
+                            <option value="this-month">Bu Ay</option>
+                            <option value="last-month">Geçen Ay</option>
+                            <option value="this-quarter">Bu Çeyrek</option>
+                            <option value="last-quarter">Son Çeyrek</option>
+                            <option value="this-year">Bu Yıl</option>
+                            <option value="last-year">Geçen Yıl</option>
+                            <option value="custom">Özel Aralık</option>
+                        </select>
+                    </div>
+                    <div id="custom-date-range" class="hidden grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="text-sm font-medium" for="start-date">Başlangıç Tarihi</label>
+                            <input type="date" id="start-date" name="start-date" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)]" />
+                        </div>
+                        <div>
+                            <label class="text-sm font-medium" for="end-date">Bitiş Tarihi</label>
+                            <input type="date" id="end-date" name="end-date" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)]" />
+                        </div>
+                    </div>
+                    <div class="pt-2">
+                        <button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300" type="submit">
+                            Raporu Oluştur
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="mt-8 text-center text-sm text-[var(--text-secondary-color)]">
+                Raporunuz oluşturulduktan sonra indirmeye hazır olacaktır.
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+</div>
+</div>
+
+<!-- Load our app script at the end of the body -->
+<script src="app.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const dateRangeSelect = document.getElementById('date-range');
+        const customDateRangeDiv = document.getElementById('custom-date-range');
+
+        if (dateRangeSelect && customDateRangeDiv) {
+            dateRangeSelect.addEventListener('change', function() {
+                if (this.value === 'custom') {
+                    customDateRangeDiv.classList.remove('hidden');
+                } else {
+                    customDateRangeDiv.classList.add('hidden');
+                }
+            });
+            // Initial check in case "Custom Range" is pre-selected (though not in this static example)
+            if (dateRangeSelect.value === 'custom') {
+                customDateRangeDiv.classList.remove('hidden');
+            }
+        }
+    });
+</script>
+</body>
+</html>

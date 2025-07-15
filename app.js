@@ -74,7 +74,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 'partner-plan.html', 'payment.html', 'privacy.html', 'signup.html', 'login.html',
                 'forgot-password.html', 'subscription.html', 'success-stories.html', 'help-center.html', 'blog.html',
                 'dashboard.html', 'orders.html', 'products-manage.html', 'marketing-tools.html', 'trends.html', 'finances.html',
-                'product-add-edit.html' 
+                'product-add-edit.html', // Existing pages
+                'full-statement.html', 'update-payment.html', 'generate-report.html', // Newly added pages
+                'blog-post.html', 'order-detail.html' // Newly added templates
             ];
 
             const getTargetPage = (originalPage, targetLangIsEnglish) => {
@@ -92,13 +94,13 @@ document.addEventListener("DOMContentLoaded", function() {
                             if (allPages.includes(potentialEnglishPage)) {
                                 targetPage = potentialEnglishPage;
                             } else {
-                                targetPage = originalBaseName; 
+                                targetPage = originalBaseName; // Fallback if specific EN version doesn't exist
                             }
                         } else { // Target is Turkish
                             if (allPages.includes(potentialTurkishPage)) {
                                 targetPage = potentialTurkishPage;
                             } else {
-                                targetPage = originalPage.replace('_en.html', '.html');
+                                targetPage = originalPage.replace('_en.html', '.html'); // Fallback if specific TR version doesn't exist
                             }
                         }
                         foundMatch = true;
@@ -107,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 
                 if (!foundMatch) { 
+                    // If the exact base name isn't found in allPages, try simple _en.html addition/removal
                     if (targetLangIsEnglish && !originalPage.endsWith('_en.html')) {
                         targetPage = originalPage.replace('.html', '_en.html');
                     } else if (!targetLangIsEnglish && originalPage.endsWith('_en.html')) {
@@ -128,73 +131,85 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
         
-        // 3. DEMO MODE LOGIC (Integrated with login state for nav visibility)
-        const navLoggedIn = document.getElementById('nav-logged-in');
-        const navLoggedOut = document.getElementById('nav-logged-out');
-        const actionsLoggedIn = document.getElementById('actions-logged-in');
-        const actionsLoggedOut = document.getElementById('actions-logged-out');
-        const logoLink = document.getElementById('logo-link');
-        const demoModeStrip = document.getElementById('demo-mode-strip');
+        // 3. DEMO MODE & LOGIN STATE LOGIC
+        const desktopNavLoggedOut = document.getElementById('nav-logged-out');
+        const desktopNavLoggedIn = document.getElementById('nav-logged-in');
+        const desktopActionsLoggedOut = document.getElementById('actions-logged-out');
+        const desktopActionsLoggedIn = document.getElementById('actions-logged-in'); // This is the desktop logout button container
 
         const mobileNavLoggedOut = document.getElementById('mobile-nav-logged-out'); 
         const mobileNavLoggedIn = document.getElementById('mobile-nav-logged-in');   
+        const mobileSignupButton = document.getElementById('mobile-signup-button');
+        const mobileLoginLink = document.getElementById('mobile-login-link');
+        const mobileLogoutButton = document.getElementById('mobile-logout-button'); // New element for mobile logout
 
-        const loggedInPagesBase = ['dashboard', 'orders', 'products-manage', 'marketing-tools', 'trends', 'finances', 'product-add-edit']; 
+        const logoLink = document.getElementById('logo-link');
+        const demoModeStrip = document.getElementById('demo-mode-strip');
+
+        const loggedInPagesBase = ['dashboard', 'orders', 'products-manage', 'marketing-tools', 'trends', 'finances', 'product-add-edit', 'full-statement', 'update-payment', 'generate-report', 'order-detail']; 
         const isCurrentPageLoggedIn = loggedInPagesBase.some(base => 
             currentPage.startsWith(base) || currentPage.startsWith(base.replace('.html', '_en.html'))
         );
         
         const applyLoggedInState = (isLoggedIn) => {
-            if (isLoggedIn) {
-                if (navLoggedOut) navLoggedOut.classList.add('hidden');
-                if (navLoggedIn) navLoggedIn.classList.remove('hidden'); 
+            // Desktop Navigation and Actions
+            // Ensure proper display property is set along with hidden for desktop
+            if (desktopNavLoggedOut) {
+                desktopNavLoggedOut.classList.toggle('hidden', isLoggedIn);
+                desktopNavLoggedOut.classList.toggle('md:flex', !isLoggedIn); 
+            }
+            if (desktopNavLoggedIn) {
+                desktopNavLoggedIn.classList.toggle('hidden', !isLoggedIn);
+                desktopNavLoggedIn.classList.toggle('md:flex', isLoggedIn);
+            }
 
-                if (actionsLoggedOut) actionsLoggedOut.classList.add('hidden');
-                if (actionsLoggedIn) actionsLoggedIn.classList.remove('hidden'); 
+            if (desktopActionsLoggedOut) {
+                desktopActionsLoggedOut.classList.toggle('hidden', isLoggedIn);
+                desktopActionsLoggedOut.classList.toggle('md:flex', !isLoggedIn); 
+            }
+            if (desktopActionsLoggedIn) {
+                desktopActionsLoggedIn.classList.toggle('hidden', !isLoggedIn);
+                desktopActionsLoggedIn.classList.toggle('md:flex', isLoggedIn); 
+            }
 
-                if (mobileNavLoggedOut) mobileNavLoggedOut.classList.add('hidden');
-                if (mobileNavLoggedIn) mobileNavLoggedIn.classList.remove('hidden');
+            // Mobile Navigation and Actions (inside mobile menu)
+            // Mobile navs within the slide-out menu are naturally block/flex by default, just manage 'hidden'
+            if (mobileNavLoggedOut) {
+                mobileNavLoggedOut.classList.toggle('hidden', isLoggedIn);
+                mobileNavLoggedOut.classList.toggle('flex', !isLoggedIn); // Ensure it's flex on mobile when not logged in
+            }
+            if (mobileNavLoggedIn) {
+                mobileNavLoggedIn.classList.toggle('hidden', !isLoggedIn);
+                mobileNavLoggedIn.classList.toggle('flex', isLoggedIn); // Ensure it's flex on mobile when logged in
+            }
 
-                if (logoLink) {
-                    const dashboardPage = isEnglish ? 'dashboard_en.html' : 'dashboard.html';
-                    logoLink.href = dashboardPage;
-                }
+            if (mobileSignupButton) mobileSignupButton.classList.toggle('hidden', isLoggedIn);
+            if (mobileLoginLink) mobileLoginLink.classList.toggle('hidden', isLoggedIn);
+            if (mobileLogoutButton) mobileLogoutButton.classList.toggle('hidden', !isLoggedIn);
 
-                if (demoModeStrip) {
-                    demoModeStrip.classList.remove('bg-[var(--primary-color)]', 'text-white');
-                    demoModeStrip.classList.add('bg-gray-200', 'text-[var(--text-primary-color)]');
-                    demoModeStrip.textContent = isEnglish ? 'DEMO MODE' : 'ZİYARETÇİ MODU';
-                }
+            if (logoLink) {
+                const targetPage = isLoggedIn ? (isEnglish ? 'dashboard_en.html' : 'dashboard.html') : (isEnglish ? 'index_en.html' : 'index.html');
+                logoLink.href = targetPage;
+            }
 
-                if (currentPage === 'index.html' || currentPage === 'index_en.html') {
-                    const redirectPage = isEnglish ? 'dashboard_en.html' : 'dashboard.html';
+            if (demoModeStrip) {
+                demoModeStrip.classList.toggle('bg-[var(--primary-color)]', !isLoggedIn);
+                demoModeStrip.classList.toggle('text-white', !isLoggedIn);
+                demoModeStrip.classList.toggle('bg-gray-200', isLoggedIn);
+                demoModeStrip.classList.toggle('text-[var(--text-primary-color)]', isLoggedIn);
+                demoModeStrip.textContent = isLoggedIn ? (isEnglish ? 'DEMO MODE' : 'ZİYARETÇİ MODU') : (isEnglish ? 'PUBLIC MODE' : 'DEMO MODU');
+            }
+
+            // Redirect logic (only if not already on the correct page)
+            if (isLoggedIn && (currentPage === 'index.html' || currentPage === 'index_en.html')) {
+                const redirectPage = isEnglish ? 'dashboard_en.html' : 'dashboard.html';
+                if (window.location.pathname.endsWith(redirectPage) === false) { // Prevent infinite reload if already on dashboard
                     window.location.href = redirectPage;
                 }
-
-            } else { 
-                if (navLoggedIn) navLoggedIn.classList.add('hidden');
-                if (navLoggedOut) navLoggedOut.classList.remove('hidden'); 
-
-                if (actionsLoggedIn) actionsLoggedIn.classList.add('hidden'); 
-                if (actionsLoggedOut) actionsLoggedOut.classList.remove('hidden'); 
-
-                if (mobileNavLoggedIn) mobileNavLoggedIn.classList.add('hidden');
-                if (mobileNavLoggedOut) mobileNavLoggedOut.classList.remove('hidden');
-
-                if (logoLink) {
-                    const indexPage = isEnglish ? 'index_en.html' : 'index.html';
-                    logoLink.href = indexPage;
-                }
-
-                if (demoModeStrip) {
-                    demoModeStrip.classList.remove('bg-gray-200', 'text-[var(--text-primary-color)]');
-                    demoModeStrip.classList.add('bg-[var(--primary-color)]', 'text-white');
-                    demoModeStrip.textContent = isEnglish ? 'PUBLIC MODE' : 'DEMO MODU';
-                }
-
-                if (isCurrentPageLoggedIn) {
-                    const indexPage = isEnglish ? 'index_en.html' : 'index.html';
-                    window.location.href = indexPage;
+            } else if (!isLoggedIn && isCurrentPageLoggedIn) { 
+                const redirectPage = isEnglish ? 'index_en.html' : 'index.html';
+                 if (window.location.pathname.endsWith(redirectPage) === false) { // Prevent infinite reload if already on index
+                    window.location.href = redirectPage;
                 }
             }
         };
@@ -210,8 +225,9 @@ document.addEventListener("DOMContentLoaded", function() {
             demoModeStrip.addEventListener('click', toggleDemoMode);
         }
 
-        const isLoggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
-        applyLoggedInState(isLoggedIn);
+        // Apply initial state based on sessionStorage after elements are loaded
+        const isLoggedInOnLoad = sessionStorage.getItem('isLoggedIn') === 'true';
+        applyLoggedInState(isLoggedInOnLoad);
 
 
         // 4. Mobile Menu Logic (Hamburger Menu)
@@ -407,7 +423,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <li>Consider negotiating lower shipping rates; current rates impact your net profit by 1.5%.</li>
                     <li>Identified potential tax deductions related to office supplies totaling ${currency}X.XX this quarter.</li>
                 ` : `
-                    <li>Pazarlama harcamanız, satış hacminize göre ortalamadan %2 daha yüksek. Kampanya verimliliğini gözden geçirin.</li>
+                    <li>Pazarlama harcamalarınız, satış hacminize göre ortalamadan %2 daha yüksek. Kampanya verimliliğini gözden geçirin.</li>
                     <li>Daha düşük nakliye oranları için müzakere yapmayı düşünün; mevcut oranlar net kârınızı %1.5 etkiliyor.</li>
                     <li>Bu çeyrekte ofis malzemeleriyle ilgili toplam X.XX TL'lik potansiyel vergi indirimleri tespit edildi.</li>
                 `;
@@ -542,7 +558,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const yearlyLabel = document.getElementById('yearly-label');
         const featurePrices = document.querySelectorAll('.feature-price');
 
-        let isYearlyBilling = false; 
+        let isYearlyBilling = false; // Initial state: Monthly
 
         const updatePrices = () => {
             featurePrices.forEach(priceElement => {
@@ -556,25 +572,27 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else {
                     priceElement.textContent = `${currency}${monthlyPrice}`;
                 }
-                
-                if (priceElement.id !== 'full-suite-price' || !isYearlyBilling) { 
+                // Append the "/mo" or "/ay" unless it's the full suite which might not need it explicitly if it's already part of the hardcoded text
+                if (priceElement.id !== 'full-suite-price' || !isYearlyBilling) { // Assuming full-suite-price also has /mo or /ay for monthly
                      const existingSpan = priceElement.querySelector('span');
-                     if (existingSpan) { 
+                     if (existingSpan) { // If there's already a span for /ay or /mo
                         existingSpan.textContent = perPeriodText;
-                     } else { 
+                     } else { // Otherwise, create one
                         const span = document.createElement('span');
                         span.className = 'text-base font-medium text-[var(--text-secondary-color)]';
                         span.textContent = perPeriodText;
                         priceElement.appendChild(span);
                      }
                 } else if (priceElement.id === 'full-suite-price' && isYearlyBilling) {
+                    // For yearly full suite, ensure the suffix matches the expected display (e.g. no /mo or /ay)
                     const existingSpan = priceElement.querySelector('span');
                     if (existingSpan) {
-                        existingSpan.remove(); 
+                        existingSpan.remove(); // Remove the /mo or /ay suffix for yearly full suite if desired
                     }
                 }
             });
 
+            // Update toggle circle position and label styling
             if (isYearlyBilling) {
                 toggleCircle.style.transform = 'translateX(100%)';
                 monthlyLabel.classList.remove('text-[var(--primary-color)]');
@@ -592,6 +610,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 updatePrices();
             });
         }
-        updatePrices(); 
+        updatePrices(); // Initial price display based on default `isYearlyBilling`
     }
 });

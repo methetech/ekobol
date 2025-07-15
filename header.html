@@ -1,9 +1,18 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Ekobol</title> <!-- Title is just a placeholder here, actual page title would be used -->
+    <!-- Fonts, Tailwind, Global CSS are usually in the main page, but included here for completeness -->
+</head>
+<body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
 <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--border-color)] px-4 sm:px-10 py-4 transition-colors duration-300 relative z-20">
     <a id="logo-link" class="flex items-center gap-3 text-2xl font-bold tracking-tight" href="index.html">
         <img src="ekobol.ico" alt="Ekobol Logo" class="h-16 w-16 sm:h-20 sm:w-20 lg:h-24 lg:w-24">
     </a>
 
-    <!-- Desktop Navigation (hidden on mobile) -->
+    <!-- Desktop Navigation for Logged-OUT users (hidden by default on mobile, flex on md and up) -->
     <nav id="nav-logged-out" class="hidden md:flex items-center gap-8">
         <a class="text-base font-medium text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" href="product.html">Ürün</a>
         <a class="text-base font-medium text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" href="solutions.html">Çözümler</a>
@@ -11,7 +20,7 @@
         <a class="text-base font-medium text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" href="pricing.html">Fiyatlandırma</a>
     </nav>
     
-    <!-- Desktop Logged-in Navigation (hidden on mobile) -->
+    <!-- Desktop Navigation for Logged-IN users (hidden by default, shown by JS, flex on md and up) -->
     <nav id="nav-logged-in" class="hidden md:flex items-center gap-8">
         <a class="text-base font-medium text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" href="dashboard.html">Kontrol Paneli</a>
         <a class="text-base font-medium text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" href="orders.html">Siparişler</a>
@@ -44,7 +53,7 @@
         
         <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8 sm:size-10" style='background-image: url("https://i.pravatar.cc/150?u=a042581f4e29026704d");'></div>
         
-        <!-- Logged-out Actions (Login/Signup buttons - hidden on mobile, visible on desktop) -->
+        <!-- Desktop Actions for Logged-OUT users (hidden by default on mobile, flex on md and up) -->
         <div id="actions-logged-out" class="hidden md:flex items-center gap-4">
             <a class="hidden sm:inline-block text-base font-medium text-[var(--text-secondary-color)] hover:text-[var(--text-primary-color)] transition-colors" href="login.html">Giriş Yap</a>
             <a class="flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300" href="signup.html">
@@ -52,8 +61,12 @@
             </a>
         </div>
         
-        <!-- Logged-in Actions (Empty, just a container for JS to toggle) -->
+        <!-- Desktop Actions for Logged-IN users (hidden by default, shown by JS, flex on md and up) -->
         <div id="actions-logged-in" class="hidden items-center gap-4">
+            <!-- Potentially a logout button or profile dropdown for logged-in desktop users -->
+            <a class="flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-red-500 text-white text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300" href="#">
+                <span class="truncate">Çıkış Yap</span>
+            </a>
         </div>
 
         <!-- Hamburger Menu Button (visible on mobile, hidden on desktop) -->
@@ -77,7 +90,7 @@
         </button>
     </div>
     <nav class="flex flex-col p-4 space-y-2">
-        <!-- Logged-out Mobile Navigation (managed by JS based on login state) -->
+        <!-- Mobile Navigation for Logged-OUT users (visible by default, hidden by JS) -->
         <div id="mobile-nav-logged-out" class="flex flex-col space-y-2">
             <a class="block py-2 text-base font-medium text-[var(--text-primary-color)] hover:bg-[var(--divider-color)] rounded-md px-3 transition-colors" href="product.html">Ürün</a>
             <a class="block py-2 text-base font-medium text-[var(--text-primary-color)] hover:bg-[var(--divider-color)] rounded-md px-3 transition-colors" href="solutions.html">Çözümler</a>
@@ -85,7 +98,7 @@
             <a class="block py-2 text-base font-medium text-[var(--text-primary-color)] hover:bg-[var(--divider-color)] rounded-md px-3 transition-colors" href="pricing.html">Fiyatlandırma</a>
         </div>
         
-        <!-- Logged-in Mobile Navigation (managed by JS based on login state) -->
+        <!-- Mobile Navigation for Logged-IN users (hidden by default, managed by JS) -->
         <div id="mobile-nav-logged-in" class="hidden flex-col space-y-2">
             <a class="block py-2 text-base font-medium text-[var(--text-primary-color)] hover:bg-[var(--divider-color)] rounded-md px-3 transition-colors" href="dashboard.html">Kontrol Paneli</a>
             <a class="block py-2 text-base font-medium text-[var(--text-primary-color)] hover:bg-[var(--divider-color)] rounded-md px-3 transition-colors" href="orders.html">Siparişler</a>
@@ -96,13 +109,19 @@
         </div>
 
         <div class="pt-4 border-t border-[var(--divider-color)] flex flex-col gap-2">
-            <!-- Mobile Login/Signup buttons - controlled by JS if they should appear here or desktop actions -->
-            <a class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300" href="signup.html">
+            <!-- Mobile Login/Signup buttons (visible if logged out, hidden by JS) -->
+            <a id="mobile-signup-button" class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300" href="signup.html">
                 <span class="truncate">Ücretsiz Başla</span>
             </a>
-            <a class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-gray-100 border-2 border-[var(--border-color)] text-[var(--text-primary-color)] text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300" href="login.html">
+            <a id="mobile-login-link" class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-gray-100 border-2 border-[var(--border-color)] text-[var(--text-primary-color)] text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300" href="login.html">
                 <span class="truncate">Giriş Yap</span>
+            </a>
+            <!-- Mobile Logout button (hidden by default, visible if logged in) -->
+            <a id="mobile-logout-button" class="hidden flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-red-500 text-white text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300" href="#">
+                <span class="truncate">Çıkış Yap</span>
             </a>
         </div>
     </nav>
 </div>
+</body>
+</html>
