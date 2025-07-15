@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // --- Core Logic to Load Header and Footer ---
-
     const headerPlaceholder = document.getElementById('header-placeholder');
     const footerPlaceholder = document.getElementById('footer-placeholder');
     const path = window.location.pathname;
@@ -21,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
             })
             .then(data => {
                 headerPlaceholder.innerHTML = data;
-                initializeHeaderScripts();
+                initializeHeaderAndMobileMenu(); // Renamed and consolidated
             })
             .catch(error => console.error("Header loading failed:", error));
     }
@@ -38,7 +36,8 @@ document.addEventListener("DOMContentLoaded", function() {
             .catch(error => console.error("Footer loading failed:", error));
     }
 
-    function initializeHeaderScripts() {
+    // This function now encapsulates all header-related JS logic, including mobile menu
+    function initializeHeaderAndMobileMenu() {
         // 1. THEME SWITCHER LOGIC
         const themeToggle = document.getElementById('theme-toggle');
         const sunIcon = document.getElementById('theme-icon-sun');
@@ -69,7 +68,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const trLink = document.getElementById('lang-tr-link');
         
         if (enLink && trLink) {
-            let basePageName = currentPage.replace('_en.html', '.html');
             const allPages = [
                 'index.html', 'product.html', 'solutions.html', 'resources.html', 'pricing.html', 'about.html',
                 'careers.html', 'contact.html', 'cookies.html', 'dynamic-plan.html', 'basic-plan.html',
@@ -87,30 +85,28 @@ document.addEventListener("DOMContentLoaded", function() {
                 for (const page of allPages) {
                     const pageBaseName = page.replace('_en.html', '.html'); 
                     if (pageBaseName === originalBaseName) { 
-                        if (targetLangIsEnglish) {
-                            targetPage = pageBaseName.replace('.html', '_en.html'); 
-                        } else {
-                            targetPage = pageBaseName;
-                        }
-                        
-                        if (pageBaseName === 'trends.html' && targetLangIsEnglish && !allPages.includes('trends_en.html')) {
-                             targetPage = 'trends.html'; 
-                        } else if (pageBaseName === 'trends.html' && !targetLangIsEnglish && allPages.includes('trends.html')) {
-                            targetPage = 'trends.html';
-                        }
-                        
-                        if (targetLangIsEnglish && !targetPage.endsWith('_en.html') && allPages.includes(targetPage.replace('.html', '_en.html'))) {
-                            targetPage = targetPage.replace('.html', '_en.html');
-                        } else if (!targetLangIsEnglish && targetPage.endsWith('_en.html') && allPages.includes(targetPage.replace('_en.html', '.html'))) {
-                            targetPage = targetPage.replace('_en.html', '.html');
-                        }
+                        const potentialEnglishPage = pageBaseName.replace('.html', '_en.html');
+                        const potentialTurkishPage = pageBaseName;
 
+                        if (targetLangIsEnglish) {
+                            if (allPages.includes(potentialEnglishPage)) {
+                                targetPage = potentialEnglishPage;
+                            } else {
+                                targetPage = originalBaseName; 
+                            }
+                        } else { // Target is Turkish
+                            if (allPages.includes(potentialTurkishPage)) {
+                                targetPage = potentialTurkishPage;
+                            } else {
+                                targetPage = originalPage.replace('_en.html', '.html');
+                            }
+                        }
                         foundMatch = true;
                         break;
                     }
                 }
                 
-                if (!foundMatch) {
+                if (!foundMatch) { 
                     if (targetLangIsEnglish && !originalPage.endsWith('_en.html')) {
                         targetPage = originalPage.replace('.html', '_en.html');
                     } else if (!targetLangIsEnglish && originalPage.endsWith('_en.html')) {
@@ -132,19 +128,16 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
         
-        // 3. DEMO MODE LOGIC
-        initializeDemoMode();
-    }
-    
-    // --- DEMO MODE CORE FUNCTIONS ---
-    function initializeDemoMode() {
-        const demoModeStrip = document.getElementById('demo-mode-strip');
-        const logoLink = document.getElementById('logo-link');
-
+        // 3. DEMO MODE LOGIC (Integrated with login state for nav visibility)
         const navLoggedIn = document.getElementById('nav-logged-in');
         const navLoggedOut = document.getElementById('nav-logged-out');
         const actionsLoggedIn = document.getElementById('actions-logged-in');
         const actionsLoggedOut = document.getElementById('actions-logged-out');
+        const logoLink = document.getElementById('logo-link');
+        const demoModeStrip = document.getElementById('demo-mode-strip');
+
+        const mobileNavLoggedOut = document.getElementById('mobile-nav-logged-out'); 
+        const mobileNavLoggedIn = document.getElementById('mobile-nav-logged-in');   
 
         const loggedInPagesBase = ['dashboard', 'orders', 'products-manage', 'marketing-tools', 'trends', 'finances', 'product-add-edit']; 
         const isCurrentPageLoggedIn = loggedInPagesBase.some(base => 
@@ -153,11 +146,14 @@ document.addEventListener("DOMContentLoaded", function() {
         
         const applyLoggedInState = (isLoggedIn) => {
             if (isLoggedIn) {
-                if (navLoggedOut) navLoggedOut.style.display = 'none';
-                if (navLoggedIn) navLoggedIn.style.display = 'flex'; 
+                if (navLoggedOut) navLoggedOut.classList.add('hidden');
+                if (navLoggedIn) navLoggedIn.classList.remove('hidden'); 
 
-                if (actionsLoggedOut) actionsLoggedOut.style.display = 'none';
-                if (actionsLoggedIn) actionsLoggedIn.style.display = 'flex'; 
+                if (actionsLoggedOut) actionsLoggedOut.classList.add('hidden');
+                if (actionsLoggedIn) actionsLoggedIn.classList.remove('hidden'); 
+
+                if (mobileNavLoggedOut) mobileNavLoggedOut.classList.add('hidden');
+                if (mobileNavLoggedIn) mobileNavLoggedIn.classList.remove('hidden');
 
                 if (logoLink) {
                     const dashboardPage = isEnglish ? 'dashboard_en.html' : 'dashboard.html';
@@ -175,12 +171,15 @@ document.addEventListener("DOMContentLoaded", function() {
                     window.location.href = redirectPage;
                 }
 
-            } else {
-                if (navLoggedIn) navLoggedIn.style.display = 'none';
-                if (navLoggedOut) navLoggedOut.style.display = 'flex'; 
+            } else { 
+                if (navLoggedIn) navLoggedIn.classList.add('hidden');
+                if (navLoggedOut) navLoggedOut.classList.remove('hidden'); 
 
-                if (actionsLoggedIn) actionsLoggedIn.style.display = 'none'; 
-                if (actionsLoggedOut) actionsLoggedOut.style.display = 'flex'; 
+                if (actionsLoggedIn) actionsLoggedIn.classList.add('hidden'); 
+                if (actionsLoggedOut) actionsLoggedOut.classList.remove('hidden'); 
+
+                if (mobileNavLoggedIn) mobileNavLoggedIn.classList.add('hidden');
+                if (mobileNavLoggedOut) mobileNavLoggedOut.classList.remove('hidden');
 
                 if (logoLink) {
                     const indexPage = isEnglish ? 'index_en.html' : 'index.html';
@@ -213,8 +212,49 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const isLoggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
         applyLoggedInState(isLoggedIn);
-    }
 
+
+        // 4. Mobile Menu Logic (Hamburger Menu)
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+        function openMobileMenu() {
+            if (mobileMenu && mobileMenuOverlay) {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+                mobileMenuOverlay.classList.remove('hidden');
+                setTimeout(() => { 
+                    mobileMenuOverlay.classList.add('opacity-100');
+                }, 10);
+                document.body.style.overflow = 'hidden'; 
+            }
+        }
+
+        function closeMobileMenu() {
+            if (mobileMenu && mobileMenuOverlay) {
+                mobileMenu.classList.remove('translate-x-0');
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenuOverlay.classList.remove('opacity-100');
+                setTimeout(() => { 
+                    mobileMenuOverlay.classList.add('hidden');
+                }, 300); 
+                document.body.style.overflow = ''; 
+            }
+        }
+
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', openMobileMenu);
+        }
+        if (closeMobileMenuButton) {
+            closeMobileMenuButton.addEventListener('click', closeMobileMenu);
+        }
+        if (mobileMenuOverlay) {
+            mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+        }
+    }
+    
     // --- AI PLAYGROUND ANIMATION LOGIC (For index pages only) ---
     const playgroundContainer = document.getElementById('playground-container');
     if (playgroundContainer) {
@@ -502,7 +542,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const yearlyLabel = document.getElementById('yearly-label');
         const featurePrices = document.querySelectorAll('.feature-price');
 
-        let isYearlyBilling = false; // Initial state: Monthly
+        let isYearlyBilling = false; 
 
         const updatePrices = () => {
             featurePrices.forEach(priceElement => {
@@ -516,27 +556,25 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else {
                     priceElement.textContent = `${currency}${monthlyPrice}`;
                 }
-                // Append the "/mo" or "/ay" unless it's the full suite which might not need it explicitly if it's already part of the hardcoded text
-                if (priceElement.id !== 'full-suite-price' || !isYearlyBilling) { // Assuming full-suite-price also has /mo or /ay for monthly
+                
+                if (priceElement.id !== 'full-suite-price' || !isYearlyBilling) { 
                      const existingSpan = priceElement.querySelector('span');
-                     if (existingSpan) { // If there's already a span for /ay or /mo
+                     if (existingSpan) { 
                         existingSpan.textContent = perPeriodText;
-                     } else { // Otherwise, create one
+                     } else { 
                         const span = document.createElement('span');
                         span.className = 'text-base font-medium text-[var(--text-secondary-color)]';
                         span.textContent = perPeriodText;
                         priceElement.appendChild(span);
                      }
                 } else if (priceElement.id === 'full-suite-price' && isYearlyBilling) {
-                    // For yearly full suite, ensure the suffix matches the expected display (e.g. no /mo or /ay)
                     const existingSpan = priceElement.querySelector('span');
                     if (existingSpan) {
-                        existingSpan.remove(); // Remove the /mo or /ay suffix for yearly full suite if desired
+                        existingSpan.remove(); 
                     }
                 }
             });
 
-            // Update toggle circle position and label styling
             if (isYearlyBilling) {
                 toggleCircle.style.transform = 'translateX(100%)';
                 monthlyLabel.classList.remove('text-[var(--primary-color)]');
@@ -554,6 +592,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 updatePrices();
             });
         }
-        updatePrices(); // Initial price display based on default `isYearlyBilling`
+        updatePrices(); 
     }
 });
