@@ -1,85 +1,114 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Aylık Abonelik Planları - Ekobol</title>
-    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link rel="stylesheet" href="global.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Özel Özellik Aboneliği - Ekobol</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="global.css">
 </head>
 <body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
 <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
 <div class="layout-container flex h-full grow flex-col">
+<div id="header-placeholder"></div>
 
-    <div id="header-placeholder"></div>
-
-    <main class="flex-1 px-4 sm:px-10 lg:px-20 py-16 lg:py-24">
-        <div class="max-w-5xl mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-tight mb-6">
-                Kendi Planınızı Oluşturun.
-            </h1>
-            <p class="text-lg md:text-xl text-[var(--text-secondary-color)] max-w-3xl mx-auto">
-                Sadece ihtiyacınız olan araçlar için ödeme yapın. İşletmeniz için mükemmel aboneliği oluşturmak üzere özellikleri seçin ve eşleştirin. Yıllık ödeme yapın ve %20 tasarruf edin.
-            </p>
-            <div class="mt-8 flex justify-center items-center gap-4">
-                <span id="monthly-label" class="font-medium">Aylık</span>
-                <div id="billing-toggle" class="relative inline-block w-14 h-8 rounded-full bg-gray-200 cursor-pointer">
-                    <div id="toggle-circle" class="absolute left-1 top-1 w-6 h-6 rounded-full bg-white transition-transform duration-300"></div>
+<main class="flex-1 px-4 sm:px-10 lg:px-20 py-16 lg:py-24">
+    <div class="max-w-5xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-tight mb-6">
+            Kendi Planınızı Oluşturun.
+        </h1>
+        <p class="text-lg md:text-xl text-[var(--text-secondary-color)] max-w-3xl mx-auto">
+            Sadece ihtiyacınız olan araçlar için ödeme yapın. İşletmeniz için mükemmel aboneliği oluşturmak üzere özellikleri seçin ve eşleştirin. Yıllık ödeme yaparak %20 tasarruf edin.
+        </p>
+        <div class="mt-8 flex justify-center items-center gap-4">
+            <span id="monthly-label" class="font-medium text-[var(--text-primary-color)]">Aylık</span>
+            <div id="billing-toggle" class="relative inline-block w-14 h-8 rounded-full bg-gray-200 cursor-pointer">
+                <div id="toggle-circle" class="absolute left-1 top-1 w-6 h-6 rounded-full bg-white transition-transform duration-300 shadow"></div>
+            </div>
+            <span id="yearly-label" class="font-medium text-[var(--text-secondary-color)]">Yıllık (2 Ay Ücretsiz)</span>
+        </div>
+    </div>
+    <div class="mt-20 max-w-7xl mx-auto flex flex-col lg:flex-row gap-8">
+        <div class="lg:w-2/3 flex flex-col gap-8">
+            <!-- Marketplace Tiers -->
+            <div class="border border-[var(--divider-color)] rounded-lg p-8">
+                <h3 class="text-2xl font-bold mb-4">Pazar Yeri Katmanını Seçin</h3>
+                <p class="text-[var(--text-secondary-color)] mb-6">Entegre etmeniz gereken pazar yeri sayısını seçin.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <label class="block p-4 border border-[var(--divider-color)] rounded-lg cursor-pointer hover:border-[var(--primary-color)] transition-colors">
+                        <input type="radio" name="marketplace-tier" id="marketplace-1" value="5" class="mr-2 text-[var(--primary-color)] focus:ring-[var(--primary-color)]" checked>
+                        1 Pazar Yeri <span class="font-bold">(₺200/ay)</span>
+                    </label>
+                    <label class="block p-4 border border-[var(--divider-color)] rounded-lg cursor-pointer hover:border-[var(--primary-color)] transition-colors">
+                        <input type="radio" name="marketplace-tier" id="marketplace-3" value="10" class="mr-2 text-[var(--primary-color)] focus:ring-[var(--primary-color)]">
+                        3 Pazar Yeriye Kadar <span class="font-bold">(₺400/ay)</span>
+                    </label>
+                    <label class="block p-4 border border-[var(--divider-color)] rounded-lg cursor-pointer hover:border-[var(--primary-color)] transition-colors">
+                        <input type="radio" name="marketplace-tier" id="marketplace-5" value="20" class="mr-2 text-[var(--primary-color)] focus:ring-[var(--primary-color)]">
+                        5 Pazar Yeriye Kadar <span class="font-bold">(₺800/ay)</span>
+                    </label>
                 </div>
-                <span id="yearly-label" class="font-medium text-[var(--primary-color)]">Yıllık (2 Ay Ücretsiz)</span>
+            </div>
+
+            <!-- AI Features -->
+            <div class="border border-[var(--divider-color)] rounded-lg p-8">
+                <h3 class="text-2xl font-bold mb-4">Yapay Zeka Destekli Özellikleri Seçin</h3>
+                <p class="text-[var(--text-secondary-color)] mb-6">Güçlü yapay zeka araçlarıyla operasyonlarınızı geliştirin.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <label class="flex items-center p-4 border border-[var(--divider-color)] rounded-lg cursor-pointer hover:border-[var(--primary-color)] transition-colors">
+                        <input type="checkbox" name="ai-features" id="ai-image-generator" value="10" class="mr-2 text-[var(--primary-color)] focus:ring-[var(--primary-color)]">
+                        Yapay Zeka Görsel Oluşturucu <span class="font-bold ml-auto">(₺400/ay)</span>
+                    </label>
+                    <label class="flex items-center p-4 border border-[var(--divider-color)] rounded-lg cursor-pointer hover:border-[var(--primary-color)] transition-colors">
+                        <input type="checkbox" name="ai-features" id="ai-description-writer" value="8" class="mr-2 text-[var(--primary-color)] focus:ring-[var(--primary-color)]">
+                        Yapay Zeka Açıklama Yazıcı <span class="font-bold ml-auto">(₺320/ay)</span>
+                    </label>
+                    <label class="flex items-center p-4 border border-[var(--divider-color)] rounded-lg cursor-pointer hover:border-[var(--primary-color)] transition-colors">
+                        <input type="checkbox" name="ai-features" id="ai-pricing-optimization" value="12" class="mr-2 text-[var(--primary-color)] focus:ring-[var(--primary-color)]">
+                        Yapay Zeka Fiyat Optimizasyonu <span class="font-bold ml-auto">(₺480/ay)</span>
+                    </label>
+                    <label class="flex items-center p-4 border border-[var(--divider-color)] rounded-lg cursor-pointer hover:border-[var(--primary-color)] transition-colors">
+                        <input type="checkbox" name="ai-features" id="ai-inventory-automation" value="15" class="mr-2 text-[var(--primary-color)] focus:ring-[var(--primary-color)]">
+                        Yapay Zeka Envanter Otomasyonu <span class="font-bold ml-auto">(₺600/ay)</span>
+                    </label>
+                    <label class="flex items-center p-4 border border-[var(--divider-color)] rounded-lg cursor-pointer hover:border-[var(--primary-color)] transition-colors">
+                        <input type="checkbox" name="ai-features" id="unified-analytics" value="7" class="mr-2 text-[var(--primary-color)] focus:ring-[var(--primary-color)]">
+                        Birleşik Analizler <span class="font-bold ml-auto">(₺280/ay)</span>
+                    </label>
+                    <label class="flex items-center p-4 border border-[var(--divider-color)] rounded-lg cursor-pointer hover:border-[var(--primary-color)] transition-colors">
+                        <input type="checkbox" name="ai-features" id="seo-optimization-tools" value="10" class="mr-2 text-[var(--primary-color)] focus:ring-[var(--primary-color)]">
+                        SEO Optimizasyon Araçları <span class="font-bold ml-auto">(₺400/ay)</span>
+                    </label>
+                    <label class="flex items-center p-4 border border-[var(--divider-color)] rounded-lg cursor-pointer hover:border-[var(--primary-color)] transition-colors">
+                        <input type="checkbox" name="ai-features" id="social-media-scheduler" value="9" class="mr-2 text-[var(--primary-color)] focus:ring-[var(--primary-color)]">
+                        Sosyal Medya Planlayıcı <span class="font-bold ml-auto">(₺360/ay)</span>
+                    </label>
+                </div>
             </div>
         </div>
-        <div class="mt-20 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <div class="border border-[var(--divider-color)] rounded-lg p-8 flex flex-col text-center">
-                <h3 class="text-2xl font-bold mb-3">YZ Görüntü Oluşturucu</h3>
-                <p class="text-[var(--text-secondary-color)] mb-6 grow">Ürün fotoğraflarınızdan anında pazar yerine hazır görseller oluşturun.</p>
-                <p id="image-generator-price" class="feature-price text-4xl font-bold" data-monthly="200" data-yearly="160">₺200<span class="text-base font-medium text-[var(--text-secondary-color)]">/ay</span></p>
-            </div>
-            
-            <div class="border border-[var(--divider-color)] rounded-lg p-8 flex flex-col text-center">
-                <h3 class="text-2xl font-bold mb-3">YZ Açıklama Yazarı</h3>
-                <p class="text-[var(--text-secondary-color)] mb-6 grow">SEO için optimize edilmiş, ilgi çekici başlıklar ve açıklamalar oluşturun.</p>
-                <p id="description-writer-price" class="feature-price text-4xl font-bold" data-monthly="150" data-yearly="120">₺150<span class="text-base font-medium text-[var(--text-secondary-color)]">/ay</span></p>
-            </div>
 
-            <div class="border border-[var(--divider-color)] rounded-lg p-8 flex flex-col text-center">
-                <h3 class="text-2xl font-bold mb-3">Çok Kanallı Senkronizasyon</h3>
-                <p class="text-[var(--text-secondary-color)] mb-6 grow">Tüm pazar yerlerinizdeki stok ve fiyatları gerçek zamanlı olarak senkronize edin.</p>
-                <p id="multi-channel-sync-price" class="feature-price text-4xl font-bold" data-monthly="250" data-yearly="200">₺250<span class="text-base font-medium text-[var(--text-secondary-color)]">/ay</span></p>
+        <!-- Summary Card -->
+        <div class="lg:w-1/3 border border-[var(--divider-color)] rounded-lg p-8 sticky top-8 self-start bg-gray-50">
+            <h3 class="text-2xl font-bold mb-4">Özel Plan Özetiniz</h3>
+            <div class="text-center my-8">
+                <p class="text-lg text-[var(--text-secondary-color)]">Tahmini Aylık Maliyet</p>
+                <p id="total-amount" class="text-5xl font-bold text-[var(--primary-color)]">₺200.00</p>
+                <p class="text-sm text-[var(--text-secondary-color)] mt-2">(Temel/İş Ortağı Planları için işlem ücretleri hariçtir)</p>
             </div>
-
-            <div class="border border-[var(--divider-color)] rounded-lg p-8 flex flex-col text-center">
-                <h3 class="text-2xl font-bold mb-3">YZ Fiyat Optimizasyonu</h3>
-                <p class="text-[var(--text-secondary-color)] mb-6 grow">Kârınızı en üst düzeye çıkarmak için veriye dayalı fiyatlandırma önerileri alın.</p>
-                <p id="price-optimization-price" class="feature-price text-4xl font-bold" data-monthly="300" data-yearly="240">₺300<span class="text-base font-medium text-[var(--text-secondary-color)]">/ay</span></p>
-            </div>
-
-            <div class="border border-[var(--divider-color)] rounded-lg p-8 flex flex-col text-center">
-                <h3 class="text-2xl font-bold mb-3">Birleşik Analitik</h3>
-                <p class="text-[var(--text-secondary-color)] mb-6 grow">Tüm satış kanallarınız için birleşik bir kontrol panelinden içgörüler edinin.</p>
-                <p id="unified-analytics-price" class="feature-price text-4xl font-bold" data-monthly="100" data-yearly="80">₺100<span class="text-base font-medium text-[var(--text-secondary-color)]">/ay</span></p>
-            </div>
-
-             <div class="border border-[var(--divider-color)] rounded-lg p-8 flex flex-col text-center bg-gray-50">
-                <h3 class="text-2xl font-bold mb-3">Tam Paket</h3>
-                <p class="text-[var(--text-secondary-color)] mb-6 grow">Tüm özellikleri bir araya getirin ve en iyi değeri elde edin.</p>
-                <p id="full-suite-price" class="feature-price text-4xl font-bold text-[var(--primary-color)]" data-monthly="750" data-yearly="600">₺750<span class="text-base font-medium text-[var(--text-secondary-color)]">/ay</span></p>
-            </div>
-
+            <ul class="space-y-3 text-[var(--text-secondary-color)] text-left mb-8">
+                <li class="flex items-center"><svg class="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Esnek faturalandırma, istediğiniz zaman iptal edin</span></li>
+                <li class="flex items-center"><svg class="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Sadece kullandığınız kadar ödeyin</span></li>
+                <li class="flex items-center"><svg class="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>İşletmenizle birlikte ölçeklenir</span></li>
+            </ul>
+            <a href="signup_en.html" class="text-center w-full block rounded-full py-3 px-6 bg-[var(--primary-color)] text-white font-bold hover:shadow-xl transition-shadow">Ödeme İşlemine Devam Et</a>
         </div>
-         <div class="mt-16 text-center">
-            <a class="inline-flex min-w-[200px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300" href="signup.html">
-                <span class="truncate">Planınızı Oluşturmaya Başlayın</span>
-            </a>
-        </div>
-    </main>
+    </div>
+</main>
 
-    <div id="footer-placeholder"></div>
-    
+<div id="footer-placeholder"></div>
 </div>
 </div>
 <script src="app.js"></script>
