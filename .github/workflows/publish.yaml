@@ -32,7 +32,7 @@ jobs:
           personal_token: ${{ secrets.GH_PAT }}
           external_repository: methetech/methetech.github.io
           publish_branch: main          # public repoda Pages: main/(root)
-          publish_dir: ./dist           # Vite: dist  | CRA: build | Next export: out
+          publish_dir: ./           # Vite: dist  | CRA: build | Next export: out
           destination_dir: ekobol       # URL /ekobol/
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
