@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Ürünler - Ekobol</title>
+    
+    <!-- Fonts -->
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    
+    <!-- Tailwind CSS Script -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Global Stylesheet -->
+    <link rel="stylesheet" href="global.css">
+
+</head>
+<body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+
+    <!-- Header will be loaded here by JavaScript -->
+    <div id="header-placeholder"></div>
+
+    <main class="flex-1 px-4 sm:px-10 lg:px-20 py-10 bg-[var(--background-secondary-color)]">
+        <div class="layout-content-container flex flex-col w-full max-w-7xl mx-auto">
+            <div class="mb-8 flex justify-between items-center">
+                <div>
+                    <h1 class="text-[var(--text-primary-color)] text-4xl font-bold leading-tight tracking-tight">Ürünleriniz</h1>
+                    <p class="text-[var(--text-secondary-color)] text-base font-normal leading-normal mt-1">Tüm bağlı kanallarınızdaki ürün kataloğunuzu yönetin.</p>
+                </div>
+                <a href="product-add-edit.html" class="inline-flex items-center justify-center rounded-full h-10 px-4 bg-[var(--primary-color)] text-white text-base font-bold shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                    Yeni Ürün Ekle
+                </a>
+            </div>
+
+            <!-- Filters and Search -->
+            <section class="mb-8 flex flex-col sm:flex-row gap-4 justify-between items-center">
+                <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                    <select id="channel-filter" class="form-select block w-full sm:w-48 rounded-md border-gray-300 shadow-sm focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] bg-white text-[var(--text-primary-color)]">
+                        <option value="">Tüm Kanallar</option>
+                        <option value="etsy">Etsy</option>
+                        <option value="trendyol">Trendyol</option>
+                        <option value="hepsiburada">Hepsiburada</option>
+                        <option value="website">Web Sitesi</option>
+                    </select>
+                    <select id="status-filter" class="form-select block w-full sm:w-48 rounded-md border-gray-300 shadow-sm focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] bg-white text-[var(--text-primary-color)]">
+                        <option value="">Tüm Durumlar</option>
+                        <option value="active">Aktif</option>
+                        <option value="draft">Taslak</option>
+                        <option value="oos">Stokta Yok</option>
+                        <option value="archived">Arşivlendi</option>
+                    </select>
+                </div>
+                <div class="w-full sm:w-auto">
+                    <input type="text" id="product-search" placeholder="Ürün Adı veya SKU Ara..." class="form-input block w-full sm:w-64 rounded-md border-gray-300 shadow-sm focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] bg-white text-[var(--text-primary-color)]">
+                </div>
+            </section>
+
+            <!-- Products Table -->
+            <section class="bg-white rounded-xl border border-[var(--divider-color)] shadow-sm overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-[var(--divider-color)]">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-[var(--text-secondary-color)] uppercase tracking-wider">Ürün</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-[var(--text-secondary-color)] uppercase tracking-wider">SKU</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-[var(--text-secondary-color)] uppercase tracking-wider">Stok</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-[var(--text-secondary-color)] uppercase tracking-wider">Fiyat</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-[var(--text-secondary-color)] uppercase tracking-wider">Kanallar</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-[var(--text-secondary-color)] uppercase tracking-wider">Durum</th>
+                                <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-[var(--text-secondary-color)] uppercase tracking-wider">Eylemler</th>
+                            </tr>
+                        </thead>
+                        <tbody id="products-table-body" class="bg-white divide-y divide-[var(--divider-color)]">
+                            <tr class="product-row" data-channels="etsy,trendyol,website" data-status="active" data-product-name="Organik Pamuk Tişört" data-sku="OCTS001">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            <img class="h-10 w-10 rounded-full object-cover" src="https://images.unsplash.com/photo-1576566588028-cdfd587872e0?q=80&w=250&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Organik Pamuk Tişört">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-[var(--text-primary-color)]">Organik Pamuk Tişört</div>
+                                            <div class="text-sm text-[var(--text-secondary-color)]">Yumuşak ve nefes alabilen</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-secondary-color)]">OCTS001</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-primary-color)]">150</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-primary-color)]">₺20.00</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-secondary-color)]">
+                                    <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 rounded-full mr-1">Etsy</span>
+                                    <span class="inline-block bg-red-100 text-red-800 text-xs px-2 rounded-full mr-1">Trendyol</span>
+                                    <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 rounded-full">Web Sitesi</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Aktif</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <a href="product-add-edit.html?id=OCTS001" class="text-[var(--primary-color)] hover:text-[var(--primary-color)]-dark">Düzenle</a>
+                                    <a href="product-display.html?sku=OCTS001" class="ml-4 text-indigo-600 hover:text-indigo-900">Canlı Görüntüle</a>
+                                </td>
+                            </tr>
+                            <tr class="product-row" data-channels="etsy,hepsiburada" data-status="oos" data-product-name="El Yapımı Seramik Kupa" data-sku="HCM002">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            <img class="h-10 w-10 rounded-full object-cover" src="https://images.unsplash.com/photo-1627918074902-861f1816f1b3?q=80&w=250&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="El Yapımı Seramik Kupa">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-[var(--text-primary-color)]">El Yapımı Seramik Kupa</div>
+                                            <div class="text-sm text-[var(--text-secondary-color)]">Benzersiz el yapımı kupa</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-secondary-color)]">HCM002</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600">0</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-primary-color)]">₺25.00</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-secondary-color)]">
+                                    <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 rounded-full mr-1">Etsy</span>
+                                    <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 rounded-full">Hepsiburada</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">Stokta Yok</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <a href="product-add-edit.html?id=HCM002" class="text-[var(--primary-color)] hover:text-[var(--primary-color)]-dark">Düzenle</a>
+                                    <a href="#" class="ml-4 text-purple-600 hover:text-purple-900">Arşivle</a>
+                                </td>
+                            </tr>
+                            <tr class="product-row" data-channels="website" data-status="draft" data-product-name="YZ Oluşturulmuş Sanat Baskısı" data-sku="AIGAP003">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            <img class="h-10 w-10 rounded-full object-cover" src="https://images.unsplash.com/photo-1698297753351-4091f09c6298?q=80&w=250&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="YZ Oluşturulmuş Sanat Baskısı">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-[var(--text-primary-color)]">YZ Oluşturulmuş Sanat Baskısı</div>
+                                            <div class="text-sm text-[var(--text-secondary-color)]">Benzersiz dijital oluşturma</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-secondary-color)]">AIGAP003</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-primary-color)]">Sınırsız</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-primary-color)]">₺50.00</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-secondary-color)]">
+                                    <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 rounded-full">Web Sitesi</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">Taslak</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <a href="product-add-edit.html?id=AIGAP003" class="text-[var(--primary-color)] hover:text-[var(--primary-color)]-dark">Düzenle</a>
+                                    <button class="ml-4 text-orange-600 hover:text-orange-900">Yayınla</button>
+                                </td>
+                            </tr>
+                            <tr class="product-row" data-channels="trendyol" data-status="active" data-product-name="Ergonomik Ofis Koltuğu" data-sku="EOC004">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            <img class="h-10 w-10 rounded-full object-cover" src="https://images.unsplash.com/photo-1596541223-fa9d30009c91?q=80&w=250&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ergonomik Ofis Koltuğu">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-[var(--text-primary-color)]">Ergonomik Ofis Koltuğu</div>
+                                            <div class="text-sm text-[var(--text-secondary-color)]">Uzun çalışma saatleri için</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-secondary-color)]">EOC004</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-primary-color)]">25</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-primary-color)]">₺350.00</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-secondary-color)]">
+                                    <span class="inline-block bg-red-100 text-red-800 text-xs px-2 rounded-full">Trendyol</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Aktif</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <a href="product-add-edit.html?id=EOC004" class="text-[var(--primary-color)] hover:text-[var(--primary-color)]-dark">Düzenle</a>
+                                    <a href="product-display.html?sku=EOC004" class="ml-4 text-indigo-600 hover:text-indigo-900">Canlı Görüntüle</a>
+                                </td>
+                            </tr>
+                            <tr class="product-row" data-channels="hepsiburada" data-status="active" data-product-name="Bluetooth Hoparlör" data-sku="BTSP005">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            <img class="h-10 w-10 rounded-full object-cover" src="https://images.unsplash.com/photo-1543886566-224449842a27?q=80&w=250&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Bluetooth Hoparlör">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-[var(--text-primary-color)]">Bluetooth Hoparlör</div>
+                                            <div class="text-sm text-[var(--text-secondary-color)]">Taşınabilir ve güçlü</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-secondary-color)]">BTSP005</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-primary-color)]">80</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-primary-color)]">₺85.00</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-secondary-color)]">
+                                    <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 rounded-full">Hepsiburada</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Aktif</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <a href="product-add-edit.html?id=BTSP005" class="text-[var(--primary-color)] hover:text-[var(--primary-color)]-dark">Düzenle</a>
+                                    <a href="product-display.html?sku=BTSP005" class="ml-4 text-indigo-600 hover:text-indigo-900">Canlı Görüntüle</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Pagination Placeholder -->
+            <section class="mt-8 flex justify-center">
+                <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                    <a href="products-manage.html?page=1" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                        <span class="sr-only">Önceki</span>
+                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="products-manage.html?page=1" aria-current="page" class="z-10 bg-[var(--primary-color)] border-[var(--primary-color)] text-white relative inline-flex items-center px-4 py-2 text-sm font-medium">1</a>
+                    <a href="products-manage.html?page=2" class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">2</a>
+                    <a href="products-manage.html?page=3" class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">3</a>
+                    <span class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700">...</span>
+                    <a href="products-manage.html?page=10" class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">10</a>
+                    <a href="products-manage.html?page=2" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                        <span class="sr-only">Sonraki</span>
+                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </nav>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+    
+</div>
+</div>
+
+<!-- Load our app script at the end of the body -->
+<script src="app.js"></script>
+
+<!-- Products Page Specific Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const channelFilter = document.getElementById('channel-filter');
+        const statusFilter = document.getElementById('status-filter');
+        const productSearch = document.getElementById('product-search');
+        const productsTableBody = document.getElementById('products-table-body');
+        const allProductRows = Array.from(productsTableBody.querySelectorAll('.product-row'));
+
+        const applyFilters = () => {
+            const selectedChannel = channelFilter.value;
+            const selectedStatus = statusFilter.value;
+            const searchTerm = productSearch.value.toLowerCase();
+
+            allProductRows.forEach(row => {
+                const rowChannels = row.dataset.channels.split(','); // Array of channels
+                const rowStatus = row.dataset.status;
+                const rowProductName = row.dataset.productName.toLowerCase();
+                const rowSku = row.dataset.sku.toLowerCase();
+
+                const matchesChannel = !selectedChannel || rowChannels.includes(selectedChannel);
+                const matchesStatus = !selectedStatus || rowStatus === selectedStatus;
+                const matchesSearch = !searchTerm || rowProductName.includes(searchTerm) || rowSku.includes(searchTerm);
+
+                if (matchesChannel && matchesStatus && matchesSearch) {
+                    row.style.display = ''; // Show row
+                } else {
+                    row.style.display = 'none'; // Hide row
+                }
+            });
+        };
+
+        // Event Listeners for filters and search
+        if (channelFilter) channelFilter.addEventListener('change', applyFilters);
+        if (statusFilter) statusFilter.addEventListener('change', applyFilters);
+        if (productSearch) productSearch.addEventListener('keyup', applyFilters);
+
+        applyFilters(); // Initial filter application
+    });
+</script>
+
+</body>
+</html>

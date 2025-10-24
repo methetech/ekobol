@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Özel Özellik Aboneliği - Ekobol</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="global.css">
+</head>
+<body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div id="header-placeholder"></div>
+
+<main class="flex-1 px-4 sm:px-10 lg:px-20 py-16 lg:py-24">
+    <div class="max-w-5xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-tight mb-6">
+            Kendi Planınızı Oluşturun.
+        </h1>
+        <p class="text-lg md:text-xl text-[var(--text-secondary-color)] max-w-3xl mx-auto">
+            Sadece ihtiyacınız olan araçlar için ödeme yapın. İşletmeniz için mükemmel aboneliği oluşturmak üzere özellikleri seçin ve eşleştirin. Yıllık ödeme yaparak %20 tasarruf edin.
+        </p>
+        <div class="mt-8 flex justify-center items-center gap-4">
+            <span id="monthly-label" class="font-medium text-[var(--text-primary-color)]">Aylık</span>
+            <div id="billing-toggle" class="relative inline-block w-14 h-8 rounded-full bg-gray-200 cursor-pointer">
+                <div id="toggle-circle" class="absolute left-1 top-1 w-6 h-6 rounded-full bg-white transition-transform duration-300 shadow"></div>
+            </div>
+            <span id="yearly-label" class="font-medium text-[var(--text-secondary-color)]">Yıllık (2 Ay Ücretsiz)</span>
+        </div>
+    </div>
+    <div class="mt-20 max-w-7xl mx-auto flex flex-col lg:flex-row gap-8">
+        <div class="lg:w-2/3 flex flex-col gap-8">
+            <!-- Marketplace Tiers -->
+            <div class="border border-[var(--divider-color)] rounded-lg p-8">
+                <h3 class="text-2xl font-bold mb-4">Pazar Yeri Katmanını Seçin</h3>
+                <p class="text-[var(--text-secondary-color)] mb-6">Entegre etmeniz gereken pazar yeri sayısını seçin.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <label class="block p-4 border border-[var(--divider-color)] rounded-lg cursor-pointer hover:border-[var(--primary-color)] transition-colors">
+                        <input type="radio" name="marketplace-tier" id="marketplace-1" value="5" class="mr-2 text-[var(--primary-color)] focus:ring-[var(--primary-color)]" checked>
+                        1 Pazar Yeri <span class="font-bold">(₺200/ay)</span>
+                    </label>
+                    <label class="block p-4 border border-[var(--divider-color)] rounded-lg cursor-pointer hover:border-[var(--primary-color)] transition-colors">
+                        <input type="radio" name="marketplace-tier" id="marketplace-3" value="10" class="mr-2 text-[var(--primary-color)] focus:ring-[var(--primary-color)]">
+                        3 Pazar Yeriye Kadar <span class="font-bold">(₺400/ay)</span>
+                    </label>
+                    <label class="block p-4 border border-[var(--divider-color)] rounded-lg cursor-pointer hover:border-[var(--primary-color)] transition-colors">
+                        <input type="radio" name="marketplace-tier" id="marketplace-5" value="20" class="mr-2 text-[var(--primary-color)] focus:ring-[var(--primary-color)]">
+                        5 Pazar Yeriye Kadar <span class="font-bold">(₺800/ay)</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- AI Features -->
+            <div class="border border-[var(--divider-color)] rounded-lg p-8">
+                <h3 class="text-2xl font-bold mb-4">Yapay Zeka Destekli Özellikleri Seçin</h3>
+                <p class="text-[var(--text-secondary-color)] mb-6">Güçlü yapay zeka araçlarıyla operasyonlarınızı geliştirin.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <label class="flex items-center p-4 border border-[var(--divider-color)] rounded-lg cursor-pointer hover:border-[var(--primary-color)] transition-colors">
+                        <input type="checkbox" name="ai-features" id="ai-image-generator" value="10" class="mr-2 text-[var(--primary-color)] focus:ring-[var(--primary-color)]">
+                        Yapay Zeka Görsel Oluşturucu <span class="font-bold ml-auto">(₺400/ay)</span>
+                    </label>
+                    <label class="flex items-center p-4 border border-[var(--divider-color)] rounded-lg cursor-pointer hover:border-[var(--primary-color)] transition-colors">
+                        <input type="checkbox" name="ai-features" id="ai-description-writer" value="8" class="mr-2 text-[var(--primary-color)] focus:ring-[var(--primary-color)]">
+                        Yapay Zeka Açıklama Yazıcı <span class="font-bold ml-auto">(₺320/ay)</span>
+                    </label>
+                    <label class="flex items-center p-4 border border-[var(--divider-color)] rounded-lg cursor-pointer hover:border-[var(--primary-color)] transition-colors">
+                        <input type="checkbox" name="ai-features" id="ai-pricing-optimization" value="12" class="mr-2 text-[var(--primary-color)] focus:ring-[var(--primary-color)]">
+                        Yapay Zeka Fiyat Optimizasyonu <span class="font-bold ml-auto">(₺480/ay)</span>
+                    </label>
+                    <label class="flex items-center p-4 border border-[var(--divider-color)] rounded-lg cursor-pointer hover:border-[var(--primary-color)] transition-colors">
+                        <input type="checkbox" name="ai-features" id="ai-inventory-automation" value="15" class="mr-2 text-[var(--primary-color)] focus:ring-[var(--primary-color)]">
+                        Yapay Zeka Envanter Otomasyonu <span class="font-bold ml-auto">(₺600/ay)</span>
+                    </label>
+                    <label class="flex items-center p-4 border border-[var(--divider-color)] rounded-lg cursor-pointer hover:border-[var(--primary-color)] transition-colors">
+                        <input type="checkbox" name="ai-features" id="unified-analytics" value="7" class="mr-2 text-[var(--primary-color)] focus:ring-[var(--primary-color)]">
+                        Birleşik Analizler <span class="font-bold ml-auto">(₺280/ay)</span>
+                    </label>
+                    <label class="flex items-center p-4 border border-[var(--divider-color)] rounded-lg cursor-pointer hover:border-[var(--primary-color)] transition-colors">
+                        <input type="checkbox" name="ai-features" id="seo-optimization-tools" value="10" class="mr-2 text-[var(--primary-color)] focus:ring-[var(--primary-color)]">
+                        SEO Optimizasyon Araçları <span class="font-bold ml-auto">(₺400/ay)</span>
+                    </label>
+                    <label class="flex items-center p-4 border border-[var(--divider-color)] rounded-lg cursor-pointer hover:border-[var(--primary-color)] transition-colors">
+                        <input type="checkbox" name="ai-features" id="social-media-scheduler" value="9" class="mr-2 text-[var(--primary-color)] focus:ring-[var(--primary-color)]">
+                        Sosyal Medya Planlayıcı <span class="font-bold ml-auto">(₺360/ay)</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Card -->
+        <div class="lg:w-1/3 border border-[var(--divider-color)] rounded-lg p-8 sticky top-8 self-start bg-gray-50">
+            <h3 class="text-2xl font-bold mb-4">Özel Plan Özetiniz</h3>
+            <div class="text-center my-8">
+                <p class="text-lg text-[var(--text-secondary-color)]">Tahmini Aylık Maliyet</p>
+                <p id="total-amount" class="text-5xl font-bold text-[var(--primary-color)]">₺200.00</p>
+                <p class="text-sm text-[var(--text-secondary-color)] mt-2">(Temel/İş Ortağı Planları için işlem ücretleri hariçtir)</p>
+            </div>
+            <ul class="space-y-3 text-[var(--text-secondary-color)] text-left mb-8">
+                <li class="flex items-center"><svg class="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Esnek faturalandırma, istediğiniz zaman iptal edin</span></li>
+                <li class="flex items-center"><svg class="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Sadece kullandığınız kadar ödeyin</span></li>
+                <li class="flex items-center"><svg class="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>İşletmenizle birlikte ölçeklenir</span></li>
+            </ul>
+            <a href="signup_en.html" class="text-center w-full block rounded-full py-3 px-6 bg-[var(--primary-color)] text-white font-bold hover:shadow-xl transition-shadow">Ödeme İşlemine Devam Et</a>
+        </div>
+    </div>
+</main>
+
+<div id="footer-placeholder"></div>
+</div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
