@@ -1,8 +1,8 @@
-name: Publish ekobol STATIC to public repo
+name: Publish STATIC to root (methetech.github.io)
 
 on:
   push:
-    branches: [ "main" ]   # Yayına çıkmak istediğin branch
+    branches: [ "main" ]
   workflow_dispatch:
 
 permissions:
@@ -15,24 +15,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Secret gerçekten geliyor mu diye basit kontrol
+      # Secret var mı, yok mu önceden yakala
       - name: Assert EKOBOL token is present
         run: |
           if [ -z "${{ secrets.EKOBOL }}" ]; then
             echo "EKOBOL secret is EMPTY or not visible to this workflow"; exit 1; fi
 
-      # KÖKTEKİ statik dosyaları (index.html, static/, manifest.json, vb.)
-      # public repodaki /ekobol klasörüne basar
-      - name: Deploy to methetech.github.io/ekobol
+      # KÖKTEKİ statik dosyaları olduğu gibi ROOT'a bas
+      - name: Deploy to methetech.github.io (ROOT)
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.EKOBOL }}          # <-- Secret adı
+          personal_token: ${{ secrets.EKOBOL }}
           external_repository: methetech/methetech.github.io
-          publish_branch: main                           # Public repo Pages: main/(root)
-          publish_dir: .                                 # Bu repo KÖKÜ (gerekirse ./site gibi değiştir)
-          destination_dir: ekobol                        # URL: /ekobol/
-          keep_files: false                              # Her seferinde temiz yaz
-          exclude_assets: |                              # Gereksizleri gönderme
+          publish_branch: main
+          publish_dir: .              # gerekirse ./build veya ./dist yaparsın
+          keep_files: false
+          exclude_assets: |
             .github
             .gitignore
             README.md
