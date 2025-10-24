@@ -1,0 +1,38 @@
+name: Publish ekobol to public Pages repo
+
+on:
+  push:
+    branches: [ "main" ]   # yayınlamak istediğin branch
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm   # yarn/pnpm kullanıyorsan cache'i değiştir
+
+      # Paket yöneticini ve komutlarını kendi projene göre düzenle
+      - name: Install deps
+        run: npm ci
+
+      - name: Build
+        run: npm run build    # ÇIKTI DİZİNİNİ aşağıdaki publish_dir ile eşleştir
+
+      - name: Push built site to public repo
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.GH_PAT }}
+          external_repository: methetech/methetech.github.io
+          publish_branch: main          # public repoda Pages: main/(root)
+          publish_dir: ./build           # Vite: dist  | CRA: build | Next export: out
+          destination_dir: ekobol       # URL /ekobol/
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
