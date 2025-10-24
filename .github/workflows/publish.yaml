@@ -1,8 +1,8 @@
-name: Publish ekobol to public Pages repo
+name: Publish ekobol STATIC to public repo
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main" ]     # hangi branchtan yayınlayacaksan onu yaz
   workflow_dispatch:
 
 permissions:
@@ -12,23 +12,24 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20.x
+      # (opsiyonel) debug için dosyaları listele
+      - name: List files
+        run: ls -la
 
-      - name: Install deps
-        run: yarn install
-
-      - name: Build
-        run: yarn build         # ÇIKTI klasörün: CRA=build | Vite=dist | Next export=out
-
+      # STATİK NE VARSA KÖKTEN ALIP public repoya /ekobol altına bas
       - name: Deploy to methetech.github.io/ekobol
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.GH_PAT }}
-          external_repository: methetech/methetech.github.io
-          publish_branch: main
-          publish_dir: ./build   # Vite: ./dist | Next export: ./out
-          destination_dir: ekobol
+          external_repository: methetech/methetech.github.io   # hedef PUBLIC repo
+          publish_branch: main                                  # public repo Pages: main/(root)
+          publish_dir: .                                        # private repo KÖKÜ (index.html, static/ vs.)
+          destination_dir: ekobol                               # URL: /ekobol/
+          exclude_assets: |
+            .github
+            .gitignore
+            README.md
+            LICENSE
