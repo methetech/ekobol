@@ -2,7 +2,7 @@ name: Publish ekobol STATIC to public repo
 
 on:
   push:
-    branches: [ "main" ]     # hangi branchtan yayınlayacaksan onu yaz
+    branches: [ "main" ]   # Yayına çıkmak istediğin branch
   workflow_dispatch:
 
 permissions:
@@ -15,20 +15,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # (opsiyonel) debug için dosyaları listele
-      - name: List files
-        run: ls -la
+      # Secret gerçekten geliyor mu diye basit kontrol
+      - name: Assert EKOBOL token is present
+        run: |
+          if [ -z "${{ secrets.EKOBOL }}" ]; then
+            echo "EKOBOL secret is EMPTY or not visible to this workflow"; exit 1; fi
 
-      # STATİK NE VARSA KÖKTEN ALIP public repoya /ekobol altına bas
+      # KÖKTEKİ statik dosyaları (index.html, static/, manifest.json, vb.)
+      # public repodaki /ekobol klasörüne basar
       - name: Deploy to methetech.github.io/ekobol
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.GH_PAT }}
-          external_repository: methetech/methetech.github.io   # hedef PUBLIC repo
-          publish_branch: main                                  # public repo Pages: main/(root)
-          publish_dir: .                                        # private repo KÖKÜ (index.html, static/ vs.)
-          destination_dir: ekobol                               # URL: /ekobol/
-          exclude_assets: |
+          personal_token: ${{ secrets.EKOBOL }}          # <-- Secret adı
+          external_repository: methetech/methetech.github.io
+          publish_branch: main                           # Public repo Pages: main/(root)
+          publish_dir: .                                 # Bu repo KÖKÜ (gerekirse ./site gibi değiştir)
+          destination_dir: ekobol                        # URL: /ekobol/
+          keep_files: false                              # Her seferinde temiz yaz
+          exclude_assets: |                              # Gereksizleri gönderme
             .github
             .gitignore
             README.md
