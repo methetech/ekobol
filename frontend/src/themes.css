@@ -1,136 +1,117 @@
 
 /* themes.css */
 
-/* 1. Asfalt Kemik (Default Theme) */
 [data-theme='asfalt-kemik'] {
-  --background-color: #3d3d3d; /* Asfalt Grisi */
-  --primary-color: #f5f5dc;    /* Kemik Beyazı */
-  --secondary-color: #ff4500; /* Vurgu Rengi - Turuncu-Kırmızı */
-  --text-color: #f5f5dc;
-  --text-secondary-color: #b3b3b3;
-  --border-color: #5a5a5a;
+  --void-primary: rgba(20, 20, 20, 0.8);   /* Header background - darker asphalt, semi-transparent */
+  --void-secondary: #121212;              /* Page background - very dark gray, almost black */
+  --text-primary: #FFFFFF;                /* Main text - pure white */
+  --text-secondary: #b3b3b3;              /* Secondary text - light gray */
+  --accent-primary: #FFFFFF;              /* Buttons, links - white */
+  --accent-primary-dark: #CCCCCC;         /* Hover for accent - light gray */
+  --border-color: #333333;                /* Borders - dark gray */
 }
 
-/* 2. Light Mode */
 [data-theme='light'] {
-  --background-color: #ffffff;
-  --primary-color: #007bff;
-  --secondary-color: #6c757d;
-  --text-color: #212529;
-  --text-secondary-color: #6c757d;
+  --void-primary: rgba(255, 255, 255, 0.8);
+  --void-secondary: #f8f9fa;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --accent-primary: #007bff;
   --border-color: #dee2e6;
 }
 
-/* 3. Dark Mode */
 [data-theme='dark'] {
-  --background-color: #121212;
-  --primary-color: #bb86fc;
-  --secondary-color: #03dac6;
-  --text-color: #e1e1e1;
-  --text-secondary-color: #a8a8a8;
+  --void-primary: rgba(18, 18, 18, 0.8);
+  --void-secondary: #2c2c2c;
+  --text-primary: #e1e1e1;
+  --text-secondary: #a8a8a8;
+  --accent-primary: #bb86fc;
   --border-color: #2c2c2c;
 }
 
-/* 4. Renk Şeması - Okyanus Mavisi */
-[data-theme='ocean-blue'] {
-  --background-color: #e0f7fa;
-  --primary-color: #00796b;
-  --secondary-color: #00bcd4;
-  --text-color: #004d40;
-  --text-secondary-color: #00796b;
-  --border-color: #b2ebf2;
+[data-theme='cupcake'] {
+  --void-primary: rgba(249, 243, 245, 0.8);
+  --void-secondary: #ffffff;
+  --text-primary: #291334;
+  --text-secondary: #776a82;
+  --accent-primary: #65275d;
+  --border-color: #d0c2d9;
 }
 
-/* 5. Renk Şeması - Güneş Batımı Turuncusu */
-[data-theme='sunset-orange'] {
-  --background-color: #fff3e0;
-  --primary-color: #f57c00;
-  --secondary-color: #ff9800;
-  --text-color: #bf360c;
-  --text-secondary-color: #f57c00;
-  --border-color: #ffe0b2;
+[data-theme='bumblebee'] {
+  --void-primary: rgba(255, 252, 235, 0.8);
+  --void-secondary: #ffffff;
+  --text-primary: #3d4451;
+  --text-secondary: #7c879c;
+  --accent-primary: #f9d72f;
+  --border-color: #e3d9a8;
 }
 
-/* 6. Renk Şeması - Orman Yeşili */
-[data-theme='forest-green'] {
-  --background-color: #e8f5e9;
-  --primary-color: #388e3c;
-  --secondary-color: #4caf50;
-  --text-color: #1b5e20;
-  --text-secondary-color: #388e3c;
-  --border-color: #c8e6c9;
+[data-theme='emerald'] {
+  --void-primary: rgba(244, 249, 247, 0.8);
+  --void-secondary: #ffffff;
+  --text-primary: #333c4d;
+  --text-secondary: #7d8799;
+  --accent-primary: #66cc8a;
+  --border-color: #c5d1cb;
 }
 
-/* 7. Renk Şeması - Kraliyet Moru */
-[data-theme='royal-purple'] {
-  --background-color: #f3e5f5;
-  --primary-color: #7b1fa2;
-  --secondary-color: #9c27b0;
-  --text-color: #4a148c;
-  --text-secondary-color: #7b1fa2;
-  --border-color: #e1bee7;
+[data-theme='corporate'] {
+  --void-primary: rgba(242, 242, 242, 0.8);
+  --void-secondary: #ffffff;
+  --text-primary: #333333;
+  --text-secondary: #737373;
+  --accent-primary: #4a6eff;
+  --border-color: #cccccc;
 }
 
-/* 8. Renk Şeması - Yakut Kırmızısı */
-[data-theme='ruby-red'] {
-  --background-color: #ffebee;
-  --primary-color: #d32f2f;
-  --secondary-color: #f44336;
-  --text-color: #b71c1c;
-  --text-secondary-color: #d32f2f;
-  --border-color: #ffcdd2;
+[data-theme='synthwave'] {
+  --void-primary: rgba(26, 24, 52, 0.8);
+  --void-secondary: #2a215c;
+  --text-primary: #ffffff;
+  --text-secondary: #b8b5d8;
+  --accent-primary: #ff82ce;
+  --border-color: #4a457d;
 }
 
-/* 9. Renk Şeması - Altın Sarısı */
-[data-theme='golden-yellow'] {
-  --background-color: #fffde7;
-  --primary-color: #fbc02d;
-  --secondary-color: #ffeb3b;
-  --text-color: #f57f17;
-  --text-secondary-color: #fbc02d;
-  --border-color: #fff9c4;
+[data-theme='retro'] {
+  --void-primary: rgba(229, 220, 204, 0.8);
+  --void-secondary: #ffffff;
+  --text-primary: #2e282a;
+  --text-secondary: #7d7269;
+  --accent-primary: #ef9d00;
+  --border-color: #d4c8b0;
 }
 
-/* 10. Renk Şeması - Gece Siyahı */
-[data-theme='midnight-black'] {
-  --background-color: #000000;
-  --primary-color: #424242;
-  --secondary-color: #616161;
-  --text-color: #ffffff;
-  --text-secondary-color: #bdbdbd;
-  --border-color: #212121;
+[data-theme='cyberpunk'] {
+  --void-primary: rgba(255, 255, 51, 0.8);
+  --void-secondary: #333333;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --accent-primary: #ff00ff;
+  --border-color: #4d4d4d;
 }
 
-/* 11. Renk Şeması - Çelik Grisi */
-[data-theme='steel-gray'] {
-  --background-color: #eceff1;
-  --primary-color: #546e7a;
-  --secondary-color: #78909c;
-  --text-color: #263238;
-  --text-secondary-color: #546e7a;
-  --border-color: #cfd8dc;
+[data-theme='valentine'] {
+  --void-primary: rgba(249, 232, 239, 0.8);
+  --void-secondary: #ffffff;
+  --text-primary: #660033;
+  --text-secondary: #99004d;
+  --accent-primary: #ff3385;
+  --border-color: #f3c4d7;
 }
 
-/* 12. Renk Şeması - Toz Pembe */
-[data-theme='dusty-pink'] {
-  --background-color: #fce4ec;
-  --primary-color: #ec407a;
-  --secondary-color: #f06292;
-  --text-color: #880e4f;
-  --text-secondary-color: #ec407a;
-  --border-color: #f8bbd0;
-}
-
-/* Diğer 2 renk şeması için yer tutucu */
-[data-theme='placeholder-1'] {
-  /* ... */
-}
-[data-theme='placeholder-2'] {
-  /* ... */
+[data-theme='halloween'] {
+  --void-primary: rgba(31, 31, 31, 0.8);
+  --void-secondary: #4a4a4a;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --accent-primary: #ff7500;
+  --border-color: #666666;
 }
 
 body {
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: var(--void-secondary);
+  color: var(--text-primary);
   transition: background-color 0.3s, color 0.3s;
 }

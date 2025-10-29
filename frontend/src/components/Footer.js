@@ -1,12 +1,50 @@
-
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
+  const { t } = useTranslation();
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="w-full bg-void-secondary dark:bg-black/20 border-t border-void-secondary dark:border-white/10 p-8 text-center z-10 relative">
-      <p className="text-text-secondary text-sm">
-        © {new Date().getFullYear()} Me the Tech. Tüm Hakları Saklıdır. Ekobol bir Me the Tech markasıdır.
-      </p>
+    <footer className="bg-void-secondary text-text-secondary px-4 sm:px-10 py-8 md:py-12 transition-colors duration-300 z-10 relative">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="col-span-1 sm:col-span-2 md:col-span-1 flex flex-col items-center sm:items-start text-center sm:text-left">
+          <Link to="/" className="flex items-center gap-3 text-2xl font-bold tracking-tight text-text-primary">
+            <img src="/logo192.png" alt="Ekobol Logo" className="h-20 w-20 sm:h-24 sm:w-24" />
+          </Link>
+          <p className="mt-4 text-sm max-w-xs">{t('footer_subtitle')}</p>
+        </div>
+        <div className="text-center sm:text-left">
+          <h4 className="font-semibold text-text-primary mb-4">{t('footer_product_title')}</h4>
+          <ul className="space-y-3">
+            <li><Link to="/product" className="hover:text-accent-primary transition-colors">{t('footer_product_features')}</Link></li>
+            <li><Link to="/solutions" className="hover:text-accent-primary transition-colors">{t('footer_product_solutions')}</Link></li>
+            <li><Link to="/pricing" className="hover:text-accent-primary transition-colors">{t('footer_product_pricing')}</Link></li>
+            <li><Link to="/blog" className="hover:text-accent-primary transition-colors">{t('footer_product_updates')}</Link></li>
+          </ul>
+        </div>
+        <div className="text-center sm:text-left">
+          <h4 className="font-semibold text-text-primary mb-4">{t('footer_company_title')}</h4>
+          <ul className="space-y-3">
+            <li><Link to="/about" className="hover:text-accent-primary transition-colors">{t('footer_company_about')}</Link></li>
+            <li><Link to="/careers" className="hover:text-accent-primary transition-colors">{t('footer_company_careers')}</Link></li>
+            <li><Link to="/contact" className="hover:text-accent-primary transition-colors">{t('footer_company_contact')}</Link></li>
+            <li><Link to="/resources" className="hover:text-accent-primary transition-colors">{t('footer_company_resources')}</Link></li>
+          </ul>
+        </div>
+        <div className="text-center sm:text-left">
+          <h4 className="font-semibold text-text-primary mb-4">{t('footer_legal_title')}</h4>
+          <ul className="space-y-3">
+            <li><Link to="/terms" className="hover:text-accent-primary transition-colors">{t('footer_legal_terms')}</Link></li>
+            <li><Link to="/privacy" className="hover:text-accent-primary transition-colors">{t('footer_legal_privacy')}</Link></li>
+            <li><Link to="/cookies" className="hover:text-accent-primary transition-colors">{t('footer_legal_cookies')}</Link></li>
+          </ul>
+        </div>
+      </div>
+      <div className="mt-8 pt-6 border-t border-void-secondary text-center text-sm transition-colors duration-300">
+        <p>{t('footer_copyright', { year })}</p>
+      </div>
     </footer>
   );
 };

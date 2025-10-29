@@ -1,51 +1,79 @@
-import React, { useRef, useContext, useMemo } from 'react';
+
+import React, { useRef, useMemo, useContext, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Stars } from '@react-three/drei';
+import * as THREE from 'three';
 import { ThemeContext } from '../ThemeContext';
 
-const themeColors = {
-  'asfalt-kemik': '#FFFFFF',
-  'light': '#000000',
-  'dark': '#FFFFFF',
-  'cupcake': '#000000',
-  'bumblebee': '#000000',
-  'emerald': '#FFFFFF',
-  'corporate': '#000000',
-  'synthwave': '#FFFFFF',
-  'retro': '#000000',
-  'cyberpunk': '#FFFFFF',
-  'valentine': '#000000',
-  'halloween': '#FFFFFF',
+const Star = ({ position, color }) => {
+  const mesh = useRef();
+
+  return (
+    <mesh ref={mesh} position={position}>
+      <sphereGeometry args={[0.005, 8, 8]} /> {/* Tiny stars */}
+      <meshStandardMaterial color={color} emissive={color} emissiveIntensity={1} />
+    </mesh>
+  );
 };
 
-function AnimatedStars() {
-  const stars = useRef();
-  const { theme } = useContext(ThemeContext);
-  const color = useMemo(() => themeColors[theme] || '#FFFFFF', [theme]);
+const Stars = ({ stars }) => {
+  const group = useRef();
 
-  useFrame(() => {
-    if (stars.current) {
-      stars.current.rotation.x += 0.0001;
-      stars.current.rotation.y += 0.0001;
+  useFrame((state, delta) => {
+    if (group.current) {
+      group.current.rotation.y += delta * 0.01;
+      group.current.rotation.x += delta * 0.005;
     }
   });
 
   return (
-    <Stars ref={stars} radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} color={color} />
+    <group ref={group}>
+      {stars.map((star, i) => (
+        <Star key={i} {...star} />
+      ))}
+    </group>
   );
-}
+};
 
-function AnimatedBackground() {
+const AnimatedBackground = () => {
+  const { theme } = useContext(ThemeContext);
+  const [themeColors, setThemeColors] = useState([]);
+
+  useEffect(() => {
+    const computedStyle = getComputedStyle(document.documentElement);
+    const colors = [
+      computedStyle.getPropertyValue('--text-primary').trim(),
+      computedStyle.getPropertyValue('--text-secondary').trim(),
+      computedStyle.getPropertyValue('--accent-primary').trim(),
+    ].filter(color => color);
+
+    if (colors.length > 0) {
+        setThemeColors(colors);
+    } else {
+        setThemeColors(['#FFFFFF', '#CCCCCC', '#999999']);
+    }
+  }, [theme]);
+
+  const stars = useMemo(() => {
+    if (themeColors.length === 0) return [];
+    const temp = [];
+    for (let i = 0; i < 2000; i++) { // Lots of stars
+      const x = THREE.MathUtils.randFloatSpread(100);
+      const y = THREE.MathUtils.randFloatSpread(100);
+      const z = THREE.MathUtils.randFloatSpread(100);
+      const color = new THREE.Color(themeColors[Math.floor(Math.random() * themeColors.length)]);
+      temp.push({ position: [x, y, z], color });
+    }
+    return temp;
+  }, [themeColors]);
+
   return (
-    <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}>
-      <Canvas>
-        <ambientLight intensity={0.5} />
-        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-        <pointLight position={[-10, -10, -10]} />
-        <AnimatedStars />
+    <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}>
+      <Canvas camera={{ position: [0, 0, 1], fov: 75 }}>
+        <ambientLight intensity={0.1} />
+        <Stars stars={stars} />
       </Canvas>
     </div>
   );
-}
+};
 
 export default AnimatedBackground;
