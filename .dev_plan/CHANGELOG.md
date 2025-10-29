@@ -2,6 +2,17 @@
 
 All significant changes made to the `ekobol.com` project will be documented here.
 
+## [2025-10-29] - Routing and Page Implementation
+
+- **ADDED:** Installed `react-router-dom` to handle client-side routing.
+- **ADDED:** Created new page components in `frontend/src/pages/`: `Solutions.js`, `Pricing.js`, `Resources.js`, `About.js`, and `Contact.js`.
+- **MODIFIED:** Migrated content from the corresponding static HTML files (`solutions.html`, `pricing.html`, etc.) into the new React page components.
+- **MODIFIED:** Updated `public/locales/tr/translation.json` and `public/locales/en/translation.json` with the text content for all the new pages.
+- **MODIFIED:** Refactored `App.js` to implement the main routing structure using `<BrowserRouter>`, `<Routes>`, and `<Route>`, mapping paths to their respective page components.
+- **MODIFIED:** Updated `Header.js` to replace placeholder buttons with `react-router-dom`'s `<Link>` components for seamless client-side navigation.
+- **ADDED:** Added "About" and "Contact" links to the main navigation in `Header.js`.
+- **FIXED:** Corrected translation keys in `Header.js` for "About" and "Contact" links.
+
 ## [2025-10-29] - React Application Migration & Core Feature Implementation
 
 - **ADDED:** Initialized React application in the `frontend/` directory.

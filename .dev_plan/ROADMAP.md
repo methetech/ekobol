@@ -26,6 +26,6 @@ This document outlines the planned development steps for `ekobol.com`.
 - [ ] Conduct internet research for cutting-edge web technologies and visual effects.
 - [x] Implement "Crazy Cool" 3D Effects (e.g., Three.js, react-three-fiber for subtle background animations)
 - [ ] Further performance optimizations and code splitting
-- [ ] Implement React Router for navigation between pages
-- [ ] Convert remaining static HTML pages to React components and integrate into routing
+- [x] Implement React Router for navigation between pages
+- [x] Convert remaining static HTML pages to React components and integrate into routing
 - [ ] Integrate dynamic data (if applicable) and API calls
