@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ThemeContext } from '../ThemeContext';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -29,27 +30,28 @@ const Header = () => {
 
   const navLinks = isLoggedIn ? (
     <>
-      <button type="button" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('dashboard')}</button>
-      <button type="button" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('orders')}</button>
-      <button type="button" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('products')}</button>
-      <button type="button" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('marketing')}</button>
-      <button type="button" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('analytics')}</button>
-      <button type="button" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('finances')}</button>
+      <Link to="/dashboard" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('dashboard')}</Link>
+      <Link to="/orders" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('orders')}</Link>
+      <Link to="/products" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('products')}</Link>
+      <Link to="/marketing" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('marketing')}</Link>
+      <Link to="/analytics" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('analytics')}</Link>
+      <Link to="/finances" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('finances')}</Link>
     </>
   ) : (
     <>
-      <button type="button" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('product')}</button>
-      <button type="button" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('solutions')}</button>
-      <button type="button" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('resources')}</button>
-      <button type="button" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('pricing')}</button>
+      <Link to="/solutions" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('solutions')}</Link>
+      <Link to="/pricing" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('pricing')}</Link>
+      <Link to="/resources" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('resources')}</Link>
+      <Link to="/about" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('about')}</Link>
+      <Link to="/contact" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('contact')}</Link>
     </>
   );
 
   return (
     <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-void-secondary px-4 sm:px-10 py-4 transition-colors duration-300 relative z-20">
-      <a id="logo-link" className="flex items-center gap-3 text-2xl font-bold tracking-tight" href="index.html">
+      <Link to="/" id="logo-link" className="flex items-center gap-3 text-2xl font-bold tracking-tight">
           <img src="/ekobol.ico" alt="Ekobol Logo" className="h-16 w-16 sm:h-20 sm:w-20 lg:h-24 lg:w-24" />
-      </a>
+      </Link>
 
       {/* Desktop Navigation */}
       <nav className="hidden md:flex items-center gap-8">
@@ -78,10 +80,10 @@ const Header = () => {
                 </button>
             ) : (
                 <>
-                    <button type="button" className="hidden sm:inline-block text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('login')}</button>
-                    <button type="button" className="flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-accent-primary text-void-primary text-base font-bold leading-normal tracking-wide shadow-lg transition-colors duration-300 hover:bg-accent-primary-dark">
+                    <Link to="/login" className="hidden sm:inline-block text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('login')}</Link>
+                    <Link to="/signup" className="flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-accent-primary text-void-primary text-base font-bold leading-normal tracking-wide shadow-lg transition-colors duration-300 hover:bg-accent-primary-dark">
                         <span className="truncate">{t('start_free')}</span>
-                    </button>
+                    </Link>
                 </>
             )}
         </div>
@@ -98,9 +100,9 @@ const Header = () => {
       )}
       <div className={`fixed inset-y-0 right-0 w-64 bg-void-primary shadow-lg z-40 transform transition-transform duration-300 md:hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="flex items-center justify-between px-4 py-4 border-b border-void-secondary">
-              <a className="flex items-center gap-3 text-xl font-bold tracking-tight" href="index.html">
+              <Link to="/" className="flex items-center gap-3 text-xl font-bold tracking-tight">
                   <img src="/ekobol.ico" alt="Ekobol Logo" className="h-16 w-16" />
-              </a>
+              </Link>
               <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 rounded-full text-text-secondary hover:bg-void-secondary transition-colors">
                   <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
               </button>
@@ -114,12 +116,12 @@ const Header = () => {
                       </button>
                   ) : (
                       <>
-                          <button type="button" className="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-accent-primary text-void-primary text-base font-bold leading-normal tracking-wide shadow-lg transition-colors duration-300 hover:bg-accent-primary-dark">
+                          <Link to="/signup" className="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-accent-primary text-void-primary text-base font-bold leading-normal tracking-wide shadow-lg transition-colors duration-300 hover:bg-accent-primary-dark">
                               <span className="truncate">{t('start_free')}</span>
-                          </button>
-                          <button type="button" className="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-transparent border-2 border-accent-primary text-accent-primary text-base font-bold leading-normal transition-colors duration-300 hover:bg-accent-primary hover:text-void-primary">
+                          </Link>
+                          <Link to="/login" className="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-transparent border-2 border-accent-primary text-accent-primary text-base font-bold leading-normal transition-colors duration-300 hover:bg-accent-primary hover:text-void-primary">
                               <span className="truncate">{t('login')}</span>
-                          </button>
+                          </Link>
                       </>
                   )}
               </div>

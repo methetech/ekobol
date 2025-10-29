@@ -38,5 +38,207 @@
   "finances": "Finances",
   "login": "Login",
   "logout": "Logout",
-  "start_free": "Start Free"
+  "start_free": "Start Free",
+  "about": "About Us",
+  "contact": "Contact Us",
+  "solutions": {
+    "title": {
+      "part1": "One Platform,",
+      "part2": "Infinite Strategy."
+    },
+    "subtitle": "Whether you are a creative artisan, a growing brand, or an established manufacturer... Choose one of the strategic paths designed to build your empire.",
+    "artisan": {
+      "title": "For the Artisan Ruler: Basic Plan",
+      "description": "For those who like to be in control but hate repetitive tasks. The basic plan provides full access to our AI-powered platform for a fair 10% profit share. You manage the strategy, we automate the drudgery and give you back your most valuable asset: time.",
+      "link": "View the Strategy",
+      "alt": "An artisan ruler working in their workshop"
+    },
+    "architect": {
+      "title": "For the Empire Architect: Partner Plan",
+      "description": "Your genius is in creating great products, not managing digital operations. With the 50/50 Partner Plan, you just produce and ship. We'll take care of the rest: build your brand, run your marketing, optimize your listings. We build your empire on your behalf.",
+      "link": "Partner Up",
+      "alt": "Empire architects collaborating on a project"
+    },
+    "strategist": {
+      "title": "For the Master Strategist: Dynamic Plan",
+      "description": "Your needs evolve. The Dynamic Plan offers an adjustable revenue share based on the workload between you and our platform. As you take on more responsibility, your profit share increases. This is the ultimate flexible partnership for growing businesses.",
+      "link": "Discover Flexibility",
+      "alt": "Strategists planning on a map"
+    }
+  },
+  "pricing": {
+    "title": {
+      "part1": "Not Fair Pricing,",
+      "part2": "Strategic Investment."
+    },
+    "subtitle": "The scale of your empire is determined by the strength of the alliance you choose. No hidden costs. Only shared victory.",
+    "pacts": {
+      "rebel": {
+        "title": "Rebel Pact",
+        "subtitle": "For the lone warriors who stay in control.",
+        "price": "10%",
+        "period": " / of profit",
+        "features": [
+          {
+            "name": "Full Access to",
+            "desc": "Genesis Engine"
+          },
+          {
+            "desc": "Entire",
+            "name": "AI Arsenal"
+          },
+          "Unlimited Channel Integration",
+          {
+            "name": "Unified",
+            "desc": "Command Center"
+          }
+        ],
+        "cta": "Initiate Pact"
+      },
+      "ruler": {
+        "badge": "RECOMMENDED DECREE",
+        "title": "Ruler's Decree",
+        "subtitle": "For those who only set the vision.",
+        "price": "50%",
+        "period": " / of profit",
+        "features": [
+          {
+            "name": "Everything in Rebel Pact, PLUS:",
+            "desc": ""
+          },
+          "Professional Brand & Website Build",
+          "Full Digital Marketing Management (SEO, Ads)",
+          "Comprehensive Operations Management",
+          "Dedicated Growth Strategist"
+        ],
+        "cta": "Approve Decree"
+      },
+      "blacksmith": {
+        "title": "Blacksmith's Forge",
+        "subtitle": "For the masters who forge their own arsenal.",
+        "price": "$20",
+        "period": "/mo",
+        "features": [
+          "Create your own plan with marketplace tiers and AI tools",
+          "Cancel or adjust anytime",
+          "20% discount on annual payments"
+        ],
+        "cta": "Fire the Forge"
+      }
+    },
+    "alliances": {
+      "title": "Custom Alliances",
+      "subtitle": "Beyond the standard pacts, for special missions.",
+      "dynamic": {
+        "title": "Dynamic Alliance",
+        "description": "A flexible partnership that shares the workload and constantly adjusts the profit share. It evolves with you."
+      },
+      "build_transfer": {
+        "title": "Build and Transfer Decree",
+        "description": "We build your empire for you and hand you the keys. A one-time, powerful start."
+      }
+    },
+    "faq": {
+      "title": "War Council: FAQ",
+      "subtitle": "What you need to know before setting your strategy.",
+      "questions": [
+        {
+          "q": "What exactly does \"% of Profit\" mean?",
+          "a": "Profit is the net revenue after product costs and marketplace commissions are deducted. We show every penny transparently in your finance panel. Nothing is hidden."
+        },
+        {
+          "q": "Can I change or cancel my plan at any time?",
+          "a": "Yes. The decree is yours. There are no long-term commitments. You can upgrade, downgrade, or cancel your plan for your next billing cycle at any time."
+        },
+        {
+          "q": "Who owns the website and brand in the Ruler's Decree?",
+          "a": "You. We build and manage on your behalf, but all intellectual property rights and assets are entirely yours. We are just the loyal architects of your empire."
+        }
+      ]
+    }
+  },
+  "resources": {
+    "title": "Grow More and Smarter.",
+    "subtitle": "Dive into our collection of resources designed to help you succeed in the ever-changing world of e-commerce.",
+    "links": {
+      "blog": {
+        "title": "Ekobol Blog",
+        "description": "Stay up-to-date with the latest e-commerce trends, AI strategies, and tips for multi-marketplace success.",
+        "cta": "Read Now"
+      },
+      "success_stories": {
+        "title": "Success Stories",
+        "description": "See how real businesses have scaled their operations and increased their revenue with Ekobol.",
+        "cta": "See the Results"
+      },
+      "help_center": {
+        "title": "Help Center & Docs",
+        "description": "Find step-by-step guides, technical documentation, and answers to frequently asked questions.",
+        "cta": "Get Support"
+      },
+      "webinars": {
+        "title": "Webinars & Tutorials",
+        "description": "Watch on-demand webinars and video tutorials to learn about Ekobol's features and advanced e-commerce strategies.",
+        "cta": "Watch & Learn"
+      }
+    }
+  },
+  "about": {
+    "title": {
+      "line1": "We are the Builders, the Dreamers, and",
+      "line2": "Your Partners in Growth."
+    },
+    "subtitle": "Ekobol was born from a simple idea: e-commerce should be about great products, not tedious processes. We are Me the Tech, and Ekobol is our answer to the complex digital world.",
+    "founders": {
+      "title": "Meet the Founders",
+      "subtitle": "The driving force behind Ekobol's innovation and architecture.",
+      "members": [
+        {
+          "name": "Mete Avcı",
+          "role": "AI, UX & Frontend Visionary",
+          "bio": "Mete is obsessed with the user. He designed Ekobol's intuitive interface and leads the development of our groundbreaking AI features, ensuring that powerful technology feels effortless and magical."
+        },
+        {
+          "name": "Doğa Aydın",
+          "role": "Full-Stack & Systems Architect",
+          "bio": "Doğa is the backbone of Ekobol. He engineered the robust, scalable, and secure full-stack architecture that ensures real-time synchronization and flawless performance across countless marketplaces."
+        }
+      ]
+    },
+    "philosophy": {
+      "title": "Our Philosophy: Me the Tech",
+      "content": {
+        "part1": "Ekobol is the first product of ",
+        "part2": "Me the Tech",
+        "part3": ". Our philosophy is that technology should be an extension of human creativity, not a barrier to it. We build \"thinking codes and working systems\" that act like living organisms. From AI-powered graphic design to intelligent web infrastructures, we infuse every code we write with purpose and intelligence. Ekobol is the embodiment of this vision, created for you to build your digital empire."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Have questions about the Dynamic Plan, partnerships, or anything else? Our team is ready to help you.",
+    "info": {
+      "title": "Contact Information",
+      "general": {
+        "title": "General Inquiries",
+        "description": "For questions about features and support."
+      },
+      "sales": {
+        "title": "Sales & Partnerships",
+        "description": "For custom plans and collaborations."
+      }
+    },
+    "form": {
+      "name": {
+        "label": "Your Name"
+      },
+      "email": {
+        "label": "Your Email Address"
+      },
+      "message": {
+        "label": "Your Message"
+      },
+      "submit": "Send Message"
+    }
+  }
 }

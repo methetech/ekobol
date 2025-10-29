@@ -38,5 +38,207 @@
   "finances": "Finans",
   "login": "Giriş Yap",
   "logout": "Çıkış Yap",
-  "start_free": "Ücretsiz Başla"
+  "start_free": "Ücretsiz Başla",
+  "about": "Hakkımızda",
+  "contact": "İletişim",
+  "solutions": {
+    "title": {
+      "part1": "Tek Platform,",
+      "part2": "Sonsuz Strateji."
+    },
+    "subtitle": "Yaratıcı bir zanaatkar, büyüyen bir marka veya köklü bir üretici... İmparatorluğunuzu inşa etmek için tasarlanmış stratejik yollardan birini seçin.",
+    "artisan": {
+      "title": "Zanaatkâr Hükümdar İçin: Temel Plan",
+      "description": "Kontrolü elinde tutmayı seven ama tekrar eden işlerden nefret edenler için. Temel plan, %10'luk adil bir kâr payı karşılığında YZ destekli platformumuza tam erişim sağlar. Stratejiyi siz yönetin, biz angaryayı otomatikleştirelim ve size en değerli varlığınız olan zamanı geri verelim.",
+      "link": "Stratejiyi Görüntüle",
+      "alt": "Zanaatkar bir hükümdar atölyesinde çalışıyor"
+    },
+    "architect": {
+      "title": "İmparatorluk Mimarı İçin: Partner Planı",
+      "description": "Sizin dehanız harika ürünler yaratmakta, dijital operasyonları yönetmekte değil. 50/50 Partner Planı ile siz sadece üretin ve gönderin. Gerisini biz hallederiz: markanızı inşa eder, pazarlamanızı yürütür, listelemelerinizi optimize ederiz. İmparatorluğunuzu sizin adınıza biz kurarız.",
+      "link": "Ortaklık Kur",
+      "alt": "İmparatorluk mimarları bir proje üzerinde işbirliği yapıyor"
+    },
+    "strategist": {
+      "title": "Usta Stratejist İçin: Dinamik Plan",
+      "description": "İhtiyaçlarınız evrimleşir. Dinamik Plan, siz ve platformumuz arasındaki iş yüküne dayalı, ayarlanabilir bir gelir payı sunar. Siz daha fazla sorumluluk aldıkça, kâr payınız artar. Bu, büyüyen işletmeler için nihai esnek ortaklıktır.",
+      "link": "Esnekliği Keşfet",
+      "alt": "Stratejistler bir harita üzerinde planlama yapıyor"
+    }
+  },
+  "pricing": {
+    "title": {
+      "part1": "Adil Fiyatlandırma Değil,",
+      "part2": "Stratejik Yatırım."
+    },
+    "subtitle": "İmparatorluğunuzun ölçeği, seçtiğiniz ittifakın gücüyle belirlenir. Gizli maliyetler yok. Sadece paylaşılan zafer var.",
+    "pacts": {
+      "rebel": {
+        "title": "Asi Paktı",
+        "subtitle": "Kontrolü elinde tutan yalnız savaşçılar için.",
+        "price": "%10",
+        "period": " / kârdan",
+        "features": [
+          {
+            "name": "Genesis Motoruna",
+            "desc": "Tam Erişim"
+          },
+          {
+            "desc": "Tüm",
+            "name": "YZ Cephaneliği"
+          },
+          "Sınırsız Kanal Entegrasyonu",
+          {
+            "name": "Komuta Merkezi",
+            "desc": "Birleşik"
+          }
+        ],
+        "cta": "Paktı Başlat"
+      },
+      "ruler": {
+        "badge": "TAVSİYE EDİLEN FERMAN",
+        "title": "Hükümdar Fermanı",
+        "subtitle": "Sadece vizyonu belirleyenler için.",
+        "price": "%50",
+        "period": " / kârdan",
+        "features": [
+          {
+            "name": "Asi Paktı'ndaki Her Şey, ARTI:",
+            "desc": ""
+          },
+          "Profesyonel Marka & Web Sitesi İnşası",
+          "Tam Dijital Pazarlama Yönetimi (SEO, Reklam)",
+          "Kapsamlı Operasyon Yönetimi",
+          "Size Atanmış Büyüme Stratejisti"
+        ],
+        "cta": "Fermanı Onayla"
+      },
+      "blacksmith": {
+        "title": "Demirci Ocağı",
+        "subtitle": "Kendi cephaneliğini döven ustalar için.",
+        "price": "₺200",
+        "period": "/ay'dan",
+        "features": [
+          "Pazar yeri katmanları ve YZ araçlarıyla kendi planınızı yaratın",
+          "İstediğiniz zaman iptal edin veya ayarlayın",
+          "Yıllık ödemelerde %20 indirim"
+        ],
+        "cta": "Ocağı Ateşle"
+      }
+    },
+    "alliances": {
+      "title": "Ismarlama İttifaklar",
+      "subtitle": "Standart paktların ötesinde, özel görevler için.",
+      "dynamic": {
+        "title": "Dinamik İttifak",
+        "description": "İş yükünü bölüşen, kâr payını sürekli ayarlayan esnek bir ortaklık. Sizinle birlikte evrilir."
+      },
+      "build_transfer": {
+        "title": "Kur ve Devret Fermanı",
+        "description": "İmparatorluğunuzu sizin için kurar, anahtarları size teslim ederiz. Tek seferlik, güçlü bir başlangıç."
+      }
+    },
+    "faq": {
+      "title": "Savaş Konseyi: SSS",
+      "subtitle": "Stratejinizi belirlemeden önce bilmeniz gerekenler.",
+      "questions": [
+        {
+          "q": "\"% Kârdan\" tam olarak ne anlama geliyor?",
+          "a": "Kâr, ürün maliyetleri ve pazar yeri komisyonları düşüldükten sonraki net gelirdir. Finans panelinizde her kuruşu şeffaf bir şekilde gösteriyoruz. Gizli hiçbir şey yok."
+        },
+        {
+          "q": "Planımı istediğim zaman değiştirebilir veya iptal edebilir miyim?",
+          "a": "Evet. Ferman sizindir. Hiçbir uzun vadeli zorunluluk yok. Planınızı bir sonraki fatura döneminiz için istediğiniz zaman yükseltebilir, düşürebilir veya iptal edebilirsiniz."
+        },
+        {
+          "q": "Hükümdar Fermanı'nda web sitesi ve marka kime ait oluyor?",
+          "a": "Size. Biz sizin adınıza inşa eder ve yönetiriz, ancak tüm fikri mülkiyet hakları ve varlıklar tamamen size aittir. Biz sadece sizin imparatorluğunuzun sadık mimarlarıyız."
+        }
+      ]
+    }
+  },
+  "resources": {
+    "title": "Hem Daha Çok Hem Daha Akıllıca Büyüyün.",
+    "subtitle": "Sürekli değişen e-ticaret dünyasında başarılı olmanıza yardımcı olmak için tasarlanmış kaynak koleksiyonumuza dalın.",
+    "links": {
+      "blog": {
+        "title": "Ekobol Blog",
+        "description": "En son e-ticaret trendleri, YZ stratejileri ve çoklu pazar yeri başarısı için ipuçları ile güncel kalın.",
+        "cta": "Şimdi Oku"
+      },
+      "success_stories": {
+        "title": "Başarı Hikayeleri",
+        "description": "Gerçek işletmelerin Ekobol ile operasyonlarını nasıl ölçeklendirdiğini ve gelirlerini nasıl artırdığını görün.",
+        "cta": "Sonuçları Gör"
+      },
+      "help_center": {
+        "title": "Yardım Merkezi & Dokümanlar",
+        "description": "Adım adım kılavuzlar, teknik belgeler ve sıkça sorulan soruların yanıtlarını bulun.",
+        "cta": "Destek Al"
+      },
+      "webinars": {
+        "title": "Webinarlar & Eğitimler",
+        "description": "Ekobol'ün özelliklerini ve gelişmiş e-ticaret stratejilerini öğrenmek için talep üzerine webinarları ve video eğitimlerini izleyin.",
+        "cta": "İzle & Öğren"
+      }
+    }
+  },
+  "about": {
+    "title": {
+      "line1": "Biz İnşa Edenler, Hayal Kuranlar ve",
+      "line2": "Büyümedeki Ortaklarınızız."
+    },
+    "subtitle": "Ekobol basit bir fikirden doğdu: e-ticaret harika ürünlerle ilgili olmalı, sıkıcı süreçlerle değil. Biz Me the Tech'iz ve Ekobol, karmaşık dijital dünyaya cevabımızdır.",
+    "founders": {
+      "title": "Kurucularla Tanışın",
+      "subtitle": "Ekobol'ün yenilikçiliğinin ve mimarisinin arkasındaki itici güç.",
+      "members": [
+        {
+          "name": "Mete Avcı",
+          "role": "YZ, UX & Frontend Vizyoneri",
+          "bio": "Mete, kullanıcıya takıntılıdır. Ekobol'ün sezgisel arayüzünü tasarladı ve çığır açan YZ özelliklerimizin geliştirilmesine liderlik ederek güçlü teknolojinin zahmetsiz ve sihirli hissettirmesini sağlıyor."
+        },
+        {
+          "name": "Doğa Aydın",
+          "role": "Full-Stack & Sistem Mimarı",
+          "bio": "Doğa, Ekobol'ün bel kemiğidir. Sayısız pazar yerinde gerçek zamanlı senkronizasyon ve kusursuz performans sağlayan sağlam, ölçeklenebilir ve güvenli full-stack mimarisini tasarladı."
+        }
+      ]
+    },
+    "philosophy": {
+      "title": "Felsefemiz: Me the Tech",
+      "content": {
+        "part1": "Ekobol, ",
+        "part2": "Me the Tech",
+        "part3": "'in ilk ürünüdür. Felsefemiz, teknolojinin insan yaratıcılığının bir engeli değil, bir uzantısı olması gerektiğidir. Canlılar gibi hareket eden \"düşünen kodlar ve çalışan sistemler\" inşa ediyoruz. Yapay zeka destekli grafik tasarımdan akıllı web altyapılarına kadar, yazdığımız her koda amaç ve zeka katıyoruz. Ekobol, dijital imparatorluğunuzu kurmanız için yaratılmış bu vizyonun somutlaşmış halidir."
+      }
+    }
+  },
+  "contact": {
+    "title": "Bize Ulaşın",
+    "subtitle": "Dinamik Plan, ortaklıklar veya başka bir konuda sorularınız mı var? Ekibimiz size yardımcı olmaya hazır.",
+    "info": {
+      "title": "İletişim Bilgileri",
+      "general": {
+        "title": "Genel Sorular",
+        "description": "Özellikler ve destek hakkındaki sorularınız için."
+      },
+      "sales": {
+        "title": "Satış & Ortaklıklar",
+        "description": "Özel planlar ve işbirlikleri için."
+      }
+    },
+    "form": {
+      "name": {
+        "label": "Adınız"
+      },
+      "email": {
+        "label": "E-posta Adresiniz"
+      },
+      "message": {
+        "label": "Mesajınız"
+      },
+      "submit": "Mesaj Gönder"
+    }
+  }
 }
