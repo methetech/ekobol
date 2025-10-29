@@ -1,4 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
+import { ThemeContext } from '../ThemeContext';
+import Prism from '../components/Prism';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
@@ -37,10 +39,42 @@ const HomePage = () => {
     };
   }, []);
 
+  const { theme } = useContext(ThemeContext);
+
+  const themeHueMap = {
+    'asfalt-kemik': 0,
+    'light': 3.14,
+    'dark': 4.71,
+    'cupcake': 5.2,
+    'bumblebee': 0.8,
+    'emerald': 2.5,
+    'corporate': 4,
+    'synthwave': 5.5,
+    'retro': 0.7,
+    'cyberpunk': 5.8,
+    'valentine': 5.8,
+    'halloween': 0.5,
+  };
+
+  const hueShift = themeHueMap[theme] || 0;
+
   return (
     <div>
       {/* Hero Section */}
       <section className="px-4 sm:px-10 lg:px-20 py-24 lg:py-40 text-center relative" data-aos="fade-up">
+        <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex: -1, opacity: 0.5 }}>
+          <Prism
+            animationType="rotate"
+            timeScale={0.5}
+            height={3.5}
+            baseWidth={5.5}
+            scale={3.6}
+            hueShift={hueShift}
+            colorFrequency={1}
+            noise={0.5}
+            glow={1}
+          />
+        </div>
         <div className="max-w-5xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tighter leading-tight mb-6 text-text-primary dark:hero-glow">
             {t('hero_title')}
