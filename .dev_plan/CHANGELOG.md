@@ -2,6 +2,14 @@
 
 All significant changes made to the `ekobol.com` project will be documented here.
 
+## [2025-10-29] - Pricing Page i18n Debugging
+
+- **FIXED:** Added `Array.isArray` checks to `Pricing.js` to prevent crashes when translation keys do not return arrays.
+- **MODIFIED:** Wrapped `App` component with `I18nextProvider` in `index.js` to explicitly provide the `i18n` instance.
+- **FIXED:** Corrected `i18n` import in `Pricing.js` to import from `../i18n` instead of `react-i18next`.
+- **DEBUG:** Added `console.log` statements to `Pricing.js` to inspect `i18n.isInitialized` and translation key values.
+- **ISSUE:** Translations on the Pricing page are still not being displayed correctly, indicating a deeper issue with i18n loading or processing.
+
 ## [2025-10-29] - Routing and Page Implementation
 
 - **ADDED:** Installed `react-router-dom` to handle client-side routing.

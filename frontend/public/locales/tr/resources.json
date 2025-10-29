@@ -1,0 +1,28 @@
+{
+  "resources": {
+    "title": "Hem Daha Çok Hem Daha Akıllıca Büyüyün.",
+    "subtitle": "Sürekli değişen e-ticaret dünyasında başarılı olmanıza yardımcı olmak için tasarlanmış kaynak koleksiyonumuza dalın.",
+    "links": {
+      "blog": {
+        "title": "Ekobol Blog",
+        "description": "En son e-ticaret trendleri, YZ stratejileri ve çoklu pazar yeri başarısı için ipuçları ile güncel kalın.",
+        "cta": "Şimdi Oku"
+      },
+      "success_stories": {
+        "title": "Başarı Hikayeleri",
+        "description": "Gerçek işletmelerin Ekobol ile operasyonlarını nasıl ölçeklendirdiğini ve gelirlerini nasıl artırdığını görün.",
+        "cta": "Sonuçları Gör"
+      },
+      "help_center": {
+        "title": "Yardım Merkezi & Dokümanlar",
+        "description": "Adım adım kılavuzlar, teknik belgeler ve sıkça sorulan soruların yanıtlarını bulun.",
+        "cta": "Destek Al"
+      },
+      "webinars": {
+        "title": "Webinarlar & Eğitimler",
+        "description": "Ekobol'ün özelliklerini ve gelişmiş e-ticaret stratejilerini öğrenmek için talep üzerine webinarları ve video eğitimlerini izleyin.",
+        "cta": "İzle & Öğren"
+      }
+    }
+  }
+}

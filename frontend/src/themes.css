@@ -9,6 +9,14 @@
   --accent-primary: #FFFFFF;              /* Buttons, links - white */
   --accent-primary-dark: #CCCCCC;         /* Hover for accent - light gray */
   --border-color: #333333;                /* Borders - dark gray */
+
+  --glass-surface-background: hsla(0, 0%, 100%, 0.05);
+  --glass-surface-border-color: hsla(0, 0%, 100%, 0.1);
+  --glass-surface-shadow-color: hsla(0, 0%, 0%, 0.1);
+  --glass-surface-highlight-start: hsla(0, 0%, 100%, 0.1);
+  --glass-surface-highlight-end: hsla(0, 0%, 100%, 0);
+  --glass-surface-shadow-start: hsla(0, 0%, 0%, 0.1);
+  --glass-surface-shadow-end: hsla(0, 0%, 0%, 0);
 }
 
 [data-theme='light'] {
@@ -18,6 +26,14 @@
   --text-secondary: #6c757d;
   --accent-primary: #007bff;
   --border-color: #dee2e6;
+
+  --glass-surface-background: hsla(0, 0%, 0%, 0.05);
+  --glass-surface-border-color: hsla(0, 0%, 0%, 0.1);
+  --glass-surface-shadow-color: hsla(0, 0%, 0%, 0.1);
+  --glass-surface-highlight-start: hsla(0, 0%, 100%, 0.2);
+  --glass-surface-highlight-end: hsla(0, 0%, 100%, 0);
+  --glass-surface-shadow-start: hsla(0, 0%, 0%, 0.1);
+  --glass-surface-shadow-end: hsla(0, 0%, 0%, 0);
 }
 
 [data-theme='dark'] {
@@ -27,6 +43,14 @@
   --text-secondary: #a8a8a8;
   --accent-primary: #bb86fc;
   --border-color: #2c2c2c;
+
+  --glass-surface-background: hsla(0, 0%, 100%, 0.05);
+  --glass-surface-border-color: hsla(0, 0%, 100%, 0.1);
+  --glass-surface-shadow-color: hsla(0, 0%, 0%, 0.1);
+  --glass-surface-highlight-start: hsla(0, 0%, 100%, 0.1);
+  --glass-surface-highlight-end: hsla(0, 0%, 100%, 0);
+  --glass-surface-shadow-start: hsla(0, 0%, 0%, 0.1);
+  --glass-surface-shadow-end: hsla(0, 0%, 0%, 0);
 }
 
 [data-theme='cupcake'] {
@@ -36,6 +60,14 @@
   --text-secondary: #776a82;
   --accent-primary: #65275d;
   --border-color: #d0c2d9;
+
+  --glass-surface-background: hsla(330, 33%, 97%, 0.5);
+  --glass-surface-border-color: hsla(330, 33%, 90%, 0.5);
+  --glass-surface-shadow-color: hsla(330, 33%, 50%, 0.1);
+  --glass-surface-highlight-start: hsla(330, 33%, 99%, 0.8);
+  --glass-surface-highlight-end: hsla(330, 33%, 99%, 0);
+  --glass-surface-shadow-start: hsla(330, 33%, 50%, 0.1);
+  --glass-surface-shadow-end: hsla(330, 33%, 50%, 0);
 }
 
 [data-theme='bumblebee'] {
@@ -45,6 +77,14 @@
   --text-secondary: #7c879c;
   --accent-primary: #f9d72f;
   --border-color: #e3d9a8;
+
+  --glass-surface-background: hsla(51, 93%, 87%, 0.5);
+  --glass-surface-border-color: hsla(51, 93%, 80%, 0.5);
+  --glass-surface-shadow-color: hsla(51, 93%, 50%, 0.1);
+  --glass-surface-highlight-start: hsla(51, 93%, 95%, 0.8);
+  --glass-surface-highlight-end: hsla(51, 93%, 95%, 0);
+  --glass-surface-shadow-start: hsla(51, 93%, 50%, 0.1);
+  --glass-surface-shadow-end: hsla(51, 93%, 50%, 0);
 }
 
 [data-theme='emerald'] {
@@ -54,6 +94,14 @@
   --text-secondary: #7d8799;
   --accent-primary: #66cc8a;
   --border-color: #c5d1cb;
+
+  --glass-surface-background: hsla(145, 46%, 96%, 0.5);
+  --glass-surface-border-color: hsla(145, 46%, 90%, 0.5);
+  --glass-surface-shadow-color: hsla(145, 46%, 50%, 0.1);
+  --glass-surface-highlight-start: hsla(145, 46%, 99%, 0.8);
+  --glass-surface-highlight-end: hsla(145, 46%, 99%, 0);
+  --glass-surface-shadow-start: hsla(145, 46%, 50%, 0.1);
+  --glass-surface-shadow-end: hsla(145, 46%, 50%, 0);
 }
 
 [data-theme='corporate'] {
@@ -63,6 +111,14 @@
   --text-secondary: #737373;
   --accent-primary: #4a6eff;
   --border-color: #cccccc;
+
+  --glass-surface-background: hsla(0, 0%, 95%, 0.5);
+  --glass-surface-border-color: hsla(0, 0%, 85%, 0.5);
+  --glass-surface-shadow-color: hsla(0, 0%, 50%, 0.1);
+  --glass-surface-highlight-start: hsla(0, 0%, 98%, 0.8);
+  --glass-surface-highlight-end: hsla(0, 0%, 98%, 0);
+  --glass-surface-shadow-start: hsla(0, 0%, 50%, 0.1);
+  --glass-surface-shadow-end: hsla(0, 0%, 50%, 0);
 }
 
 [data-theme='synthwave'] {
@@ -72,6 +128,14 @@
   --text-secondary: #b8b5d8;
   --accent-primary: #ff82ce;
   --border-color: #4a457d;
+
+  --glass-surface-background: hsla(245, 41%, 23%, 0.5);
+  --glass-surface-border-color: hsla(245, 41%, 33%, 0.5);
+  --glass-surface-shadow-color: hsla(245, 41%, 10%, 0.1);
+  --glass-surface-highlight-start: hsla(245, 41%, 35%, 0.8);
+  --glass-surface-highlight-end: hsla(245, 41%, 35%, 0);
+  --glass-surface-shadow-start: hsla(245, 41%, 10%, 0.1);
+  --glass-surface-shadow-end: hsla(245, 41%, 10%, 0);
 }
 
 [data-theme='retro'] {
@@ -81,6 +145,14 @@
   --text-secondary: #7d7269;
   --accent-primary: #ef9d00;
   --border-color: #d4c8b0;
+
+  --glass-surface-background: hsla(38, 33%, 85%, 0.5);
+  --glass-surface-border-color: hsla(38, 33%, 75%, 0.5);
+  --glass-surface-shadow-color: hsla(38, 33%, 40%, 0.1);
+  --glass-surface-highlight-start: hsla(38, 33%, 95%, 0.8);
+  --glass-surface-highlight-end: hsla(38, 33%, 95%, 0);
+  --glass-surface-shadow-start: hsla(38, 33%, 40%, 0.1);
+  --glass-surface-shadow-end: hsla(38, 33%, 40%, 0);
 }
 
 [data-theme='cyberpunk'] {
@@ -90,6 +162,14 @@
   --text-secondary: #b3b3b3;
   --accent-primary: #ff00ff;
   --border-color: #4d4d4d;
+
+  --glass-surface-background: hsla(60, 100%, 60%, 0.5);
+  --glass-surface-border-color: hsla(60, 100%, 70%, 0.5);
+  --glass-surface-shadow-color: hsla(60, 100%, 30%, 0.1);
+  --glass-surface-highlight-start: hsla(60, 100%, 80%, 0.8);
+  --glass-surface-highlight-end: hsla(60, 100%, 80%, 0);
+  --glass-surface-shadow-start: hsla(60, 100%, 30%, 0.1);
+  --glass-surface-shadow-end: hsla(60, 100%, 30%, 0);
 }
 
 [data-theme='valentine'] {
@@ -99,6 +179,14 @@
   --text-secondary: #99004d;
   --accent-primary: #ff3385;
   --border-color: #f3c4d7;
+
+  --glass-surface-background: hsla(336, 84%, 96%, 0.5);
+  --glass-surface-border-color: hsla(336, 84%, 90%, 0.5);
+  --glass-surface-shadow-color: hsla(336, 84%, 50%, 0.1);
+  --glass-surface-highlight-start: hsla(336, 84%, 99%, 0.8);
+  --glass-surface-highlight-end: hsla(336, 84%, 99%, 0);
+  --glass-surface-shadow-start: hsla(336, 84%, 50%, 0.1);
+  --glass-surface-shadow-end: hsla(336, 84%, 50%, 0);
 }
 
 [data-theme='halloween'] {
@@ -108,6 +196,14 @@
   --text-secondary: #b3b3b3;
   --accent-primary: #ff7500;
   --border-color: #666666;
+
+  --glass-surface-background: hsla(24, 100%, 50%, 0.5);
+  --glass-surface-border-color: hsla(24, 100%, 60%, 0.5);
+  --glass-surface-shadow-color: hsla(24, 100%, 25%, 0.1);
+  --glass-surface-highlight-start: hsla(24, 100%, 70%, 0.8);
+  --glass-surface-highlight-end: hsla(24, 100%, 70%, 0);
+  --glass-surface-shadow-start: hsla(24, 100%, 25%, 0.1);
+  --glass-surface-shadow-end: hsla(24, 100%, 25%, 0);
 }
 
 body {

@@ -1,0 +1,29 @@
+{
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Have questions about the Dynamic Plan, partnerships, or anything else? Our team is ready to help you.",
+    "info": {
+      "title": "Contact Information",
+      "general": {
+        "title": "General Inquiries",
+        "description": "For questions about features and support."
+      },
+      "sales": {
+        "title": "Sales & Partnerships",
+        "description": "For custom plans and collaborations."
+      }
+    },
+    "form": {
+      "name": {
+        "label": "Your Name"
+      },
+      "email": {
+        "label": "Your Email Address"
+      },
+      "message": {
+        "label": "Your Message"
+      },
+      "submit": "Send Message"
+    }
+  }
+}

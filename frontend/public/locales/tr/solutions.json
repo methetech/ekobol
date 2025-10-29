@@ -1,0 +1,27 @@
+{
+  "solutions": {
+    "title": {
+      "part1": "Tek Platform,",
+      "part2": "Sonsuz Strateji."
+    },
+    "subtitle": "Yaratıcı bir zanaatkar, büyüyen bir marka veya köklü bir üretici... İmparatorluğunuzu inşa etmek için tasarlanmış stratejik yollardan birini seçin.",
+    "artisan": {
+      "title": "Zanaatkâr Hükümdar İçin: Temel Plan",
+      "description": "Kontrolü elinde tutmayı seven ama tekrar eden işlerden nefret edenler için. Temel plan, %10'luk adil bir kâr payı karşılığında YZ destekli platformumuza tam erişim sağlar. Stratejiyi siz yönetin, biz angaryayı otomatikleştirelim ve size en değerli varlığınız olan zamanı geri verelim.",
+      "link": "Stratejiyi Görüntüle",
+      "alt": "Zanaatkar bir hükümdar atölyesinde çalışıyor"
+    },
+    "architect": {
+      "title": "İmparatorluk Mimarı İçin: Partner Planı",
+      "description": "Sizin dehanız harika ürünler yaratmakta, dijital operasyonları yönetmekte değil. 50/50 Partner Planı ile siz sadece üretin ve gönderin. Gerisini biz hallederiz: markanızı inşa eder, pazarlamanızı yürütür, listelemelerinizi optimize ederiz. İmparatorluğunuzu sizin adınıza biz kurarız.",
+      "link": "Ortaklık Kur",
+      "alt": "İmparatorluk mimarları bir proje üzerinde işbirliği yapıyor"
+    },
+    "strategist": {
+      "title": "Usta Stratejist İçin: Dinamik Plan",
+      "description": "İhtiyaçlarınız evrimleşir. Dinamik Plan, siz ve platformumuz arasındaki iş yüküne dayalı, ayarlanabilir bir gelir payı sunar. Siz daha fazla sorumluluk aldıkça, kâr payınız artar. Bu, büyüyen işletmeler için nihai esnek ortaklıktır.",
+      "link": "Esnekliği Keşfet",
+      "alt": "Stratejistler bir harita üzerinde planlama yapıyor"
+    }
+  }
+}

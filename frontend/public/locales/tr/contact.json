@@ -1,0 +1,29 @@
+{
+  "contact": {
+    "title": "Bize Ulaşın",
+    "subtitle": "Dinamik Plan, ortaklıklar veya başka bir konuda sorularınız mı var? Ekibimiz size yardımcı olmaya hazır.",
+    "info": {
+      "title": "İletişim Bilgileri",
+      "general": {
+        "title": "Genel Sorular",
+        "description": "Özellikler ve destek hakkındaki sorularınız için."
+      },
+      "sales": {
+        "title": "Satış & Ortaklıklar",
+        "description": "Özel planlar ve işbirlikleri için."
+      }
+    },
+    "form": {
+      "name": {
+        "label": "Adınız"
+      },
+      "email": {
+        "label": "E-posta Adresiniz"
+      },
+      "message": {
+        "label": "Mesajınız"
+      },
+      "submit": "Mesaj Gönder"
+    }
+  }
+}

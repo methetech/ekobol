@@ -14,8 +14,12 @@ This document outlines the planned development steps for `ekobol.com`.
 
 - [x] Project Scaffolding (Create React App setup in `frontend/`)
 - [x] Multi-Theme System Implementation (12 themes, CSS variables, React Context)
-- [x] Internationalization (i18n) Setup (TR/EN, `i18next`, `react-i18next`, `i18next-http-backend`)
+- [ ] Internationalization (i18n) Setup (TR/EN, `i18next`, `react-i18next`, `i18next-http-backend`) - *Requires further debugging for Pricing page*
 - [x] HomePage (`index.html`) Migration to React Component (`HomePage.js`)
+
+## Phase 3: Advanced Visuals & Optimization (In Progress/Next)
+
+- [ ] Debug and resolve i18n translation issues on the Pricing page.
 - [x] Header & Footer Component Creation
 - [x] TailwindCSS CDN Integration into `public/index.html`
 - [x] Image Loading Fixes (`wallet-before.webp`, `wallet-after.webp` moved to `public`)

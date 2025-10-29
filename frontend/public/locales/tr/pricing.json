@@ -1,0 +1,93 @@
+{
+  "pricing": {
+    "title": {
+      "part1": "Adil Fiyatlandırma Değil,",
+      "part2": "Stratejik Yatırım."
+    },
+    "subtitle": "İmparatorluğunuzun ölçeği, seçtiğiniz ittifakın gücüyle belirlenir. Gizli maliyetler yok. Sadece paylaşılan zafer var.",
+    "pacts": {
+      "rebel": {
+        "title": "Asi Paktı",
+        "subtitle": "Kontrolü elinde tutan yalnız savaşçılar için.",
+        "price": "%10",
+        "period": " / kârdan",
+        "features": [
+          {
+            "name": "Genesis Motoruna",
+            "desc": "Tam Erişim"
+          },
+          {
+            "desc": "Tüm",
+            "name": "YZ Cephaneliği"
+          },
+          "Sınırsız Kanal Entegrasyonu",
+          {
+            "name": "Komuta Merkezi",
+            "desc": "Birleşik"
+          }
+        ],
+        "cta": "Paktı Başlat"
+      },
+      "ruler": {
+        "badge": "TAVSİYE EDİLEN FERMAN",
+        "title": "Hükümdar Fermanı",
+        "subtitle": "Sadece vizyonu belirleyenler için.",
+        "price": "%50",
+        "period": " / kârdan",
+        "features": [
+          {
+            "name": "Asi Paktı'ndaki Her Şey, ARTI:",
+            "desc": ""
+          },
+          "Profesyonel Marka & Web Sitesi İnşası",
+          "Tam Dijital Pazarlama Yönetimi (SEO, Reklam)",
+          "Kapsamlı Operasyon Yönetimi",
+          "Size Atanmış Büyüme Stratejisti"
+        ],
+        "cta": "Fermanı Onayla"
+      },
+      "blacksmith": {
+        "title": "Demirci Ocağı",
+        "subtitle": "Kendi cephaneliğini döven ustalar için.",
+        "price": "₺200",
+        "period": "/ay'dan",
+        "features": [
+          "Pazar yeri katmanları ve YZ araçlarıyla kendi planınızı yaratın",
+          "İstediğiniz zaman iptal edin veya ayarlayın",
+          "Yıllık ödemelerde %20 indirim"
+        ],
+        "cta": "Ocağı Ateşle"
+      }
+    },
+    "alliances": {
+      "title": "Ismarlama İttifaklar",
+      "subtitle": "Standart paktların ötesinde, özel görevler için.",
+      "dynamic": {
+        "title": "Dinamik İttifak",
+        "description": "İş yükünü bölüşen, kâr payını sürekli ayarlayan esnek bir ortaklık. Sizinle birlikte evrilir."
+      },
+      "build_transfer": {
+        "title": "Kur ve Devret Fermanı",
+        "description": "İmparatorluğunuzu sizin için kurar, anahtarları size teslim ederiz. Tek seferlik, güçlü bir başlangıç."
+      }
+    },
+    "faq": {
+      "title": "Savaş Konseyi: SSS",
+      "subtitle": "Stratejinizi belirlemeden önce bilmeniz gerekenler.",
+      "questions": [
+        {
+          "q": ""% Kârdan" tam olarak ne anlama geliyor?",
+          "a": "Kâr, ürün maliyetleri ve pazar yeri komisyonları düşüldükten sonraki net gelirdir. Finans panelinizde her kuruşu şeffaf bir şekilde gösteriyoruz. Gizli hiçbir şey yok."
+        },
+        {
+          "q": "Planımı istediğim zaman değiştirebilir veya iptal edebilir miyim?",
+          "a": "Evet. Ferman sizindir. Hiçbir uzun vadeli zorunluluk yok. Planınızı bir sonraki fatura döneminiz için istediğiniz zaman yükseltebilir, düşürebilir veya iptal edebilirsiniz."
+        },
+        {
+          "q": "Hükümdar Fermanı'nda web sitesi ve marka kime ait oluyor?",
+          "a": "Size. Biz sizin adınıza inşa eder ve yönetiriz, ancak tüm fikri mülkiyet hakları ve varlıklar tamamen size aittir. Biz sadece sizin imparatorluğunuzun sadık mimarlarıyız."
+        }
+      ]
+    }
+  }
+}

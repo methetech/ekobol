@@ -14,12 +14,14 @@ i18n
   .init({
     // Backend yapılandırması
     backend: {
-      loadPath: '/locales/{{lng}}/translation.json', // Çeviri dosyalarının yolu
+      loadPath: '/locales/{{lng}}/{{ns}}.json', // Namespace'leri destekleyen yeni yol
     },
-    fallbackLng: 'tr', // Eğer dil algılanamazsa varsayılan dil
-    debug: false, // Geliştirme aşamasında true yapılabilir
+    fallbackLng: 'tr',
+    debug: false,
+    ns: ['common', 'home', 'solutions', 'pricing', 'resources', 'about', 'contact'], // Kullanılacak namespace'ler
+    defaultNS: 'common', // Varsayılan namespace
     interpolation: {
-      escapeValue: false // React zaten XSS'e karşı koruduğu için gerekli değil
+      escapeValue: false,
     },
     // React için özel seçenekler
     react: {

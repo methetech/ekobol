@@ -1,0 +1,42 @@
+
+.glass-surface {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--glass-surface-background);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-surface-border-color);
+  box-shadow: 0 0 10px var(--glass-surface-shadow-color);
+}
+
+.glass-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, var(--glass-surface-highlight-start), var(--glass-surface-highlight-end));
+  pointer-events: none;
+}
+
+.glass-surface::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top left, var(--glass-surface-shadow-start), var(--glass-surface-shadow-end));
+  pointer-events: none;
+}
+
+.glass-surface-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-primary);
+  text-align: center;
+}

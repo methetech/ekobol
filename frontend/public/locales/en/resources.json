@@ -1,0 +1,28 @@
+{
+  "resources": {
+    "title": "Grow More and Smarter.",
+    "subtitle": "Dive into our collection of resources designed to help you succeed in the ever-changing world of e-commerce.",
+    "links": {
+      "blog": {
+        "title": "Ekobol Blog",
+        "description": "Stay up-to-date with the latest e-commerce trends, AI strategies, and tips for multi-marketplace success.",
+        "cta": "Read Now"
+      },
+      "success_stories": {
+        "title": "Success Stories",
+        "description": "See how real businesses have scaled their operations and increased their revenue with Ekobol.",
+        "cta": "See the Results"
+      },
+      "help_center": {
+        "title": "Help Center & Docs",
+        "description": "Find step-by-step guides, technical documentation, and answers to frequently asked questions.",
+        "cta": "Get Support"
+      },
+      "webinars": {
+        "title": "Webinars & Tutorials",
+        "description": "Watch on-demand webinars and video tutorials to learn about Ekobol's features and advanced e-commerce strategies.",
+        "cta": "Watch & Learn"
+      }
+    }
+  }
+}
