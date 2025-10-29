@@ -1,9 +1,27 @@
-import React, { useRef } from 'react';
+import React, { useRef, useContext, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Stars } from '@react-three/drei';
+import { ThemeContext } from '../ThemeContext';
+
+const themeColors = {
+  'asfalt-kemik': '#FFFFFF',
+  'light': '#000000',
+  'dark': '#FFFFFF',
+  'cupcake': '#000000',
+  'bumblebee': '#000000',
+  'emerald': '#FFFFFF',
+  'corporate': '#000000',
+  'synthwave': '#FFFFFF',
+  'retro': '#000000',
+  'cyberpunk': '#FFFFFF',
+  'valentine': '#000000',
+  'halloween': '#FFFFFF',
+};
 
 function AnimatedStars() {
   const stars = useRef();
+  const { theme } = useContext(ThemeContext);
+  const color = useMemo(() => themeColors[theme] || '#FFFFFF', [theme]);
 
   useFrame(() => {
     if (stars.current) {
@@ -13,7 +31,7 @@ function AnimatedStars() {
   });
 
   return (
-    <Stars ref={stars} radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+    <Stars ref={stars} radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} color={color} />
   );
 }
 

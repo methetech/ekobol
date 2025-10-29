@@ -25,5 +25,18 @@
   "playground_reset_button": "Sıfırla",
   "final_cta_title": "Sıradaki Trend Siz Olun.",
   "final_cta_subtitle": "Platformları birleştirmeyi bırakın. Pazarı domine etmeye başlayın. Esnek planlarımızı keşfedin ve imparatorluğunuzun temelini atın.",
-  "final_cta_button": "Bugün Ücretsiz Başlayın"
+  "final_cta_button": "Bugün Ücretsiz Başlayın",
+  "product": "Ürün",
+  "solutions": "Çözümler",
+  "resources": "Kaynaklar",
+  "pricing": "Fiyatlandırma",
+  "dashboard": "Kontrol Paneli",
+  "orders": "Siparişler",
+  "products": "Ürünler",
+  "marketing": "Pazarlama",
+  "analytics": "Analitik",
+  "finances": "Finans",
+  "login": "Giriş Yap",
+  "logout": "Çıkış Yap",
+  "start_free": "Ücretsiz Başla"
 }

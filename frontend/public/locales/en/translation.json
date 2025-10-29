@@ -25,5 +25,18 @@
   "playground_reset_button": "Reset",
   "final_cta_title": "Be the Next Trend.",
   "final_cta_subtitle": "Stop unifying platforms. Start dominating the market. Discover our flexible plans and lay the foundation of your empire.",
-  "final_cta_button": "Start Free Today"
+  "final_cta_button": "Start Free Today",
+  "product": "Product",
+  "solutions": "Solutions",
+  "resources": "Resources",
+  "pricing": "Pricing",
+  "dashboard": "Dashboard",
+  "orders": "Orders",
+  "products": "Products",
+  "marketing": "Marketing",
+  "analytics": "Analytics",
+  "finances": "Finances",
+  "login": "Login",
+  "logout": "Logout",
+  "start_free": "Start Free"
 }
