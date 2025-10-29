@@ -17,6 +17,9 @@
   --glass-surface-highlight-end: hsla(0, 0%, 100%, 0);
   --glass-surface-shadow-start: hsla(0, 0%, 0%, 0.1);
   --glass-surface-shadow-end: hsla(0, 0%, 0%, 0);
+
+  --animated-shape-color: #4a4a4a;
+  --animated-speed: 10s;
 }
 
 [data-theme='light'] {
@@ -34,6 +37,9 @@
   --glass-surface-highlight-end: hsla(0, 0%, 100%, 0);
   --glass-surface-shadow-start: hsla(0, 0%, 0%, 0.1);
   --glass-surface-shadow-end: hsla(0, 0%, 0%, 0);
+
+  --animated-shape-color: #cccccc;
+  --animated-speed: 12s;
 }
 
 [data-theme='dark'] {
@@ -51,6 +57,9 @@
   --glass-surface-highlight-end: hsla(0, 0%, 100%, 0);
   --glass-surface-shadow-start: hsla(0, 0%, 0%, 0.1);
   --glass-surface-shadow-end: hsla(0, 0%, 0%, 0);
+
+  --animated-shape-color: #555555;
+  --animated-speed: 10s;
 }
 
 [data-theme='cupcake'] {
@@ -68,6 +77,9 @@
   --glass-surface-highlight-end: hsla(330, 33%, 99%, 0);
   --glass-surface-shadow-start: hsla(330, 33%, 50%, 0.1);
   --glass-surface-shadow-end: hsla(330, 33%, 50%, 0);
+
+  --animated-shape-color: #f0b8d0;
+  --animated-speed: 11s;
 }
 
 [data-theme='bumblebee'] {
@@ -85,6 +97,9 @@
   --glass-surface-highlight-end: hsla(51, 93%, 95%, 0);
   --glass-surface-shadow-start: hsla(51, 93%, 50%, 0.1);
   --glass-surface-shadow-end: hsla(51, 93%, 50%, 0);
+
+  --animated-shape-color: #ffeb99;
+  --animated-speed: 13s;
 }
 
 [data-theme='emerald'] {
@@ -102,6 +117,9 @@
   --glass-surface-highlight-end: hsla(145, 46%, 99%, 0);
   --glass-surface-shadow-start: hsla(145, 46%, 50%, 0.1);
   --glass-surface-shadow-end: hsla(145, 46%, 50%, 0);
+
+  --animated-shape-color: #99ffcc;
+  --animated-speed: 10s;
 }
 
 [data-theme='corporate'] {
@@ -119,6 +137,9 @@
   --glass-surface-highlight-end: hsla(0, 0%, 98%, 0);
   --glass-surface-shadow-start: hsla(0, 0%, 50%, 0.1);
   --glass-surface-shadow-end: hsla(0, 0%, 50%, 0);
+
+  --animated-shape-color: #cccccc;
+  --animated-speed: 12s;
 }
 
 [data-theme='synthwave'] {
@@ -136,6 +157,9 @@
   --glass-surface-highlight-end: hsla(245, 41%, 35%, 0);
   --glass-surface-shadow-start: hsla(245, 41%, 10%, 0.1);
   --glass-surface-shadow-end: hsla(245, 41%, 10%, 0);
+
+  --animated-shape-color: #ff82ce;
+  --animated-speed: 10s;
 }
 
 [data-theme='retro'] {
@@ -153,6 +177,9 @@
   --glass-surface-highlight-end: hsla(38, 33%, 95%, 0);
   --glass-surface-shadow-start: hsla(38, 33%, 40%, 0.1);
   --glass-surface-shadow-end: hsla(38, 33%, 40%, 0);
+
+  --animated-shape-color: #ef9d00;
+  --animated-speed: 12s;
 }
 
 [data-theme='cyberpunk'] {
@@ -170,6 +197,9 @@
   --glass-surface-highlight-end: hsla(60, 100%, 80%, 0);
   --glass-surface-shadow-start: hsla(60, 100%, 30%, 0.1);
   --glass-surface-shadow-end: hsla(60, 100%, 30%, 0);
+
+  --animated-shape-color: #00ffff;
+  --animated-speed: 10s;
 }
 
 [data-theme='valentine'] {
@@ -187,6 +217,9 @@
   --glass-surface-highlight-end: hsla(336, 84%, 99%, 0);
   --glass-surface-shadow-start: hsla(336, 84%, 50%, 0.1);
   --glass-surface-shadow-end: hsla(336, 84%, 50%, 0);
+
+  --animated-shape-color: #ff3385;
+  --animated-speed: 11s;
 }
 
 [data-theme='halloween'] {
@@ -205,6 +238,13 @@
   --glass-surface-shadow-start: hsla(24, 100%, 25%, 0.1);
   --glass-surface-shadow-end: hsla(24, 100%, 25%, 0);
 }
+
+body {
+  background-color: var(--void-secondary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
 
 body {
   background-color: var(--void-secondary);

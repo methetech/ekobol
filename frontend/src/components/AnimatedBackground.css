@@ -1,0 +1,67 @@
+
+.animated-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  background: var(--animated-shape-color);
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: float-and-fade var(--animated-speed) infinite ease-in-out alternate;
+}
+
+.shape:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  left: 10%;
+  top: 20%;
+  animation-delay: 0s;
+  transform: scale(0.8);
+}
+
+.shape:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  left: 30%;
+  top: 50%;
+  animation-delay: 2s;
+  transform: scale(1.2);
+}
+
+.shape:nth-child(3) {
+  width: 80px;
+  height: 80px;
+  left: 60%;
+  top: 10%;
+  animation-delay: 4s;
+  transform: scale(0.7);
+}
+
+.shape:nth-child(4) {
+  width: 120px;
+  height: 120px;
+  left: 80%;
+  top: 70%;
+  animation-delay: 6s;
+  transform: scale(1.1);
+}
+
+@keyframes float-and-fade {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+}

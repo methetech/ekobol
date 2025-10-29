@@ -124,7 +124,7 @@ const HomePage = () => {
                     <h4 className="font-bold mb-2 text-gray-600 dark:text-white/80">{t('playground_result3_title')}</h4>
                     <div className="bg-white dark:bg-black/20 border border-void-secondary dark:border-white/10 rounded-lg p-6 flex flex-col justify-center items-center text-center h-full">
                       <p className="text-lg text-text-secondary">{t('playground_result3_desc')}</p>
-                      <p className="text-5xl font-bold text-accent-primary">₺4,950</p>
+                      <p className="text-5xl font-bold text-accent-primary">{t('playground_price')}</p>
                     </div>
                   </div>
                 </div>
