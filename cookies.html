@@ -1,25 +1,53 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" data-theme="dark">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Çerez Politikası - Ekobol</title>
+    
+    <link rel="icon" href="ekobol.ico" type="image/x-icon">
+    
+    <link rel="stylesheet" href="design_system.css">
+    
     <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
     <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'void-primary': 'var(--void-primary)',
+              'void-secondary': 'var(--void-secondary)',
+              'text-primary': 'var(--text-primary)',
+              'text-secondary': 'var(--text-secondary)',
+              'accent-primary': 'var(--accent-primary)',
+              'accent-primary-dark': 'var(--accent-primary-dark)',
+              'system-success': 'var(--system-success)',
+              'system-warning': 'var(--system-warning)',
+              'system-error': 'var(--system-error)',
+              'system-error-dark': 'var(--system-error-dark)',
+            },
+            shadowColor: {
+              'accent-primary': 'var(--accent-primary)',
+            }
+          }
+        }
+      }
+    </script>
     <link rel="stylesheet" href="global.css">
 </head>
-<body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
+<body class="bg-void-primary text-text-primary">
 <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
 <div class="layout-container flex h-full grow flex-col">
     
     <div id="header-placeholder"></div>
 
     <main class="flex-1 px-4 sm:px-10 lg:px-20 py-16 lg:py-24">
-        <div class="max-w-4xl mx-auto prose lg:prose-xl">
+        <div class="max-w-4xl mx-auto prose lg:prose-xl dark:prose-invert prose-headings:text-text-primary prose-p:text-text-secondary prose-a:text-accent-primary hover:prose-a:text-accent-primary-dark prose-strong:text-text-primary prose-ul:text-text-secondary prose-ol:text-text-secondary">
             <h1>Çerez Politikası</h1>
-            <p class="text-sm text-[var(--text-secondary-color)]">Son Güncelleme: 15 Temmuz 2025</p>
+            <p class="text-sm text-text-secondary">Son Güncelleme: 15 Temmuz 2025</p>
             <p>Bu Çerez Politikası, çerezlerin ne olduğunu ve bunları Ekobol web sitesinde nasıl kullandığımızı açıklar. Ne tür çerezler kullandığımızı, çerezleri kullanarak topladığımız bilgileri ve bu bilgilerin nasıl kullanıldığını anlamak için bu politikayı okumalısınız.</p>
             
             <h2>1. Çerezler Nedir?</h2>
@@ -37,7 +65,7 @@
             <p>Çerezleri kabul etme veya reddetme hakkına sahipsiniz. Çerez tercihlerinizi, web tarayıcınızın kontrollerini çerezleri kabul edecek veya reddedecek şekilde ayarlayarak veya değiştirerek kullanabilirsiniz. Çerezleri reddetmeyi seçerseniz, web sitemizi kullanmaya devam edebilirsiniz, ancak web sitemizin bazı işlevlerine ve alanlarına erişiminiz kısıtlanabilir.</p>
             
             <h2>4. Bize Ulaşın</h2>
-            <p>Çerez kullanımımızla ilgili herhangi bir sorunuz varsa, lütfen bizimle legal@ekobol.com adresinden iletişime geçin.</p>
+            <p>Çerez kullanımımızla ilgili herhangi bir sorunuz varsa, lütfen bizimle <a href="mailto:legal@ekobol.com">legal@ekobol.com</a> adresinden iletişime geçin.</p>
         </div>
     </main>
 

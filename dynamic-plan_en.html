@@ -1,16 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Dynamic Plan - Ekobol</title>
+
+<link rel="icon" href="ekobol.ico" type="image/x-icon">
+
+<link rel="stylesheet" href="design_system.css">
+
 <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
 <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          'void-primary': 'var(--void-primary)',
+          'void-secondary': 'var(--void-secondary)',
+          'text-primary': 'var(--text-primary)',
+          'text-secondary': 'var(--text-secondary)',
+          'accent-primary': 'var(--accent-primary)',
+          'accent-primary-dark': 'var(--accent-primary-dark)',
+          'system-success': 'var(--system-success)',
+          'system-warning': 'var(--system-warning)',
+          'system-error': 'var(--system-error)',
+          'system-error-dark': 'var(--system-error-dark)',
+        },
+        shadowColor: {
+          'accent-primary': 'var(--accent-primary)',
+        }
+      }
+    }
+  }
+</script>
 <link rel="stylesheet" href="global.css">
 </head>
-<body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
+<body class="bg-void-primary text-text-primary">
 <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
 <div class="layout-container flex h-full grow flex-col">
 <div id="header-placeholder"></div>
@@ -18,21 +46,21 @@
 <div class="max-w-4xl mx-auto">
 <div class="text-center">
 <h1 class="text-4xl md:text-5xl font-extrabold tracking-tighter leading-tight mb-6">The Dynamic Plan: Ultimate Flexibility</h1>
-<p class="text-lg md:text-xl text-[var(--text-secondary-color)] max-w-3xl mx-auto">
+<p class="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto">
 Your needs might change over time. The Dynamic Plan offers a partnership that adjusts based on the workload shared between you and our platform.
 </p>
 </div>
-<div class="mt-16 bg-gray-50 border border-[var(--divider-color)] rounded-lg p-12">
-<h2 class="text-3xl font-bold text-center mb-8">How It Works</h2>
+<div class="mt-16 bg-void-secondary dark:bg-black/20 border border-void-secondary dark:border-white/10 rounded-lg p-12">
+<h2 class="text-3xl font-bold text-center mb-8 text-text-primary">How It Works</h2>
 <div class="text-center max-w-2xl mx-auto">
-<p class="text-lg text-[var(--text-secondary-color)] mb-4">The Dynamic Plan is a custom revenue share model based on the effort both parties bring to the table. Want to handle some marketing tasks yourself? Great, your share increases. Want to offload everything to us? No problem, the shares adjust accordingly.</p>
-<p class="text-lg text-[var(--text-secondary-color)]">It's the ultimate flexible partnership for growing businesses. Scale your effort up or down, and your plan adapts with you.</p>
+<p class="text-lg text-text-secondary mb-4">The Dynamic Plan is a custom revenue share model based on the effort both parties bring to the table. Want to handle some marketing tasks yourself? Great, your share increases. Want to offload everything to us? No problem, the shares adjust accordingly.</p>
+<p class="text-lg text-text-secondary">It's the ultimate flexible partnership for growing businesses. Scale your effort up or down, and your plan adapts with you.</p>
 </div>
 </div>
 <div class="mt-12 text-center">
-<h2 class="text-3xl font-bold mb-4">Let's Build the Perfect Partnership</h2>
-<p class="text-lg text-[var(--text-secondary-color)] max-w-2xl mx-auto mb-8">This plan is all about collaboration. Contact our team to discuss your unique needs and let's build a custom plan that works for you.</p>
-<a class="inline-flex min-w-[200px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300" href="contact_en.html">
+<h2 class="text-3xl font-bold mb-4 text-text-primary">Let's Build the Perfect Partnership</h2>
+<p class="text-lg text-text-secondary max-w-2xl mx-auto mb-8">This plan is all about collaboration. Contact our team to discuss your unique needs and let's build a custom plan that works for you.</p>
+<a class="inline-flex min-w-[200px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-accent-primary text-void-primary text-base font-bold leading-normal tracking-wide shadow-lg hover:bg-accent-primary-dark transition-shadow duration-300" href="contact_en.html">
 <span class="truncate">Contact Us to Get Started</span>
 </a>
 </div>

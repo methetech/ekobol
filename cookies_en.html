@@ -1,26 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Cookie Policy - Ekobol</title>
+    
+    <link rel="icon" href="ekobol.ico" type="image/x-icon">
+    
+    <link rel="stylesheet" href="design_system.css">
+    
     <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
     <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'void-primary': 'var(--void-primary)',
+              'void-secondary': 'var(--void-secondary)',
+              'text-primary': 'var(--text-primary)',
+              'text-secondary': 'var(--text-secondary)',
+              'accent-primary': 'var(--accent-primary)',
+              'accent-primary-dark': 'var(--accent-primary-dark)',
+              'system-success': 'var(--system-success)',
+              'system-warning': 'var(--system-warning)',
+              'system-error': 'var(--system-error)',
+              'system-error-dark': 'var(--system-error-dark)',
+            },
+            shadowColor: {
+              'accent-primary': 'var(--accent-primary)',
+            }
+          }
+        }
+      }
+    </script>
     <link rel="stylesheet" href="global.css">
 </head>
-<body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
+<body class="bg-void-primary text-text-primary">
 <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
 <div class="layout-container flex h-full grow flex-col">
-    <!-- Header -->
-    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--divider-color)] px-10 py-4"><!-- Full header code goes here --></header>
+    
+    <div id="header-placeholder"></div>
 
-    <!-- Main Content -->
     <main class="flex-1 px-4 sm:px-10 lg:px-20 py-16 lg:py-24">
-        <div class="max-w-4xl mx-auto prose lg:prose-xl">
+        <div class="max-w-4xl mx-auto prose lg:prose-xl dark:prose-invert prose-headings:text-text-primary prose-p:text-text-secondary prose-a:text-accent-primary hover:prose-a:text-accent-primary-dark prose-strong:text-text-primary prose-ul:text-text-secondary prose-ol:text-text-secondary">
             <h1>Cookie Policy</h1>
-            <p class="text-sm text-[var(--text-secondary-color)]">Last Updated: July 15, 2025</p>
+            <p class="text-sm text-text-secondary">Last Updated: July 15, 2025</p>
             <p>This Cookie Policy explains what cookies are and how we use them on the Ekobol website. You should read this policy so you can understand what type of cookies we use, the information we collect using cookies and how that information is used.</p>
             
             <h2>1. What Are Cookies?</h2>
@@ -38,13 +65,14 @@
             <p>You have the right to decide whether to accept or reject cookies. You can exercise your cookie preferences by setting or amending your web browser controls to accept or refuse cookies. If you choose to reject cookies, you may still use our website though your access to some functionality and areas of our website may be restricted.</p>
             
             <h2>4. Contact Us</h2>
-            <p>If you have any questions about our use of cookies, please contact us at legal@ekobol.com.</p>
+            <p>If you have any questions about our use of cookies, please contact us at <a href="mailto:legal@ekobol.com">legal@ekobol.com</a>.</p>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-50 text-[var(--text-secondary-color)] px-10 py-12"><!-- Full footer code goes here --></footer>
+    <div id="footer-placeholder"></div>
+
 </div>
 </div>
+<script src="app.js"></script>
 </body>
 </html>

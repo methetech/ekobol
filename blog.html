@@ -1,36 +1,64 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" data-theme="dark">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Blog & Güncellemeler - Ekobol</title>
+    
+    <link rel="icon" href="ekobol.ico" type="image/x-icon">
+    
+    <link rel="stylesheet" href="design_system.css">
+    
     <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
     <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'void-primary': 'var(--void-primary)',
+              'void-secondary': 'var(--void-secondary)',
+              'text-primary': 'var(--text-primary)',
+              'text-secondary': 'var(--text-secondary)',
+              'accent-primary': 'var(--accent-primary)',
+              'accent-primary-dark': 'var(--accent-primary-dark)',
+              'system-success': 'var(--system-success)',
+              'system-warning': 'var(--system-warning)',
+              'system-error': 'var(--system-error)',
+              'system-error-dark': 'var(--system-error-dark)',
+            },
+            shadowColor: {
+              'accent-primary': 'var(--accent-primary)',
+            }
+          }
+        }
+      }
+    </script>
     <link rel="stylesheet" href="global.css">
 </head>
-<body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
+<body class="bg-void-primary text-text-primary">
 <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
 <div class="layout-container flex h-full grow flex-col">
     <div id="header-placeholder"></div>
     <main class="flex-1 px-4 sm:px-10 lg:px-20 py-16 lg:py-24">
         <div class="max-w-5xl mx-auto text-center">
             <h1 class="text-4xl md:text-5xl font-extrabold tracking-tighter leading-tight mb-6">Ekobol Blog</h1>
-            <p class="text-lg md:text-xl text-[var(--text-secondary-color)] max-w-3xl mx-auto">Yapay zeka destekli en son haberler, özellik güncellemeleri ve e-ticaret stratejileri.</p>
+            <p class="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto">Yapay zeka destekli en son haberler, özellik güncellemeleri ve e-ticaret stratejileri.</p>
         </div>
         <div class="mt-20 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="flex flex-col overflow-hidden rounded-lg border border-[var(--divider-color)] shadow-sm hover:shadow-xl transition-shadow duration-300">
-                <div class="h-48 w-full bg-gray-200"></div>
-                <div class="p-6 flex flex-col flex-1"><h3 class="text-xl font-bold mb-3">Partner Planı Tanıtımı: Biz Kuralım, Siz Yaratın</h3><p class="text-[var(--text-secondary-color)] mb-6 grow">En kapsamlı planımıza derinlemesine bir bakış; en iyi yaptıkları işe odaklanmak isteyen yaratıcılar için tasarlandı.</p><a href="blog-post.html" class="font-bold text-[var(--primary-color)] hover:underline">Devamını Oku →</a></div>
+            <div class="flex flex-col overflow-hidden rounded-lg border border-void-secondary dark:border-white/10 bg-void-secondary dark:bg-black/20 shadow-sm hover:shadow-xl transition-shadow duration-300">
+                <div class="h-48 w-full bg-void-primary"></div>
+                <div class="p-6 flex flex-col flex-1"><h3 class="text-xl font-bold mb-3 text-text-primary">Partner Planı Tanıtımı: Biz Kuralım, Siz Yaratın</h3><p class="text-text-secondary mb-6 grow">En kapsamlı planımıza derinlemesine bir bakış; en iyi yaptıkları işe odaklanmak isteyen yaratıcılar için tasarlandı.</p><a href="blog-post.html" class="font-bold text-accent-primary hover:underline">Devamını Oku →</a></div>
             </div>
-            <div class="flex flex-col overflow-hidden rounded-lg border border-[var(--divider-color)] shadow-sm hover:shadow-xl transition-shadow duration-300">
-                <div class="h-48 w-full bg-gray-200"></div>
-                <div class="p-6 flex flex-col flex-1"><h3 class="text-xl font-bold mb-3">Trendyol'da Fiyatlarınızı Optimize Etmenin 5 Yolu</h3><p class="text-[var(--text-secondary-color)] mb-6 grow">Ekobol'ün YZ motorunu kullanarak bugün uygulayabileceğiniz stratejilerle rekabetçi fiyatlandırmanın sırlarını açığa çıkarın.</p><a href="ai-pricing-optimization.html" class="font-bold text-[var(--primary-color)] hover:underline">Devamını Oku →</a></div>
+            <div class="flex flex-col overflow-hidden rounded-lg border border-void-secondary dark:border-white/10 bg-void-secondary dark:bg-black/20 shadow-sm hover:shadow-xl transition-shadow duration-300">
+                <div class="h-48 w-full bg-void-primary"></div>
+                <div class="p-6 flex flex-col flex-1"><h3 class="text-xl font-bold mb-3 text-text-primary">Trendyol'da Fiyatlarınızı Optimize Etmenin 5 Yolu</h3><p class="text-text-secondary mb-6 grow">Ekobol'ün YZ motorunu kullanarak bugün uygulayabileceğiniz stratejilerle rekabetçi fiyatlandırmanın sırlarını açığa çıkarın.</p><a href="ai-pricing-optimization.html" class="font-bold text-accent-primary hover:underline">Devamını Oku →</a></div>
             </div>
-            <div class="flex flex-col overflow-hidden rounded-lg border border-[var(--divider-color)] shadow-sm hover:shadow-xl transition-shadow duration-300">
-                <div class="h-48 w-full bg-gray-200"></div>
-                <div class="p-6 flex flex-col flex-1"><h3 class="text-xl font-bold mb-3">Özellik Güncellemesi: Yeni Görüntü Oluşturma Stilleri</h3><p class="text-[var(--text-secondary-color)] mb-6 grow">Ürünlerinizi her platformda öne çıkarmak için üç yeni yapay zeka destekli görüntü stilini kullanıma sunduk.</p><a href="new-image-styles-update.html" class="font-bold text-[var(--primary-color)] hover:underline">Devamını Oku →</a></div>
+            <div class="flex flex-col overflow-hidden rounded-lg border border-void-secondary dark:border-white/10 bg-void-secondary dark:bg-black/20 shadow-sm hover:shadow-xl transition-shadow duration-300">
+                <div class="h-48 w-full bg-void-primary"></div>
+                <div class="p-6 flex flex-col flex-1"><h3 class="text-xl font-bold mb-3 text-text-primary">Özellik Güncellemesi: Yeni Görüntü Oluşturma Stilleri</h3><p class="text-text-secondary mb-6 grow">Ürünlerinizi her platformda öne çıkarmak için üç yeni yapay zeka destekli görüntü stilini kullanıma sunduk.</p><a href="new-image-styles-update.html" class="font-bold text-accent-primary hover:underline">Devamını Oku →</a></div>
             </div>
         </div>
     </main>

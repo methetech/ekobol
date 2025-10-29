@@ -1,0 +1,44 @@
+/*
+  EKOBOL GENESIS DESIGN SYSTEM
+  ---
+  This file contains the core design tokens for the Ekobol brand.
+  - Color Palette (Asphalt & Bone)
+  - Typography (to be added)
+  - Spacing (to be added)
+*/
+
+:root,
+[data-theme='light'] {
+  /* 
+    Light theme is not fully defined yet. 
+    Using placeholders and forwarding primary colors.
+    For now, light is a slightly inverted dark.
+  */
+  --void-primary: #FFFFFF;
+  --void-secondary: #F0F0F0;
+  --text-primary: #121212;
+  --text-secondary: #555555;
+
+  --accent-primary: #444444;
+  --accent-primary-dark: #222222;
+
+  --system-success: #28a745;
+  --system-warning: #ffc107;
+  --system-error: #dc3545;
+  --system-error-dark: #b02a37;
+}
+
+[data-theme='dark'] {
+  --void-primary: #121212; /* Asphalt */
+  --void-secondary: #1E1E1E; /* Darker Asphalt */
+  --text-primary: #EAEAEA; /* Bone */
+  --text-secondary: #A0A0A0; /* Lighter Bone */
+
+  --accent-primary: #DEDEDE; /* Highlight Bone */
+  --accent-primary-dark: #B0B0B0; /* Hover Bone */
+
+  --system-success: #66CF98;
+  --system-warning: #F6AD55;
+  --system-error: #CF6679;
+  --system-error-dark: #B00020;
+}

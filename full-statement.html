@@ -1,42 +1,62 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" data-theme="dark">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Tam Beyan - Ekobol</title>
     
-    <!-- Fonts -->
+    <link rel="icon" href="ekobol.ico" type="image/x-icon">
+    
+    <link rel="stylesheet" href="design_system.css">
+    
     <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
     <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
     
-    <!-- Tailwind CSS Script -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-
-    <!-- Global Stylesheet -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'void-primary': 'var(--void-primary)',
+              'void-secondary': 'var(--void-secondary)',
+              'text-primary': 'var(--text-primary)',
+              'text-secondary': 'var(--text-secondary)',
+              'accent-primary': 'var(--accent-primary)',
+              'accent-primary-dark': 'var(--accent-primary-dark)',
+              'system-success': 'var(--system-success)',
+              'system-warning': 'var(--system-warning)',
+              'system-error': 'var(--system-error)',
+              'system-error-dark': 'var(--system-error-dark)',
+            },
+            shadowColor: {
+              'accent-primary': 'var(--accent-primary)',
+            }
+          }
+        }
+      }
+    </script>
     <link rel="stylesheet" href="global.css">
 
 </head>
-<body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
+<body class="bg-void-secondary text-text-primary">
 <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
 <div class="layout-container flex h-full grow flex-col">
 
-    <!-- Header will be loaded here by JavaScript -->
     <div id="header-placeholder"></div>
 
-    <main class="flex-1 px-4 sm:px-10 lg:px-20 py-10 bg-[var(--background-secondary-color)]">
+    <main class="flex-1 px-4 sm:px-10 lg:px-20 py-10">
         <div class="layout-content-container flex flex-col w-full max-w-7xl mx-auto">
             <div class="mb-8">
-                <h1 class="text-[var(--text-primary-color)] text-4xl font-bold leading-tight tracking-tight">Tam Finansal Beyan</h1>
-                <p class="text-[var(--text-secondary-color)] text-base font-normal leading-normal mt-1">Geçmiş tüm işlemlerinizi ve faturalarınızı görüntüleyin.</p>
+                <h1 class="text-text-primary text-4xl font-bold leading-tight tracking-tight">Tam Finansal Beyan</h1>
+                <p class="text-text-secondary text-base font-normal leading-normal mt-1">Geçmiş tüm işlemlerinizi ve faturalarınızı görüntüleyin.</p>
             </div>
 
-            <!-- Filters and Controls -->
-            <section class="bg-white rounded-xl border border-[var(--divider-color)] shadow-sm p-4 sm:p-6 mb-8 flex flex-col sm:flex-row gap-4 justify-between items-center">
+            <section class="bg-void-primary rounded-xl border border-void-secondary dark:border-white/10 shadow-sm p-4 sm:p-6 mb-8 flex flex-col sm:flex-row gap-4 justify-between items-center">
                 <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                     <div>
                         <label for="date-range-filter" class="sr-only">Tarih Aralığı</label>
-                        <select id="date-range-filter" class="form-select block w-full sm:w-48 rounded-md border-gray-300 shadow-sm focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] bg-white text-[var(--text-primary-color)]">
+                        <select id="date-range-filter" class="form-select block w-full sm:w-48 rounded-md bg-void-secondary border-void-secondary dark:border-white/20 shadow-sm focus:border-accent-primary focus:ring-accent-primary text-text-primary">
                             <option value="last-30-days">Son 30 Gün</option>
                             <option value="this-quarter">Bu Çeyrek</option>
                             <option value="last-quarter">Son Çeyrek</option>
@@ -47,114 +67,105 @@
                     </div>
                 </div>
                 <div class="w-full sm:w-auto flex justify-end">
-                    <button class="inline-flex items-center justify-center rounded-full h-10 px-6 bg-[var(--primary-color)] text-white text-base font-bold shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <button class="inline-flex items-center justify-center rounded-full h-10 px-6 bg-accent-primary text-void-primary text-base font-bold shadow-lg hover:bg-accent-primary-dark transition-shadow duration-300">
                         <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
                         <span>Raporu İndir</span>
                     </button>
                 </div>
             </section>
 
-            <!-- Full Transactions Table -->
-            <section class="bg-white rounded-xl border border-[var(--divider-color)] shadow-sm overflow-hidden mb-8">
+            <section class="bg-void-primary rounded-xl border border-void-secondary dark:border-white/10 shadow-sm overflow-hidden mb-8">
                 <div class="overflow-x-auto">
-                    <table class="min-w-full divide-y divide-[var(--divider-color)]">
-                        <thead class="bg-gray-50">
+                    <table class="min-w-full divide-y divide-void-secondary dark:divide-white/10">
+                        <thead class="bg-void-secondary">
                             <tr>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-[var(--text-secondary-color)] uppercase tracking-wider">İşlem ID</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-[var(--text-secondary-color)] uppercase tracking-wider">Tarih</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-[var(--text-secondary-color)] uppercase tracking-wider">Açıklama</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-[var(--text-secondary-color)] uppercase tracking-wider">Tür</th>
-                                <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-[var(--text-secondary-color)] uppercase tracking-wider">Miktar</th>
-                                <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-[var(--text-secondary-color)] uppercase tracking-wider">Bakiye</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-text-secondary uppercase tracking-wider">İşlem ID</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-text-secondary uppercase tracking-wider">Tarih</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-text-secondary uppercase tracking-wider">Açıklama</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-text-secondary uppercase tracking-wider">Tür</th>
+                                <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-text-secondary uppercase tracking-wider">Miktar</th>
+                                <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-text-secondary uppercase tracking-wider">Bakiye</th>
                             </tr>
                         </thead>
-                        <tbody class="bg-white divide-y divide-[var(--divider-color)]">
-                            <!-- Example transactions (more would be dynamically loaded) -->
-                            <tr class="hover:bg-gray-50 transition-colors">
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-500">TRX00105</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-secondary-color)]">2025-07-14</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[var(--text-primary-color)]">Etsy Satış Ödemesi (Sipariş #E10025)</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm"><span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Gelir</span></td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium text-green-600">+₺150.00</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm text-[var(--text-primary-color)]">₺1,800.00</td>
+                        <tbody class="bg-void-primary divide-y divide-void-secondary dark:divide-white/10">
+                            <tr class="hover:bg-void-secondary transition-colors">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-secondary">TRX00105</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-text-secondary">2025-07-14</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-primary">Etsy Satış Ödemesi (Sipariş #E10025)</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm"><span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-system-success/10 text-system-success">Gelir</span></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium text-system-success">+₺1,500.00</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm text-text-primary">₺1,800.00</td>
                             </tr>
-                            <tr class="hover:bg-gray-50 transition-colors">
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-500">TRX00104</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-secondary-color)]">2025-07-13</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[var(--text-primary-color)]">Trendyol Komisyon (Sipariş #T20060)</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm"><span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">Gider</span></td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium text-red-500">-₺25.00</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm text-[var(--text-primary-color)]">₺1,650.00</td>
+                            <tr class="hover:bg-void-secondary transition-colors">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-secondary">TRX00104</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-text-secondary">2025-07-13</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-primary">Trendyol Komisyon (Sipariş #T20060)</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm"><span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-system-error/10 text-system-error">Gider</span></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium text-system-error">-₺25.00</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm text-text-primary">₺1,650.00</td>
                             </tr>
-                            <tr class="hover:bg-gray-50 transition-colors">
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-500">TRX00103</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-secondary-color)]">2025-07-12</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[var(--text-primary-color)]">Web Sitesi Siparişi (Sipariş #W40080)</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm"><span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Gelir</span></td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium text-green-600">+₺75.00</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm text-[var(--text-primary-color)]">₺1,675.00</td>
+                            <tr class="hover:bg-void-secondary transition-colors">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-secondary">TRX00103</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-text-secondary">2025-07-12</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-primary">Web Sitesi Siparişi (Sipariş #W40080)</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm"><span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-system-success/10 text-system-success">Gelir</span></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium text-system-success">+₺75.00</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm text-text-primary">₺1,675.00</td>
                             </tr>
-                            <tr class="hover:bg-gray-50 transition-colors">
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-500">TRX00102</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-secondary-color)]">2025-07-10</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[var(--text-primary-color)]">Pazarlama Kampanyası Harcaması</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm"><span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">Gider</span></td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium text-red-500">-₺100.00</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm text-[var(--text-primary-color)]">₺1,600.00</td>
+                            <tr class="hover:bg-void-secondary transition-colors">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-secondary">TRX00102</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-text-secondary">2025-07-10</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-primary">Pazarlama Kampanyası Harcaması</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm"><span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-system-error/10 text-system-error">Gider</span></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium text-system-error">-₺100.00</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm text-text-primary">₺1,600.00</td>
                             </tr>
-                            <tr class="hover:bg-gray-50 transition-colors">
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-500">TRX00101</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-secondary-color)]">2025-07-08</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[var(--text-primary-color)]">Hepsiburada Satış Ödemesi (Sipariş #H30015)</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm"><span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Gelir</span></td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium text-green-600">+₺220.00</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm text-[var(--text-primary-color)]">₺1,700.00</td>
+                            <tr class="hover:bg-void-secondary transition-colors">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-secondary">TRX00101</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-text-secondary">2025-07-08</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-primary">Hepsiburada Satış Ödemesi (Sipariş #H30015)</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm"><span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-system-success/10 text-system-success">Gelir</span></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium text-system-success">+₺220.00</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm text-text-primary">₺1,700.00</td>
                             </tr>
-                            <tr class="hover:bg-gray-50 transition-colors">
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-500">TRX00100</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-secondary-color)]">2025-07-05</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[var(--text-primary-color)]">Ekobol Partner Plan Ücreti</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm"><span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">Gider</span></td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium text-red-500">-₺500.00</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm text-[var(--text-primary-color)]">₺1,480.00</td>
+                            <tr class="hover:bg-void-secondary transition-colors">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-secondary">TRX00100</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-text-secondary">2025-07-05</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-primary">Ekobol Partner Plan Ücreti</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm"><span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-system-error/10 text-system-error">Gider</span></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium text-system-error">-₺500.00</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm text-text-primary">₺1,480.00</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <!-- Pagination Placeholder -->
             <section class="mt-8 flex justify-center">
                 <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
-                    <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                    <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-void-secondary dark:border-white/20 bg-void-primary text-sm font-medium text-text-secondary hover:bg-void-secondary">
                         <span class="sr-only">Önceki</span>
-                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
-                        </svg>
+                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" /></svg>
                     </a>
-                    <a href="#" aria-current="page" class="z-10 bg-emerald-50 border-emerald-500 text-emerald-600 relative inline-flex items-center px-4 py-2 text-sm font-medium">1</a>
-                    <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">2</a>
-                    <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">3</a>
-                    <span class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700">...</span>
-                    <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">10</a>
-                    <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                    <a href="#" aria-current="page" class="z-10 bg-accent-primary/10 border-accent-primary text-accent-primary relative inline-flex items-center px-4 py-2 text-sm font-medium">1</a>
+                    <a href="#" class="relative inline-flex items-center px-4 py-2 border border-void-secondary dark:border-white/20 bg-void-primary text-sm font-medium text-text-secondary hover:bg-void-secondary">2</a>
+                    <a href="#" class="relative inline-flex items-center px-4 py-2 border border-void-secondary dark:border-white/20 bg-void-primary text-sm font-medium text-text-secondary hover:bg-void-secondary">3</a>
+                    <span class="relative inline-flex items-center px-4 py-2 border border-void-secondary dark:border-white/20 bg-void-primary text-sm font-medium text-text-secondary">...</span>
+                    <a href="#" class="relative inline-flex items-center px-4 py-2 border border-void-secondary dark:border-white/20 bg-void-primary text-sm font-medium text-text-secondary hover:bg-void-secondary">10</a>
+                    <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-void-secondary dark:border-white/20 bg-void-primary text-sm font-medium text-text-secondary hover:bg-void-secondary">
                         <span class="sr-only">Sonraki</span>
-                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
-                        </svg>
+                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" /></svg>
                     </a>
                 </nav>
             </section>
         </div>
     </main>
 
-    <!-- Footer will be loaded here by JavaScript -->
     <div id="footer-placeholder"></div>
     
 </div>
 </div>
 
-<!-- Load our app script at the end of the body -->
 <script src="app.js"></script>
 
 </body>

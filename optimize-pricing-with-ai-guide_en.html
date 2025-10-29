@@ -1,35 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Optimizing Your Pricing with AI - Ekobol Help Center</title>
+    
+    <link rel="icon" href="ekobol.ico" type="image/x-icon">
+    
+    <link rel="stylesheet" href="design_system.css">
+    
     <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
     <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'void-primary': 'var(--void-primary)',
+              'void-secondary': 'var(--void-secondary)',
+              'text-primary': 'var(--text-primary)',
+              'text-secondary': 'var(--text-secondary)',
+              'accent-primary': 'var(--accent-primary)',
+              'accent-primary-dark': 'var(--accent-primary-dark)',
+              'system-success': 'var(--system-success)',
+              'system-warning': 'var(--system-warning)',
+              'system-error': 'var(--system-error)',
+              'system-error-dark': 'var(--system-error-dark)',
+            },
+            shadowColor: {
+              'accent-primary': 'var(--accent-primary)',
+            }
+          }
+        }
+      }
+    </script>
     <link rel="stylesheet" href="global.css">
+
 </head>
-<body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
+<body class="bg-void-primary text-text-primary">
 <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
 <div class="layout-container flex h-full grow flex-col">
     
     <div id="header-placeholder"></div>
 
     <main class="flex-1 px-4 sm:px-10 lg:px-20 py-16 lg:py-24">
-        <article class="max-w-4xl mx-auto prose lg:prose-xl">
+        <article class="max-w-4xl mx-auto prose lg:prose-xl dark:prose-invert prose-headings:text-text-primary prose-p:text-text-secondary prose-a:text-accent-primary hover:prose-a:text-accent-primary-dark prose-strong:text-text-primary prose-ul:text-text-secondary prose-ol:text-text-secondary">
             <header class="mb-12 text-center">
                 <h1 class="text-4xl md:text-5xl font-extrabold tracking-tighter leading-tight mb-4">
                     Optimizing Your Pricing with AI in Ekobol
                 </h1>
-                <p class="text-lg text-[var(--text-secondary-color)]">
-                    By <span class="font-semibold text-[var(--text-primary-color)]">The Ekobol Product Team</span> on <time datetime="2025-07-19">July 19, 2025</time>
+                <p class="text-lg text-text-secondary">
+                    By <span class="font-semibold text-text-primary">The Ekobol Product Team</span> on <time datetime="2025-07-19">July 19, 2025</time>
                 </p>
             </header>
 
             <figure class="mb-8">
                 <img src="https://images.unsplash.com/photo-1518458028780-ec9860b0e35f?q=80&w=1920&auto=format&fit=crop" alt="AI pricing optimization graphs" class="w-full rounded-lg shadow-md"/>
-                <figcaption class="text-center text-sm text-[var(--text-secondary-color)] mt-2">
+                <figcaption class="text-center text-sm text-text-secondary mt-2">
                     Data-driven pricing decisions for maximum profit.
                 </figcaption>
             </figure>
@@ -90,22 +119,20 @@
                 By leveraging Ekobol's AI Pricing Optimization tool, you can maintain or increase your profitability while staying competitive. It's a data-driven advantage that helps you scale your e-commerce business smarter.
             </p>
 
-            <div class="mt-12 pt-8 border-t border-[var(--divider-color)] text-center">
-                <p class="text-lg text-[var(--text-secondary-color)] mb-4">Need help? Find more guides and answers in our Help Center.</p>
-                <a href="help-center_en.html" class="inline-flex min-w-[160px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-wide shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="mt-12 pt-8 border-t border-void-secondary dark:border-white/10 text-center">
+                <p class="text-lg text-text-secondary mb-4">Need help? Find more guides and answers in our Help Center.</p>
+                <a href="help-center_en.html" class="inline-flex min-w-[160px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-accent-primary text-void-primary text-base font-bold leading-normal tracking-wide shadow-lg hover:bg-accent-primary-dark transition-shadow duration-300">
                     <span class="truncate">Go to Help Center</span>
                 </a>
             </div>
         </article>
     </main>
 
-    <!-- Footer will be loaded here by JavaScript -->
     <div id="footer-placeholder"></div>
     
 </div>
 </div>
 
-<!-- Load our app script at the end of the body -->
 <script src="app.js"></script>
 
 </body>

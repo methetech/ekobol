@@ -1,55 +1,83 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" data-theme="dark">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Yardım Merkezi - Ekobol</title>
+    
+    <link rel="icon" href="ekobol.ico" type="image/x-icon">
+    
+    <link rel="stylesheet" href="design_system.css">
+    
     <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
     <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'void-primary': 'var(--void-primary)',
+              'void-secondary': 'var(--void-secondary)',
+              'text-primary': 'var(--text-primary)',
+              'text-secondary': 'var(--text-secondary)',
+              'accent-primary': 'var(--accent-primary)',
+              'accent-primary-dark': 'var(--accent-primary-dark)',
+              'system-success': 'var(--system-success)',
+              'system-warning': 'var(--system-warning)',
+              'system-error': 'var(--system-error)',
+              'system-error-dark': 'var(--system-error-dark)',
+            },
+            shadowColor: {
+              'accent-primary': 'var(--accent-primary)',
+            }
+          }
+        }
+      }
+    </script>
     <link rel="stylesheet" href="global.css">
 </head>
-<body class="bg-gray-50 text-[var(--text-primary-color)]">
+<body class="bg-void-primary text-text-primary">
 <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
 <div class="layout-container flex h-full grow flex-col">
     <div id="header-placeholder"></div>
     <main class="flex-1">
-        <section class="bg-[var(--primary-color)] text-white py-20">
+        <section class="bg-void-secondary dark:bg-black/20 border-b border-void-secondary dark:border-white/10 py-20">
             <div class="max-w-4xl mx-auto text-center px-4">
-                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tighter">Nasıl yardımcı olabiliriz?</h1>
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tighter text-text-primary">Nasıl yardımcı olabiliriz?</h1>
                 <div class="mt-6 max-w-xl mx-auto">
-                    <input type="search" placeholder="Cevapları arayın..." class="w-full h-14 px-6 rounded-full text-lg text-[var(--text-primary-color)] focus:ring-2 focus:ring-white"/>
+                    <input type="search" placeholder="Cevapları arayın..." class="w-full h-14 px-6 rounded-full text-lg bg-void-primary border-void-secondary dark:border-white/20 text-text-primary focus:ring-2 focus:ring-accent-primary"/>
                 </div>
             </div>
         </section>
         <section class="px-4 sm:px-10 lg:px-20 py-16 lg:py-24">
             <div class="max-w-7xl mx-auto">
-                 <h2 class="text-3xl font-bold text-center mb-12">Yardım Konularına Göz Atın</h2>
+                 <h2 class="text-3xl font-bold text-center mb-12 text-text-primary">Yardım Konularına Göz Atın</h2>
                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white border border-[var(--divider-color)] p-8 rounded-lg">
-                        <h3 class="font-bold text-xl mb-4">Başlarken</h3>
+                    <div class="bg-void-secondary dark:bg-black/20 border border-void-secondary dark:border-white/10 p-8 rounded-lg">
+                        <h3 class="font-bold text-xl mb-4 text-text-primary">Başlarken</h3>
                         <ul class="space-y-3">
-                            <li class="text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] cursor-pointer"><a href="connect-marketplace-guide.html">İlk pazar yerinizi bağlama</a></li>
-                            <li class="text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] cursor-pointer"><a href="setup-profile-guide.html">Profilinizi ayarlama</a></li>
-                            <li class="text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] cursor-pointer"><a href="understanding-dashboard-guide.html">Kontrol panelini anlama</a></li>
+                            <li><a href="connect-marketplace-guide.html" class="text-text-secondary hover:text-accent-primary hover:underline">İlk pazar yerinizi bağlama</a></li>
+                            <li><a href="setup-profile-guide.html" class="text-text-secondary hover:text-accent-primary hover:underline">Profilinizi ayarlama</a></li>
+                            <li><a href="understanding-dashboard-guide.html" class="text-text-secondary hover:text-accent-primary hover:underline">Kontrol panelini anlama</a></li>
                         </ul>
                     </div>
-                    <div class="bg-white border border-[var(--divider-color)] p-8 rounded-lg">
-                        <h3 class="font-bold text-xl mb-4">YZ Araçları</h3>
+                    <div class="bg-void-secondary dark:bg-black/20 border border-void-secondary dark:border-white/10 p-8 rounded-lg">
+                        <h3 class="font-bold text-xl mb-4 text-text-primary">YZ Araçları</h3>
                         <ul class="space-y-3">
-                            <li class="text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] cursor-pointer"><a href="ai-image-generator-guide.html">Görüntü Oluşturucu nasıl kullanılır</a></li>
-                            <li class="text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] cursor-pointer"><a href="best-practices-ai-descriptions.html">YZ açıklamaları için en iyi pratikler</a></li>
-                            <li class="text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] cursor-pointer"><a href="optimize-pricing-with-ai-guide.html">YZ ile fiyatlandırmanızı optimize etme</a></li>
-                            <li class="text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] cursor-pointer"><a href="ai-inventory-automation-guide.html">YZ ile envanter otomasyonu</a></li>
+                            <li><a href="ai-image-generator-guide.html" class="text-text-secondary hover:text-accent-primary hover:underline">Görüntü Oluşturucu nasıl kullanılır</a></li>
+                            <li><a href="best-practices-ai-descriptions.html" class="text-text-secondary hover:text-accent-primary hover:underline">YZ açıklamaları için en iyi pratikler</a></li>
+                            <li><a href="optimize-pricing-with-ai-guide.html" class="text-text-secondary hover:text-accent-primary hover:underline">YZ ile fiyatlandırmanızı optimize etme</a></li>
+                            <li><a href="ai-inventory-automation-guide.html" class="text-text-secondary hover:text-accent-primary hover:underline">YZ ile envanter otomasyonu</a></li>
                         </ul>
                     </div>
-                    <div class="bg-white border border-[var(--divider-color)] p-8 rounded-lg">
-                        <h3 class="font-bold text-xl mb-4">Faturalandırma ve Planlar</h3>
+                    <div class="bg-void-secondary dark:bg-black/20 border border-void-secondary dark:border-white/10 p-8 rounded-lg">
+                        <h3 class="font-bold text-xl mb-4 text-text-primary">Faturalandırma ve Planlar</h3>
                         <ul class="space-y-3">
-                            <li class="text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] cursor-pointer"><a href="how-revenue-sharing-works-guide.html">Gelir paylaşımı nasıl çalışır</a></li>
-                            <li class="text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] cursor-pointer"><a href="upgrade-downgrade-plan-guide.html">Planınızı yükseltme veya düşürme</a></li>
-                            <li class="text-[var(--text-secondary-color)] hover:text-[var(--primary-color)] cursor-pointer"><a href="viewing-invoices-guide.html">Faturalarınızı görüntüleme</a></li>
+                            <li><a href="how-revenue-sharing-works-guide.html" class="text-text-secondary hover:text-accent-primary hover:underline">Gelir paylaşımı nasıl çalışır</a></li>
+                            <li><a href="upgrade-downgrade-plan-guide.html" class="text-text-secondary hover:text-accent-primary hover:underline">Planınızı yükseltme veya düşürme</a></li>
+                            <li><a href="viewing-invoices-guide.html" class="text-text-secondary hover:text-accent-primary hover:underline">Faturalarınızı görüntüleme</a></li>
                         </ul>
                     </div>
                  </div>

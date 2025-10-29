@@ -1,25 +1,53 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" data-theme="dark">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Ödeme - Ekobol</title>
+    
+    <link rel="icon" href="ekobol.ico" type="image/x-icon">
+    
+    <link rel="stylesheet" href="design_system.css">
+    
     <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
     <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'void-primary': 'var(--void-primary)',
+              'void-secondary': 'var(--void-secondary)',
+              'text-primary': 'var(--text-primary)',
+              'text-secondary': 'var(--text-secondary)',
+              'accent-primary': 'var(--accent-primary)',
+              'accent-primary-dark': 'var(--accent-primary-dark)',
+              'system-success': 'var(--system-success)',
+              'system-warning': 'var(--system-warning)',
+              'system-error': 'var(--system-error)',
+              'system-error-dark': 'var(--system-error-dark)',
+            },
+            shadowColor: {
+              'accent-primary': 'var(--accent-primary)',
+            }
+          }
+        }
+      }
+    </script>
     <link rel="stylesheet" href="global.css">
 </head>
-<body class="bg-[var(--background-color)] text-[var(--text-primary-color)]">
+<body class="bg-void-primary text-text-primary">
 <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
 <div class="layout-container flex h-full grow flex-col">
     <div id="header-placeholder"></div>
-    <main class="flex-1 flex items-center justify-center px-4 py-16 lg:py-24 bg-gray-50">
+    <main class="flex-1 flex items-center justify-center px-4 py-16 lg:py-24">
         <div class="w-full max-w-md text-center">
-            <h1 class="text-3xl font-bold tracking-tight md:text-4xl">Ödeme Sayfası</h1>
-            <p class="mt-4 text-lg text-[var(--text-secondary-color)]">Ödeme işleminizi tamamlamak için buradasınız.</p>
-            <div class="mt-8 rounded-lg border border-[var(--divider-color)] bg-[var(--background-color)] p-8 shadow-sm">
-                <p class="text-[var(--text-secondary-color)]">Bu, gerçek bir ödeme ağ geçidi entegrasyonunun olacağı yerdir.</p>
+            <h1 class="text-3xl font-bold tracking-tight md:text-4xl text-text-primary">Ödeme Sayfası</h1>
+            <p class="mt-4 text-lg text-text-secondary">Ödeme işleminizi tamamlamak için buradasınız.</p>
+            <div class="mt-8 rounded-lg border border-void-secondary dark:border-white/10 bg-void-secondary p-8 shadow-sm">
+                <p class="text-text-secondary">Bu, gerçek bir ödeme ağ geçidi entegrasyonunun olacağı yerdir.</p>
             </div>
         </div>
     </main>
