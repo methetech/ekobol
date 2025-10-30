@@ -46,3 +46,4 @@ This document outlines the planned development steps for `ekobol.com`.
     - Prioritize this for future development to prevent similar issues.
     - [x] Implement GitHub Pages deployment.
     - [x] Revert i18n loadPath and deploy script for GitHub Pages.
+    - [x] Correct GitHub Pages deployment configuration (homepage, logo link, i18n loadPath).

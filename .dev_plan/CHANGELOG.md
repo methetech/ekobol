@@ -2,6 +2,12 @@
 
 All significant changes made to the `ekobol.com` project will be documented here.
 
+## [2025-10-30] - GitHub Pages Deployment Configuration Corrected
+
+- **FIXED:** `homepage` field in `frontend/package.json` set to `http://methetech.github.io/ekobol`.
+- **FIXED:** Logo link in `frontend/src/components/Header.js` changed to `/ekobol`.
+- **FIXED:** `i18n.js` `loadPath` adjusted to `/ekobol/locales/{{lng}}/{{ns}}.json`.
+
 ## [2025-10-30] - i18n loadPath and Deploy Script Reverted
 
 - **REVERTED:** `i18n.js` `loadPath` back to `/locales/{{lng}}/{{ns}}.json`.
