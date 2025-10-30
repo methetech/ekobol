@@ -1,0 +1,27 @@
+{
+  "solutions": {
+    "title": {
+      "part1": "One Platform,",
+      "part2": "Infinite Strategy."
+    },
+    "subtitle": "Whether you are a creative artisan, a growing brand, or an established manufacturer... Choose one of the strategic paths designed to build your empire.",
+    "artisan": {
+      "title": "For the Artisan Ruler: Basic Plan",
+      "description": "For those who like to be in control but hate repetitive tasks. The basic plan provides full access to our AI-powered platform for a fair 10% profit share. You manage the strategy, we automate the drudgery and give you back your most valuable asset: time.",
+      "link": "View the Strategy",
+      "alt": "An artisan ruler working in their workshop"
+    },
+    "architect": {
+      "title": "For the Empire Architect: Partner Plan",
+      "description": "Your genius is in creating great products, not managing digital operations. With the 50/50 Partner Plan, you just produce and ship. We'll take care of the rest: build your brand, run your marketing, optimize your listings. We build your empire on your behalf.",
+      "link": "Partner Up",
+      "alt": "Empire architects collaborating on a project"
+    },
+    "strategist": {
+      "title": "For the Master Strategist: Dynamic Plan",
+      "description": "Your needs evolve. The Dynamic Plan offers an adjustable revenue share based on the workload between you and our platform. As you take on more responsibility, your profit share increases. This is the ultimate flexible partnership for growing businesses.",
+      "link": "Discover Flexibility",
+      "alt": "Strategists planning on a map"
+    }
+  }
+}

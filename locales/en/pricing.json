@@ -1,0 +1,93 @@
+{
+  "pricing": {
+    "title": {
+      "part1": "Not Fair Pricing,",
+      "part2": "Strategic Investment."
+    },
+    "subtitle": "The scale of your empire is determined by the strength of the alliance you choose. No hidden costs. Only shared victory.",
+    "pacts": {
+      "rebel": {
+        "title": "Rebel Pact",
+        "subtitle": "For the lone warriors who stay in control.",
+        "price": "10%",
+        "period": " / of profit",
+        "features": [
+          {
+            "name": "Full Access to",
+            "desc": "Genesis Engine"
+          },
+          {
+            "desc": "Entire",
+            "name": "AI Arsenal"
+          },
+          "Unlimited Channel Integration",
+          {
+            "name": "Unified",
+            "desc": "Command Center"
+          }
+        ],
+        "cta": "Initiate Pact"
+      },
+      "ruler": {
+        "badge": "RECOMMENDED DECREE",
+        "title": "Ruler's Decree",
+        "subtitle": "For those who only set the vision.",
+        "price": "50%",
+        "period": " / of profit",
+        "features": [
+          {
+            "name": "Everything in Rebel Pact, PLUS:",
+            "desc": ""
+          },
+          "Professional Brand & Website Build",
+          "Full Digital Marketing Management (SEO, Ads)",
+          "Comprehensive Operations Management",
+          "Dedicated Growth Strategist"
+        ],
+        "cta": "Approve Decree"
+      },
+      "blacksmith": {
+        "title": "Blacksmith's Forge",
+        "subtitle": "For the masters who forge their own arsenal.",
+        "price": "$20",
+        "period": "/mo",
+        "features": [
+          "Create your own plan with marketplace tiers and AI tools",
+          "Cancel or adjust anytime",
+          "20% discount on annual payments"
+        ],
+        "cta": "Fire the Forge"
+      }
+    },
+    "alliances": {
+      "title": "Custom Alliances",
+      "subtitle": "Beyond the standard pacts, for special missions.",
+      "dynamic": {
+        "title": "Dynamic Alliance",
+        "description": "A flexible partnership that shares the workload and constantly adjusts the profit share. It evolves with you."
+      },
+      "build_transfer": {
+        "title": "Build and Transfer Decree",
+        "description": "We build your empire for you and hand you the keys. A one-time, powerful start."
+      }
+    },
+    "faq": {
+      "title": "War Council: FAQ",
+      "subtitle": "What you need to know before setting your strategy.",
+      "questions": [
+        {
+          "q": "What exactly does \"% of Profit\" mean?",
+          "a": "Profit is the net revenue after product costs and marketplace commissions are deducted. We show every penny transparently in your finance panel. Nothing is hidden."
+        },
+        {
+          "q": "Can I change or cancel my plan at any time?",
+          "a": "Yes. The decree is yours. There are no long-term commitments. You can upgrade, downgrade, or cancel your plan for your next billing cycle at any time."
+        },
+        {
+          "q": "Who owns the website and brand in the Ruler's Decree?",
+          "a": "You. We build and manage on your behalf, but all intellectual property rights and assets are entirely yours. We are just the loyal architects of your empire."
+        }
+      ]
+    }
+  }
+}

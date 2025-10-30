@@ -1,0 +1,33 @@
+{
+  "about": {
+    "title": {
+      "line1": "Biz İnşa Edenler, Hayal Kuranlar ve",
+      "line2": "Büyümedeki Ortaklarınızız."
+    },
+    "subtitle": "Ekobol basit bir fikirden doğdu: e-ticaret harika ürünlerle ilgili olmalı, sıkıcı süreçlerle değil. Biz Me the Tech'iz ve Ekobol, karmaşık dijital dünyaya cevabımızdır.",
+    "founders": {
+      "title": "Kurucularla Tanışın",
+      "subtitle": "Ekobol'ün yenilikçiliğinin ve mimarisinin arkasındaki itici güç.",
+      "members": [
+        {
+          "name": "Mete Avcı",
+          "role": "YZ, UX & Frontend Vizyoneri",
+          "bio": "Mete, kullanıcıya takıntılıdır. Ekobol'ün sezgisel arayüzünü tasarladı ve çığır açan YZ özelliklerimizin geliştirilmesine liderlik ederek güçlü teknolojinin zahmetsiz ve sihirli hissettirmesini sağlıyor."
+        },
+        {
+          "name": "Doğa Aydın",
+          "role": "Full-Stack & Sistem Mimarı",
+          "bio": "Doğa, Ekobol'ün bel kemiğidir. Sayısız pazar yerinde gerçek zamanlı senkronizasyon ve kusursuz performans sağlayan sağlam, ölçeklenebilir ve güvenli full-stack mimarisini tasarladı."
+        }
+      ]
+    },
+    "philosophy": {
+      "title": "Felsefemiz: Me the Tech",
+      "content": {
+        "part1": "Ekobol, ",
+        "part2": "Me the Tech",
+        "part3": "'in ilk ürünüdür. Felsefemiz, teknolojinin insan yaratıcılığının bir engeli değil, bir uzantısı olması gerektiğidir. Canlılar gibi hareket eden \"düşünen kodlar ve çalışan sistemler\" inşa ediyoruz. Yapay zeka destekli grafik tasarımdan akıllı web altyapılarına kadar, yazdığımız her koda amaç ve zeka katıyoruz. Ekobol, dijital imparatorluğunuzu kurmanız için yaratılmış bu vizyonun somutlaşmış halidir."
+      }
+    }
+  }
+}

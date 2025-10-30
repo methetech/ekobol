@@ -1,0 +1,33 @@
+{
+  "about": {
+    "title": {
+      "line1": "We are the Builders, the Dreamers, and",
+      "line2": "Your Partners in Growth."
+    },
+    "subtitle": "Ekobol was born from a simple idea: e-commerce should be about great products, not tedious processes. We are Me the Tech, and Ekobol is our answer to the complex digital world.",
+    "founders": {
+      "title": "Meet the Founders",
+      "subtitle": "The driving force behind Ekobol's innovation and architecture.",
+      "members": [
+        {
+          "name": "Mete Avcı",
+          "role": "AI, UX & Frontend Visionary",
+          "bio": "Mete is obsessed with the user. He designed Ekobol's intuitive interface and leads the development of our groundbreaking AI features, ensuring that powerful technology feels effortless and magical."
+        },
+        {
+          "name": "Doğa Aydın",
+          "role": "Full-Stack & Systems Architect",
+          "bio": "Doğa is the backbone of Ekobol. He engineered the robust, scalable, and secure full-stack architecture that ensures real-time synchronization and flawless performance across countless marketplaces."
+        }
+      ]
+    },
+    "philosophy": {
+      "title": "Our Philosophy: Me the Tech",
+      "content": {
+        "part1": "Ekobol is the first product of ",
+        "part2": "Me the Tech",
+        "part3": ". Our philosophy is that technology should be an extension of human creativity, not a barrier to it. We build \"thinking codes and working systems\" that act like living organisms. From AI-powered graphic design to intelligent web infrastructures, we infuse every code we write with purpose and intelligence. Ekobol is the embodiment of this vision, created for you to build your digital empire."
+      }
+    }
+  }
+}
