@@ -2,6 +2,10 @@
 
 All significant changes made to the `ekobol.com` project will be documented here.
 
+## [2025-10-30] - Logo Resized in Header and Footer
+
+- **UPDATED:** Logo size increased in `frontend/src/components/Header.js` and `frontend/src/components/Footer.js`.
+
 ## [2025-10-30] - Logo Moved to static/media and Paths Updated
 
 - **MOVED:** `ekobol.png` from `frontend/public` to `frontend/public/static/media`.
