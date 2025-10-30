@@ -2,6 +2,11 @@
 
 All significant changes made to the `ekobol.com` project will be documented here.
 
+## [2025-10-30] - MagicBento Mobile Optimization Implemented (Responsive Grid, Removed Fixed Positioning)
+
+- **FIXED:** `magic-bento-grid` in `frontend/src/App.css` adjusted for mobile responsiveness (single column by default, multi-column from `md` breakpoint).
+- **REMOVED:** Fixed card positioning (ID-based `grid-column` and `grid-row`) from `frontend/src/components/MagicBento.js` to allow natural stacking on mobile.
+
 ## [2025-10-30] - Header Mobile Optimization Implemented (Overflow Hidden, Language/Theme Toggles)
 
 - **ADDED:** `overflow-hidden` to `document.body` when mobile menu is open in `frontend/src/components/Header.js`.

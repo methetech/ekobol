@@ -271,24 +271,20 @@ select {
 
 .magic-bento-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr; /* Default to single column for mobile */
   gap: 1.5rem; /* 24px */
   padding: 1rem;
   z-index: 10; /* Ensure it appears above other content */
 }
 
-.bento-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease, scale 0.3s ease;
-  will-change: transform, box-shadow;
-  cursor: pointer;
+@media (min-width: 768px) { /* md breakpoint */
+  .magic-bento-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
 }
 
-/* Card Positioning */
-#card-forge { grid-column: 1 / 2; grid-row: 1 / 2; }
-#card-amplify { grid-column: 2 / 3; grid-row: 1 / 2; }
-#card-dominate { grid-column: 3 / 4; grid-row: 1 / 2; }
-#card-connectivity { grid-column: 1 / 2; grid-row: 2 / 3; align-self: center; }
-#card-insights { grid-column: 3 / 4; grid-row: 2 / 3; align-self: center; }
+/* Card Positioning - Removed for mobile responsiveness */
+
 
 /* SVG Connections Layer */
 .bento-connections {

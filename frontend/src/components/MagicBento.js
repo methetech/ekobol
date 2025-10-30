@@ -110,16 +110,16 @@ const MagicBento = () => {
 
   return (
     <div ref={containerRef} className="magic-bento-grid relative w-full max-w-5xl mx-auto">
-      <Card id="card-seo-analysis" data={cardData.seo_analysis} />
-      <Card id="card-competitor-analysis" data={cardData.competitor_analysis} />
-      <Card id="card-forge" data={cardData.forge} />
-      <Card id="card-ai-visuals" data={cardData.ai_visuals} />
-      <Card id="card-ai-descriptions" data={cardData.ai_descriptions} />
-      <Card id="card-amplify" data={cardData.amplify} />
-      <Card id="card-connectivity" data={cardData.connectivity} />
-      <Card id="card-insights" data={cardData.insights} />
-      <Card id="card-dominate" data={cardData.dominate} />
-      <Card id="card-ai-learning" data={cardData.ai_learning} />
+      <Card data={cardData.seo_analysis} />
+      <Card data={cardData.competitor_analysis} />
+      <Card data={cardData.forge} />
+      <Card data={cardData.ai_visuals} />
+      <Card data={cardData.ai_descriptions} />
+      <Card data={cardData.amplify} />
+      <Card data={cardData.connectivity} />
+      <Card data={cardData.insights} />
+      <Card data={cardData.dominate} />
+      <Card data={cardData.ai_learning} />
     </div>
   );
 };
