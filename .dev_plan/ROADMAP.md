@@ -45,3 +45,4 @@ This document outlines the planned development steps for `ekobol.com`.
     - Implement a custom tool or script for targeted section replacement that is resilient to minor whitespace or i18n call variations.
     - Prioritize this for future development to prevent similar issues.
     - [x] Implement GitHub Pages deployment.
+    - [x] Revert i18n loadPath and deploy script for GitHub Pages.

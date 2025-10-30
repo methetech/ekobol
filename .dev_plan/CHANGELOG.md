@@ -2,6 +2,11 @@
 
 All significant changes made to the `ekobol.com` project will be documented here.
 
+## [2025-10-30] - i18n loadPath and Deploy Script Reverted
+
+- **REVERTED:** `i18n.js` `loadPath` back to `/locales/{{lng}}/{{ns}}.json`.
+- **REVERTED:** `deploy` script in `frontend/package.json` to `gh-pages -d build`.
+
 ## [2025-10-30] - Deploy Script Refinement for GitHub Pages
 
 - **MODIFIED:** `deploy` script in `frontend/package.json` to explicitly specify the repository and branch for `gh-pages`.
