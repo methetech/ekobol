@@ -6,7 +6,6 @@ import GlassSurface from './GlassSurface';
 const Footer = () => {
   const { t } = useTranslation();
   const year = 2025;
-  console.log('Footer copyright:', t('footer_copyright', { year }));
 
   return (
     <footer className="bg-transparent text-text-secondary px-4 sm:px-10 py-8 md:py-12 transition-colors duration-300 z-10 relative">

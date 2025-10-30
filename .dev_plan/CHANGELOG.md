@@ -2,6 +2,11 @@
 
 All significant changes made to the `ekobol.com` project will be documented here.
 
+## [2025-10-30] - index.html Base Tag Added and Footer Debug Log Removed
+
+- **ADDED:** `<base href="%PUBLIC_URL%/">` tag to `frontend/public/index.html` to correctly resolve relative URLs.
+- **REMOVED:** Temporary `console.log` from `frontend/src/components/Footer.js`.
+
 ## [2025-10-30] - i18n Language Fallback and Logo Paths Corrected, Theme Persistence Implemented
 
 - **FIXED:** `i18n.js` updated with `supportedLngs` and `nonExplicitSupportedLngs` for correct language fallback.
