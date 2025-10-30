@@ -102,7 +102,7 @@ const MagicBento = () => {
       <GlassSurface className="w-full h-full p-6 flex flex-col items-start">
         {data.icon && React.createElement(data.icon, { className: "h-8 w-8 text-accent-primary mb-4" })}
         <span className="text-sm font-bold text-accent-primary uppercase tracking-widest">{data.label}</span>
-        <h3 className="text-xl font-bold my-2 text-text-primary">{data.title}</h3>
+        <h3 className="text-lg sm:text-xl font-bold my-2 text-text-primary">{data.title}</h3>
         <p className="text-text-secondary text-sm leading-relaxed">{data.description}</p>
       </GlassSurface>
     </div>

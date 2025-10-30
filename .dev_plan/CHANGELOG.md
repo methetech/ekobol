@@ -2,6 +2,15 @@
 
 All significant changes made to the `ekobol.com` project will be documented here.
 
+## [2025-10-30] - Custom Domain Configuration for ekobol.com
+
+- **UPDATED:** `homepage` in `frontend/package.json` changed to `http://ekobol.com`.
+- **UPDATED:** `basename` in `frontend/src/App.js` `BrowserRouter` changed to `/`.
+
+## [2025-10-30] - MagicBento Card h3 Font Size Adjusted for Mobile
+
+- **FIXED:** `h3` font size in `frontend/src/components/MagicBento.js` Card component adjusted for better mobile responsiveness.
+
 ## [2025-10-30] - MagicBento Mobile Optimization Implemented (Responsive Grid, Removed Fixed Positioning)
 
 - **FIXED:** `magic-bento-grid` in `frontend/src/App.css` adjusted for mobile responsiveness (single column by default, multi-column from `md` breakpoint).

@@ -44,17 +44,17 @@ const HomePage = () => {
       {/* Hero Section */}
       <section className="px-4 sm:px-10 lg:px-20 py-24 lg:py-40 text-center relative" data-aos="fade-up">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tighter leading-tight mb-6 text-text-primary dark:hero-glow">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tighter leading-tight mb-4 sm:mb-6 text-text-primary dark:hero-glow">
             {t('hero_title')}
           </h1>
-          <p className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto mb-10">
+          <p className="text-base sm:text-lg text-text-secondary max-w-3xl mx-auto mb-8 sm:mb-10">
             {t('hero_subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <Link to="/signup" className="flex w-full sm:w-auto min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-accent-primary text-void-secondary text-lg font-bold shadow-lg transition-all duration-300 hover:bg-accent-primary-dark">
+            <Link to="/signup" className="flex w-full sm:w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-accent-primary text-void-secondary text-base font-bold shadow-lg transition-all duration-300 hover:bg-accent-primary-dark">
               <span className="truncate">{t('hero_cta1')}</span>
             </Link>
-            <Link to="/solutions" className="flex w-full sm:w-auto min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-transparent border-2 border-accent-primary text-accent-primary text-lg font-bold transition-all duration-300 hover:bg-accent-primary hover:text-void-primary">
+            <Link to="/solutions" className="flex w-full sm:w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-transparent border-2 border-accent-primary text-accent-primary text-base font-bold transition-all duration-300 hover:bg-accent-primary hover:text-void-primary">
               <span className="truncate">{t('hero_cta2')}</span>
             </Link>
           </div>
@@ -98,22 +98,22 @@ const HomePage = () => {
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-text-primary">{t('genesis_title')}</h2>
             <p className="text-lg text-text-secondary mt-4">{t('genesis_subtitle')}</p>
           </div>
-          <div className="relative grid md:grid-cols-3 gap-8">
+          <div className="relative grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
             <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent -translate-y-1/2 -z-10 hidden md:block"></div>
-            <div className="relative flex flex-col items-center text-center p-6 bg-void-primary/50 dark:bg-white/5 rounded-lg border border-void-secondary dark:border-white/10 backdrop-blur-xl shadow-sm hover:shadow-xl transition-shadow">
-              <div className="relative mb-6 flex items-center justify-center size-16 rounded-full bg-accent-primary text-void-secondary shadow-lg"><span className="text-2xl font-bold">1</span></div>
-              <h3 className="text-xl font-bold mb-3 text-text-primary">{t('genesis_step1_title')}</h3>
-              <p className="text-text-secondary">{t('genesis_step1_desc')}</p>
+            <div className="relative flex flex-col items-center text-center p-4 sm:p-6 bg-void-primary/50 dark:bg-white/5 rounded-lg border border-void-secondary dark:border-white/10 backdrop-blur-xl shadow-sm hover:shadow-xl transition-shadow">
+              <div className="relative mb-4 flex items-center justify-center size-12 sm:size-16 rounded-full bg-accent-primary text-void-secondary shadow-lg"><span className="text-xl sm:text-2xl font-bold">1</span></div>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 text-text-primary">{t('genesis_step1_title')}</h3>
+              <p className="text-sm text-text-secondary">{t('genesis_step1_desc')}</p>
             </div>
-            <div className="relative flex flex-col items-center text-center p-6 bg-void-primary/50 dark:bg-white/5 rounded-lg border border-void-secondary dark:border-white/10 backdrop-blur-xl shadow-sm hover:shadow-xl transition-shadow">
-              <div className="relative mb-6 flex items-center justify-center size-16 rounded-full bg-accent-primary text-void-secondary shadow-lg"><span className="text-2xl font-bold">2</span></div>
-              <h3 className="text-xl font-bold mb-3 text-text-primary">{t('genesis_step2_title')}</h3>
-              <p className="text-text-secondary">{t('genesis_step2_desc')}</p>
+            <div className="relative flex flex-col items-center text-center p-4 sm:p-6 bg-void-primary/50 dark:bg-white/5 rounded-lg border border-void-secondary dark:border-white/10 backdrop-blur-xl shadow-sm hover:shadow-xl transition-shadow">
+              <div className="relative mb-4 flex items-center justify-center size-12 sm:size-16 rounded-full bg-accent-primary text-void-secondary shadow-lg"><span className="text-xl sm:text-2xl font-bold">2</span></div>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 text-text-primary">{t('genesis_step2_title')}</h3>
+              <p className="text-sm text-text-secondary">{t('genesis_step2_desc')}</p>
             </div>
-            <div className="relative flex flex-col items-center text-center p-6 bg-void-primary/50 dark:bg-white/5 rounded-lg border border-void-secondary dark:border-white/10 backdrop-blur-xl shadow-sm hover:shadow-xl transition-shadow">
-              <div className="relative mb-6 flex items-center justify-center size-16 rounded-full bg-accent-primary text-void-secondary shadow-lg"><span className="text-2xl font-bold">3</span></div>
-              <h3 className="text-xl font-bold mb-3 text-text-primary">{t('genesis_step3_title')}</h3>
-              <p className="text-text-secondary">{t('genesis_step3_desc')}</p>
+            <div className="relative flex flex-col items-center text-center p-4 sm:p-6 bg-void-primary/50 dark:bg-white/5 rounded-lg border border-void-secondary dark:border-white/10 backdrop-blur-xl shadow-sm hover:shadow-xl transition-shadow">
+              <div className="relative mb-4 flex items-center justify-center size-12 sm:size-16 rounded-full bg-accent-primary text-void-secondary shadow-lg"><span className="text-xl sm:text-2xl font-bold">3</span></div>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 text-text-primary">{t('genesis_step3_title')}</h3>
+              <p className="text-sm text-text-secondary">{t('genesis_step3_desc')}</p>
             </div>
           </div>
         </GlassSurface>

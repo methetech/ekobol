@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://methetech.github.io/ekobol",
+  "homepage": "http://ekobol.com",
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@react-three/drei": "^9.107.0",

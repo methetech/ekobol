@@ -47,4 +47,4 @@ This document outlines the planned development steps for `ekobol.com`.
     - [x] Implement GitHub Pages deployment.
     - [x] Revert i18n loadPath and deploy script for GitHub Pages.
     - [x] Correct GitHub Pages deployment configuration (homepage, logo link, i18n loadPath, i18n language fallback, footer logo path, index.html base tag, BrowserRouter basename, BrowserRouter closing tag fix, BrowserRouter import fix).
-    - [x] Implement mobile optimization for MagicBento (responsive grid, remove fixed positioning).
+    - [x] Configure custom domain (ekobol.com) for GitHub Pages.

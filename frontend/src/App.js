@@ -121,7 +121,7 @@ const AppContent = () => {
 function App() {
   return (
     <ThemeProvider>
-                <BrowserRouter basename="/ekobol">
+                <BrowserRouter basename="/">
                   <AppContent />
                 </BrowserRouter>    </ThemeProvider>
   );
