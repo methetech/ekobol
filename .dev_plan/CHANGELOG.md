@@ -7,6 +7,11 @@ All significant changes made to the `ekobol.com` project will be documented here
 - **UPDATED:** `homepage` in `frontend/package.json` changed to `http://ekobol.com`.
 - **UPDATED:** `basename` in `frontend/src/App.js` `BrowserRouter` changed to `/`.
 
+## [2025-10-30] - Custom Domain Configuration Reverted
+
+- **REVERTED:** `homepage` in `frontend/package.json` reverted to `http://methetech.github.io/ekobol`.
+- **REVERTED:** `basename` in `frontend/src/App.js` `BrowserRouter` reverted to `/ekobol`.
+
 ## [2025-10-30] - MagicBento Card h3 Font Size Adjusted for Mobile
 
 - **FIXED:** `h3` font size in `frontend/src/components/MagicBento.js` Card component adjusted for better mobile responsiveness.
