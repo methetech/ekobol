@@ -19,3 +19,9 @@ Our mission is to incrementally transform the existing static site into a modern
 ## The Grand Plan (High-Level)
 1.  **Phase 1: Visual Overhaul (Current Focus):** Enhance the existing static site with modern tools and design principles (Tailwind CSS, animations, better UX).
 2.  **Phase 2: Full Migration (Long-Term Goal):** Once the visual overhaul is complete and the site is in a better state, plan and execute a full migration to a modern framework like Next.js.
+
+## Operational Guidelines Update: Tool Adaptability
+
+- **Issue Identified:** Over-reliance on the `replace` tool's exact matching for complex content modifications, particularly when dealing with i18n calls and dynamic content, led to repeated failures and inefficient workflow.
+- **Refinement:** Emphasize dynamic adaptation of tool usage. When a tool proves brittle or unsuitable for a specific task (e.g., `replace` for large, dynamic HTML blocks), immediately pivot to alternative, more robust methods (e.g., `read_file` + manual string manipulation + `write_file`).
+- **Mandate:** Prioritize task completion and efficiency over rigid adherence to a single tool. Understand tool limitations and proactively seek alternative solutions within the available toolkit.

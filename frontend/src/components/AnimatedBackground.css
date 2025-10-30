@@ -1,67 +1,64 @@
-
 .animated-background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
   overflow: hidden;
-  pointer-events: none;
+  background-color: var(--void-primary); /* Fallback background */
 }
 
 .shape {
   position: absolute;
-  background: var(--animated-shape-color);
   border-radius: 50%;
-  opacity: 0.3;
-  animation: float-and-fade var(--animated-speed) infinite ease-in-out alternate;
+  filter: blur(150px);
+  opacity: 0.5;
+  mix-blend-mode: screen; /* Or 'overlay', 'soft-light' */
 }
 
-.shape:nth-child(1) {
-  width: 100px;
-  height: 100px;
-  left: 10%;
+.shape-1 {
+  width: 800px;
+  height: 800px;
+  top: -20%;
+  left: -20%;
+  background: radial-gradient(circle, var(--accent-primary) 0%, transparent 70%);
+  animation: drift 25s infinite alternate ease-in-out;
+}
+
+.shape-2 {
+  width: 700px;
+  height: 700px;
+  bottom: -10%;
+  right: -15%;
+  background: radial-gradient(circle, var(--system-success) 0%, transparent 70%);
+  animation: drift 30s infinite alternate-reverse ease-in-out;
+}
+
+.shape-3 {
+  width: 600px;
+  height: 600px;
   top: 20%;
-  animation-delay: 0s;
-  transform: scale(0.8);
+  right: 10%;
+  background: radial-gradient(circle, var(--system-warning) 0%, transparent 70%);
+  animation: drift 20s infinite alternate ease-in-out;
 }
 
-.shape:nth-child(2) {
-  width: 150px;
-  height: 150px;
-  left: 30%;
-  top: 50%;
-  animation-delay: 2s;
-  transform: scale(1.2);
+.shape-4 {
+    width: 500px;
+    height: 500px;
+    bottom: 15%;
+    left: 5%;
+    background: radial-gradient(circle, var(--system-info) 0%, transparent 70%);
+    animation: drift 35s infinite alternate-reverse ease-in-out;
 }
 
-.shape:nth-child(3) {
-  width: 80px;
-  height: 80px;
-  left: 60%;
-  top: 10%;
-  animation-delay: 4s;
-  transform: scale(0.7);
-}
 
-.shape:nth-child(4) {
-  width: 120px;
-  height: 120px;
-  left: 80%;
-  top: 70%;
-  animation-delay: 6s;
-  transform: scale(1.1);
-}
-
-@keyframes float-and-fade {
+@keyframes drift {
   0% {
-    transform: translateY(0) scale(1);
-    opacity: 0.3;
-  }
-  50% {
-    transform: translateY(-20px) scale(1.1);
-    opacity: 0.5;
+    transform: translate(0, 0) rotate(0deg);
   }
   100% {
-    transform: translateY(0) scale(1);
-    opacity: 0.3;
+    transform: translate(100px, 150px) rotate(70deg);
   }
 }

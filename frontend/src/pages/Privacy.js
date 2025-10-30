@@ -1,0 +1,46 @@
+
+import React from 'react';
+
+const Privacy = () => {
+  return (
+    <main className="flex-1 px-4 sm:px-10 lg:px-20 py-16 lg:py-24">
+      <div className="max-w-4xl mx-auto prose lg:prose-xl dark:prose-invert prose-headings:text-text-primary prose-p:text-text-secondary prose-a:text-accent-primary hover:prose-a:text-accent-primary-dark prose-strong:text-text-primary prose-ul:text-text-secondary prose-ol:text-text-secondary">
+        <h1>Gizlilik Politikası</h1>
+        <p className="text-sm text-text-secondary">Son Güncelleme: 15 Temmuz 2025</p>
+        <p>Me the Tech ("biz", "bize" veya "bizim") Ekobol web sitesini ve hizmetini ("Hizmet") işletmektedir. Bu sayfa, Hizmetimizi kullandığınızda kişisel verilerin toplanması, kullanılması ve ifşa edilmesine ilişkin politikalarımız ve bu verilerle ilgili sahip olduğunuz seçenekler hakkında sizi bilgilendirir.</p>
+
+        <h2>1. Topladığımız Bilgiler</h2>
+        <p>Size Hizmetimizi sunmak ve geliştirmek için çeşitli amaçlarla birkaç farklı türde bilgi topluyoruz. Bunlar şunları içerir:</p>
+        <ul>
+          <li><strong>Kişisel Veriler:</strong> Hizmetimizi kullanırken, e-posta adresiniz, adınız ve ödeme bilgileriniz gibi belirli kişisel olarak tanımlanabilir bilgileri bize sağlamanızı isteyebiliriz.</li>
+          <li><strong>Kullanım Verileri:</strong> Hizmete nasıl erişildiği ve kullanıldığı hakkında da bilgi toplayabiliriz. Bu Kullanım Verileri, bilgisayarınızın IP adresi, tarayıcı türü ve Hizmetimizin ziyaret ettiğiniz sayfaları gibi bilgileri içerebilir.</li>
+          <li><strong>Pazar Yeri Verileri:</strong> Temel hizmetimizi sağlamak için, ürün bilgileri, satış verileri ve sipariş detayları dahil olmak üzere bağlı pazar yerlerinizden gelen verilere erişiriz.</li>
+        </ul>
+
+        <h2>2. Bilgilerinizi Nasıl Kullanıyoruz</h2>
+        <p>Toplanan verileri çeşitli amaçlar için kullanırız:</p>
+        <ul>
+          <li>Hizmetimizi sağlamak ve sürdürmek.</li>
+          <li>Hizmetimizdeki değişiklikler hakkında sizi bilgilendirmek.</li>
+          <li>Müşteri desteği sağlamak.</li>
+          <li>Hizmetimizi geliştirebilmemiz için analiz veya değerli bilgiler toplamak.</li>
+          <li>Hizmetimizin kullanımını izlemek.</li>
+        </ul>
+
+        <h2>3. Veri Güvenliği</h2>
+        <p>Verilerinizin güvenliği bizim için önemlidir, ancak internet üzerinden hiçbir aktarım yönteminin veya elektronik depolama yönteminin %100 güvenli olmadığını unutmayın. Kişisel Verilerinizi korumak için ticari olarak kabul edilebilir yöntemler kullanmaya çalışsak da, mutlak güvenliğini garanti edemeyiz.</p>
+
+        <h2>4. Veri Haklarınız</h2>
+        <p>Sizinle ilgili elimizdeki bilgilere erişme, bunları güncelleme veya silme hakkına sahipsiniz. Mümkün olduğunda, Kişisel Verilerinize doğrudan hesap ayarları bölümünüzden erişebilir, bunları güncelleyebilir veya silinmesini talep edebilirsiniz. Bu işlemleri kendiniz gerçekleştiremiyorsanız, size yardımcı olmamız için lütfen bizimle iletişime geçin.</p>
+
+        <h2>5. Bu Gizlilik Politikası'ndaki Değişiklikler</h2>
+        <p>Gizlilik Politikamızı zaman zaman güncelleyebiliriz. Yeni Gizlilik Politikası'nı bu sayfada yayınlayarak herhangi bir değişiklik hakkında sizi bilgilendireceğiz. Herhangi bir değişiklik için bu Gizlilik Politikası'nı periyodik olarak gözden geçirmeniz tavsiye edilir.</p>
+
+        <h2>6. Bize Ulaşın</h2>
+        <p>Bu Gizlilik Politikası hakkında herhangi bir sorunuz varsa, lütfen bizimle <a href="mailto:legal@ekobol.com">legal@ekobol.com</a> adresinden iletişime geçin.</p>
+      </div>
+    </main>
+  );
+};
+
+export default Privacy;

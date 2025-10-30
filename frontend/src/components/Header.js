@@ -20,7 +20,7 @@ const Header = () => {
   };
 
   const themeOptions = [
-    'asfalt-kemik',
+    'retro',
     'light',
     'dark',
     'cupcake',
@@ -28,7 +28,7 @@ const Header = () => {
     'emerald',
     'corporate',
     'synthwave',
-    'retro',
+    'asfalt-kemik',
     'cyberpunk',
     'valentine',
     'halloween',

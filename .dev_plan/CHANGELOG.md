@@ -2,6 +2,81 @@
 
 All significant changes made to the `ekobol.com` project will be documented here.
 
+## [2025-10-30] - Global Visual Overhaul & Workflow Component Redesign
+
+- **REMOVED:** The performance-heavy WebGL-based `Prism` background component.
+- **ADDED:** A new, lightweight, CSS-based `AnimatedBackground` component to provide a global, theme-aware animated background.
+    - **MODIFIED:** `App.js` was updated to import and render the `AnimatedBackground` component.
+    - **REMOVED:** Unused `global-prism-background` CSS rules from `App.css`.
+    - **FIXED:** High GPU usage and temperature issues caused by the previous `Prism` component.
+- **FIXED:** ESLint warnings in `HomePage.js` by removing unused `useContext` and `ThemeContext` imports.
+- **ADDED:** Implemented a global, theme-aware prism background across the entire application.
+    - **MODIFIED:** `App.js` was refactored to manage a single `Prism` component instance, making it persistent across all pages. The background's `hueShift` is now dynamically linked to the active theme via `ThemeContext`.
+    - **ADDED:** New CSS rules in `App.css` to make the global prism background `position: fixed` and ensure it sits behind all other content (`z-index: -1`).
+    - **MODIFIED:** `HomePage.js` was stripped of its local `Prism` instance and hardcoded section backgrounds were removed to allow the global background to show through.
+- **REMOVED:** The overly complex and visually cluttered `MagicBento` component has been completely removed.
+- **ADDED:** A new, redesigned `MagicBento.js` component was created from scratch with a focus on clarity, visual appeal, and a logical representation of the Ekobol workflow (Forge, Amplify, Dominate).
+    - The new component uses a clean CSS Grid layout to ensure all cards are perfectly aligned and uniformly sized.
+    - It features elegant, GSAP-animated SVG lines connecting the workflow stages, providing a clear visual flow.
+    - The chaotic particle, tilt, and magnetism effects were removed in favor of subtle, purposeful hover animations.
+    - Cards now use the `GlassSurface` component for a modern, "frosted glass" look that enhances readability over the dynamic background.
+- **ADDED:** New CSS styles in `App.css` to support the redesigned `MagicBento` grid layout and the animated SVG connections.
+- **FIXED:** The misaligned, inconsistently sized card layout in the "Automation Nexus" section, as highlighted in the user's screenshot.
+
+## [2025-10-29] - MagicBento Component Visual & Layout Fixes
+
+- **ADDED:** `--accent-primary-rgb` CSS variable to all themes in `frontend/src/themes.css` for consistent accent color usage in JavaScript.
+- **MODIFIED:** `frontend/src/components/MagicBento.js` to:
+    - Use `var(--text-primary)` for card text color for theme compatibility.
+    - Increase card minimum height (`min-h-[250px]`) and grid gap (`gap-4`) for better spacing.
+    - Remove `text-clamp-1` and `text-clamp-2` classes to prevent text truncation.
+    - Implement a placeholder `card-workflow-line` for future workflow visualization.
+- **FIXED:** Initial display issues of the `MagicBento` component, improving text readability and card layout.
+
+## [2025-10-29] - Automation Nexus Section Revamp with MagicBento
+
+- **ADDED:** Installed `gsap` library for animations.
+- **REMOVED:** Old `AutomationNexus.js` and `AutomationNexus3D.js` components.
+- **REMOVED:** Related CSS animations from `frontend/src/App.css`.
+- **ADDED:** New `MagicBento.js` component in `frontend/src/components/`, showcasing a multi-functional, AI-powered automation system.
+- **MODIFIED:** `HomePage.js` to replace `AutomationNexus3D` with the new `MagicBento` component.
+- **MODIFIED:** `frontend/src/App.css` to include styling for the `MagicBento` component, adapted for theme compatibility.
+- **MODIFIED:** `frontend/public/locales/en/home.json` and `frontend/public/locales/tr/home.json` to update translation keys for the new Automation Nexus section and remove old `nexus_` keys.
+
+## [2025-10-29] - Automation Nexus 3D Component Fix (Unused Import)
+
+- **FIXED:** Removed unused `extend` import from `@react-three/fiber` in `AutomationNexus3D.js` to resolve `no-unused-vars` warning.
+
+## [2025-10-29] - Automation Nexus 3D Component Fix
+
+- **FIXED:** `AutomationNexus3D.js` to correctly use `OrbitControls` from `@react-three/drei` by removing the unnecessary `extend` call and using the component directly.
+
+## [2025-10-29] - Automation Nexus Section Overhaul (3D Implementation & Theme Change)
+
+- **ADDED:** `three` and `@react-three/fiber` libraries for 3D rendering.
+- **REMOVED:** Old `AutomationNexus.js` component.
+- **ADDED:** New `AutomationNexus3D.js` component in `frontend/src/components/` for an interactive 3D lab environment.
+- **MODIFIED:** `HomePage.js` to replace `AutomationNexus` with `AutomationNexus3D` component.
+- **MODIFIED:** `frontend/src/ThemeContext.js` to change the default theme to 'retro'.
+- **MODIFIED:** `public/locales/tr/home.json` and `public/locales/en/home.json` to update translation keys for `AutomationNexus3D`, removing old workflow selection keys and adding `nexus_select_workflow_3d`.
+- **MODIFIED:** `frontend/src/App.css` to remove previous `AutomationNexus` animations and add new CSS animations for `AutomationNexus3D`.
+
+## [2025-10-29] - Automation Nexus Section Styling Adjustment
+
+- **MODIFIED:** `frontend/src/components/AutomationNexus.js` to align its styling (background, heading sizes, ModuleNode appearance) with the overall landing page aesthetic.
+- **MODIFIED:** `frontend/src/App.css` to include new CSS animations (`spin-slow-nexus`, `spin-reverse-slow-nexus`, `pulse-light`, `marquee`, `line-flow`) for the `AutomationNexus` component.
+- **MODIFIED:** `HomePage.js` to replace `AutomationCore` with `AutomationNexus` component.
+- **MODIFIED:** `public/locales/tr/home.json` and `public/locales/en/home.json` to replace `automation_core_` translation keys with `nexus_` keys and add new translation keys for the `AutomationNexus` component.
+
+## [2025-10-29] - AI Playground Section Overhaul (Successful Implementation)
+
+- **REMOVED:** The old "AI Playground Section" from `HomePage.js`.
+- **ADDED:** A new `AutomationCore.js` component in `frontend/src/components/` to replace the old section. This component features an interactive, visually striking representation of Ekobol's automation capabilities.
+- **MODIFIED:** `frontend/src/App.css` to include necessary CSS animations (`pulse-slow`, `spin-slow`, `spin-reverse-slow`, `flow-X`) for the `AutomationCore` component.
+- **MODIFIED:** `HomePage.js` to import and render the new `AutomationCore` component.
+- **MODIFIED:** `public/locales/tr/home.json` and `public/locales/en/home.json` to include new translation keys (`automation_core_title`, `automation_core_subtitle`, `automation_core_cta`) for the `AutomationCore` component.
+- **STRATEGY VALIDATED:** The approach of using `read_file` for content extraction and `write_file` for content replacement (after manual manipulation) proved effective for complex, dynamic sections where the `replace` tool was too brittle.
+
 ## [2025-10-29] - Pricing Page i18n Debugging
 
 - **FIXED:** Added `Array.isArray` checks to `Pricing.js` to prevent crashes when translation keys do not return arrays.
@@ -96,4 +171,3 @@ All significant changes made to the `ekobol.com` project will be documented here
 
 - **ATTEMPTED FIX:** Refactored the logout button in `header.html` and `header_en.html` to use `bg-system-error` and `hover:bg-system-error-dark`.
 - **NOTED ISSUE:** User reported the button still appears red, indicating a potential caching or serving issue on the user's end. Further investigation needed.
-

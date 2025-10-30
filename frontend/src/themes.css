@@ -7,6 +7,7 @@
   --text-primary: #FFFFFF;                /* Main text - pure white */
   --text-secondary: #b3b3b3;              /* Secondary text - light gray */
   --accent-primary: #FFFFFF;              /* Buttons, links - white */
+  --accent-primary-rgb: 255, 255, 255;
   --accent-primary-dark: #CCCCCC;         /* Hover for accent - light gray */
   --border-color: #333333;                /* Borders - dark gray */
 
@@ -28,6 +29,7 @@
   --text-primary: #212529;
   --text-secondary: #6c757d;
   --accent-primary: #007bff;
+  --accent-primary-rgb: 0, 123, 255;
   --border-color: #dee2e6;
 
   --glass-surface-background: hsla(0, 0%, 0%, 0.05);
@@ -48,6 +50,7 @@
   --text-primary: #e1e1e1;
   --text-secondary: #a8a8a8;
   --accent-primary: #bb86fc;
+  --accent-primary-rgb: 187, 134, 252;
   --border-color: #2c2c2c;
 
   --glass-surface-background: hsla(0, 0%, 100%, 0.05);
@@ -68,6 +71,7 @@
   --text-primary: #291334;
   --text-secondary: #776a82;
   --accent-primary: #65275d;
+  --accent-primary-rgb: 101, 39, 93;
   --border-color: #d0c2d9;
 
   --glass-surface-background: hsla(330, 33%, 97%, 0.5);
@@ -88,6 +92,7 @@
   --text-primary: #3d4451;
   --text-secondary: #7c879c;
   --accent-primary: #f9d72f;
+  --accent-primary-rgb: 249, 215, 47;
   --border-color: #e3d9a8;
 
   --glass-surface-background: hsla(51, 93%, 87%, 0.5);
@@ -108,6 +113,7 @@
   --text-primary: #333c4d;
   --text-secondary: #7d8799;
   --accent-primary: #66cc8a;
+  --accent-primary-rgb: 102, 204, 138;
   --border-color: #c5d1cb;
 
   --glass-surface-background: hsla(145, 46%, 96%, 0.5);
@@ -128,6 +134,7 @@
   --text-primary: #333333;
   --text-secondary: #737373;
   --accent-primary: #4a6eff;
+  --accent-primary-rgb: 74, 110, 255;
   --border-color: #cccccc;
 
   --glass-surface-background: hsla(0, 0%, 95%, 0.5);
@@ -148,6 +155,7 @@
   --text-primary: #ffffff;
   --text-secondary: #b8b5d8;
   --accent-primary: #ff82ce;
+  --accent-primary-rgb: 255, 130, 206;
   --border-color: #4a457d;
 
   --glass-surface-background: hsla(245, 41%, 23%, 0.5);
@@ -168,6 +176,7 @@
   --text-primary: #2e282a;
   --text-secondary: #7d7269;
   --accent-primary: #ef9d00;
+  --accent-primary-rgb: 239, 157, 0;
   --border-color: #d4c8b0;
 
   --glass-surface-background: hsla(38, 33%, 85%, 0.5);
@@ -188,6 +197,7 @@
   --text-primary: #ffffff;
   --text-secondary: #b3b3b3;
   --accent-primary: #ff00ff;
+  --accent-primary-rgb: 255, 0, 255;
   --border-color: #4d4d4d;
 
   --glass-surface-background: hsla(60, 100%, 60%, 0.5);
@@ -208,6 +218,7 @@
   --text-primary: #660033;
   --text-secondary: #99004d;
   --accent-primary: #ff3385;
+  --accent-primary-rgb: 255, 51, 133;
   --border-color: #f3c4d7;
 
   --glass-surface-background: hsla(336, 84%, 96%, 0.5);
@@ -228,6 +239,7 @@
   --text-primary: #ffffff;
   --text-secondary: #b3b3b3;
   --accent-primary: #ff7500;
+  --accent-primary-rgb: 255, 117, 0;
   --border-color: #666666;
 
   --glass-surface-background: hsla(24, 100%, 50%, 0.5);
