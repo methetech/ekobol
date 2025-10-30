@@ -90,7 +90,7 @@ const Header = () => {
       <div className={`fixed inset-y-0 right-0 w-64 bg-void-primary shadow-lg z-40 transform transition-transform duration-300 md:hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="flex items-center justify-between px-4 py-4 border-b border-void-secondary">
               <Link to="/" className="flex items-center gap-3 text-xl font-bold tracking-tight">
-                  <img src="../ekobol.ico" alt="Ekobol Logo" className="h-16 w-16" />
+                  <img src="/ekobol/ekobol.ico" alt="Ekobol Logo" className="h-16 w-16" />
               </Link>
               <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 rounded-full text-text-secondary hover:bg-void-secondary transition-colors">
                   <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
