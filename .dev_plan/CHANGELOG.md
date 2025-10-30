@@ -2,6 +2,24 @@
 
 All significant changes made to the `ekobol.com` project will be documented here.
 
+## [2025-10-30] - New Logo Implemented and Logo Links Corrected
+
+- **ADDED:** `ekobol.png` moved to `frontend/public`.
+- **FIXED:** Logo links in `frontend/src/components/Header.js` and `frontend/src/components/Footer.js` corrected to `/` and use `ekobol.png`.
+- **FIXED:** Favicon link in `frontend/public/index.html` corrected to use `ekobol.png`.
+
+## [2025-10-30] - BrowserRouter Import Alias Removed in App.js
+
+- **FIXED:** Removed `as Router` alias for `BrowserRouter` in `frontend/src/App.js` import statement to resolve `react/jsx-no-undef` error.
+
+## [2025-10-30] - BrowserRouter Closing Tag Fixed in App.js
+
+- **FIXED:** Incorrect closing tag for `BrowserRouter` in `frontend/src/App.js` was corrected from `</Router>` to `</BrowserRouter>`.
+
+## [2025-10-30] - BrowserRouter Basename Added for GitHub Pages Subpath Routing
+
+- **ADDED:** `basename="/ekobol"` attribute to `BrowserRouter` in `frontend/src/App.js` for correct subpath routing on GitHub Pages.
+
 ## [2025-10-30] - index.html Base Tag Added and Footer Debug Log Removed
 
 - **ADDED:** `<base href="%PUBLIC_URL%/">` tag to `frontend/public/index.html` to correctly resolve relative URLs.

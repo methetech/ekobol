@@ -46,5 +46,5 @@ This document outlines the planned development steps for `ekobol.com`.
     - Prioritize this for future development to prevent similar issues.
     - [x] Implement GitHub Pages deployment.
     - [x] Revert i18n loadPath and deploy script for GitHub Pages.
-    - [x] Correct GitHub Pages deployment configuration (homepage, logo link, i18n loadPath, i18n language fallback, footer logo path, index.html base tag).
-    - [x] Implement theme persistence using localStorage.
+    - [x] Correct GitHub Pages deployment configuration (homepage, logo link, i18n loadPath, i18n language fallback, footer logo path, index.html base tag, BrowserRouter basename, BrowserRouter closing tag fix, BrowserRouter import fix).
+    - [x] Implement new logo (ekobol.png) and correct logo links.
