@@ -2,6 +2,11 @@
 
 All significant changes made to the `ekobol.com` project will be documented here.
 
+## [2025-10-30] - Header Mobile Optimization Implemented (Overflow Hidden, Language/Theme Toggles)
+
+- **ADDED:** `overflow-hidden` to `document.body` when mobile menu is open in `frontend/src/components/Header.js`.
+- **ADDED:** Language and theme toggles to the mobile menu in `frontend/src/components/Header.js`.
+
 ## [2025-10-30] - Mobile Menu Logo Path and Size Corrected in Header
 
 - **FIXED:** Logo path and size in the mobile menu of `frontend/src/components/Header.js` corrected to use `process.env.PUBLIC_URL` and appropriate dimensions.

@@ -13,7 +13,17 @@ const Header = () => {
     const path = location.pathname.split('/')[1];
     const title = path ? path.charAt(0).toUpperCase() + path.slice(1) : 'Home';
     document.title = `Ekobol - ${title}`;
-  }, [location]);
+
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto'; // Cleanup on unmount
+    };
+  }, [location, isMobileMenuOpen]);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -98,6 +108,16 @@ const Header = () => {
           </div>
           <nav className="flex flex-col p-4 space-y-2">
               {navLinks}
+              <div className="flex items-center justify-center gap-1 sm:gap-2 text-base font-medium pt-4 border-t border-void-secondary">
+                  <button type="button" onClick={() => changeLanguage('en')} className={`transition-colors ${i18n.language === 'en' ? 'text-accent-primary' : 'text-text-secondary'}`}>EN</button>
+                  <span className="text-text-secondary">/</span>
+                  <button type="button" onClick={() => changeLanguage('tr')} className={`transition-colors ${i18n.language === 'tr' ? 'text-accent-primary' : 'text-text-secondary'}`}>TR</button>
+              </div>
+              <select value={theme} onChange={(e) => setTheme(e.target.value)} className="bg-void-secondary text-text-primary border border-void-secondary dark:border-white/10 rounded-md p-2 text-sm mt-2">
+                  {themeOptions.map(t => (
+                      <option key={t} value={t}>{t}</option>
+                  ))}
+              </select>
               <div className="pt-4 border-t border-void-secondary flex flex-col gap-2">
                   <Link to="/signup" className="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-accent-primary text-void-primary text-base font-bold leading-normal tracking-wide shadow-lg transition-colors duration-300 hover:bg-accent-primary-dark">
                       <span className="truncate">{t('start_free')}</span>
