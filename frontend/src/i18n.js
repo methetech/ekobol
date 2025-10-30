@@ -9,7 +9,7 @@ i18n
   .use(initReactI18next)
   .init({
     backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json',
+      loadPath: '/ekobol/locales/{{lng}}/{{ns}}.json',
     },
     fallbackLng: 'tr',
     debug: false,

@@ -19,7 +19,7 @@ This document outlines the planned development steps for `ekobol.com`.
 
 ## Phase 3: Advanced Visuals & Optimization (In Progress/Next)
 
-- [ ] Debug and resolve i18n translation issues on the Pricing page.
+- [x] Debug and resolve i18n translation issues on the Pricing page.
 - [x] Header & Footer Component Creation
 - [x] TailwindCSS CDN Integration into `public/index.html`
 - [x] Image Loading Fixes (`wallet-before.webp`, `wallet-after.webp` moved to `public`)
@@ -33,6 +33,7 @@ This document outlines the planned development steps for `ekobol.com`.
 - [ ] Integrate professional icons into MagicBento cards.
 - [x] Address ESLint warnings.
 - [x] Reorder HomePage sections and apply glass effect to Footer.
+- [x] Address remaining ESLint warnings.
 
 ## Phase 4: System Refinement & Tooling Improvement
 
@@ -43,3 +44,4 @@ This document outlines the planned development steps for `ekobol.com`.
     - Explore alternative programmatic content manipulation techniques (e.g., string slicing, AST manipulation).
     - Implement a custom tool or script for targeted section replacement that is resilient to minor whitespace or i18n call variations.
     - Prioritize this for future development to prevent similar issues.
+    - [x] Implement GitHub Pages deployment.

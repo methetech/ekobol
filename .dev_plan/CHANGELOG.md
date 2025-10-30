@@ -2,6 +2,34 @@
 
 All significant changes made to the `ekobol.com` project will be documented here.
 
+## [2025-10-30] - Deploy Script Refinement for GitHub Pages
+
+- **MODIFIED:** `deploy` script in `frontend/package.json` to explicitly specify the repository and branch for `gh-pages`.
+
+## [2025-10-30] - Router Type Reverted to BrowserRouter
+
+- **REVERTED:** `HashRouter` back to `BrowserRouter` in `frontend/src/App.js` as the site is deploying correctly with `BrowserRouter`.
+
+## [2025-10-30] - i18n loadPath Correction for GitHub Pages
+
+- **FIXED:** `i18n.js` `loadPath` adjusted to include the GitHub Pages subpath (`/ekobol/`) to correctly load translation files.
+
+## [2025-10-30] - GitHub Pages Deployment Executed
+
+- **EXECUTED:** `npm run deploy` command to deploy the application to GitHub Pages.
+
+## [2025-10-30] - ESLint Warnings Addressed (FullStatement.js & Product.js)
+
+- **FIXED:** `no-unused-vars` warning in `FullStatement.js` by removing the unused `Link` import.
+- **FIXED:** `jsx-a11y/anchor-is-valid` warnings in `FullStatement.js` by replacing `<a>` tags with `button` tags for pagination controls.
+- **FIXED:** `react/jsx-no-comment-textnodes` warning in `Product.js` by converting the JavaScript comment to a JSX comment.
+
+## [2025-10-30] - GitHub Pages Deployment Setup
+
+- **ADDED:** `homepage` field to `frontend/package.json`.
+- **ADDED:** `predeploy` and `deploy` scripts to `frontend/package.json`.
+- **ADDED:** `gh-pages` package installed as a dev dependency.
+
 ## [2025-10-30] - Footer GlassSurface Import Fix
 
 - **FIXED:** Missing `GlassSurface` import in `frontend/src/components/Footer.js`.

@@ -39,7 +39,7 @@ const Product = () => {
               <h3 className="text-2xl font-bold mb-3 text-text-primary">YZ Metin Yazarı & SEO Kâhini</h3>
               <p className="text-lg text-text-secondary mb-4">Sadece açıklama yazmayın, dijital bir hipnoz yaratın. YZ'miz, her pazar yerinin (Trendyol, Etsy, Amazon) algoritmasını ve alıcı psikolojisini anlar. Ürününüzün ruhunu yakalayan, SEO için mükemmelleştirilmiş ve dönüşüm için tasarlanmış başlıklar ve metinler oluşturur.</p>
               <div className="font-mono text-sm bg-void-secondary dark:bg-black/20 p-4 rounded-lg border border-void-secondary dark:border-white/10 text-emerald-500">
-                <span className="text-gray-400">// Sistem Akışı:</span><br />
+                <span className="text-gray-400">{/* Sistem Akışı: */}</span><br />
                 <span className="text-purple-400">[Ürün Verisi]</span> + <span className="text-blue-400">[Ton: 'İddialı']</span> + <span className="text-orange-400">[Platform: 'Trendyol']</span><br />
                 <span className="text-gray-400">--&gt; [Nihai Optimize Listeleme]</span>
               </div>
