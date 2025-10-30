@@ -2,6 +2,15 @@
 
 All significant changes made to the `ekobol.com` project will be documented here.
 
+## [2025-10-30] - Logo Moved to static/media and Paths Updated
+
+- **MOVED:** `ekobol.png` from `frontend/public` to `frontend/public/static/media`.
+- **FIXED:** Logo paths in `frontend/src/components/Header.js`, `frontend/src/components/Footer.js`, and favicon link in `frontend/public/index.html` updated to reflect new `static/media` location.
+
+## [2025-10-30] - Logo Paths Updated to Use process.env.PUBLIC_URL
+
+- **FIXED:** Logo paths in `frontend/src/components/Header.js` and `frontend/src/components/Footer.js` updated to use `process.env.PUBLIC_URL` for correct loading on GitHub Pages subpath.
+
 ## [2025-10-30] - New Logo Implemented and Logo Links Corrected
 
 - **ADDED:** `ekobol.png` moved to `frontend/public`.
