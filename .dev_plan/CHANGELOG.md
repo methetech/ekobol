@@ -2,6 +2,10 @@
 
 All significant changes made to the `ekobol.com` project will be documented here.
 
+## [2025-10-30] - Mobile Menu Logo Path and Size Corrected in Header
+
+- **FIXED:** Logo path and size in the mobile menu of `frontend/src/components/Header.js` corrected to use `process.env.PUBLIC_URL` and appropriate dimensions.
+
 ## [2025-10-30] - Logo Resized in Header and Footer
 
 - **UPDATED:** Logo size increased in `frontend/src/components/Header.js` and `frontend/src/components/Footer.js`.
