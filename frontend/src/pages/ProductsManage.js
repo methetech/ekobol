@@ -202,7 +202,7 @@ const ProductsManage = () => {
                         <Link to={`/product-display?sku=${product.sku}`} className="ml-4 text-indigo-600 hover:text-indigo-900">Canlı Görüntüle</Link>
                       )}
                       {product.status === 'oos' && (
-                        <a href="#" className="ml-4 text-purple-600 hover:text-purple-900">Arşivle</a>
+                        <button type="button" className="ml-4 text-purple-600 hover:text-purple-900">Arşivle</button>
                       )}
                       {product.status === 'draft' && (
                         <button className="ml-4 text-orange-600 hover:text-orange-900">Yayınla</button>

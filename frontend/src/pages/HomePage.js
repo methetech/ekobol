@@ -61,6 +61,36 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Automation Nexus Section */}
+
+
+
+            <section className="px-4 sm:px-10 lg:px-20 py-20 lg:py-32 mb-20" data-aos="fade-up">
+
+
+
+              <div className="max-w-6xl mx-auto flex flex-col items-center justify-center">
+
+
+
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-text-primary mb-4 text-center">{t('automation_nexus_title')}</h2>
+
+
+
+                <p className="text-lg text-text-secondary mt-4 mb-8 text-center">{t('automation_nexus_subtitle')}</p>
+
+
+
+                <MagicBento />
+
+
+
+              </div>
+
+
+
+            </section>
+
       {/* Genesis Engine Section */}
       <section className="px-4 sm:px-10 lg:px-20 py-20 lg:py-32" data-aos="fade-up">
         <GlassSurface className="max-w-6xl mx-auto p-8 sm:p-12 lg:p-16">
@@ -87,28 +117,6 @@ const HomePage = () => {
             </div>
           </div>
         </GlassSurface>
-      </section>
-
-
-
-      {/* Automation Nexus Section */}
-      <section className="px-4 sm:px-10 lg:px-20 py-20 lg:py-32" data-aos="fade-up">
-        <div className="max-w-6xl mx-auto flex flex-col items-center justify-center">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-text-primary mb-4 text-center">{t('automation_nexus_title')}</h2>
-          <p className="text-lg text-text-secondary mt-4 mb-8 text-center">{t('automation_nexus_subtitle')}</p>
-          <MagicBento 
-            textAutoHide={true}
-            enableStars={true}
-            enableSpotlight={true}
-            enableBorderGlow={true}
-            enableTilt={true}
-            enableMagnetism={true}
-            clickEffect={true}
-            spotlightRadius={300}
-            particleCount={12}
-            glowColor="var(--accent-primary-rgb)"
-          />
-        </div>
       </section>
 
       {/* Final CTA Section */}

@@ -2,6 +2,68 @@
 
 All significant changes made to the `ekobol.com` project will be documented here.
 
+## [2025-10-30] - Footer GlassSurface Import Fix
+
+- **FIXED:** Missing `GlassSurface` import in `frontend/src/components/Footer.js`.
+
+## [2025-10-30] - HomePage Section Reordering & Footer Glass Effect
+
+- **MODIFIED:** `HomePage.js` to swap the order of 'Genesis Engine Section' and 'Automation Nexus Section', placing 'Automation Nexus Section' immediately after the 'Hero Section'.
+- **MODIFIED:** `Footer.js` to wrap its content with `GlassSurface` component and set the footer's background to transparent for a glass effect.
+
+## [2025-10-30] - ESLint Warnings Addressed
+
+- **FIXED:** `jsx-a11y/anchor-is-valid` warning in `ProductsManage.js` by replacing `<a>` with `button` for action-oriented elements.
+- **NOTED:** `jsx-a11y/anchor-is-valid` warnings in `Header.js` are due to ESLint configuration not correctly interpreting `react-router-dom`'s `Link` components. This is an ESLint configuration issue, not a code bug, and cannot be fixed without modifying the ESLint config.
+- **NOTED:** `react/jsx-no-comment-textnodes` warning in `Product.js` appears to be stale, as the current file content does not show the issue.
+
+## [2025-10-30] - MagicBento Icons Integration
+
+- **ADDED:** Heroicons (`@heroicons/react`) installed.
+- **MODIFIED:** `MagicBento.js` to include an `icon` property in `cardData` for each card.
+- **MODIFIED:** `MagicBento.js` `Card` component to render the respective Heroicon at the top of each card.
+
+## [2025-10-30] - Automation Nexus Title & Footer Update
+
+- **UPDATED:** Automation Nexus title in `public/locales/tr/home.json` to "Ekobol Yapay Zeka Otomasyon Komuta Merkezi".
+- **UPDATED:** Automation Nexus title in `public/locales/en/home.json` to "Ekobol AI Automation Command Center".
+- **UPDATED:** Footer year to static `2025` in `frontend/src/components/Footer.js`.
+- **UPDATED:** Footer copyright in `public/locales/tr/common.json` to include "Me the Tech markasıdır.".
+- **UPDATED:** Footer copyright in `public/locales/en/common.json` to include "A Me the Tech brand.".
+
+## [2025-10-30] - MagicBento Layout Fixes & Expansion
+
+- **FIXED:** Overlap issue between `MagicBento` section and `Final CTA` section.
+    - **MODIFIED:** `HomePage.js` to add `mb-20` (margin-bottom) to the `Automation Nexus Section`.
+- **FIXED:** `MagicBento` grid layout to accommodate more cards and prevent overlap.
+    - **MODIFIED:** `App.css` to update `.magic-bento-grid` with `grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));` and `z-index: 10;`, and removed fixed height.
+
+## [2025-10-30] - MagicBento Component Expansion & i18n Fix
+
+- **FIXED:** Missing Turkish translations for `MagicBento` component card descriptions.
+    - **MODIFIED:** `public/locales/tr/home.json` updated with `magic_bento` keys and Turkish translations.
+    - **MODIFIED:** `public/locales/en/home.json` updated with `magic_bento` keys and English translations for consistency.
+- **REMOVED:** Light orange animated dashed lines from `MagicBento` component.
+    - **MODIFIED:** `MagicBento.js` to remove SVG connection lines and associated animation logic.
+- **ADDED:** Expanded `MagicBento` component with new workflow cards:
+    - SEO & Trend Analysis
+    - Competitor Intelligence
+    - AI-Optimized Descriptions
+    - AI-Generated Product Visuals
+    - Continuous AI Learning
+    - **MODIFIED:** `MagicBento.js` `cardData` and render section updated to include new cards.
+
+## [2025-10-30] - Liquid Ether Background Integration (Attempted & Reverted)
+
+- **ATTEMPTED:** Integration of `LiquidEther` (Three.js based) as a new global animated background to address GPU usage concerns.
+    - **MODIFIED:** `App.js` was updated to import and render `LiquidEther` with dynamic theme colors.
+    - **ADDED:** `rgbToHex` helper function in `App.js` for color conversion.
+    - **ISSUE:** Led to high GPU usage, similar to previous WebGL background.
+- **REVERTED:** All changes related to `LiquidEther` were discarded due to performance issues.
+    - **REMOVED:** `LiquidEther.js` and `LiquidEther.css` files.
+    - **REMOVED:** `three` library dependency.
+    - **MODIFIED:** `App.js` reverted to use `AnimatedBackground` component.
+
 ## [2025-10-30] - Global Visual Overhaul & Workflow Component Redesign
 
 - **REMOVED:** The performance-heavy WebGL-based `Prism` background component.

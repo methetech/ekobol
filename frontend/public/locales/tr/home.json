@@ -27,6 +27,58 @@
   "final_cta_title": "Sıradaki Trend Siz Olun.",
   "final_cta_subtitle": "Platformları birleştirmeyi bırakın. Pazarı domine etmeye başlayın. Esnek planlarımızı keşfedin ve imparatorluğunuzun temelini atın.",
   "final_cta_button": "Bugün Ücretsiz Başlayın",
-  "automation_nexus_title": "EKOBOL KOMUTA MERKEZİ: YAPAY ZEKA OTOMASYON MERKEZİ",
-  "automation_nexus_subtitle": "Ekobol'ün yapay zeka destekli otomasyonuyla iş süreçlerinizi dönüştürün, verimliliği zirveye taşıyın ve rakiplerinizi geride bırakın. Tüm site yeteneklerini ve iş akışlarını kapsayan interaktif bir deneyim."
+  "automation_nexus_title": "Ekobol Yapay Zeka Otomasyon Komuta Merkezi",
+  "automation_nexus_subtitle": "Ekobol'ün yapay zeka destekli otomasyonuyla iş süreçlerinizi dönüştürün, verimliliği zirveye taşıyın ve rakiplerinizi geride bırakın. Tüm site yeteneklerini ve iş akışlarını kapsayan interaktif bir deneyim.",
+  "magic_bento": {
+    "forge": {
+      "label": "ENTEGRE ET",
+      "title": "YZ Ürün Görselleştirme ve İçerik",
+      "description": "Pazar yerlerini bağlayın ve ürünleri yükleyin. YZ'nin çarpıcı görseller ve etkileyici açıklamalar oluşturmasına izin verin."
+    },
+    "amplify": {
+      "label": "OPTİMİZE ET",
+      "title": "Akıllı Pazarlama ve Fiyatlandırma",
+      "description": "Hipnotize edici kampanyalar oluşturmak ve rakipsiz fiyatlandırma stratejileri uygulamak için YZ'yi serbest bırakın."
+    },
+    "dominate": {
+      "label": "YÖNET",
+      "title": "Birleşik Komuta Merkezi",
+      "description": "Tek bir panelden imparatorluğunuzu yönetin. Gerçek zamanlı verilerle pazara hükmedin."
+    },
+    "seo_analysis": {
+      "label": "ANALİZ",
+      "title": "SEO & Trend Analizi",
+      "description": "Lansmandan önce, YZ pazar trendlerini, SEO anahtar kelimelerini ve rakip stratejilerini analiz ederek ürününüzü maksimum etki için konumlandırır."
+    },
+    "competitor_analysis": {
+      "label": "ANALİZ",
+      "title": "Rakip İstihbaratı",
+      "description": "Rakip fiyatlandırması, pazarlaması ve ürün stratejileri hakkında derinlemesine içgörülerle haksız bir avantaj elde edin."
+    },
+    "ai_descriptions": {
+      "label": "İÇERİK",
+      "title": "YZ Optimize Edilmiş Açıklamalar",
+      "description": "Marka sesinize ve hedef kitlenize göre uyarlanmış, ilgi çekici, anahtar kelime açısından zengin ürün açıklamaları oluşturun."
+    },
+    "ai_visuals": {
+      "label": "GÖRSELLER",
+      "title": "YZ Destekli Ürün Görselleri",
+      "description": "Basit bir fikirden veya eskizden, Ekobol YZ çarpıcı, fotogerçekçi ürün görselleri ve görselleştirmeler oluşturur."
+    },
+    "ai_learning": {
+      "label": "OPTİMİZASYON",
+      "title": "Sürekli YZ Öğrenimi",
+      "description": "YZ ajanlarımız pazar verilerini sürekli izler, performanstan öğrenir ve sürekli büyüme için stratejileri otonom olarak iyileştirir."
+    },
+    "connectivity": {
+      "label": "ÇEKİRDEK",
+      "title": "Pazar Yeri Entegrasyonu",
+      "description": "Tüm satış kanallarınızı tek bir merkezi hub'dan sorunsuz bir şekilde bağlayın ve yönetin."
+    },
+    "insights": {
+      "label": "ÇEKİRDEK",
+      "title": "Gerçek Zamanlı Analizler",
+      "description": "Satışlarınız, müşterileriniz ve pazar davranışlarınız hakkında derinlemesine içgörüler elde ederek önde kalın."
+    }
+  }
 }
