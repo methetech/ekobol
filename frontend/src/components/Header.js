@@ -47,7 +47,7 @@ const Header = () => {
   return (
     <header className="sticky top-0 flex items-center justify-between whitespace-nowrap border-b border-solid border-void-secondary/20 bg-void-primary/80 px-4 sm:px-10 py-4 transition-colors duration-300 z-20 backdrop-blur-lg">
       <Link to="/" id="logo-link" className="flex items-center gap-3 text-2xl font-bold tracking-tight">
-          <img src="/ekobol.png" alt="Ekobol Logo" className="h-8 w-auto" />
+          <img src={process.env.PUBLIC_URL + "/ekobol.png"} alt="Ekobol Logo" className="h-8 w-auto" />
       </Link>
 
       {/* Desktop Navigation */}

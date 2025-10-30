@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div className="col-span-1 sm:col-span-2 md:col-span-1 flex flex-col items-center sm:items-start text-center sm:text-left">
             <Link to="/" className="flex items-center gap-3 text-2xl font-bold tracking-tight text-text-primary">
-              <img src="/ekobol.png" alt="Ekobol Logo" className="h-20 w-20 sm:h-24 sm:w-24" />
+              <img src={process.env.PUBLIC_URL + "/ekobol.png"} alt="Ekobol Logo" className="h-20 w-20 sm:h-24 sm:w-24" />
             </Link>
             <p className="mt-4 text-sm max-w-xs">{t('footer_subtitle')}</p>
           </div>
