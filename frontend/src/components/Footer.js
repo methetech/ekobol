@@ -6,14 +6,15 @@ import GlassSurface from './GlassSurface';
 const Footer = () => {
   const { t } = useTranslation();
   const year = 2025;
+  console.log('Footer copyright:', t('footer_copyright', { year }));
 
   return (
     <footer className="bg-transparent text-text-secondary px-4 sm:px-10 py-8 md:py-12 transition-colors duration-300 z-10 relative">
       <GlassSurface className="w-full h-full p-0">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div className="col-span-1 sm:col-span-2 md:col-span-1 flex flex-col items-center sm:items-start text-center sm:text-left">
-            <Link to="/" className="flex items-center gap-3 text-2xl font-bold tracking-tight text-text-primary">
-              <img src="../ekobol.ico" alt="Ekobol Logo" className="h-20 w-20 sm:h-24 sm:w-24" />
+            <Link to="/ekobol" className="flex items-center gap-3 text-2xl font-bold tracking-tight text-text-primary">
+              <img src="/ekobol.ico" alt="Ekobol Logo" className="h-20 w-20 sm:h-24 sm:w-24" />
             </Link>
             <p className="mt-4 text-sm max-w-xs">{t('footer_subtitle')}</p>
           </div>

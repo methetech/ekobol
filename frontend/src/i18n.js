@@ -13,6 +13,8 @@ i18n
     },
     fallbackLng: 'tr',
     debug: false,
+    supportedLngs: ['en', 'tr'],
+    nonExplicitSupportedLngs: true,
     ns: ['common', 'home', 'solutions', 'pricing', 'resources', 'about', 'contact'],
     defaultNS: 'common',
     interpolation: {

@@ -7,11 +7,14 @@ export const ThemeContext = createContext();
 // 2. Provider Bileşenini oluştur
 export const ThemeProvider = ({ children }) => {
   // Temayı state'de tut, varsayılan olarak 'asfalt-kemik'
-  const [theme, setTheme] = useState('retro');
+  const [theme, setTheme] = useState(() => {
+    const storedTheme = localStorage.getItem('theme');
+    return storedTheme || 'retro';
+  });
 
-  // Tema değiştiğinde, <body> etiketinin data-theme attribute'unu güncelle
   useEffect(() => {
     document.body.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
   }, [theme]);
 
   // Değişkenleri ve fonksiyonu provider aracılığıyla alt bileşenlere sağla

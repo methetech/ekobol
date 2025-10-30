@@ -2,6 +2,13 @@
 
 All significant changes made to the `ekobol.com` project will be documented here.
 
+## [2025-10-30] - i18n Language Fallback and Logo Paths Corrected, Theme Persistence Implemented
+
+- **FIXED:** `i18n.js` updated with `supportedLngs` and `nonExplicitSupportedLngs` for correct language fallback.
+- **FIXED:** Logo path in `frontend/src/components/Header.js` corrected to `/ekobol.ico`.
+- **FIXED:** Logo path in `frontend/src/components/Footer.js` corrected to `/ekobol.ico` and Link to `/ekobol`.
+- **IMPLEMENTED:** Theme persistence using `localStorage` in `frontend/src/ThemeContext.js`.
+
 ## [2025-10-30] - GitHub Pages Deployment Configuration Corrected
 
 - **FIXED:** `homepage` field in `frontend/package.json` set to `http://methetech.github.io/ekobol`.
