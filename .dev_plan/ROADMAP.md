@@ -25,6 +25,7 @@ This document outlines the planned development steps for `ekobol.com`.
 - [x] Image Loading Fixes (`wallet-before.webp`, `wallet-after.webp` moved to `public`)
 - [x] Text Readability Fixes (conflicting Tailwind classes resolved in `HomePage.js`)
 - [x] Automation Nexus Section (Implemented 3D interactive lab environment with `react-three-fiber`, default theme set to 'retro', styling adjusted for consistency, OrbitControls fix applied, unused import removed)
+- [x] Fix mobile header overlap and tap target size issues based on UX Report.
 - [ ] Conduct internet research for cutting-edge web technologies and visual effects.
 - [x] Implement React Router for navigation between pages
 - [x] Convert remaining static HTML pages to React components and integrate into routing
@@ -47,4 +48,5 @@ This document outlines the planned development steps for `ekobol.com`.
     - [x] Implement GitHub Pages deployment.
     - [x] Revert i18n loadPath and deploy script for GitHub Pages.
     - [x] Correct GitHub Pages deployment configuration (homepage, logo link, i18n loadPath, i18n language fallback, footer logo path, index.html base tag, BrowserRouter basename, BrowserRouter closing tag fix, BrowserRouter import fix).
-    - [ ] Configure custom domain (ekobol.com) for GitHub Pages (reverted for now).
+    - [x] Implement robust Playwright tests for critical mobile UX flows (scrolling, targeted clicks, navigation).
+    - **Note:** This includes overcoming complex element interception issues in various mobile browser environments.

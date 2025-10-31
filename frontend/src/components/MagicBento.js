@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { useTranslation } from 'react-i18next';
 import { LinkIcon, ChartBarIcon, CommandLineIcon, MagnifyingGlassIcon, EyeIcon, PencilSquareIcon, PhotoIcon, AcademicCapIcon, PuzzlePieceIcon, ChartPieIcon } from '@heroicons/react/24/outline';
 import GlassSurface from './GlassSurface'; // Assuming GlassSurface is in the same directory
+import './MagicBento.css';
 
 const MagicBento = () => {
   const { t } = useTranslation('home');

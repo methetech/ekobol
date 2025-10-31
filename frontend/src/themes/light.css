@@ -1,0 +1,51 @@
+[data-theme='light'] {
+  --void-primary: rgba(255, 255, 255, 0.8);
+  --void-secondary: #f8f9fa;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --accent-primary: #007bff;
+  --accent-primary-rgb: 0, 123, 255;
+  --border-color: #dee2e6;
+
+  /* Font Sizes */
+  --font-size-base: 1rem;
+  --font-size-lg: calc(10px + 2vmin);
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;   /* 8px */
+  --spacing-sm: 10px;
+  --spacing-md: 1rem;     /* 16px */
+  --spacing-lg: 20px;
+  --spacing-xl: 30px;
+  --spacing-xxl: 1.5rem;  /* 24px */
+
+  --glass-surface-background: hsla(0, 0%, 0%, 0.05);
+  --glass-surface-border-color: hsla(0, 0%, 0%, 0.1);
+  --glass-surface-shadow-color: hsla(0, 0%, 0%, 0.1);
+  --glass-surface-highlight-start: hsla(0, 0%, 100%, 0.2);
+  --glass-surface-highlight-end: hsla(0, 0%, 100%, 0);
+  --glass-surface-shadow-start: hsla(0, 0%, 0%, 0.1);
+  --glass-surface-shadow-end: hsla(0, 0%, 0%, 0);
+
+  --animated-shape-color: #cccccc;
+  --animated-speed: 12s;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Line Heights */
+  --line-height-none: 1;
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+
+  /* Component Specific */
+  --min-height-card-responsive: 180px;
+  --min-width-bento-grid-item: 280px;
+}

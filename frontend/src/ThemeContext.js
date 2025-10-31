@@ -9,7 +9,7 @@ export const ThemeProvider = ({ children }) => {
   // Temayı state'de tut, varsayılan olarak 'asfalt-kemik'
   const [theme, setTheme] = useState(() => {
     const storedTheme = localStorage.getItem('theme');
-    return storedTheme || 'retro';
+    return storedTheme || 'asfalt-kemik';
   });
 
   useEffect(() => {

@@ -44,7 +44,7 @@ const HomePage = () => {
       {/* Hero Section */}
       <section className="px-4 sm:px-10 lg:px-20 py-16 sm:py-20 lg:py-40 text-center relative" data-aos="fade-up">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tighter leading-tight mb-4 sm:mb-6 text-text-primary dark:hero-glow">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tighter leading-tight mb-4 sm:mb-6 text-text-primary dark:hero-glow">
             {t('hero_title')}
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-text-secondary max-w-3xl mx-auto mb-8 sm:mb-10">

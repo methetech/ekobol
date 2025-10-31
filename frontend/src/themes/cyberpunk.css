@@ -1,0 +1,51 @@
+[data-theme='cyberpunk'] {
+  --void-primary: rgba(255, 255, 51, 0.8);
+  --void-secondary: #333333;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --accent-primary: #ff00ff;
+  --accent-primary-rgb: 255, 0, 255;
+  --border-color: #4d4d4d;
+
+  /* Font Sizes */
+  --font-size-base: 1rem;
+  --font-size-lg: calc(10px + 2vmin);
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;   /* 8px */
+  --spacing-sm: 10px;
+  --spacing-md: 1rem;     /* 16px */
+  --spacing-lg: 20px;
+  --spacing-xl: 30px;
+  --spacing-xxl: 1.5rem;  /* 24px */
+
+  --glass-surface-background: hsla(60, 100%, 60%, 0.5);
+  --glass-surface-border-color: hsla(60, 100%, 70%, 0.5);
+  --glass-surface-shadow-color: hsla(60, 100%, 30%, 0.1);
+  --glass-surface-highlight-start: hsla(60, 100%, 80%, 0.8);
+  --glass-surface-highlight-end: hsla(60, 100%, 80%, 0);
+  --glass-surface-shadow-start: hsla(60, 100%, 30%, 0.1);
+  --glass-surface-shadow-end: hsla(60, 100%, 30%, 0);
+
+  --animated-shape-color: #00ffff;
+  --animated-speed: 10s;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Line Heights */
+  --line-height-none: 1;
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+
+  /* Component Specific */
+  --min-height-card-responsive: 180px;
+  --min-width-bento-grid-item: 280px;
+}

@@ -1,0 +1,51 @@
+[data-theme='bumblebee'] {
+  --void-primary: rgba(255, 252, 235, 0.8);
+  --void-secondary: #ffffff;
+  --text-primary: #3d4451;
+  --text-secondary: #7c879c;
+  --accent-primary: #f9d72f;
+  --accent-primary-rgb: 249, 215, 47;
+  --border-color: #e3d9a8;
+
+  /* Font Sizes */
+  --font-size-base: 1rem;
+  --font-size-lg: calc(10px + 2vmin);
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;   /* 8px */
+  --spacing-sm: 10px;
+  --spacing-md: 1rem;     /* 16px */
+  --spacing-lg: 20px;
+  --spacing-xl: 30px;
+  --spacing-xxl: 1.5rem;  /* 24px */
+
+  --glass-surface-background: hsla(51, 93%, 87%, 0.5);
+  --glass-surface-border-color: hsla(51, 93%, 80%, 0.5);
+  --glass-surface-shadow-color: hsla(51, 93%, 50%, 0.1);
+  --glass-surface-highlight-start: hsla(51, 93%, 95%, 0.8);
+  --glass-surface-highlight-end: hsla(51, 93%, 95%, 0);
+  --glass-surface-shadow-start: hsla(51, 93%, 50%, 0.1);
+  --glass-surface-shadow-end: hsla(51, 93%, 50%, 0);
+
+  --animated-shape-color: #ffeb99;
+  --animated-speed: 13s;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Line Heights */
+  --line-height-none: 1;
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+
+  /* Component Specific */
+  --min-height-card-responsive: 180px;
+  --min-width-bento-grid-item: 280px;
+}

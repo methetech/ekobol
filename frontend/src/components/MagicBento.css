@@ -1,0 +1,210 @@
+.bento-section {
+  --glow-x: 50%;
+  --glow-y: 50%;
+  --glow-intensity: 0;
+  --glow-radius: 200px;
+  --glow-color: var(--accent-primary-rgb);
+  --border-color: var(--void-secondary);
+  --background-dark: var(--void-primary);
+  --white: var(--text-primary);
+  --purple-primary: var(--accent-primary);
+  --purple-glow: rgba(var(--accent-primary-rgb), 0.2);
+  --purple-border: rgba(var(--accent-primary-rgb), 0.8);
+}
+
+.card-responsive {
+  grid-template-columns: 1fr;
+  width: 90%;
+  margin: 0 auto;
+  padding: var(--spacing-xs);
+}
+
+@media (min-width: 600px) {
+  .card-responsive {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-responsive {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .card-responsive .card:nth-child(3) {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  
+  .card-responsive .card:nth-child(4) {
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 2;
+  }
+  
+  .card-responsive .card:nth-child(6) {
+    grid-column: 4;
+    grid-row: 3;
+  }
+}
+
+.card--border-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 6px;
+  background: radial-gradient(var(--glow-radius) circle at var(--glow-x) var(--glow-y),
+      rgba(var(--accent-primary-rgb), calc(var(--glow-intensity) * 0.8)) 0%,
+      rgba(var(--accent-primary-rgb), calc(var(--glow-intensity) * 0.4)) 30%,
+      transparent 60%);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: subtract;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.card--border-glow:hover::after {
+  opacity: 1;
+}
+
+.card--border-glow:hover {
+  box-shadow: 0 4px 20px rgba(46, 24, 78, 0.4), 0 0 30px rgba(var(--accent-primary-rgb), 0.2);
+}
+
+.particle::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: rgba(var(--accent-primary-rgb), 0.2);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.particle-container:hover {
+  box-shadow: 0 4px 20px rgba(46, 24, 78, 0.2), 0 0 30px rgba(var(--accent-primary-rgb), 0.2);
+}
+
+.text-clamp-1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-clamp-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 599px) {
+  .card-responsive {
+    grid-template-columns: 1fr;
+    width: 90%;
+    margin: 0 auto;
+    padding: var(--spacing-xs);
+  }
+  
+  .card-responsive .card {
+    width: 100%;
+    min-height: var(--min-height-card-responsive);
+  }
+}
+
+/* === New MagicBento Styles === */
+
+.magic-bento-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Default to single column for mobile */
+  gap: var(--spacing-xxl);
+  padding: var(--spacing-md);
+  z-index: 10; /* Ensure it appears above other content */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+  .magic-bento-grid {
+    grid-template-columns: repeat(auto-fit, minmax(var(--min-width-bento-grid-item), 1fr));
+  }
+}
+
+/* Card Positioning - Removed for mobile responsiveness */
+
+
+/* SVG Connections Layer */
+.bento-connections {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.connection-line {
+  --line-opacity: 0.3;
+  --line-stroke: rgba(var(--accent-primary-rgb), 0.3);
+  opacity: var(--line-opacity);
+  transition: opacity 0.3s ease-in-out;
+  overflow: visible;
+}
+
+.connection-line .line-bg {
+  stroke: rgba(var(--accent-primary-rgb), 0.1);
+  stroke-width: 1;
+}
+
+.connection-line .line-glow {
+  stroke: var(--line-stroke);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 3px rgba(var(--accent-primary-rgb), 0.5));
+}
+
+/* Line Positioning */
+.line-forge-amplify {
+  position: absolute;
+  top: 50%;
+  left: calc(100% / 3);
+  width: calc(100% / 3);
+  height: 2px;
+  transform: translateY(-50%);
+}
+.line-forge-amplify path { d: path("M 0 1 H 1000"); } /* Arbitrarily large path */
+
+.line-amplify-dominate {
+  position: absolute;
+  top: 50%;
+  left: calc(100% / 3 * 2);
+  width: calc(100% / 3);
+  height: 2px;
+  transform: translateY(-50%);
+}
+.line-amplify-dominate path { d: path("M 0 1 H 1000"); }
+
+.line-core-forge {
+    position: absolute;
+    top: 50%;
+    left: calc(100% / 6);
+    width: 2px;
+    height: 50%;
+}
+.line-core-forge path { d: path("M 1 0 V 1000"); }
+
+.line-core-dominate {
+    position: absolute;
+    top: 50%;
+    left: calc(100% - (100% / 6));
+    width: 2px;
+    height: 50%;
+}
+.line-core-dominate path { d: path("M 1 0 V 1000"); }

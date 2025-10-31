@@ -1,9 +1,12 @@
-import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { ThemeProvider } from './ThemeContext';
+import React, { useState, useEffect, useContext } from 'react'; // Added useState, useEffect, useContext
+import { BrowserRouter, Route, Routes, useLocation, Link } from 'react-router-dom'; // Added useLocation
+import { ThemeProvider, ThemeContext } from './ThemeContext'; // Added ThemeContext
 import Header from './components/Header';
 import Footer from './components/Footer';
 import AnimatedBackground from './components/AnimatedBackground';
+import Select from './components/Select/Select'; // Select bileşenini import ettik (mobil menü için gerekli)
+import { useTranslation } from 'react-i18next'; // useTranslation eklendi
+
 import HomePage from './pages/HomePage';
 import Solutions from './pages/Solutions';
 import Pricing from './pages/Pricing';
@@ -55,14 +58,53 @@ import ProductsManage from './pages/ProductsManage';
 import './App.css';
 
 const AppContent = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Mobile menu state
+  const location = useLocation(); // For title and overflow effect
+  const { theme, setTheme } = useContext(ThemeContext); // For theme options in mobile menu
+  const { t, i18n } = useTranslation(); // For translations in mobile menu
+
+  useEffect(() => {
+    const path = location.pathname.split('/')[1];
+    const title = path ? path.charAt(0).toUpperCase() + path.slice(1) : 'Home';
+    document.title = `Ekobol - ${title}`;
+
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto'; // Cleanup on unmount
+    };
+  }, [location, isMobileMenuOpen]);
+
+  const changeLanguage = (lng) => { // For language toggle in mobile menu
+    i18n.changeLanguage(lng);
+  };
+
+  const themeOptions = [ // For theme options in mobile menu
+    'retro', 'light', 'dark', 'cupcake', 'bumblebee', 'emerald', 'corporate',
+    'synthwave', 'asfalt-kemik', 'cyberpunk', 'valentine', 'halloween',
+  ];
+
+  const navLinks = ( // Copied from Header.js
+    <>
+      <Link to="/solutions" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors min-h-[44px] flex items-center">{t('nav_solutions')}</Link>
+      <Link to="/pricing" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors min-h-[44px] flex items-center">{t('nav_pricing')}</Link>
+      <Link to="/resources" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors min-h-[44px] flex items-center">{t('nav_resources')}</Link>
+      <Link to="/about" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors min-h-[44px] flex items-center">{t('nav_about')}</Link>
+      <Link to="/contact" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors min-h-[44px] flex items-center">{t('nav_contact')}</Link>
+    </>
+  );
+
   return (
     <>
       <AnimatedBackground />
       <div className="content-wrap">
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
+        <Header onToggleMobileMenu={() => setIsMobileMenuOpen(!isMobileMenuOpen)} /> {/* Pass toggle function */}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/resources" element={<Resources />} />
@@ -111,8 +153,44 @@ const AppContent = () => {
             <Route path="/product-display" element={<ProductDisplay />} />
             <Route path="/products-manage" element={<ProductsManage />} />
           </Routes>
-        </main>
         <Footer />
+      </div>
+
+      {/* Mobile Menu - Moved from Header.js */}
+      {isMobileMenuOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setIsMobileMenuOpen(false)}></div>
+      )}
+      <div className={`fixed inset-y-0 right-0 w-64 bg-void-primary shadow-lg z-50 transform transition-transform duration-300 md:hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+          <div className="flex items-center justify-between px-3 py-3 border-b border-void-secondary">
+              <Link to="/" className="flex items-center gap-2 text-lg font-bold tracking-tight">
+              <img src={process.env.PUBLIC_URL + "/static/media/ekobol.png"} alt="Ekobol Logo" className="h-10 w-auto" />
+              </Link>
+              <button onClick={() => setIsMobileMenuOpen(false)} className="p-1 rounded-full text-text-secondary hover:bg-void-secondary transition-colors">
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+              </button>
+          </div>
+          <nav className="flex flex-col p-3 space-y-0">
+              {navLinks}
+              <div className="flex items-center justify-center gap-1 sm:gap-2 text-sm font-medium pt-2 border-t border-void-secondary">
+                  <button type="button" onClick={() => changeLanguage('en')} className={`transition-colors ${i18n.language === 'en' ? 'text-accent-primary' : 'text-text-secondary'}`}>EN</button>
+                  <span className="text-text-secondary">/</span>
+                  <button type="button" onClick={() => changeLanguage('tr')} className={`transition-colors ${i18n.language === 'tr' ? 'text-accent-primary' : 'text-text-secondary'}`}>TR</button>
+              </div>
+              {/* Select bileşenini kullanıyoruz */}
+              <Select value={theme} onChange={(e) => setTheme(e.target.value)} className="bg-void-secondary text-text-primary border border-void-secondary dark:border-white/10 rounded-md py-1 px-2 text-xs mt-0">
+                  {themeOptions.map(t => (
+                      <option key={t} value={t}>{t}</option>
+                  ))}
+              </Select>
+              <div className="pt-2 border-t border-void-secondary flex flex-col gap-1">
+                  <Link to="/signup" className="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-3 bg-accent-primary text-void-secondary text-sm font-bold leading-normal tracking-wide shadow-lg transition-colors duration-300 hover:bg-accent-primary-dark">
+                      <span className="truncate">{t('start_free')}</span>
+                  </Link>
+                  <Link to="/login" className="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-3 bg-transparent border-2 border-accent-primary text-accent-primary text-sm font-bold leading-normal transition-colors duration-300 hover:bg-accent-primary hover:text-void-primary">
+                      <span className="truncate">{t('login')}</span>
+                  </Link>
+              </div>
+          </nav>
       </div>
     </>
   );
@@ -121,7 +199,7 @@ const AppContent = () => {
 function App() {
   return (
     <ThemeProvider>
-                <BrowserRouter basename="/ekobol">
+                <BrowserRouter basename={process.env.PUBLIC_URL}>
                   <AppContent />
                 </BrowserRouter>    </ThemeProvider>
   );

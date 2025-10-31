@@ -1,0 +1,17 @@
+.button {
+  background-color: var(--accent-primary); /* Using accent-primary for buttons */
+  color: var(--void-secondary); /* Text color should contrast with button background */
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--font-size-base);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: var(--accent-primary-dark, var(--accent-primary)); /* Fallback to primary if dark not defined */
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 1; /* Opacity'yi kaldırıp daha belirgin bir etki yaratıyoruz */
+}

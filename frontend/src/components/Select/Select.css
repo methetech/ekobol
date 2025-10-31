@@ -1,0 +1,9 @@
+.select-component {
+  margin: var(--spacing-lg);
+  padding: var(--spacing-sm);
+  font-size: var(--font-size-base);
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  background-color: var(--void-secondary); /* Using void-secondary for background */
+  color: var(--text-primary); /* Using text-primary for text color */
+}

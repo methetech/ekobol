@@ -1,0 +1,15 @@
+.card-component {
+  background-color: var(--void-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s, border-color 0.3s;
+  width: 50%; /* This might need to be adjusted based on context */
+}
+
+.card-component h2 {
+  color: var(--accent-primary); /* Using accent-primary for card titles */
+  margin-top: 0;
+}
