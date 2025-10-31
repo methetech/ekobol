@@ -97,11 +97,11 @@ const AppContent = () => {
 
   const navLinks = ( // Copied from Header.js
     <>
-      <Link to="/solutions" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors min-h-[44px] flex items-center">{t('nav_solutions')}</Link>
-      <Link to="/pricing" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors min-h-[44px] flex items-center">{t('nav_pricing')}</Link>
-      <Link to="/resources" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors min-h-[44px] flex items-center">{t('nav_resources')}</Link>
-      <Link to="/about" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors min-h-[44px] flex items-center">{t('nav_about')}</Link>
-      <Link to="/contact" className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors min-h-[44px] flex items-center">{t('nav_contact')}</Link>
+      <Link to="/solutions" className="text-base font-medium text-text-primary hover:text-accent-primary transition-colors min-h-[44px] flex items-center">{t('nav_solutions')}</Link>
+      <Link to="/pricing" className="text-base font-medium text-text-primary hover:text-accent-primary transition-colors min-h-[44px] flex items-center">{t('nav_pricing')}</Link>
+      <Link to="/resources" className="text-base font-medium text-text-primary hover:text-accent-primary transition-colors min-h-[44px] flex items-center">{t('nav_resources')}</Link>
+      <Link to="/about" className="text-base font-medium text-text-primary hover:text-accent-primary transition-colors min-h-[44px] flex items-center">{t('nav_about')}</Link>
+      <Link to="/contact" className="text-base font-medium text-text-primary hover:text-accent-primary transition-colors min-h-[44px] flex items-center">{t('nav_contact')}</Link>
     </>
   );
 
@@ -170,11 +170,11 @@ const AppContent = () => {
         <Footer />
       </div>
 
-      {/* Mobile Menu - Moved from Header.js */}
+      {/* Mobile Menu - Refactored for UX */}
       {isMobileMenuOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setIsMobileMenuOpen(false)}></div>
+          <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm z-40" onClick={() => setIsMobileMenuOpen(false)}></div>
       )}
-      <div className={`fixed inset-y-0 right-0 w-64 bg-void-primary shadow-lg z-50 transform transition-transform duration-300 md:hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`fixed inset-x-4 top-24 sm:inset-x-auto sm:right-4 sm:w-96 bg-void-primary/95 backdrop-blur-xl shadow-2xl z-50 rounded-2xl transform transition-transform duration-300 md:hidden ${isMobileMenuOpen ? 'translate-y-0' : '-translate-y-[150%]'}`}>
           <div className="flex items-center justify-between px-3 py-3 border-b border-void-secondary">
               <Link to="/" className="flex items-center gap-2 text-lg font-bold tracking-tight">
               <img src={process.env.PUBLIC_URL + "/static/media/ekobol.png"} alt="Ekobol Logo" className="h-10 w-auto" />

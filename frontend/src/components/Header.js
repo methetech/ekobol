@@ -50,38 +50,71 @@ const Header = ({ onToggleMobileMenu }) => { // Added onToggleMobileMenu prop
           <img src={process.env.PUBLIC_URL + "/static/media/ekobol.png"} alt="Ekobol Logo" className="h-12 w-auto" />
       </Link>
 
-      {/* Desktop Navigation */}
-      <nav className="hidden md:flex items-center gap-8">
-        {navLinks}
-      </nav>
+            {/* Desktop Navigation & Actions */}
 
-      <div className="flex items-center gap-2 sm:gap-4">
-        {/* Language and Theme Toggles */}
-        <div className="flex items-center gap-1 sm:gap-2 text-base font-medium">
-            <button type="button" onClick={() => changeLanguage('en')} className={`transition-colors ${i18n.language === 'en' ? 'text-accent-primary' : 'text-text-secondary'}`}>EN</button>
-            <span className="text-text-secondary">/</span>
-            <button type="button" onClick={() => changeLanguage('tr')} className={`transition-colors ${i18n.language === 'tr' ? 'text-accent-primary' : 'text-text-secondary'}`}>TR</button>
-        </div>
-        
-        <select value={theme} onChange={(e) => setTheme(e.target.value)} className="bg-void-secondary text-text-primary border border-void-secondary dark:border-white/10 rounded-md py-2 px-3 text-sm">
-          {themeOptions.map(t => (
-            <option key={t} value={t}>{t}</option>
-          ))}
-        </select>
+            <div className="hidden md:flex items-center gap-8">
 
-        {/* Desktop Actions */}
-        <div className="hidden md:flex items-center gap-4">
-            <Link to="/login" className="hidden sm:inline-block text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('login')}</Link>
-            <Link to="/signup" className="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-accent-primary text-void-secondary text-base font-bold leading-normal tracking-wide shadow-lg transition-colors duration-300 hover:bg-accent-primary-dark">
-                <span className="truncate">{t('start_free')}</span>
-            </Link>
-        </div>
+              <nav className="flex items-center gap-8">
 
-        {/* Hamburger Menu Button */}
-        <button onClick={onToggleMobileMenu} className="md:hidden p-2 rounded-full text-text-secondary hover:bg-void-secondary transition-colors">
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-        </button>
-      </div>
+                {navLinks}
+
+              </nav>
+
+              <div className="flex items-center gap-4">
+
+                  <Link to="/login" className="hidden sm:inline-block text-base font-medium text-text-secondary hover:text-text-primary transition-colors">{t('login')}</Link>
+
+                  <Link to="/signup" className="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-accent-primary text-void-secondary text-base font-bold leading-normal tracking-wide shadow-lg transition-colors duration-300 hover:bg-accent-primary-dark">
+
+                      <span className="truncate">{t('start_free')}</span>
+
+                  </Link>
+
+              </div>
+
+            </div>
+
+      
+
+            {/* Language, Theme & Mobile Burger */}
+
+            <div className="flex items-center gap-2 sm:gap-4">
+
+              {/* Language and Theme Toggles */}
+
+              <div className="flex items-center gap-1 sm:gap-2 text-base font-medium">
+
+                  <button type="button" onClick={() => changeLanguage('en')} className={`transition-colors ${i18n.language === 'en' ? 'text-accent-primary' : 'text-text-secondary'}`}>EN</button>
+
+                  <span className="text-text-secondary">/</span>
+
+                  <button type="button" onClick={() => changeLanguage('tr')} className={`transition-colors ${i18n.language === 'tr' ? 'text-accent-primary' : 'text-text-secondary'}`}>TR</button>
+
+              </div>
+
+              
+
+              <select value={theme} onChange={(e) => setTheme(e.target.value)} className="bg-void-secondary text-text-primary border border-void-secondary dark:border-white/10 rounded-md py-2 px-3 text-sm">
+
+                {themeOptions.map(t => (
+
+                  <option key={t} value={t}>{t}</option>
+
+                ))}
+
+              </select>
+
+      
+
+              {/* Hamburger Menu Button */}
+
+              <button onClick={onToggleMobileMenu} className="md:hidden p-2 rounded-full text-text-secondary hover:bg-void-secondary transition-colors">
+
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+
+              </button>
+
+            </div>
     </header>
   );
 };
