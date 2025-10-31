@@ -14,7 +14,7 @@ This document outlines the planned development steps for `ekobol.com`.
 
 - [x] Project Scaffolding (Create React App setup in `frontend/`)
 - [x] Multi-Theme System Implementation (12 themes, CSS variables, React Context)
-- [x] Internationalization (i18n) Setup (TR/EN, `i18next`, `react-i18next`, `i18next-http-backend`) - *MagicBento cards fixed, Pricing page still requires debugging*
+- [x] Internationalization (i18n) Setup (TR/EN, `i18next`, `react-i18next`, `i18next-http-backend`) - *All core pages (MagicBento cards, Pricing, Careers, ConnectMarketplaceGuide, Cookies) i18n integrated and debugged.*
 - [x] HomePage (`index.html`) Migration to React Component (`HomePage.js`)
 
 ## Phase 3: Advanced Visuals & Optimization (In Progress/Next)

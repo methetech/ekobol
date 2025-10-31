@@ -1,89 +1,93 @@
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const AiImageGeneratorGuide = () => {
+  const { t } = useTranslation('guide');
+
   return (
     <main className="flex-1 px-4 sm:px-10 lg:px-20 py-16 lg:py-24">
       <article className="max-w-4xl mx-auto prose lg:prose-xl dark:prose-invert prose-headings:text-text-primary prose-p:text-text-secondary prose-a:text-accent-primary hover:prose-a:text-accent-primary-dark prose-strong:text-text-primary prose-ul:text-text-secondary prose-ol:text-text-secondary">
         <header className="mb-12 text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter leading-tight mb-4">
-            YZ Görüntü Oluşturucu Nasıl Kullanılır?
+            {t('ai_image_generator_guide.title')}
           </h1>
           <p className="text-lg text-text-secondary">
-            <time dateTime="2025-07-18">18 Temmuz 2025</time> tarafından <span className="font-semibold text-text-primary">Ekobol Destek Ekibi</span>
+            <time dateTime="2025-07-18">{t('ai_image_generator_guide.date')}</time> {t('ai_image_generator_guide.by')} <span className="font-semibold text-text-primary">{t('ai_image_generator_guide.author')}</span>
           </p>
         </header>
 
         <figure className="mb-8">
-          <img src="https://images.unsplash.com/photo-1542382257-ab17006a6557?q=80&w=1920&auto=format&fit=crop" alt="YZ görüntü oluşturucu arayüzü" className="w-full rounded-lg shadow-md" />
+          <img src="https://images.unsplash.com/photo-1542382257-ab17006a6557?q=80&w=1920&auto=format&fit=crop" alt="{t('ai_image_generator_guide.image_alt')}" className="w-full rounded-lg shadow-md" />
           <figcaption className="text-center text-sm text-text-secondary mt-2">
-            Ürün görsellerinizi saniyeler içinde dönüştürün.
+            {t('ai_image_generator_guide.image_caption')}
           </figcaption>
         </figure>
 
         <p>
-          Ekobol'ün YZ Görüntü Oluşturucusu, ürün fotoğraflarınızı profesyonel, pazaryeri uyumlu görsellere dönüştürmek için tasarlanmış güçlü bir araçtır. Bu kılavuz, bu özelliği en etkili şekilde nasıl kullanacağınızı adım adım açıklayacaktır.
+          {t('ai_image_generator_guide.p1')}
         </p>
 
-        <h2>1. YZ Görüntü Oluşturucuya Erişme</h2>
+        <h2>{t('ai_image_generator_guide.h2_1')}</h2>
         <p>
-          Kontrol panelinizden <strong>Ürünler</strong> bölümüne gidin ve düzenlemek istediğiniz bir ürünü seçin veya yeni bir ürün ekleyin. Ürün detayları sayfasında, "Ürün Görselleri" başlığı altında YZ Görüntü Oluşturucu seçeneğini bulacaksınız.
+          {t('ai_image_generator_guide.p2')}
         </p>
 
-        <h2>2. Ürün Görselinizi Yükleme</h2>
+        <h2>{t('ai_image_generator_guide.h2_2')}</h2>
         <p>
-          Oluşturucuya eriştiğinizde, ilk adım ürününüzün bir fotoğrafını yüklemektir.
-        </p>
-        <ul>
-          <li><strong>"Resim Yükle" düğmesine tıklayın.</strong></li>
-          <li>Bilgisayarınızdan kullanmak istediğiniz ürün fotoğrafını seçin. Kaliteli bir başlangıç görseli, en iyi YZ sonuçlarını sağlayacaktır.</li>
-          <li>Görselin yüklenmesini bekleyin.</li>
-        </ul>
-
-        <h2>3. Bir Görüntü Stili Seçme</h2>
-        <p>
-          Görseliniz yüklendikten sonra, yapay zekanın arka planı nasıl dönüştüreceğini belirleyen çeşitli stil seçenekleri sunulacaktır.
+          {t('ai_image_generator_guide.p3')}
         </p>
         <ul>
-          <li><strong>Mevcut stillere göz atın:</strong> Minimalist Studio, Doğal Ambiyans, Fütüristik Geometrik ve daha fazlası gibi seçenekler bulacaksınız.</li>
-          <li><strong>Ürününüz ve markanız için en uygun stili seçin.</strong> Her stil, görselinize farklı bir hava katacaktır.</li>
+          <li><strong>{t('ai_image_generator_guide.li1_strong')}:</strong> {t('ai_image_generator_guide.li1_text')}</li>
+          <li>{t('ai_image_generator_guide.li2_text')}</li>
+          <li>{t('ai_image_generator_guide.li3_text')}</li>
         </ul>
 
-        <h2>4. YZ Görüntüsünü Oluşturma</h2>
+        <h2>{t('ai_image_generator_guide.h2_3')}</h2>
         <p>
-          Stilinizi seçtikten sonra:
+          {t('ai_image_generator_guide.p4')}
         </p>
         <ul>
-          <li><strong>"YZ ile Oluştur" düğmesine tıklayın.</strong></li>
-          <li>Yapay zeka görseli oluştururken birkaç saniye bekleyin.</li>
-          <li>Oluşturulan görsel, seçtiğiniz stile göre otomatik olarak dönüştürülmüş olarak önizleme alanında görünecektir.</li>
+          <li><strong>{t('ai_image_generator_guide.li4_strong')}:</strong> {t('ai_image_generator_guide.li4_text')}</li>
+          <li><strong>{t('ai_image_generator_guide.li5_strong')}:</strong> {t('ai_image_generator_guide.li5_text')}</li>
         </ul>
 
-        <h2>5. Görseli İnceleme ve Kaydetme</h2>
+        <h2>{t('ai_image_generator_guide.h2_4')}</h2>
         <p>
-          Oluşturulan görseli dikkatlice inceleyin. Memnun kalırsanız:
+          {t('ai_image_generator_guide.p5')}
         </p>
         <ul>
-          <li><strong>"Kaydet" düğmesine tıklayın.</strong> Görsel, ürününüzün medya galerisine eklenecektir.</li>
-          <li>Memnun kalmazsanız, farklı bir stil seçebilir veya tekrar oluşturmak için "Tekrar Oluştur" (varsa) düğmesine tıklayabilirsiniz.</li>
+          <li><strong>{t('ai_image_generator_guide.li6_strong')}:</strong> {t('ai_image_generator_guide.li6_text')}</li>
+          <li>{t('ai_image_generator_guide.li7_text')}</li>
+          <li>{t('ai_image_generator_guide.li8_text')}</li>
         </ul>
 
-        <h2>İpuçları ve En İyi Uygulamalar:</h2>
+        <h2>{t('ai_image_generator_guide.h2_5')}</h2>
+        <p>
+          {t('ai_image_generator_guide.p6')}
+        </p>
         <ul>
-          <li><strong>Yüksek Çözünürlüklü Görüntüler Kullanın:</strong> Daha iyi YZ sonuçları için net ve iyi aydınlatılmış orijinal fotoğraflar sağlayın.</li>
-          <li><strong>Farklı Stiller Deneyin:</strong> Hangi stilin ürününüzü en çekici şekilde sergilediğini görmek için farklı seçenekleri deneyin.</li>
-          <li><strong>Arka Planı Kaldır Seçeneğini Kullanın:</strong> Birçok stil, arka planı otomatik olarak kaldırır, ancak ihtiyacınız olursa bu seçeneği ayrı olarak da kullanabilirsiniz.</li>
+          <li><strong>{t('ai_image_generator_guide.li9_strong')}:</strong> {t('ai_image_generator_guide.li9_text')}</li>
+          <li>{t('ai_image_generator_guide.li10_text')}</li>
+        </ul>
+
+        <h2>{t('ai_image_generator_guide.h2_6')}</h2>
+        <ul>
+          <li><strong>{t('ai_image_generator_guide.li11_strong')}:</strong> {t('ai_image_generator_guide.li11_text')}</li>
+          <li><strong>{t('ai_image_generator_guide.li12_strong')}:</strong> {t('ai_image_generator_guide.li12_text')}</li>
+          <li><strong>{t('ai_image_generator_guide.li13_strong')}:</strong> {t('ai_image_generator_guide.li13_text')}</li>
         </ul>
 
         <p>
-          Ekobol'ün YZ Görüntü Oluşturucusu, ürün görsellerinizi kolayca ve hızlı bir şekilde yükseltmenize olanak tanır. Çarpıcı görsellerle potansiyel müşterileri etkileyin ve satışlarınızı artırın!
+          {t('ai_image_generator_guide.p7')}
         </p>
 
         <div className="mt-12 pt-8 border-t border-void-secondary dark:border-white/10 text-center">
-          <p className="text-lg text-text-secondary mb-4">Yardıma mı ihtiyacınız var? Yardım Merkezimizde daha fazla kılavuz ve yanıt bulun.</p>
-          <a href="/help-center" className="inline-flex min-w-[160px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-accent-primary text-void-primary text-base font-bold leading-normal tracking-wide shadow-lg hover:bg-accent-primary-dark transition-shadow duration-300">
-            <span className="truncate">Yardım Merkezine Git</span>
-          </a>
+          <p className="text-lg text-text-secondary mb-4">{t('ai_image_generator_guide.help_text')}</p>
+          <Link to="/help-center" className="inline-flex min-w-[160px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-accent-primary text-void-primary text-base font-bold leading-normal tracking-wide shadow-lg hover:bg-accent-primary-dark transition-shadow duration-300">
+            <span className="truncate">{t('ai_image_generator_guide.help_button')}</span>
+          </Link>
         </div>
       </article>
     </main>

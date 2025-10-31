@@ -1,66 +1,70 @@
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const BlogPost = () => {
+  const { t } = useTranslation('blog');
+
   return (
     <main className="flex-1 px-4 sm:px-10 lg:px-20 py-16 lg:py-24">
       <article className="max-w-4xl mx-auto prose lg:prose-xl dark:prose-invert prose-headings:text-text-primary prose-p:text-text-secondary prose-a:text-accent-primary hover:prose-a:text-accent-primary-dark prose-strong:text-text-primary prose-ul:text-text-secondary prose-ol:text-text-secondary">
         <header className="mb-12 text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter leading-tight mb-4">
-            Partner Planı Tanıtımı: Biz Kuralım, Siz Yaratın
+            {t('blog_post.title')}
           </h1>
           <p className="text-lg text-text-secondary">
-            <time dateTime="2025-07-15">15 Temmuz 2025</time> tarafından <span className="font-semibold text-text-primary">Ekobol Ekibi</span>
+            <time dateTime="2025-07-15">{t('blog_post.date')}</time> tarafından <span className="font-semibold text-text-primary">{t('blog_post.author')}</span>
           </p>
         </header>
 
         <figure className="mb-8">
-          <img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=1920&auto=format&fit=crop" alt="Partner planını temsil eden bir fotoğraf" className="w-full rounded-lg shadow-md" />
+          <img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=1920&auto=format&fit=crop" alt="{t('blog_post.image_alt')}" className="w-full rounded-lg shadow-md" />
           <figcaption className="text-center text-sm text-text-secondary mt-2">
-            Dijital imparatorluğunuzu inşa etmeye odaklanın.
+            {t('blog_post.image_caption')}
           </figcaption>
         </figure>
 
         <p>
-          Ekobol'de, e-ticaretin potansiyeline gerçekten ulaşmak için iş kurucularının ürün yaratmaya odaklanması gerektiğine inanıyoruz, dijital operasyonların karmaşıklığını yönetmeye değil. Bu felsefe bizi, hem tecrübeli markaları hem de büyüyen girişimleri desteklemek için tasarlanmış en kapsamlı teklifimiz olan <strong>Partner Planını</strong> tanıtmaya yöneltti.
+          {t('blog_post.p1')}
         </p>
 
-        <h2>Partner Planı Nedir?</h2>
+        <h2>{t('blog_post.h2_1')}</h2>
         <p>
-          Partner Planı, basit bir kâr paylaşımı modeline dayalı benzersiz bir ortaklıktır: <strong>%50-%50</strong>. Siz harika ürünlerinizi üretip gönderirken, biz dijital varlığınızın ve pazarlama çabalarınızın her yönünü yönetiriz. Bu, platformlar arasında hokkabazlık yapmakla veya YZ araçlarının inceliklerini öğrenmekle uğraşmadan işinizi ölçeklendirebileceğiniz anlamına gelir.
+          {t('blog_post.p2')}
         </p>
 
-        <h3>Neler Dahil?</h3>
+        <h3>{t('blog_post.h3_1')}</h3>
         <p>
-          Partner Planı ile Ekobol, dijital işinizin her detayını ele alır:
-        </p>
-        <ul>
-          <li><strong>Profesyonel Marka ve Web Sitesi Oluşturma:</strong> Markanızın kimliğini ve özel e-ticaret web sitenizi sıfırdan oluşturuyoruz.</li>
-          <li><strong>Tam Dijital Pazarlama Yönetimi:</strong> SEO, ücretli reklam kampanyaları, sosyal medya yönetimi ve içerik oluşturma dahil tüm pazarlama stratejilerinizi biz yürütüyoruz.</li>
-          <li><strong>Kapsamlı Operasyon Yönetimi:</strong> Ürün listelemeleri, çoklu pazar yeri senkronizasyonu, envanter otomasyonu, müşteri hizmetleri ve pazar yeri desteği dahil günlük operasyonları ele alıyoruz.</li>
-          <li><strong>YZ Destekli Optimizasyon:</strong> Fiyat optimizasyonu ve YZ tarafından oluşturulan açıklamalar gibi tüm gelişmiş YZ araçlarımız, sizin için değer yaratmak üzere bizim tarafımızdan tam olarak kullanılır.</li>
-          <li><strong>Özel Büyüme Ortağı:</strong> Başarınızı sürekli olarak sağlamak ve iş hedeflerinize ulaşmanıza yardımcı olmak için atanmış bir ekibimiz olacak.</li>
-        </ul>
-
-        <h2>Neden Partner Planı?</h2>
-        <p>
-          Bu plan, zamanları veya uzmanlıkları dijital pazarlamanın veya platform yönetiminin tüm yönlerini ele almaya yetmeyen meşgul kurucular için mükemmeldir. Partner Planı ile şunları elde edersiniz:
+          {t('blog_post.p3')}
         </p>
         <ul>
-          <li><strong>Maksimum Büyüme, Minimum Çaba:</strong> İşletmenizi genişletmek için uzmanlığımızdan yararlanın, böylece siz en iyi yaptığınız şeye odaklanabilirsiniz: inovasyon.</li>
-          <li><strong>Tamamen Yönetilen Çözüm:</strong> Dijital yorgunluğa elveda deyin. Her şey halledilir.</li>
-          <li><strong>Ortak Başarı:</strong> Gelir paylaşımı modelimiz, sizin başarınızın bizim başarımız olduğu anlamına gelir. Büyümenizi sağlamak için motive oluruz.</li>
+          <li><strong>{t('blog_post.li1_strong')}:</strong> {t('blog_post.li1_text')}</li>
+          <li><strong>{t('blog_post.li2_strong')}:</strong> {t('blog_post.li2_text')}</li>
+          <li><strong>{t('blog_post.li3_strong')}:</strong> {t('blog_post.li3_text')}</li>
+          <li><strong>{t('blog_post.li4_strong')}:</strong> {t('blog_post.li4_text')}</li>
+          <li><strong>{t('blog_post.li5_strong')}:</strong> {t('blog_post.li5_text')}</li>
+        </ul>
+
+        <h2>{t('blog_post.h2_2')}</h2>
+        <p>
+          {t('blog_post.p4')}
+        </p>
+        <ul>
+          <li><strong>{t('blog_post.li6_strong')}:</strong> {t('blog_post.li6_text')}</li>
+          <li><strong>{t('blog_post.li7_strong')}:</strong> {t('blog_post.li7_text')}</li>
+          <li><strong>{t('blog_post.li8_strong')}:</strong> {t('blog_post.li8_text')}</li>
         </ul>
 
         <p>
-          Partner Planının işinizi bir sonraki seviyeye taşıyıp taşıyamayacağını öğrenmek için bugün bizimle iletişime geçin. İmparatorluğunuzu sizin adınıza inşa etmeye hazırız.
+          {t('blog_post.p5')}
         </p>
 
         <div className="mt-12 pt-8 border-t border-void-secondary dark:border-white/10 text-center">
-          <p className="text-lg text-text-secondary mb-4">Bu yazıyı faydalı buldunuz mu? Daha fazla e-ticaret içgörüsü ve YZ stratejisi için bizi takip edin!</p>
-          <a href="/blog" className="inline-flex min-w-[160px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-accent-primary text-void-primary text-base font-bold leading-normal tracking-wide shadow-lg hover:bg-accent-primary-dark transition-shadow duration-300">
-            <span className="truncate">Tüm Blog Yazılarını Görüntüle</span>
-          </a>
+          <p className="text-lg text-text-secondary mb-4">{t('blog_post.help_text')}</p>
+          <Link to="/blog" className="inline-flex min-w-[160px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-accent-primary text-void-primary text-base font-bold leading-normal tracking-wide shadow-lg hover:bg-accent-primary-dark transition-shadow duration-300">
+            <span className="truncate">{t('blog_post.help_button')}</span>
+          </Link>
         </div>
       </article>
     </main>

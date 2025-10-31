@@ -1,0 +1,45 @@
+{
+  "subscription": {
+    "title": "Kendi Planınızı Oluşturun.",
+    "description": "Sadece ihtiyacınız olan araçlar için ödeme yapın. İşletmeniz için mükemmel aboneliği oluşturmak üzere özellikleri seçin ve eşleştirin. Yıllık ödeme yaparak %20 tasarruf edin.",
+    "monthly": "Aylık",
+    "yearly": "Yıllık (2 Ay Ücretsiz)"
+  },
+  "marketplace_tiers": {
+    "title": "Pazar Yeri Katmanını Seçin",
+    "description": "Entegre etmeniz gereken pazar yeri sayısını seçin.",
+    "tier1_label": "1 Pazar Yeri",
+    "tier1_price": "₺200/ay",
+    "tier2_label": "3 Pazar Yeriye Kadar",
+    "tier2_price": "₺400/ay",
+    "tier3_label": "5 Pazar Yeriye Kadar",
+    "tier3_price": "₺800/ay"
+  },
+  "ai_features": {
+    "title": "Yapay Zeka Destekli Özellikleri Seçin",
+    "description": "Güçlü yapay zeka araçlarıyla operasyonlarınızı geliştirin.",
+    "image_generator_label": "Yapay Zeka Görsel Oluşturucu",
+    "image_generator_price": "₺400/ay",
+    "description_writer_label": "Yapay Zeka Açıklama Yazıcı",
+    "description_writer_price": "₺320/ay",
+    "pricing_optimization_label": "Yapay Zeka Fiyat Optimizasyonu",
+    "pricing_optimization_price": "₺480/ay",
+    "inventory_automation_label": "Yapay Zeka Envanter Otomasyonu",
+    "inventory_automation_price": "₺600/ay",
+    "unified_analytics_label": "Birleşik Analizler",
+    "unified_analytics_price": "₺280/ay",
+    "seo_tools_label": "SEO Optimizasyon Araçları",
+    "seo_tools_price": "₺400/ay",
+    "social_media_scheduler_label": "Sosyal Medya Planlayıcı",
+    "social_media_scheduler_price": "₺360/ay"
+  },
+  "summary_card": {
+    "title": "Özel Plan Özetiniz",
+    "estimated_cost": "Tahmini Aylık Maliyet",
+    "note": "(Temel/İş Ortağı Planları için işlem ücretleri hariçtir)",
+    "feature1": "Esnek faturalandırma, istediğiniz zaman iptal edin",
+    "feature2": "Sadece kullandığınız kadar ödeyin",
+    "feature3": "İşletmenizle birlikte ölçeklenir",
+    "cta_button": "Ödeme İşlemine Devam Et"
+  }
+}

@@ -51,6 +51,13 @@ import Orders from './pages/Orders';
 import OrderDetail from './pages/OrderDetail';
 import OrderTracking from './pages/OrderTracking';
 import Payment from './pages/Payment';
+import SuccessStories from './pages/SuccessStories';
+import Subscription from './pages/Subscription';
+import PriceOptimizationConversionGuide from './pages/PriceOptimizationConversionGuide';
+import PartnerPlan from './pages/PartnerPlan';
+import DynamicPlan from './pages/DynamicPlan';
+import BuildTransferService from './pages/BuildTransferService';
+import BasicPlan from './pages/BasicPlan';
 import Product from './pages/Product';
 import ProductAddEdit from './pages/ProductAddEdit';
 import ProductDisplay from './pages/ProductDisplay';
@@ -148,6 +155,13 @@ const AppContent = () => {
             <Route path="/order-detail" element={<OrderDetail />} />
             <Route path="/order-tracking" element={<OrderTracking />} />
             <Route path="/payment" element={<Payment />} />
+            <Route path="/success-stories" element={<SuccessStories />} />
+            <Route path="/subscription" element={<Subscription />} />
+            <Route path="/price-optimization-conversion-guide" element={<PriceOptimizationConversionGuide />} />
+            <Route path="/partner-plan" element={<PartnerPlan />} />
+            <Route path="/dynamic-plan" element={<DynamicPlan />} />
+            <Route path="/build-transfer-service" element={<BuildTransferService />} />
+            <Route path="/basic-plan" element={<BasicPlan />} />
             <Route path="/product" element={<Product />} />
             <Route path="/product-add-edit" element={<ProductAddEdit />} />
             <Route path="/product-display" element={<ProductDisplay />} />

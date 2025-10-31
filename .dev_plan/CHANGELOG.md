@@ -2,6 +2,14 @@
 
 All significant changes made to the `ekobol.com` project will be documented here.
 
+## [2025-10-31] - i18n Integration for Core Pages
+- **ADDED:** Full i18n integration for `Careers.js` page, including `useTranslation` hook, translation key replacements, and creation of `frontend/public/locales/tr/careers.json` and `frontend/public/locales/en/careers.json`.
+- **ADDED:** Full i18n integration for `ConnectMarketplaceGuide.js` page, including `useTranslation` hook, translation key replacements, and updates to `frontend/public/locales/tr/guide.json` and `frontend/public/locales/en/guide.json`.
+- **FIXED:** Syntax error in `frontend/src/pages/ConnectMarketplaceGuide.js` (`import { useTranslation } 'react-i18next';` corrected to `import { useTranslation } from 'react-i18next';`).
+- **FIXED:** `Link` is not defined error in `frontend/src/pages/ConnectMarketplaceGuide.js` by importing `Link` from `react-router-dom`.
+- **ADDED:** Full i18n integration for `Cookies.js` page, including `useTranslation` hook, translation key replacements, and creation of `frontend/public/locales/tr/cookies.json` and `frontend/public/locales/en/cookies.json`.
+- **UPDATED:** `frontend/src/i18n.js` to include the new `careers` namespace.
+
 ## [2025-10-31] - Mobile Header UX and Accessibility Fixes
 - **FIXED:** Resolved header element overlap on mobile by increasing the `z-index` hierarchy (`Header`: z-30, `Overlay`: z-40, `Menu`: z-50) in `frontend/src/components/Header.js`. This prevents the desktop action buttons from bleeding over content on smaller viewports.
 - **IMPROVED:** Enhanced mobile accessibility by increasing the tap target size of navigation links in the mobile menu. Added `min-h-[44px]` and `flex items-center` to ensure links are easy to press, adhering to UX best practices.

@@ -14,29 +14,6 @@ const HomePage = () => {
       duration: 1000,
       once: true,
     });
-
-    const transformButton = document.getElementById('transform-button');
-    const initialCard = document.getElementById('initial-card');
-    const resultsContainer = document.getElementById('results-container');
-    const resetButton = document.getElementById('reset-button');
-
-    const handleTransform = () => {
-      initialCard.classList.add('opacity-0', 'pointer-events-none');
-      resultsContainer.classList.remove('opacity-0', 'pointer-events-none');
-    };
-
-    const handleReset = () => {
-      initialCard.classList.remove('opacity-0', 'pointer-events-none');
-      resultsContainer.classList.add('opacity-0', 'pointer-events-none');
-    };
-
-    transformButton?.addEventListener('click', handleTransform);
-    resetButton?.addEventListener('click', handleReset);
-
-    return () => {
-      transformButton?.removeEventListener('click', handleTransform);
-      resetButton?.removeEventListener('click', handleReset);
-    };
   }, []);
 
   return (

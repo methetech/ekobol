@@ -15,7 +15,7 @@ i18n
     debug: false,
     supportedLngs: ['en', 'tr'],
     nonExplicitSupportedLngs: true,
-    ns: ['common', 'home', 'solutions', 'pricing', 'resources', 'about', 'contact'],
+    ns: ['translation', 'guide', 'subscription', 'successStories', 'blog', 'careers'],
     defaultNS: 'common',
     interpolation: {
       escapeValue: false,

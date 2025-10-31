@@ -1,90 +1,94 @@
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const ConnectMarketplaceGuide = () => {
+  const { t } = useTranslation('guide');
+
   return (
     <main className="flex-1 px-4 sm:px-10 lg:px-20 py-16 lg:py-24">
       <article className="max-w-4xl mx-auto prose lg:prose-xl dark:prose-invert prose-headings:text-text-primary prose-p:text-text-secondary prose-a:text-accent-primary hover:prose-a:text-accent-primary-dark prose-strong:text-text-primary prose-ul:text-text-secondary prose-ol:text-text-secondary">
         <header className="mb-12 text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter leading-tight mb-4">
-            İlk Pazar Yerinizi Ekobol'e Bağlama
+            {t('connect_marketplace_guide.title')}
           </h1>
           <p className="text-lg text-text-secondary">
-            <time dateTime="2025-07-18">18 Temmuz 2025</time> tarafından <span className="font-semibold text-text-primary">Ekobol Destek Ekibi</span>
+            <time dateTime="2025-07-18">{t('connect_marketplace_guide.date')}</time> tarafından <span className="font-semibold text-text-primary">{t('connect_marketplace_guide.author')}</span>
           </p>
         </header>
 
         <figure className="mb-8">
-          <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1920&auto=format&fit=crop" alt="Çoklu platform entegrasyonu" className="w-full rounded-lg shadow-md" />
+          <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1920&auto=format&fit=crop" alt="{t('connect_marketplace_guide.image_alt')}" className="w-full rounded-lg shadow-md" />
           <figcaption className="text-center text-sm text-text-secondary mt-2">
-            E-ticaret yolculuğunuza başlamak için pazar yerlerinizi entegre edin.
+            {t('connect_marketplace_guide.image_caption')}
           </figcaption>
         </figure>
 
         <p>
-          Ekobol, Trendyol, Etsy ve Amazon gibi birden fazla pazar yerindeki e-ticaret operasyonlarınızı merkezileştirmenizi sağlar. İlk pazar yerinizi bağlamak, platformumuzun tüm gücünü ortaya çıkarmanın ilk adımıdır. İşte bunu adım adım nasıl yapacağınız:
+          {t('connect_marketplace_guide.p1')}
         </p>
 
-        <h2>1. Entegrasyon Ayarlarına Erişme</h2>
+        <h2>{t('connect_marketplace_guide.h2_1')}</h2>
         <ul>
-          <li>Ekobol kontrol panelinize giriş yapın.</li>
-          <li>Sol kenar çubuğundaki navigasyonda <strong>Ayarlar</strong> (veya Entegrasyonlar) bölümüne gidin.</li>
-          <li><strong>"Pazar Yeri Bağlantıları"</strong> veya <strong>"Yeni Entegrasyon Ekle"</strong> gibi bir seçenek arayın.</li>
+          <li>{t('connect_marketplace_guide.li1_text')}</li>
+          <li><strong>{t('connect_marketplace_guide.li2_strong')}</strong> {t('connect_marketplace_guide.li2_text')}</li>
+          <li><strong>{t('connect_marketplace_guide.li3_strong')}</strong> {t('connect_marketplace_guide.li3_text')}</li>
         </ul>
 
-        <h2>2. Pazar Yerinizi Seçme</h2>
+        <h2>{t('connect_marketplace_guide.h2_2')}</h2>
         <p>
-          Ekobol'ün desteklediği pazar yerlerinin bir listesini göreceksiniz.
+          {t('connect_marketplace_guide.p2')}
         </p>
         <ul>
-          <li>Bağlamak istediğiniz pazar yerine tıklayın (ör. Trendyol, Etsy, Amazon).</li>
-          <li>Pazar yerine özgü bağlantı talimatları görüntülenecektir.</li>
+          <li>{t('connect_marketplace_guide.li4_text')}</li>
+          <li>{t('connect_marketplace_guide.li5_text')}</li>
         </ul>
 
-        <h2>3. Bağlantıyı Yetkilendirme (API Anahtarları/İzinler)</h2>
+        <h2>{t('connect_marketplace_guide.h2_3')}</h2>
         <p>
-          Her pazar yeri, güvenli bir bağlantı kurmak için farklı bir yöntem kullanır. En yaygın yöntemler şunlardır:
+          {t('connect_marketplace_guide.p3')}
         </p>
         <ul>
-          <li><strong>API Anahtarları:</strong> Pazar yeri hesabınızdan API anahtarları (ör. tüketici anahtarı, tüketici sırrı, erişim belirteci) oluşturmanız ve bunları Ekobol'e girmeniz istenebilir. Bu anahtarları genellikle pazar yerinizin satıcı/geliştirici ayarlarında bulabilirsiniz.</li>
-          <li><strong>OAuth Yetkilendirmesi:</strong> Ekobol'e hesabınıza belirli izinlerle erişim izni vermek için pazar yeri sitesine yönlendirileceksiniz. Bu genellikle bir "Bağlan" veya "Yetkilendir" düğmesine tıklamayı içerir.</li>
-          <li><strong>Mağaza Adı/URL:</strong> Bazı platformlar için sadece mağaza adınızı veya URL'nizi girmek yeterli olabilir.</li>
+          <li><strong>{t('connect_marketplace_guide.li6_strong')}:</strong> {t('connect_marketplace_guide.li6_text')}</li>
+          <li><strong>{t('connect_marketplace_guide.li7_strong')}:</strong> {t('connect_marketplace_guide.li7_text')}</li>
+          <li><strong>{t('connect_marketplace_guide.li8_strong')}:</strong> {t('connect_marketplace_guide.li8_text')}</li>
         </ul>
         <p className="text-text-secondary italic">
-          <strong>Önemli:</strong> Güvenliğiniz için, API anahtarlarını veya giriş bilgilerini yalnızca pazar yerinin kendi web sitesine doğrudan girin ve bunları yalnızca Ekobol içindeki istenen yetkilendirme alanlarına yapıştırın.
+          <strong>{t('connect_marketplace_guide.important_strong')}:</strong> {t('connect_marketplace_guide.important_text')}
         </p>
 
-        <h2>4. Entegrasyon Ayarlarını Yapılandırma</h2>
+        <h2>{t('connect_marketplace_guide.h2_4')}</h2>
         <p>
-          Bağlantı kurulduktan sonra, bazı temel ayarları yapılandırmanız istenebilir:
+          {t('connect_marketplace_guide.p4')}
         </p>
         <ul>
-          <li><strong>Varsayılan Stok Ayarları:</strong> Ekobol'ün envanterinizi nasıl yönetmesi gerektiğini ayarlayın (ör. stok bittiğinde listelemeleri otomatik olarak devre dışı bırakma).</li>
-          <li><strong>Fiyat Senkronizasyonu:</strong> Ekobol'ün fiyat değişikliklerini pazar yerinize otomatik olarak gönderip göndermeyeceğini seçin.</li>
-          <li><strong>Veri İçe Aktarma:</strong> Mevcut ürünleri veya siparişleri Ekobol'e aktarıp aktarmayacağınızı seçin.</li>
+          <li><strong>{t('connect_marketplace_guide.li9_strong')}:</strong> {t('connect_marketplace_guide.li9_text')}</li>
+          <li><strong>{t('connect_marketplace_guide.li10_strong')}:</strong> {t('connect_marketplace_guide.li10_text')}</li>
+          <li><strong>{t('connect_marketplace_guide.li11_strong')}:</strong> {t('connect_marketplace_guide.li11_text')}</li>
         </ul>
         <p>
-          Bu ayarları ihtiyaçlarınıza göre gözden geçirin ve kaydedin.
+          {t('connect_marketplace_guide.p5')}
         </p>
 
-        <h2>5. Bağlantıyı Test Etme</h2>
+        <h2>{t('connect_marketplace_guide.h2_5')}</h2>
         <p>
-          Entegrasyonunuzun başarılı bir şekilde çalıştığından emin olmak için:
+          {t('connect_marketplace_guide.p6')}
         </p>
         <ul>
-          <li>Ekobol ürünlerinizden birinde küçük bir fiyat değişikliği yapın ve pazar yerinde yansıyıp yansımadığını kontrol edin.</li>
-          <li>Yeni bir ürün listelemeyi deneyin ve pazar yerinde doğru göründüğünü doğrulayın.</li>
+          <li>{t('connect_marketplace_guide.li12_text')}</li>
+          <li>{t('connect_marketplace_guide.li13_text')}</li>
         </ul>
 
         <p>
-          Tebrikler! İlk pazar yerinizi Ekobol'e başarıyla bağladınız. Artık tüm pazar yerlerinizi tek bir yerden yönetmeye, YZ destekli araçlarımızı kullanarak iş süreçlerini otomatikleştirmeye ve büyümenizi hızlandırmaya başlayabilirsiniz. Herhangi bir sorunla karşılaşırsanız, Yardım Merkezimizdeki ilgili makalelere göz atmaktan veya destek ekibimizle iletişime geçmekten çekinmeyin.
+          {t('connect_marketplace_guide.p7')}
         </p>
 
         <div className="mt-12 pt-8 border-t border-void-secondary dark:border-white/10 text-center">
-          <p className="text-lg text-text-secondary mb-4">Yardıma mı ihtiyacınız var? Yardım Merkezimizde daha fazla kılavuz ve yanıt bulun.</p>
-          <a href="/help-center" className="inline-flex min-w-[160px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-accent-primary text-void-primary text-base font-bold leading-normal tracking-wide shadow-lg hover:bg-accent-primary-dark transition-shadow duration-300">
-            <span className="truncate">Yardım Merkezine Git</span>
-          </a>
+          <p className="text-lg text-text-secondary mb-4">{t('connect_marketplace_guide.help_text')}</p>
+          <Link to="/help-center" className="inline-flex min-w-[160px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-accent-primary text-void-primary text-base font-bold leading-normal tracking-wide shadow-lg hover:bg-accent-primary-dark transition-shadow duration-300">
+            <span className="truncate">{t('connect_marketplace_guide.help_button')}</span>
+          </Link>
         </div>
       </article>
     </main>

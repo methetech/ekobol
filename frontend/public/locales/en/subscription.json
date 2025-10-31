@@ -1,0 +1,45 @@
+{
+  "subscription": {
+    "title": "Build Your Own Plan.",
+    "description": "Pay only for the tools you need. Select and match features to create the perfect subscription for your business. Save 20% by paying annually.",
+    "monthly": "Monthly",
+    "yearly": "Yearly (2 Months Free)"
+  },
+  "marketplace_tiers": {
+    "title": "Choose Your Marketplace Tier",
+    "description": "Select the number of marketplaces you need to integrate.",
+    "tier1_label": "1 Marketplace",
+    "tier1_price": "$200/month",
+    "tier2_label": "Up to 3 Marketplaces",
+    "tier2_price": "$400/month",
+    "tier3_label": "Up to 5 Marketplaces",
+    "tier3_price": "$800/month"
+  },
+  "ai_features": {
+    "title": "Select AI-Powered Features",
+    "description": "Enhance your operations with powerful AI tools.",
+    "image_generator_label": "AI Image Generator",
+    "image_generator_price": "$400/month",
+    "description_writer_label": "AI Description Writer",
+    "description_writer_price": "$320/month",
+    "pricing_optimization_label": "AI Price Optimization",
+    "pricing_optimization_price": "$480/month",
+    "inventory_automation_label": "AI Inventory Automation",
+    "inventory_automation_price": "$600/month",
+    "unified_analytics_label": "Unified Analytics",
+    "unified_analytics_price": "$280/month",
+    "seo_tools_label": "SEO Optimization Tools",
+    "seo_tools_price": "$400/month",
+    "social_media_scheduler_label": "Social Media Scheduler",
+    "social_media_scheduler_price": "$360/month"
+  },
+  "summary_card": {
+    "title": "Your Custom Plan Summary",
+    "estimated_cost": "Estimated Monthly Cost",
+    "note": "(Excludes transaction fees for Basic/Partner Plans)",
+    "feature1": "Flexible billing, cancel anytime",
+    "feature2": "Pay only for what you use",
+    "feature3": "Scales with your business",
+    "cta_button": "Proceed to Checkout"
+  }
+}
