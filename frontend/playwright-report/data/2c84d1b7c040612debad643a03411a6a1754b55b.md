@@ -1,0 +1,210 @@
+# Page snapshot
+
+```yaml
+- main [ref=e2]:
+  - generic [ref=e8]:
+    - generic [ref=e9]:
+      - link "Ekobol Logo" [ref=e10] [cursor=pointer]:
+        - /url: /ekobol
+        - img "Ekobol Logo" [ref=e11]
+      - generic [ref=e12]:
+        - generic [ref=e13]:
+          - button "EN" [ref=e14] [cursor=pointer]
+          - generic [ref=e15]: /
+          - button "TR" [ref=e16] [cursor=pointer]
+        - combobox [ref=e17]:
+          - option "retro"
+          - option "light"
+          - option "dark"
+          - option "cupcake"
+          - option "bumblebee"
+          - option "emerald"
+          - option "corporate"
+          - option "synthwave"
+          - option "asfalt-kemik" [selected]
+          - option "cyberpunk"
+          - option "valentine"
+          - option "halloween"
+        - button [ref=e18] [cursor=pointer]:
+          - img [ref=e19]
+    - generic [ref=e21]:
+      - generic [ref=e23]:
+        - heading "Build an Empire, Not a Product." [level=1] [ref=e24]
+        - paragraph [ref=e25]: Ekobol is Me the Tech's "thinking code" philosophy. More than a tool that unifies marketplaces; it is an autonomous growth engine designed for you to dominate the digital world.
+        - generic [ref=e26]:
+          - link "Declare Your Kingdom" [ref=e27] [cursor=pointer]:
+            - /url: /ekobol/signup
+            - generic [ref=e28]: Declare Your Kingdom
+          - link "See the Arsenal" [ref=e29] [cursor=pointer]:
+            - /url: /ekobol/solutions
+            - generic [ref=e30]: See the Arsenal
+      - generic [ref=e32]:
+        - heading "Ekobol AI Automation Command Center" [level=2] [ref=e33]
+        - paragraph [ref=e34]: Transform your business processes with Ekobol's AI-powered automation, maximize efficiency, and leave your competitors behind. An interactive experience covering all site capabilities and workflows.
+        - generic [ref=e35]:
+          - generic [ref=e38]:
+            - img [ref=e39]
+            - generic [ref=e41]: ANALYSIS
+            - heading "SEO & Trend Analysis" [level=3] [ref=e42]
+            - paragraph [ref=e43]: Before launch, AI analyzes market trends, SEO keywords, and competitor strategies to position your product for maximum impact.
+          - generic [ref=e46]:
+            - img [ref=e47]
+            - generic [ref=e50]: ANALYSIS
+            - heading "Competitor Intelligence" [level=3] [ref=e51]
+            - paragraph [ref=e52]: Gain an unfair advantage with deep insights into competitor pricing, marketing, and product strategies.
+          - generic [ref=e55]:
+            - img [ref=e56]
+            - generic [ref=e58]: INTEGRATE
+            - heading "AI Product Imaging & Content" [level=3] [ref=e59]
+            - paragraph [ref=e60]: Connect marketplaces and upload products. Let AI generate stunning visuals and compelling descriptions.
+          - generic [ref=e63]:
+            - img [ref=e64]
+            - generic [ref=e66]: VISUALS
+            - heading "AI-Generated Product Visuals" [level=3] [ref=e67]
+            - paragraph [ref=e68]: From a simple idea or sketch, Ekobol AI creates stunning, photorealistic product images and visualizations.
+          - generic [ref=e71]:
+            - img [ref=e72]
+            - generic [ref=e74]: CONTENT
+            - heading "AI-Optimized Descriptions" [level=3] [ref=e75]
+            - paragraph [ref=e76]: Generate compelling, keyword-rich product descriptions tailored to your brand voice and target audience.
+          - generic [ref=e79]:
+            - img [ref=e80]
+            - generic [ref=e82]: OPTIMIZE
+            - heading "Smart Marketing & Pricing" [level=3] [ref=e83]
+            - paragraph [ref=e84]: Unleash AI to create hypnotic campaigns and execute unbeatable pricing strategies.
+          - generic [ref=e87]:
+            - img [ref=e88]
+            - generic [ref=e90]: CORE
+            - heading "Marketplace Integration" [level=3] [ref=e91]
+            - paragraph [ref=e92]: Seamlessly connect and manage all your sales channels from one central hub.
+          - generic [ref=e95]:
+            - img [ref=e96]
+            - generic [ref=e99]: CORE
+            - heading "Real-time Analytics" [level=3] [ref=e100]
+            - paragraph [ref=e101]: Gain deep insights into your sales, customers, and market behavior to stay ahead.
+          - generic [ref=e104]:
+            - img [ref=e105]
+            - generic [ref=e107]: MANAGE
+            - heading "Unified Command Center" [level=3] [ref=e108]
+            - paragraph [ref=e109]: Rule your empire from a single panel. Dominate the market with real-time data.
+          - generic [ref=e112]:
+            - img [ref=e113]
+            - generic [ref=e115]: OPTIMIZATION
+            - heading "Continuous AI Learning" [level=3] [ref=e116]
+            - paragraph [ref=e117]: Our AI agents constantly monitor market data, learn from performance, and autonomously refine strategies for ongoing growth.
+      - generic [ref=e120]:
+        - generic [ref=e121]:
+          - 'heading "Genesis Engine: From Idea to Phenomenon" [level=2] [ref=e122]'
+          - paragraph [ref=e123]: Dominate in Three Steps.
+        - generic [ref=e124]:
+          - generic [ref=e125]:
+            - generic [ref=e127]: "1"
+            - heading "FORGE" [level=3] [ref=e128]
+            - paragraph [ref=e129]: Connect all your marketplaces. Upload your products. Integrate the raw material into a single central brain.
+          - generic [ref=e130]:
+            - generic [ref=e132]: "2"
+            - heading "AMPLIFY" [level=3] [ref=e133]
+            - paragraph [ref=e134]: Unleash the power of AI. Create perfect visuals, hypnotic descriptions, and unbeatable pricing strategies.
+          - generic [ref=e135]:
+            - generic [ref=e137]: "3"
+            - heading "DOMINATE" [level=3] [ref=e138]
+            - paragraph [ref=e139]: Watch your empire from a single unified panel. Dominate the market with real-time data and leave your competitors behind.
+      - generic [ref=e142]:
+        - heading "Be the Next Trend." [level=2] [ref=e143]
+        - paragraph [ref=e144]: Stop unifying platforms. Start dominating the market. Discover our flexible plans and lay the foundation of your empire.
+        - link "Start Free Today" [ref=e145] [cursor=pointer]:
+          - /url: /ekobol/signup
+          - generic [ref=e146]: Start Free Today
+    - generic [ref=e149]:
+      - generic [ref=e150]:
+        - generic [ref=e151]:
+          - link "Ekobol Logo" [ref=e152] [cursor=pointer]:
+            - /url: /ekobol
+            - img "Ekobol Logo" [ref=e153]
+          - paragraph [ref=e154]: Powering your e-commerce journey with artificial intelligence.
+        - generic [ref=e155]:
+          - heading "Product" [level=4] [ref=e156]
+          - list [ref=e157]:
+            - listitem [ref=e158]:
+              - link "Features" [ref=e159] [cursor=pointer]:
+                - /url: /ekobol/product
+            - listitem [ref=e160]:
+              - link "Solutions" [ref=e161] [cursor=pointer]:
+                - /url: /ekobol/solutions
+            - listitem [ref=e162]:
+              - link "Pricing" [ref=e163] [cursor=pointer]:
+                - /url: /ekobol/pricing
+            - listitem [ref=e164]:
+              - link "Updates" [ref=e165] [cursor=pointer]:
+                - /url: /ekobol/blog
+        - generic [ref=e166]:
+          - heading "Company" [level=4] [ref=e167]
+          - list [ref=e168]:
+            - listitem [ref=e169]:
+              - link "About Us" [ref=e170] [cursor=pointer]:
+                - /url: /ekobol/about
+            - listitem [ref=e171]:
+              - link "Careers" [ref=e172] [cursor=pointer]:
+                - /url: /ekobol/careers
+            - listitem [ref=e173]:
+              - link "Contact Us" [ref=e174] [cursor=pointer]:
+                - /url: /ekobol/contact
+            - listitem [ref=e175]:
+              - link "Resources" [ref=e176] [cursor=pointer]:
+                - /url: /ekobol/resources
+        - generic [ref=e177]:
+          - heading "Legal" [level=4] [ref=e178]
+          - list [ref=e179]:
+            - listitem [ref=e180]:
+              - link "Terms of Service" [ref=e181] [cursor=pointer]:
+                - /url: /ekobol/terms
+            - listitem [ref=e182]:
+              - link "Privacy Policy" [ref=e183] [cursor=pointer]:
+                - /url: /ekobol/privacy
+            - listitem [ref=e184]:
+              - link "Cookie Policy" [ref=e185] [cursor=pointer]:
+                - /url: /ekobol/cookies
+      - paragraph [ref=e187]: "© {year} Ekobol. A Me the Tech brand. All rights reserved."
+  - generic [ref=e188]:
+    - generic [ref=e189]:
+      - link "Ekobol Logo" [ref=e190] [cursor=pointer]:
+        - /url: /ekobol
+        - img "Ekobol Logo" [ref=e191]
+      - button [ref=e192] [cursor=pointer]:
+        - img [ref=e193]
+    - navigation [ref=e195]:
+      - link "Solutions" [ref=e196] [cursor=pointer]:
+        - /url: /ekobol/solutions
+      - link "Pricing" [ref=e197] [cursor=pointer]:
+        - /url: /ekobol/pricing
+      - link "Resources" [ref=e198] [cursor=pointer]:
+        - /url: /ekobol/resources
+      - link "About Us" [ref=e199] [cursor=pointer]:
+        - /url: /ekobol/about
+      - link "Contact Us" [ref=e200] [cursor=pointer]:
+        - /url: /ekobol/contact
+      - generic [ref=e201]:
+        - button "EN" [ref=e202] [cursor=pointer]
+        - generic [ref=e203]: /
+        - button "TR" [ref=e204] [cursor=pointer]
+      - combobox [ref=e205]:
+        - option "retro"
+        - option "light"
+        - option "dark"
+        - option "cupcake"
+        - option "bumblebee"
+        - option "emerald"
+        - option "corporate"
+        - option "synthwave"
+        - option "asfalt-kemik" [selected]
+        - option "cyberpunk"
+        - option "valentine"
+        - option "halloween"
+      - generic [ref=e206]:
+        - link "Start Free" [ref=e207] [cursor=pointer]:
+          - /url: /ekobol/signup
+          - generic [ref=e208]: Start Free
+        - link "Login" [ref=e209] [cursor=pointer]:
+          - /url: /ekobol/login
+          - generic [ref=e210]: Login
+```

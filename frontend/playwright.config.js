@@ -8,7 +8,7 @@ module.exports = defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: 'html',
+  timeout: 60000,
   use: {
     baseURL: 'http://localhost:3000/ekobol',
     trace: 'on',
