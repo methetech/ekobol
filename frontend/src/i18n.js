@@ -23,6 +23,11 @@ i18n
     react: {
       useSuspense: false,
     },
+    detection: {
+      order: ['path', 'navigator'],
+      checkWhitelist: true,
+    },
+    whitelist: ['en', 'tr'],
   });
 
 export default i18n;
