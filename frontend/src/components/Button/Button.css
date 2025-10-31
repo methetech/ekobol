@@ -11,6 +11,7 @@
 
 .button:hover {
   background-color: var(--accent-primary-dark, var(--accent-primary)); /* Fallback to primary if dark not defined */
+  color: var(--button-hover-text-color); /* Use the theme-defined hover text color */
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   opacity: 1; /* Opacity'yi kaldırıp daha belirgin bir etki yaratıyoruz */

@@ -1,11 +1,13 @@
-import React, { useState, useEffect, useContext } from 'react'; // Added useState, useEffect, useContext
-import { BrowserRouter, Route, Routes, useLocation, Link } from 'react-router-dom'; // Added useLocation
-import { ThemeProvider, ThemeContext } from './ThemeContext'; // Added ThemeContext
+import React, { useState, useEffect, useContext } from 'react';
+import { BrowserRouter, Route, Routes, useLocation, Link } from 'react-router-dom';
+import { ThemeProvider, ThemeContext } from './ThemeContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import AnimatedBackground from './components/AnimatedBackground';
-import Select from './components/Select/Select'; // Select bileşenini import ettik (mobil menü için gerekli)
+import Select from './components/Select/Select';
 import { useTranslation } from 'react-i18next'; // useTranslation eklendi
+import LanguageSwitcher from './components/LanguageSwitcher'; // Import LanguageSwitcher
+import { UserCircleIcon, ArrowLeftOnRectangleIcon, UserPlusIcon } from '@heroicons/react/24/outline'; // Import icons for mobile menu
 
 import HomePage from './pages/HomePage';
 import Solutions from './pages/Solutions';
@@ -66,11 +68,20 @@ import './App.css';
 
 const AppContent = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Mobile menu state
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Placeholder for login state
   const location = useLocation(); // For title and overflow effect
   const { theme, setTheme } = useContext(ThemeContext); // For theme options in mobile menu
   const { t, i18n } = useTranslation(); // For translations in mobile menu
 
+  const themeOptions = [
+    'asphalt', 'light', 'dark', 'cupcake', 'bumblebee', 'emerald', 'corporate',
+    'synthwave', 'retro', 'cyberpunk', 'valentine', 'halloween',
+  ];
+
   useEffect(() => {
+    if (window.history.scrollRestoration) {
+      window.history.scrollRestoration = 'manual';
+    }
     const path = location.pathname.split('/')[1];
     const title = path ? path.charAt(0).toUpperCase() + path.slice(1) : 'Home';
     document.title = `Ekobol - ${title}`;
@@ -86,22 +97,13 @@ const AppContent = () => {
     };
   }, [location, isMobileMenuOpen]);
 
-  const changeLanguage = (lng) => { // For language toggle in mobile menu
-    i18n.changeLanguage(lng);
-  };
-
-  const themeOptions = [ // For theme options in mobile menu
-    'retro', 'light', 'dark', 'cupcake', 'bumblebee', 'emerald', 'corporate',
-    'synthwave', 'asphalt', 'cyberpunk', 'valentine', 'halloween',
-  ];
-
   const navLinks = ( // Copied from Header.js
     <>
-      <Link to="/solutions" className="text-base font-medium text-text-primary hover:text-accent-primary transition-colors min-h-[44px] flex items-center">{t('nav_solutions')}</Link>
-      <Link to="/pricing" className="text-base font-medium text-text-primary hover:text-accent-primary transition-colors min-h-[44px] flex items-center">{t('nav_pricing')}</Link>
-      <Link to="/resources" className="text-base font-medium text-text-primary hover:text-accent-primary transition-colors min-h-[44px] flex items-center">{t('nav_resources')}</Link>
-      <Link to="/about" className="text-base font-medium text-text-primary hover:text-accent-primary transition-colors min-h-[44px] flex items-center">{t('nav_about')}</Link>
-      <Link to="/contact" className="text-base font-medium text-text-primary hover:text-accent-primary transition-colors min-h-[44px] flex items-center">{t('nav_contact')}</Link>
+      <Link to="/solutions" className="text-base font-medium text-text-primary hover:text-accent-primary transition-colors min-h-[44px] flex items-center mobile-nav-link">{t('nav_solutions')}</Link>
+      <Link to="/pricing" className="text-base font-medium text-text-primary hover:text-accent-primary transition-colors min-h-[44px] flex items-center mobile-nav-link">{t('nav_pricing')}</Link>
+      <Link to="/resources" className="text-base font-medium text-text-primary hover:text-accent-primary transition-colors min-h-[44px] flex items-center mobile-nav-link">{t('nav_resources')}</Link>
+      <Link to="/about" className="text-base font-medium text-text-primary hover:text-accent-primary transition-colors min-h-[44px] flex items-center mobile-nav-link">{t('nav_about')}</Link>
+      <Link to="/contact" className="text-base font-medium text-text-primary hover:text-accent-primary transition-colors min-h-[44px] flex items-center mobile-nav-link">{t('nav_contact')}</Link>
     </>
   );
 
@@ -174,35 +176,38 @@ const AppContent = () => {
       {isMobileMenuOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm z-40" onClick={() => setIsMobileMenuOpen(false)}></div>
       )}
-      <div className={`fixed inset-x-4 top-24 sm:inset-x-auto sm:right-4 sm:w-96 bg-void-primary/95 backdrop-blur-xl shadow-2xl z-50 rounded-2xl transform transition-transform duration-300 md:hidden ${isMobileMenuOpen ? 'translate-y-0' : '-translate-y-[150%]'}`}>
-          <div className="flex items-center justify-between px-3 py-3 border-b border-void-secondary">
+      <div className={`fixed inset-x-4 top-4 sm:inset-x-auto sm:right-4 sm:w-96 bg-void-primary/95 backdrop-blur-xl shadow-2xl z-50 rounded-2xl transform transition-transform duration-300 md:hidden ${isMobileMenuOpen ? 'translate-y-0' : '-translate-y-[150%]'}`}>
+          <div className="flex items-center justify-between px-3 py-2 border-b border-void-secondary">
               <Link to="/" className="flex items-center gap-2 text-lg font-bold tracking-tight">
               <img src={process.env.PUBLIC_URL + "/static/media/ekobol.png"} alt="Ekobol Logo" className="h-10 w-auto" />
               </Link>
-              <button onClick={() => setIsMobileMenuOpen(false)} className="p-1 rounded-full text-text-secondary hover:bg-void-secondary transition-colors">
+              <button onClick={() => setIsMobileMenuOpen(false)} className="p-1 rounded-full text-text-secondary hover:bg-void-secondary transition-colors flex items-center justify-center">
                   <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
               </button>
           </div>
           <nav className="flex flex-col p-3 space-y-0">
               {navLinks}
-              <div className="flex items-center justify-center gap-1 sm:gap-2 text-sm font-medium pt-2 border-t border-void-secondary">
-                  <button type="button" onClick={() => changeLanguage('en')} className={`transition-colors ${i18n.language === 'en' ? 'text-accent-primary' : 'text-text-secondary'}`}>EN</button>
-                  <span className="text-text-secondary">/</span>
-                  <button type="button" onClick={() => changeLanguage('tr')} className={`transition-colors ${i18n.language === 'tr' ? 'text-accent-primary' : 'text-text-secondary'}`}>TR</button>
-              </div>
-              {/* Select bileşenini kullanıyoruz */}
-              <Select value={theme} onChange={(e) => setTheme(e.target.value)} className="bg-void-secondary text-text-primary border border-void-secondary dark:border-white/10 rounded-md py-1 px-2 text-xs mt-0">
-                  {themeOptions.map(themeName => (
-                      <option key={themeName} value={themeName}>{t(`themes.${themeName}`)}</option>
-                  ))}
-              </Select>
-              <div className="pt-2 border-t border-void-secondary flex flex-col gap-1">
-                  <Link to="/signup" className="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-3 bg-accent-primary text-void-secondary text-sm font-bold leading-normal tracking-wide shadow-lg transition-colors duration-300 hover:bg-accent-primary-dark">
-                      <span className="truncate">{t('start_free')}</span>
+              <div className="flex items-center justify-between pt-2 border-t border-void-secondary">
+                <LanguageSwitcher />
+                <Select value={theme} onChange={(e) => setTheme(e.target.value)} className="bg-void-secondary text-text-primary border border-void-secondary dark:border-white/10 rounded-md py-1 px-2 text-xs mt-0">
+                    {['asphalt', 'light', 'dark', 'cupcake', 'bumblebee', 'emerald', 'corporate', 'synthwave', 'retro', 'cyberpunk', 'valentine', 'halloween'].map(themeName => (
+                        <option key={themeName} value={themeName}>{t(`themes.${themeName}`)}</option>
+                    ))}
+                </Select>
+                {isLoggedIn ? (
+                  <Link to="#" onClick={() => setIsLoggedIn(false)} className="p-1 text-text-secondary hover:text-text-primary">
+                    <ArrowLeftOnRectangleIcon className="h-6 w-6" />
                   </Link>
-                  <Link to="/login" className="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-3 bg-transparent border-2 border-accent-primary text-accent-primary text-sm font-bold leading-normal transition-colors duration-300 hover:bg-accent-primary hover:text-void-primary">
-                      <span className="truncate">{t('login')}</span>
-                  </Link>
+                ) : (
+                  <div className="flex items-center">
+                    <Link to="/login" className="p-1 text-text-secondary hover:text-text-primary">
+                      <UserCircleIcon className="h-6 w-6" />
+                    </Link>
+                    <Link to="/signup" className="p-1 text-text-secondary hover:text-text-primary">
+                      <UserPlusIcon className="h-6 w-6" />
+                    </Link>
+                  </div>
+                )}
               </div>
           </nav>
       </div>

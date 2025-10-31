@@ -1,109 +1,40 @@
-/* Set body and html background to transparent to ensure the global prism is visible */
+/* App.css */
 
+/* ... (existing styles) ... */
 
-/* Wrapper for the main application content to ensure it's layered above the background */
-.content-wrap {
-  position: relative;
-  z-index: 1;
-  background-color: transparent; /* Ensure content wrapper doesn't hide the background */
+@media (max-width: 768px) {
+  /* Establish a consistent base font size for mobile */
+  body {
+    font-size: 16px; /* Base size for rem calculations */
+  }
+
+  /* Proportional heading sizes */
+  h1, .text-4xl {
+    font-size: 2rem; /* 32px */
+  }
+
+  h2, .text-3xl {
+    font-size: 1.75rem; /* 28px */
+  }
+
+  h3, .text-2xl {
+    font-size: 1.5rem; /* 24px */
+  }
+
+  /* Base paragraph and link size */
+  p, a, .text-base {
+    font-size: 1rem; /* 16px */
+    line-height: 1.5;
+  }
+
+  /* Specific adjustment for mobile navigation links */
+  .mobile-nav-link {
+    font-size: 1.125rem; /* 18px, slightly larger for touch targets */
+    font-weight: 500;
+  }
+
+  /* Smaller text utility */
+  .text-sm {
+    font-size: 0.875rem; /* 14px */
+  }
 }
-
-.App {
-  text-align: center;
-}
-
-
-.App-header {
-  background-color: var(--background-color);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--font-size-lg);
-  color: var(--text-color);
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-
-
-
-
-
-
-@keyframes pulse-slow {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 0.7; }
-}
-
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@keyframes spin-reverse-slow {
-  from { transform: rotate(360deg); }
-  to { transform: rotate(0deg); }
-}
-
-@keyframes flow-1 {
-  0% { transform: translate(0, 0); opacity: 0; }
-  25% { opacity: 1; }
-  50% { transform: translate(100px, 50px); opacity: 0; }
-  100% { transform: translate(0, 0); opacity: 0; }
-}
-
-@keyframes flow-2 {
-  0% { transform: translate(0, 0); opacity: 0; }
-  25% { opacity: 1; }
-  50% { transform: translate(-100px, -50px); opacity: 0; }
-  100% { transform: translate(0, 0); opacity: 0; }
-}
-
-@keyframes flow-3 {
-  0% { transform: translate(0, 0); opacity: 0; }
-  25% { opacity: 1; }
-  50% { transform: translate(50px, -100px); opacity: 0; }
-  100% { transform: translate(0, 0); opacity: 0; }
-}
-
-@keyframes flow-4 {
-  0% { transform: translate(0, 0); opacity: 0; }
-  25% { opacity: 1; }
-  50% { transform: translate(-50px, 100px); opacity: 0; }
-  100% { transform: translate(0, 0); opacity: 0; }
-}
-
-.animate-pulse-slow {
-  animation: pulse-slow 6s infinite ease-in-out;
-}
-
-.animate-spin-slow {
-  animation: spin-slow 30s linear infinite;
-}
-
-.animate-spin-reverse-slow {
-  animation: spin-reverse-slow 25s linear infinite;
-}
-
-.animate-flow-1 {
-  animation: flow-1 8s infinite ease-in-out;
-}
-
-.animate-flow-2 {
-  animation: flow-2 9s infinite ease-in-out 1s; /* Staggered start */
-}
-
-.animate-flow-3 {
-  animation: flow-3 7s infinite ease-in-out 2s; /* Staggered start */
-}
-
-.animate-flow-4 {
-  animation: flow-4 10s infinite ease-in-out 3s; /* Staggered start */
-}
-
-.bg-pattern-dots {
-  background-image: radial-gradient(currentColor 1px, transparent 1px);
-  background-size: 20px 20px;
-}
-

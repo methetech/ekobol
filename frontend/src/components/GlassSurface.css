@@ -40,3 +40,9 @@
   color: var(--text-primary);
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  .glass-surface-inner {
+    padding: 0.5rem;
+  }
+}

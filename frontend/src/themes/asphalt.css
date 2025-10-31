@@ -6,6 +6,7 @@
   --accent-primary: #FFFFFF;              /* Buttons, links - white */
   --accent-primary-rgb: 255, 255, 255;
   --accent-primary-dark: #CCCCCC;         /* Hover for accent - light gray */
+  --button-hover-text-color: #121212;      /* Explicit hover text color for buttons */
   --border-color: #333333;                /* Borders - dark gray */
 
   /* Font Sizes */
