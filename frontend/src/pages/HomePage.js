@@ -19,7 +19,7 @@ const HomePage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="px-4 sm:px-10 lg:px-20 py-16 sm:py-20 lg:py-40 text-center relative" data-aos="fade-up">
+      <section className="px-4 sm:px-10 lg:px-20 pt-10 pb-4 sm:pt-16 sm:pb-8 lg:pt-24 lg:pb-12 text-center relative" data-aos="fade-up">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tighter leading-tight mb-4 sm:mb-6 text-text-primary dark:hero-glow">
             {t('hero_title')}
@@ -42,7 +42,7 @@ const HomePage = () => {
 
 
 
-            <section className="px-4 sm:px-10 lg:px-20 py-20 lg:py-32 mb-20" data-aos="fade-up">
+            <section className="px-4 sm:px-10 lg:px-20 py-10 lg:py-16" data-aos="fade-up">
 
 
 
@@ -69,7 +69,7 @@ const HomePage = () => {
             </section>
 
       {/* Genesis Engine Section */}
-      <section className="px-4 sm:px-10 lg:px-20 py-20 lg:py-32" data-aos="fade-up">
+      <section className="px-4 sm:px-10 lg:px-20 py-10 lg:py-16" data-aos="fade-up">
         <GlassSurface className="max-w-6xl mx-auto p-8 sm:p-12 lg:p-16">
           <div className="text-center mb-20">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-text-primary">{t('genesis_title')}</h2>
@@ -97,7 +97,7 @@ const HomePage = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="px-4 sm:px-10 lg:px-20 py-20 lg:py-24 text-center" data-aos="fade-up">
+      <section className="px-4 sm:px-10 lg:px-20 py-10 lg:py-16 text-center" data-aos="fade-up">
         <GlassSurface className="max-w-4xl mx-auto p-8 sm:p-12 lg:p-16">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-text-primary mb-6">{t('final_cta_title')}</h2>
           <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto mb-10">
