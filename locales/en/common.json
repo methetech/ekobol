@@ -35,4 +35,19 @@
   "footer_legal_terms": "Terms of Service",
   "footer_legal_privacy": "Privacy Policy",
   "footer_legal_cookies": "Cookie Policy",
-  "footer_copyright": "© {year} Ekobol. A Me the Tech brand. All rights reserved."}
+  "footer_copyright": "© {year} Ekobol. A Me the Tech brand. All rights reserved.",
+  "themes": {
+    "retro": "Retro",
+    "light": "Light",
+    "dark": "Dark",
+    "cupcake": "Cupcake",
+    "bumblebee": "Bumblebee",
+    "emerald": "Emerald",
+    "corporate": "Corporate",
+    "synthwave": "Synthwave",
+    "asphalt": "Asphalt",
+    "cyberpunk": "Cyberpunk",
+    "valentine": "Valentine",
+    "halloween": "Halloween"
+  }
+}

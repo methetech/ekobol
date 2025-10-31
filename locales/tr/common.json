@@ -35,4 +35,19 @@
   "footer_legal_terms": "Hizmet Şartları",
   "footer_legal_privacy": "Gizlilik Politikası",
   "footer_legal_cookies": "Çerez Politikası",
-  "footer_copyright": "© {year} Ekobol. Me the Tech markasıdır. Tüm hakları saklıdır."}
+  "footer_copyright": "© 2025 Ekobol. Me the Tech markasıdır. Tüm hakları saklıdır.",
+  "themes": {
+    "retro": "Retro",
+    "light": "Açık",
+    "dark": "Koyu",
+    "cupcake": "Üzümlü Kek",
+    "bumblebee": "Yaban Arısı",
+    "emerald": "Zümrüt",
+    "corporate": "Kurumsal",
+    "synthwave": "Synthwave",
+    "asphalt": "Asfalt",
+    "cyberpunk": "Siberpunk",
+    "valentine": "Sevgililer Günü",
+    "halloween": "Cadılar Bayramı"
+  }
+}

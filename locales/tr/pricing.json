@@ -88,6 +88,69 @@
           "a": "Size. Biz sizin adınıza inşa eder ve yönetiriz, ancak tüm fikri mülkiyet hakları ve varlıklar tamamen size aittir. Biz sadece sizin imparatorluğunuzun sadık mimarlarıyız."
         }
       ]
+    },
+    "basic_plan": {
+      "title": "Temel Plan: Yapay Zeka Süper Güçleriniz",
+      "description": "Kontrol sizde olsun ama tekrarlayan işlerden nefret mi ediyorsunuz? Temel Plan, işlerinizi otomatikleştirmeniz ve büyümeniz için ihtiyacınız olan her şeyi sunar.",
+      "whats_included_title": "Neler Dahil?",
+      "feature1_strong": "Tam Platform Erişimi",
+      "feature1_text": "Ekobol'un tüm özelliklerine sınırsız erişim.",
+      "feature2_strong": "Tüm Yapay Zeka Araçları",
+      "feature2_text": "Görsel oluşturma, açıklama yazma, fiyat optimizasyonu ve envanter otomasyonu.",
+      "feature3_strong": "Çok Kanallı Entegrasyon",
+      "feature3_text": "Trendyol, Etsy, Amazon ve daha fazlasını sorunsuz bir şekilde bağlayın.",
+      "feature4_strong": "Birleşik Kontrol Paneli",
+      "feature4_text": "Tüm işinizi tek bir yerden yönetin ve analiz edin.",
+      "price": "Sadece %10",
+      "price_suffix": " / kârdan",
+      "strategy_text": "Stratejinizi siz belirleyin, biz de sıkıcı görevleri otomatikleştirelim ve size en değerli varlığınız olan zamanı geri verelim.",
+      "buy_button": "Temel Planı Satın Al"
+    },
+    "build_transfer_service": {
+      "title": "Kur ve Devret Hizmeti: Dijital İmparatorluğunuz, Sizin İçin İnşa Edildi.",
+      "description": "Tamamen size ait profesyonel bir e-ticaret varlığı mı hayal ediyorsunuz? Baştan sona kurar, sonra tam kontrolü size devrederiz.",
+      "whats_built_title": "Sizin İçin Neler Kuruyoruz:",
+      "service1_strong": "Özel E-ticaret Web Sitesi",
+      "service1_text": "Temel bir mağazadan (başlangıç fiyatı ₺8.000) gelişmiş özelliklere (₺16.000) kadar markanıza özel profesyonel tasarım ve geliştirme.",
+      "service2_strong": "Çoklu Pazar Yeri Entegrasyonu ve Kurulumu",
+      "service2_text": "Trendyol, Etsy ve Amazon gibi platformlar için sorunsuz bağlantı ve başlangıç kurulumu. Kanal başına marka oluşturma ve yapılandırma, ayrıca entegre kanal başına 100 ürüne kadar listeleme dahildir (kanal başına fiyat ayrı olarak teklif edilir).",
+      "service3_strong": "Temel SEO Kurulumu",
+      "service3_text": "Yeni dijital varlığınız için temel arama motoru optimizasyonu.",
+      "service4_strong": "Bilgi Transferi ve Eğitimi",
+      "service4_text": "Yeni dijital varlıklarınızı yönetmede kendinize güvenmeniz için devir ve eğitim sağlayacağız.",
+      "service5_strong": "Tam Mülkiyet Devri",
+      "service5_text": "Tamamlandığında, oluşturulan tüm varlıkların (web sitesi kodu, pazar yeri hesapları, içerik) tam kontrolü ve mülkiyeti size devredilir.",
+      "price": "Tek seferlik sabit ücret, başlangıç fiyatı ₺8.000",
+      "note": "Bu hizmet, Ekobol'dan uzun vadeli yönetim taahhüdü olmaksızın profesyonel bir dijital lansman arayan işletmeler için idealdir. Fiyatlar seçilen bileşenlere, karmaşıklığa ve entegrasyon sayısına göre değişir. Detaylı bir proje teklifi için bizimle iletişime geçin.",
+      "cta_button": "Özel Teklif Alın"
+    },
+    "dynamic_plan": {
+      "title": "Dinamik Plan: Nihai Esneklik",
+      "description": "İhtiyaçlarınız zamanla değişebilir. Dinamik Plan, sizinle platformumuz arasındaki iş yüküne göre ayarlanan bir ortaklık sunar.",
+      "how_it_works_title": "Nasıl Çalışır?",
+      "how_it_works_text1": "Dinamik Plan, her iki tarafın da masaya getirdiği çabaya dayalı özel bir gelir paylaşımı modelidir. Bazı pazarlama görevlerini kendiniz mi halletmek istiyorsunuz? Harika, payınız artar. Her şeyi bize devretmek mi istiyorsunuz? Sorun değil, paylar buna göre ayarlanır.",
+      "how_it_works_text2": "Büyüyen işletmeler için nihai esnek ortaklıktır. Çabanızı artırın veya azaltın, planınız sizinle birlikte adapte olur.",
+      "cta_title": "Mükemmel Ortaklığı Kuralım",
+      "cta_description": "Bu plan tamamen işbirliğiyle ilgili. Benzersiz ihtiyaçlarınızı görüşmek için ekibimizle iletişime geçin ve size özel bir plan oluşturalım.",
+      "cta_button": "Başlamak İçin Bizimle İletişime Geçin"
+    },
+    "partner_plan": {
+      "title": "İş Ortağı Planı: Biz Kurarız, Siz Yaratırsınız",
+      "description": "Sizin dehanız harika ürünler yaratmakta, dijital listelemeleri yönetmekte değil. İş ortağımız olun, dijital imparatorluğunuzu sizin adınıza biz kuralım.",
+      "whats_included_title": "Her Şeyi Biz Hallederiz",
+      "feature1_strong": "Temel Plandaki Her Şey, ARTI:",
+      "feature1_text": "Tüm yapay zeka araçlarına ve platforma tam erişim.",
+      "feature2_strong": "Marka ve Web Sitesi Oluşturma",
+      "feature2_text": "Profesyonel marka kimliğinizi ve e-ticaret sitenizi biz oluştururuz.",
+      "feature3_strong": "Tam Dijital Pazarlama",
+      "feature3_text": "SEO, reklam kampanyaları ve sosyal medya yönetimini biz yürütürüz.",
+      "feature4_strong": "Operasyon Yönetimi",
+      "feature4_text": "Listelemeleri, pazar yeri desteğini ve müşteri hizmetlerini biz yönetiriz.",
+      "feature5_strong": "Adanmış Büyüme Ortağı",
+      "feature5_text": "Başarınızı sağlamak için sizinle yakın çalışırız.",
+      "price": "50/50 Kâr Paylaşımı",
+      "strategy_text": "Sadece ürünlerinizi üretin ve gönderin. Diğer her şeyi biz hallederiz. Gerçek bir ortaklık.",
+      "buy_button": "İş Ortağı Planını Satın Al"
     }
   }
 }

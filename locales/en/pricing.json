@@ -88,6 +88,69 @@
           "a": "You. We build and manage on your behalf, but all intellectual property rights and assets are entirely yours. We are just the loyal architects of your empire."
         }
       ]
+    },
+    "basic_plan": {
+      "title": "Basic Plan: Your AI Superpowers",
+      "description": "Do you want to be in control but hate repetitive tasks? The Basic Plan offers everything you need to automate your business and grow.",
+      "whats_included_title": "What's Included?",
+      "feature1_strong": "Full Platform Access",
+      "feature1_text": "Unlimited access to all Ekobol features.",
+      "feature2_strong": "All AI Tools",
+      "feature2_text": "Image generation, description writing, price optimization, and inventory automation.",
+      "feature3_strong": "Multi-Channel Integration",
+      "feature3_text": "Seamlessly connect Trendyol, Etsy, Amazon, and more.",
+      "feature4_strong": "Unified Control Panel",
+      "feature4_text": "Manage and analyze all your business from one place.",
+      "price": "Only 10%",
+      "price_suffix": " / of profit",
+      "strategy_text": "You set your strategy, and we'll automate the tedious tasks, giving you back your most valuable asset: time.",
+      "buy_button": "Purchase Basic Plan"
+    },
+    "build_transfer_service": {
+      "title": "Build and Transfer Service: Your Digital Empire, Built for You.",
+      "description": "Dreaming of a professional e-commerce presence fully owned by you? We build it from scratch, then hand you full control.",
+      "whats_built_title": "What We Build for You:",
+      "service1_strong": "Custom E-commerce Website",
+      "service1_text": "Professional design and development tailored to your brand, from a basic store (starting price $8,000) to advanced features ($16,000).",
+      "service2_strong": "Multi-Marketplace Integration and Setup",
+      "service2_text": "Seamless connection and initial setup for platforms like Trendyol, Etsy, Amazon, and more. Includes brand creation and configuration per channel, plus listing up to 100 products per integrated channel (price per channel quoted separately).",
+      "service3_strong": "Basic SEO Setup",
+      "service3_text": "Essential search engine optimization for your new digital presence.",
+      "service4_strong": "Knowledge Transfer and Training",
+      "service4_text": "We will provide handover and training to ensure you are confident in managing your new digital assets.",
+      "service5_strong": "Full Ownership Transfer",
+      "service5_text": "Upon completion, full control and ownership of all created assets (website code, marketplace accounts, content) are transferred to you.",
+      "price": "One-time fixed fee, starting price $8,000",
+      "note": "This service is ideal for businesses seeking a professional digital launch without a long-term management commitment from Ekobol. Prices vary based on selected components, complexity, and number of integrations. Contact us for a detailed project proposal.",
+      "cta_button": "Get a Custom Quote"
+    },
+    "dynamic_plan": {
+      "title": "Dynamic Plan: Ultimate Flexibility",
+      "description": "Your needs can change over time. The Dynamic Plan offers a partnership adjusted according to the workload between you and our platform.",
+      "how_it_works_title": "How It Works?",
+      "how_it_works_text1": "The Dynamic Plan is a special revenue sharing model based on the effort both parties bring to the table. Do you want to handle some marketing tasks yourself? Great, your share increases. Do you want to hand everything over to us? No problem, shares are adjusted accordingly.",
+      "how_it_works_text2": "It is the ultimate flexible partnership for growing businesses. Increase or decrease your effort, your plan adapts with you.",
+      "cta_title": "Let's Build the Perfect Partnership",
+      "cta_description": "This plan is all about collaboration. Contact our team to discuss your unique needs and let's create a custom plan for you.",
+      "cta_button": "Contact Us to Get Started"
+    },
+    "partner_plan": {
+      "title": "Partner Plan: We Build, You Create",
+      "description": "Your genius lies in creating great products, not managing digital listings. Become our partner, and we'll build your digital empire for you.",
+      "whats_included_title": "We Handle Everything",
+      "feature1_strong": "Everything in Basic Plan, PLUS:",
+      "feature1_text": "Full access to all AI tools and the platform.",
+      "feature2_strong": "Brand and Website Creation",
+      "feature2_text": "We create your professional brand identity and e-commerce site.",
+      "feature3_strong": "Full Digital Marketing",
+      "feature3_text": "We manage SEO, advertising campaigns, and social media.",
+      "feature4_strong": "Operations Management",
+      "feature4_text": "We manage listings, marketplace support, and customer service.",
+      "feature5_strong": "Dedicated Growth Partner",
+      "feature5_text": "We work closely with you to ensure your success.",
+      "price": "50/50 Profit Share",
+      "strategy_text": "Just produce and ship your products. We'll handle everything else. A true partnership.",
+      "buy_button": "Purchase Partner Plan"
     }
   }
 }

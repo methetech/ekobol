@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/ekobol/static/css/main.6684e58f.css",
-    "main.js": "/ekobol/static/js/main.582bc11e.js",
+    "main.css": "/ekobol/static/css/main.b9a72587.css",
+    "main.js": "/ekobol/static/js/main.3a615363.js",
     "index.html": "/ekobol/index.html",
     "static/media/getFetch.cjs": "/ekobol/static/media/getFetch.7a7a1c81840c96d5a3ea.cjs"
   },
   "entrypoints": [
-    "static/css/main.6684e58f.css",
-    "static/js/main.582bc11e.js"
+    "static/css/main.b9a72587.css",
+    "static/js/main.3a615363.js"
   ]
 }
