@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [2025-10-31] - Theme, Spacing, and Hover Fixes
+- **FEAT:** Renamed 'asfalt-kemik' theme to 'asphalt' across the application, including default theme setting in `ThemeContext.js`, theme option arrays in `App.js` and `Header.js`, and the theme's CSS file (`frontend/src/themes/asphalt.css`).
+- **FEAT:** Implemented i18n translation for theme names in mobile and desktop theme selectors, utilizing `t('themes.themeName')` and adding English and Turkish translations to `common.json`.
+- **FEAT:** Optimized vertical spacing between sections on `HomePage.js` for a more compact layout, reducing padding for content sections and specifically trimming the bottom padding of the Hero Section.
+- **FIX:** Resolved jarring global hover effects on links and buttons by removing conflicting `transform: translateY` and `box-shadow` rules from `App.css`.
+
 All significant changes made to the `ekobol.com` project will be documented here.
 
 ## [2025-10-31] - i18n Integration for Core Pages

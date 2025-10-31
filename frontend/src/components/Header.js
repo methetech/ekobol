@@ -20,7 +20,7 @@ const Header = ({ onToggleMobileMenu }) => { // Added onToggleMobileMenu prop
   };
 
   const themeOptions = [
-    'retro',
+    'asphalt',
     'light',
     'dark',
     'cupcake',
@@ -28,7 +28,7 @@ const Header = ({ onToggleMobileMenu }) => { // Added onToggleMobileMenu prop
     'emerald',
     'corporate',
     'synthwave',
-    'asfalt-kemik',
+    'retro',
     'cyberpunk',
     'valentine',
     'halloween',
@@ -96,9 +96,9 @@ const Header = ({ onToggleMobileMenu }) => { // Added onToggleMobileMenu prop
 
               <select value={theme} onChange={(e) => setTheme(e.target.value)} className="bg-void-secondary text-text-primary border border-void-secondary dark:border-white/10 rounded-md py-2 px-3 text-sm">
 
-                {themeOptions.map(t => (
+                {themeOptions.map(themeName => (
 
-                  <option key={t} value={t}>{t}</option>
+                  <option key={themeName} value={themeName}>{t(`themes.${themeName}`)}</option>
 
                 ))}
 

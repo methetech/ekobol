@@ -26,6 +26,9 @@ This document outlines the planned development steps for `ekobol.com`.
 - [x] Text Readability Fixes (conflicting Tailwind classes resolved in `HomePage.js`)
 - [x] Automation Nexus Section (Implemented 3D interactive lab environment with `react-three-fiber`, default theme set to 'retro', styling adjusted for consistency, OrbitControls fix applied, unused import removed)
 - [x] Fix mobile header overlap and tap target size issues based on UX Report.
+- [x] Optimize vertical spacing between sections on homepage.
+- [x] Implement theme name translation and rename 'asfalt-kemik' to 'asphalt'.
+- [x] Fix global hover effect on links and buttons.
 - [ ] Conduct internet research for cutting-edge web technologies and visual effects.
 - [x] Implement React Router for navigation between pages
 - [x] Convert remaining static HTML pages to React components and integrate into routing

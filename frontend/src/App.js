@@ -92,7 +92,7 @@ const AppContent = () => {
 
   const themeOptions = [ // For theme options in mobile menu
     'retro', 'light', 'dark', 'cupcake', 'bumblebee', 'emerald', 'corporate',
-    'synthwave', 'asfalt-kemik', 'cyberpunk', 'valentine', 'halloween',
+    'synthwave', 'asphalt', 'cyberpunk', 'valentine', 'halloween',
   ];
 
   const navLinks = ( // Copied from Header.js
@@ -192,8 +192,8 @@ const AppContent = () => {
               </div>
               {/* Select bileşenini kullanıyoruz */}
               <Select value={theme} onChange={(e) => setTheme(e.target.value)} className="bg-void-secondary text-text-primary border border-void-secondary dark:border-white/10 rounded-md py-1 px-2 text-xs mt-0">
-                  {themeOptions.map(t => (
-                      <option key={t} value={t}>{t}</option>
+                  {themeOptions.map(themeName => (
+                      <option key={themeName} value={themeName}>{t(`themes.${themeName}`)}</option>
                   ))}
               </Select>
               <div className="pt-2 border-t border-void-secondary flex flex-col gap-1">

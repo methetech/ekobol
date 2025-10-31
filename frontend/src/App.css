@@ -107,14 +107,3 @@
   background-size: 20px 20px;
 }
 
-/* Genel Etkileşim Stilleri */
-a, button {
-  transition: all 0.3s ease-in-out;
-}
-
-a:hover, a:focus,
-button:hover, button:focus {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  outline: none; /* Odaklandığında varsayılan dış çizgiyi kaldır */
-}
