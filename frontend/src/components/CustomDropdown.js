@@ -28,7 +28,7 @@ const CustomDropdown = ({ options, value, onChange }) => {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-                                className="bg-void-secondary text-text-primary border border-void-secondary dark:border-white/10 rounded-md py-1 px-2 text-xs flex items-center justify-between"
+                                className="bg-void-secondary text-text-primary border border-void-secondary dark:border-white/10 rounded-md py-1 px-2 text-xs flex items-center justify-between w-24"
                               >
                                 <div className="flex items-center">
                                   {selectedOption && (
@@ -39,13 +39,13 @@ const CustomDropdown = ({ options, value, onChange }) => {
                                 {/* You can add a dropdown icon here if you want, e.g., a chevron */}
                               </button>
                               {isOpen && (
-                                <ul className="absolute z-10 mt-1 w-max bg-void-secondary border border-void-secondary dark:border-white/10 rounded-md shadow-lg">          {options.map((option) => (
+                                <ul className="absolute z-10 mt-1 w-24 bg-void-secondary border border-void-secondary dark:border-white/10 rounded-md shadow-lg">          {options.map((option) => (
             <li
               key={option.code}
               onClick={() => handleSelect(option)}
-              className="px-4 py-2 hover:bg-void-primary cursor-pointer flex items-center"
+              className="px-2 py-1 hover:bg-void-primary cursor-pointer flex items-center h-6"
             >
-              <img src={process.env.PUBLIC_URL + option.flag} alt={option.name} className="w-5 h-5 mr-2" />
+              <img src={process.env.PUBLIC_URL + option.flag} alt={option.name} className="w-4 h-4 mr-2" />
               <span>{option.name}</span>
             </li>
           ))}
